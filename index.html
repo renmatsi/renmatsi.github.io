@@ -3,222 +3,3982 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renan Matos Portfolio</title>
+<title>Renan Matos</title>
+
+<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000b67c720ea141757a6d9582aa%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D2b3d2ec0e3517259f735e90d1bf1674c7828057dd642363907c53b97a8fac5c9%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg: #f7f7f4;
+  --text: #111111;
+  --muted: #5f5f5f;
+  --card: rgba(255,255,255,0.72);
+  --border: rgba(0,0,0,0.12);
+  --accent1: #ff4dc4;
+  --accent2: #5b7cff;
+  --accent3: #00d4aa;
+  --success: #28ff7a;
 }
 
-/* BODY */
+body.dark {
+  --bg: #070707;
+  --text: #f4f4f4;
+  --muted: #a8a8a8;
+  --card: rgba(14,14,14,0.74);
+  --border: rgba(255,255,255,0.14);
+}
+
+* { box-sizing: border-box; }
+
 body {
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: #fff;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 16% 42%, rgba(255,77,196,.12), transparent 32%),
+    radial-gradient(circle at 82% 58%, rgba(91,124,255,.10), transparent 34%),
+    radial-gradient(circle at 54% 82%, rgba(0,212,170,.08), transparent 36%),
+    var(--bg);
+  background-size: 220% 220%;
+  animation: gradientFlow 58s ease-in-out infinite;
+  transition: background .6s ease, color .6s ease;
+  overflow-x: hidden;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
-/* INDEX CARD */
-#homeCard {
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(120,120,120,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,120,120,.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  opacity: .18;
+}
+
+.top-actions {
+  position: fixed;
+  top: 26px;
+  right: 28px;
+  z-index: 50;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.circle-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3)) border-box;
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.circle-btn:hover {
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 16px 50px rgba(91,124,255,.25);
+}
+
+.lang-wrapper { position: relative; }
+
+.lang-menu {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lang-menu.show { display: flex; }
+
+.lang-menu button {
+  color: white;
+  font-weight: 700;
+}
+
+.lang-en { background: linear-gradient(135deg, #012169, #ffffff 48%, #c8102e) padding-box, linear-gradient(135deg, #012169, #c8102e) border-box; }
+.lang-br { background: linear-gradient(135deg, #009c3b, #ffdf00 52%, #002776) padding-box, linear-gradient(135deg, #009c3b, #ffdf00, #002776) border-box; }
+.lang-es { background: linear-gradient(135deg, #aa151b, #f1bf00 50%, #aa151b) padding-box, linear-gradient(135deg, #aa151b, #f1bf00) border-box; }
+
+.hero {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  place-items: center;
+  padding: 90px 28px 70px;
+}
+
+.main-card,
+.panel-card {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, 100%);
+  padding: 42px;
+  border-radius: 42px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(26px);
+  box-shadow: 0 18px 60px rgba(0,0,0,.12);
+  overflow: hidden;
+  animation: reveal .75s ease both;
+}
+
+.main-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.main-card::after,
+.panel-card::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: -120px;
+  bottom: -120px;
+  background: radial-gradient(circle, rgba(255,77,196,.10), transparent 72%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.photo-wrap {
+  position: relative;
+  border-radius: 30px;
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(255,77,196,.85), rgba(91,124,255,.7), rgba(0,212,170,.8));
+  box-shadow: 0 18px 54px rgba(255,77,196,.08), 0 14px 48px rgba(91,124,255,.07);
 }
 
 .photo {
   width: 100%;
-  border-radius: 20px;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 27px;
 }
 
-.info h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+.info { position: relative; z-index: 2; }
+
+.name {
+  margin: 0 0 26px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(42px, 6vw, 74px);
+  line-height: .95;
+  letter-spacing: 10px;
+  font-weight: 600;
 }
 
-.info p {
-  opacity: 0.7;
+.name .renan,
+.desc strong,
+.panel-title span,
+.contact-highlight {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  background-size: 220% 220%;
+  animation: textGradient 9s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* PORTFOLIO GRID */
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.name .matos {
+  color: color-mix(in srgb, var(--text) 62%, transparent);
+}
+
+.divider {
+  width: 150px;
+  height: 2px;
+  margin: 0 0 28px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  background-size: 220% 220%;
+  animation: textGradient 9s ease infinite;
+  border-radius: 999px;
+}
+
+.desc {
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.open-status {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 5;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.32);
+  background: rgba(0,0,0,.46);
+  color: #fff;
+  backdrop-filter: blur(16px);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+body.dark .open-status {
+  background: rgba(255,255,255,.06);
+}
+
+.open-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 rgba(40,255,122,.8);
+  animation: pulseGreen 1.65s ease-in-out infinite;
+}
+
+@keyframes pulseGreen {
+  0%, 100% {
+    opacity: .42;
+    box-shadow: 0 0 0 0 rgba(40,255,122,.55), 0 0 12px rgba(40,255,122,.45);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 9px rgba(40,255,122,0), 0 0 24px rgba(40,255,122,.85);
+  }
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.nav-buttons button,
+.back-btn,
+.project-link,
+.contact-link,
+.copy-btn {
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 13px 18px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3)) border-box;
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.nav-buttons button:hover,
+.back-btn:hover,
+.project-link:hover,
+.contact-link:hover,
+.copy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(91,124,255,.22);
+}
+
+
+
+
+/* Scroll-aware compact index */
+
+.top-actions {
+  opacity: .18;
+  transition: opacity .35s ease, transform .35s ease, filter .35s ease;
+}
+
+.top-actions:hover,
+.top-actions:focus-within {
+  opacity: 1;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.contact-icon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-icon.instagram svg .fill-none {
+  fill: none;
+}
+
+.contact-icon.linkedin svg text {
+  fill: currentColor;
+  stroke: none;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* Panel color accents */
+#skillsPanel {
+  border-color: rgba(77,163,255,.32);
+  box-shadow: 0 20px 70px rgba(77,163,255,.055);
+}
+
+#skillsPanel .skill-block {
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(77,163,255,.22);
+  background: linear-gradient(135deg, rgba(77,163,255,.10), rgba(91,124,255,.05));
+}
+
+#skillsPanel .skill-block h3 {
+  color: #7fbaff;
+}
+
+#experiencePanel {
+  border-color: rgba(184,77,255,.32);
+  box-shadow: 0 20px 70px rgba(184,77,255,.055);
+}
+
+#experiencePanel .resume-item {
+  border-color: rgba(184,77,255,.24);
+  background: linear-gradient(135deg, rgba(184,77,255,.10), rgba(255,77,196,.05));
+}
+
+#experiencePanel .resume-company {
+  color: #d48aff;
+}
+
+#experiencePanel .resume-role {
+  color: #ff8fda;
+}
+
+#tutorialsPanel {
+  border-color: rgba(150,150,150,.28);
+  filter: grayscale(.7);
+}
+
+#tutorialsPanel .project-card {
+  border-color: rgba(150,150,150,.25);
+  background: linear-gradient(135deg, rgba(160,160,160,.10), rgba(90,90,90,.05));
+}
+
+#contactPanel {
+  border-color: rgba(0,212,170,.34);
+  box-shadow: 0 20px 70px rgba(0,212,170,.055);
+}
+
+#contactPanel .contact-box,
+#contactPanel .contact-message-card {
+  padding: 20px;
+  border-radius: 26px;
+  border: 1px solid rgba(0,212,170,.22);
+  background: linear-gradient(135deg, rgba(0,212,170,.10), rgba(40,255,122,.04));
+}
+
+#contactPanel .contact-link,
+#contactPanel .copy-btn {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #00d4aa, #28ff7a) border-box !important;
+}
+
+#contactPanel .contact-icon {
+  color: #28ff7a;
+}
+
+#portfolioPanel {
+  border-color: rgba(255,77,196,.28);
+  box-shadow: 0 20px 70px rgba(255,77,196,.045);
+}
+
+.portfolio-card:nth-child(4n+1) {
+  border-color: rgba(77,163,255,.24);
+}
+
+.portfolio-card:nth-child(4n+2) {
+  border-color: rgba(184,77,255,.24);
+}
+
+.portfolio-card:nth-child(4n+3) {
+  border-color: rgba(0,212,170,.24);
+}
+
+.portfolio-card:nth-child(4n+4) {
+  border-color: rgba(255,77,196,.24);
+}
+
+.portfolio-card:nth-child(4n+1) .tag {
+  border-color: rgba(77,163,255,.32);
+  color: #7fbaff;
+}
+
+.portfolio-card:nth-child(4n+2) .tag {
+  border-color: rgba(184,77,255,.32);
+  color: #d48aff;
+}
+
+.portfolio-card:nth-child(4n+3) .tag {
+  border-color: rgba(0,212,170,.32);
+  color: #28ff7a;
+}
+
+.portfolio-card:nth-child(4n+4) .tag {
+  border-color: rgba(255,77,196,.32);
+  color: #ff8fda;
+}
+
+
+
+/* High contrast terminal-style themes */
+body.terminal-dark {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #d0d0d0;
+  --card: rgba(0,0,0,.86);
+  --border: rgba(255,255,255,.72);
+  --accent1: #ffffff;
+  --accent2: #ffffff;
+  --accent3: #ffffff;
+  background: #000000 !important;
+  animation: none !important;
+}
+
+body.terminal-light {
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #202020;
+  --card: rgba(255,255,255,.92);
+  --border: rgba(0,0,0,.76);
+  --accent1: #000000;
+  --accent2: #000000;
+  --accent3: #000000;
+  background: #ffffff !important;
+  animation: none !important;
+}
+
+body.terminal-dark::before,
+body.terminal-light::before {
+  opacity: .22;
+  background-size: 18px 18px;
+}
+
+body.terminal-dark .name .renan,
+body.terminal-light .name .renan,
+body.terminal-dark .desc strong,
+body.terminal-light .desc strong,
+body.terminal-dark .panel-title span,
+body.terminal-light .panel-title span,
+body.terminal-dark .contact-highlight,
+body.terminal-light .contact-highlight {
+  background: none !important;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--text) !important;
+  animation: none !important;
+}
+
+body.terminal-dark .divider,
+body.terminal-light .divider {
+  background: var(--text) !important;
+  animation: none !important;
+}
+
+body.terminal-dark .circle-btn,
+body.terminal-light .circle-btn,
+body.terminal-dark .scroll-btn,
+body.terminal-light .scroll-btn,
+body.terminal-dark .nav-buttons button,
+body.terminal-light .nav-buttons button,
+body.terminal-dark .back-btn,
+body.terminal-light .back-btn,
+body.terminal-dark .project-link,
+body.terminal-light .project-link,
+body.terminal-dark .contact-link,
+body.terminal-light .contact-link,
+body.terminal-dark .copy-btn,
+body.terminal-light .copy-btn {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+  color: var(--text) !important;
+  text-shadow: none !important;
+}
+
+body.terminal-dark .project-card,
+body.terminal-light .project-card,
+body.terminal-dark .resume-item,
+body.terminal-light .resume-item,
+body.terminal-dark .portfolio-card,
+body.terminal-light .portfolio-card,
+body.terminal-dark .contact-box,
+body.terminal-light .contact-box {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+body.terminal-dark .tag,
+body.terminal-light .tag {
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  background: transparent !important;
+}
+
+/* Contact individual channel colors */
+#contactPanel .contact-link[href^="mailto"],
+#sendEmailLink {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #4da3ff, #5b7cff) border-box !important;
+}
+
+#contactPanel .contact-link[href*="linkedin"],
+#contactPanel .contact-link[href*="linkedin.com"] {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #0a66c2, #4da3ff) border-box !important;
+}
+
+#contactPanel .contact-link[href*="artstation"] {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #13aff0, #00d4aa) border-box !important;
+}
+
+#contactPanel .contact-link[href*="instagram"] {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #f58529, #dd2a7b, #8134af) border-box !important;
+}
+
+#contactPanel .contact-link[href*="wa.me"],
+#sendWhatsapp1 {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #25d366, #00d4aa) border-box !important;
+}
+
+#contactPanel .contact-link[href*="t.me"],
+#sendTelegram {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #229ed9, #5b7cff) border-box !important;
+}
+
+#contactPanel .copy-btn {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #b84dff, #ff4dc4) border-box !important;
+}
+
+/* Larger temporary portfolio cards */
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-/* CARD */
 .portfolio-card {
-  background: #111;
-  border-radius: 18px;
-  overflow: hidden;
-  transition: transform .2s;
+  padding: 20px;
+  min-height: 340px;
+  transform-origin: center;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-9px) scale(1.045);
+  z-index: 6;
+  box-shadow: 0 20px 58px rgba(91,124,255,.16);
 }
 
-/* THUMB */
-.portfolio-thumb-frame {
-  width: 100%;
-  aspect-ratio: 1;
+.portfolio-card h3 {
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+.portfolio-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 13px;
+  margin: 10px 0 14px;
+}
+
+.portfolio-placeholder {
+  min-height: 190px;
+  transition: transform .35s ease, border-color .35s ease;
+}
+
+.portfolio-card:hover .portfolio-placeholder {
+  transform: scale(1.02);
+  border-color: color-mix(in srgb, var(--text) 42%, transparent);
+}
+
+@media (max-width: 1100px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+
+
+/* Button color system */
+.btn-skills,
+.btn-exp,
+.btn-contact,
+.btn-tutorials {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+}
+
+.btn-skills {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #4da3ff, #5b7cff) border-box !important;
+}
+
+.btn-exp {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #b84dff, #ff4dc4) border-box !important;
+}
+
+.btn-contact {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #00d4aa, #28ff7a) border-box !important;
+}
+
+.btn-tutorials {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #555, #888) border-box !important;
+}
+
+.btn-skills:hover {
+  box-shadow: 0 12px 36px rgba(77,163,255,.35);
+}
+
+.btn-exp:hover {
+  box-shadow: 0 12px 36px rgba(184,77,255,.35);
+}
+
+.btn-contact:hover {
+  box-shadow: 0 12px 36px rgba(0,212,170,.35);
+}
+
+.btn-tutorials:hover {
+  box-shadow: none;
+}
+
+.btn-skills,
+.btn-exp,
+.btn-contact {
+  position: relative;
   overflow: hidden;
 }
 
-.portfolio-thumb-frame img {
+.btn-skills::after,
+.btn-exp::after,
+.btn-contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.15), transparent);
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+
+.btn-skills:hover::after,
+.btn-exp:hover::after,
+.btn-contact:hover::after {
+  opacity: 1;
+}
+
+
+/* Correct compact index behavior */
+body.index-compact .hero {
+  place-items: start center;
+  padding-top: 90px;
+}
+
+body.index-compact #homeCard {
+  min-height: 0;
+  width: min(1120px, 100%);
+  padding: 18px 24px;
+  display: block !important;
+  overflow: visible !important;
+  transition: padding .35s ease, transform .35s ease, opacity .35s ease;
+}
+
+body.index-compact #homeCard .photo-wrap,
+body.index-compact #homeCard .name,
+body.index-compact #homeCard .divider,
+body.index-compact #homeCard .desc {
+  display: none !important;
+}
+
+body.index-compact #homeCard .info {
+  display: block;
+  text-align: center;
+}
+
+body.index-compact #homeCard .nav-buttons {
+  margin-top: 0;
+  justify-content: center;
+}
+
+body.index-compact #homeCard::after {
+  opacity: .18;
+}
+
+/* Remove layout forcing from previous compact rules */
+body.index-compact .portfolio-strip {
+  margin-top: 24px;
+}
+
+.nav-buttons button.is-disabled {
+  opacity: .42;
+  filter: grayscale(1);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.nav-buttons button.is-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.scroll-controls {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scroll-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3)) border-box;
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+}
+
+.scroll-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 50px rgba(91,124,255,.25);
+}
+
+.portfolio-quick-actions {
+  display: none;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 38px rgba(0,0,0,.10);
+}
+
+.experience-resume {
+  display: grid;
+  gap: 22px;
+}
+
+.resume-item {
+  padding: 26px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(18px);
+}
+
+.resume-head {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.resume-company {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.resume-role {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.resume-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resume-item ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.portfolio-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(135deg, rgba(255,77,196,.08), rgba(91,124,255,.08), rgba(0,212,170,.08)),
+    rgba(255,255,255,.1);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.portfolio-strip {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, 100%);
+  margin-top: 28px;
+  animation: reveal .75s ease both;
+}
+
+.portfolio-title {
+  margin: 0 0 18px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: color-mix(in srgb, var(--text) 72%, transparent);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.portfolio-card {
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  padding: 14px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 42px rgba(91,124,255,.12);
+}
+
+.portfolio-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  display: block;
+  background: rgba(255,255,255,.12);
+}
+
+.portfolio-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  margin: 14px 0 10px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: .8px;
+  color: var(--muted);
+  padding: 6px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.12);
+}
+
+.portfolio-detail {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.portfolio-detail img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+}
+
+.portfolio-detail p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+
+.panel-card { display: none; }
+.panel-card.active { display: block; }
+
+.panel-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(28px, 4vw, 46px);
+  letter-spacing: 5px;
+  margin: 0 0 26px;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 34px;
+  align-items: start;
+}
+
+.panel-image {
+  width: 100%;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+}
+
+body:not(.dark) .panel-image {
+  filter: invert(1);
+}
+
+.skill-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.skill-block h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+
+.skill-block ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+#experienceContent {
+  grid-template-columns: 1fr;
+}
+
+.project-card,
+.contact-message-card {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(18px);
+}
+
+.project-card h3,
+.contact-message-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  margin: 0 0 12px;
+}
+
+.project-card p,
+.contact-message-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  align-items: start;
+  max-width: 760px;
+}
+
+.contact-box {
+  margin-top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.message-box {
+  width: 100%;
+  min-height: 170px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  color: var(--text);
+  background: rgba(255,255,255,.24);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
+}
+
+body.dark .message-box {
+  background: rgba(0,0,0,.22);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-mini-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.contact-mini-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.panel-actions { margin-top: 34px; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(24px) scale(.985); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@media (max-width: 920px) {
+  .main-card, .panel-grid, .skill-columns, .experience-grid, .contact-layout, .portfolio-grid, .portfolio-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .main-card {
+    padding: 28px;
+    gap: 30px;
+  }
+
+  .photo-wrap {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  .divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-buttons,
+  .contact-links {
+    justify-content: center;
+  }
+
+  .name {
+    letter-spacing: 6px;
+  }
+
+  .top-actions {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* Company links */
+.resume-company a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.resume-company a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width .3s ease;
+  opacity: .6;
+}
+
+.resume-company a:hover::after {
+  width: 100%;
+}
+
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.portfolio-gallery img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.portfolio-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 42px rgba(91,124,255,.18);
+}
+
+
+/* Portfolio image-first presentation */
+.portfolio-thumb {
+  width: 126%;
+  max-width: none;
+  transform: translateX(0);
+  animation: thumbSideScroll 16s ease-in-out infinite alternate;
+}
+
+.portfolio-card {
+  overflow: hidden;
+}
+
+@keyframes thumbSideScroll {
+  0% { transform: translateX(0) scale(1.03); }
+  100% { transform: translateX(-20.65%) scale(1.03); }
+}
+
+#portfolioPanel {
+  width: min(1380px, 100%);
+}
+
+#portfolioPanel .portfolio-detail {
+  grid-template-columns: 1fr;
+}
+
+#portfolioPanel .portfolio-detail > div:first-child {
+  display: grid;
+  gap: 22px;
+}
+
+#portfolioPanel .portfolio-detail > div:first-child > .portfolio-image-link > img {
+  width: 100%;
+  aspect-ratio: auto;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 34px;
+  background: rgba(0,0,0,.28);
+  box-shadow: 0 22px 64px rgba(0,0,0,.20);
+}
+
+#portfolioPanel .portfolio-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+#portfolioPanel .portfolio-gallery img {
+  aspect-ratio: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  background: rgba(0,0,0,.28);
+  border-radius: 28px;
+  box-shadow: 0 18px 52px rgba(0,0,0,.16);
+}
+
+#portfolioPanel .portfolio-detail > div:last-child {
+  max-width: 780px;
+}
+
+@media (max-width: 920px) {
+  #portfolioPanel .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  #portfolioPanel .portfolio-detail > div:first-child > img,
+  #portfolioPanel .portfolio-gallery img {
+    max-height: none;
+  }
+}
+
+
+/* Fixed thumbnail frame, animated image only */
+.portfolio-thumb-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: block;
+  background: rgba(255,255,255,.08);
+}
+
+.portfolio-thumb-frame .portfolio-thumb {
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+  display: block;
+}
+
+/* Clickable full image links */
+.portfolio-image-link {
+  display: block;
+  text-decoration: none;
+  cursor: zoom-in;
+}
+
+.portfolio-image-link img {
+  display: block;
+}
+
+
+.portfolio-thumb-frame .portfolio-thumb {
+  width: 126%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  animation: thumbSideScroll 16s ease-in-out infinite alternate;
+}
+
+.portfolio-thumb-frame:hover .portfolio-thumb {
+  animation-duration: 7s;
+}
+
+
+/* Native scroll stabilization */
+.hero {
+  align-items: flex-start;
+}
+
+#homeCard {
+  position: relative;
+  z-index: 10;
+}
+
+body.index-compact #homeCard {
+  overflow: visible;
+}
+
+body.index-compact #homeCard .nav-buttons {
+  position: relative;
+  z-index: 20;
+}
+
+
+/* Softer ambient effects */
+.project-card,
+.resume-item,
+.contact-box,
+.skill-block,
+.portfolio-card {
+  backdrop-filter: blur(18px);
+}
+
+#skillsPanel .skill-block {
+  background: linear-gradient(135deg, rgba(77,163,255,.055), rgba(91,124,255,.025));
+}
+
+#experiencePanel .resume-item {
+  background: linear-gradient(135deg, rgba(184,77,255,.055), rgba(255,77,196,.025));
+}
+
+#contactPanel .contact-box,
+#contactPanel .contact-message-card {
+  background: linear-gradient(135deg, rgba(0,212,170,.055), rgba(40,255,122,.025));
+}
+
+#tutorialsPanel .project-card {
+  background: linear-gradient(135deg, rgba(160,160,160,.055), rgba(90,90,90,.025));
+}
+
+.portfolio-placeholder {
+  background:
+    linear-gradient(135deg, rgba(255,77,196,.035), rgba(91,124,255,.035), rgba(0,212,170,.025)),
+    rgba(255,255,255,.045);
+}
+
+
+.portfolio-thumb-frame video.portfolio-thumb {
+  width: 126%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  animation: thumbSideScroll 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+#portfolioPanel .portfolio-detail video {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 34px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.28);
+  box-shadow: 0 22px 64px rgba(0,0,0,.20);
+}
+
+#portfolioPanel .portfolio-gallery video {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.28);
+  box-shadow: 0 18px 52px rgba(0,0,0,.16);
+}
+
+
+/* Disable side scroll animation for video thumbnails */
+.portfolio-thumb-frame video.portfolio-thumb {
+  animation: none !important;
+  transform: none !important;
+  width: 100% !important;
+  transition: transform .4s ease;
+}
+
+.portfolio-card:hover video.portfolio-thumb {
+  transform: scale(1.03);
+}
+
+
+.fake3d-viewer {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 26px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  user-select: none;
+}
+
+.fake3d-stage {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,.08), transparent 62%),
+    rgba(0,0,0,.18);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  cursor: ew-resize;
+}
+
+.fake3d-stage img {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+  padding: 12px;
+}
+
+.fake3d-controls {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.fake3d-controls input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent3);
+  cursor: ew-resize;
+}
+
+
+/* Bart fake 3D viewer: vertical 9:16 hero preview */
+.fake3d-viewer {
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+
+.fake3d-stage {
+  aspect-ratio: 9 / 16;
+  max-height: 86vh;
+  width: min(520px, 100%);
+  margin: 0 auto;
+}
+
+.fake3d-stage img {
+  height: 100%;
+  width: 100%;
+  max-height: none;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.fake3d-controls {
+  width: min(520px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.fake3d-stage {
+  overflow: hidden;
+}
+
+.fake3d-stage img {
+  transform-origin: center center;
+  transition: transform .18s ease;
+}
+
+.fake3d-controls span:nth-of-type(2) {
+  margin-top: 6px;
+}
+
+
+
+
+.portfolio-slideshow {
+  position: relative;
+}
+
+.portfolio-slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 0;
+  opacity: 0;
+  animation: portfolioSlideFade 8s ease-in-out infinite;
 }
 
-/* TEXT */
-.card-content {
-  padding: 14px;
+.portfolio-slide:nth-child(1) {
+  animation-delay: 0s;
 }
 
-.card-content h3 {
-  font-size: 16px;
-  margin-bottom: 6px;
+.portfolio-slide:nth-child(2) {
+  animation-delay: 4s;
 }
 
-.card-content p {
-  font-size: 12px;
-  opacity: 0.6;
+@keyframes portfolioSlideFade {
+  0%, 42% { opacity: 1; transform: scale(1.02); }
+  50%, 92% { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1.02); }
 }
 
-/* FOOTER */
-footer {
+
+.cody-thumb {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.cody-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(18px) brightness(.46) saturate(1.05);
+  transform: scale(1.22);
+}
+
+.cody-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  transform: scale(1.12);
+  transition: transform .35s ease;
+}
+
+.portfolio-card:hover .cody-face {
+  transform: scale(1.2);
+}
+
+
+/* COTSA / multi-slide thumbnail fix: one slide at a time with slow side pan */
+.portfolio-slideshow .portfolio-slide {
+  opacity: 0;
+  animation: portfolioSingleSlide 12s ease-in-out infinite;
+  transform: translateX(0) scale(1.08);
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(3) {
+  animation-delay: 8s;
+}
+
+@keyframes portfolioSingleSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(0) scale(1.08);
+  }
+  6% {
+    opacity: 1;
+  }
+  27% {
+    opacity: 1;
+    transform: translateX(-8%) scale(1.08);
+  }
+  33% {
+    opacity: 0;
+    transform: translateX(-10%) scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10%) scale(1.08);
+  }
+}
+
+
+/* Stable portfolio slideshow: avoids gray empty frames */
+.portfolio-slideshow {
+  background: rgba(0,0,0,.22);
+}
+
+.portfolio-slideshow .portfolio-slide {
+  position: absolute;
+  inset: 0;
+  width: 112%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: portfolioStableSlide 12s ease-in-out infinite;
+  transform: translateX(0) scale(1.04);
+  transition: opacity .35s ease;
+}
+
+.portfolio-slideshow .portfolio-slide:first-child {
+  opacity: 1;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(1) { animation-delay: 0s; }
+.portfolio-slideshow .portfolio-slide:nth-child(2) { animation-delay: 4s; }
+.portfolio-slideshow .portfolio-slide:nth-child(3) { animation-delay: 8s; }
+
+@keyframes portfolioStableSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(0) scale(1.04);
+  }
+  4% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-8%) scale(1.04);
+  }
+  34% {
+    opacity: 0;
+    transform: translateX(-10%) scale(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10%) scale(1.04);
+  }
+}
+
+
+.portfolio-card:has(.tag:first-child) {
+  position: relative;
+}
+
+.portfolio-card .tag:first-child {
+  font-weight: 700;
+}
+
+.portfolio-card[data-featured="true"] {
+  grid-column: span 2;
+  min-height: 420px;
+  border-color: rgba(255,255,255,.36);
+  box-shadow: 0 24px 80px rgba(0,0,0,.18);
+}
+
+.portfolio-card[data-featured="true"] .portfolio-thumb-frame {
+  aspect-ratio: 16 / 9;
+}
+
+.portfolio-card[data-featured="true"] h3 {
+  font-size: 18px;
+}
+
+
+.portfolio-thumb-frame.thumb-pan-vertical .portfolio-thumb {
+  width: 100% !important;
+  height: 124% !important;
+  object-fit: cover;
+  animation: thumbVerticalScroll 18s ease-in-out infinite alternate !important;
+}
+
+@keyframes thumbVerticalScroll {
+  0% { transform: translateY(0) scale(1.03); }
+  100% { transform: translateY(-19.35%) scale(1.03); }
+}
+
+
+/* Compact view fix: do not clip portfolio cards */
+body.index-compact .hero {
+  overflow: visible !important;
+}
+
+body.index-compact #homeCard {
+  overflow: visible !important;
+  margin-bottom: 28px;
+}
+
+body.index-compact .portfolio-strip {
+  overflow: visible !important;
+  padding-bottom: 90px;
+}
+
+body.index-compact .portfolio-grid {
+  overflow: visible !important;
+  align-items: stretch;
+}
+
+body.index-compact .portfolio-card {
+  overflow: visible;
+  contain: none;
+}
+
+body.index-compact .portfolio-thumb-frame {
+  overflow: hidden;
+}
+
+.portfolio-strip,
+.portfolio-grid {
+  overflow: visible;
+}
+
+.portfolio-card {
+  isolation: isolate;
+}
+
+.portfolio-card:hover {
+  z-index: 30;
+}
+
+
+/* Strong compact/mobile portfolio grid fix */
+.hero,
+.portfolio-strip,
+.portfolio-grid,
+.main-card,
+.panel-card {
+  overflow: visible !important;
+}
+
+.portfolio-strip {
+  width: min(1120px, 100%) !important;
+  margin-top: 20px;
+  padding-bottom: 90px;
+}
+
+.portfolio-grid,
+body.index-compact .portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 20px !important;
+  overflow: visible !important;
+  align-items: stretch !important;
+}
+
+.portfolio-card,
+body.index-compact .portfolio-card {
+  position: relative !important;
+  z-index: 1;
+  overflow: visible !important;
+  min-width: 0;
+}
+
+.portfolio-card:hover,
+body.index-compact .portfolio-card:hover {
+  z-index: 50;
+  transform: translateY(-7px) scale(1.035);
+}
+
+.portfolio-thumb-frame {
+  overflow: hidden !important;
+}
+
+body.index-compact #homeCard {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 24px;
+  overflow: visible !important;
+}
+
+body.index-compact .portfolio-strip {
+  display: block !important;
+  position: relative !important;
+  bottom: auto !important;
+  z-index: 2;
+  pointer-events: auto !important;
+}
+
+body.index-compact .portfolio-title {
+  display: block !important;
+}
+
+body.index-compact .portfolio-quick-actions {
+  display: none !important;
+}
+
+@media (max-width: 920px) {
+  .portfolio-grid,
+  body.index-compact .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .portfolio-strip {
+    width: 100% !important;
+  }
+}
+
+
+/* Footer copyright */
+.footer-copy {
+  width: min(1120px, 100%);
   text-align: center;
-  padding: 20px;
-  opacity: 0.5;
+  padding: 32px 12px 48px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  opacity: .65;
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  transition: opacity .3s ease;
+  margin-top: 26px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footer-copy:hover {
+  opacity: 1;
+}
+
+/* Smooth non-destructive index compact behavior */
+#homeCard {
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    opacity .35s ease,
+    padding .35s ease,
+    margin .35s ease;
+}
+
+body.index-compact #homeCard {
+  display: block !important;
+  visibility: visible !important;
+  transform: translateY(-6px) scale(.985);
+  opacity: .94;
+}
+
+body.index-compact #homeCard .nav-buttons {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.index-compact #homeCard .info {
+  display: block !important;
+}
+
+body.index-compact #homeCard .photo-wrap,
+body.index-compact #homeCard .name,
+body.index-compact #homeCard .divider,
+body.index-compact #homeCard .desc,
+body.index-compact #homeCard .open-status {
+  display: none !important;
+}
+
+body.index-compact .hero {
+  place-items: start center;
+}
+
+
+/* Sticky copyright footer */
+footer.footer-copy {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: block !important;
+  visibility: visible !important;
+  text-align: center;
+  padding: 12px 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(18px);
+  opacity: .42;
+  z-index: 80;
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+footer.footer-copy:hover {
+  opacity: 1;
+}
+
+body.index-compact footer.footer-copy {
+  opacity: .28;
+}
+
+body.index-compact footer.footer-copy:hover {
+  opacity: 1;
+}
+
+@media (max-width: 920px) {
+  footer.footer-copy {
+    font-size: 10px;
+    padding: 10px 8px;
+  }
+}
+
+
+/* SAFE COMPACT MODE — small index nav only, no clipping */
+body.index-compact .hero {
+  place-items: start center !important;
+  align-items: start !important;
+  overflow: visible !important;
+  padding-top: 90px !important;
+}
+
+body.index-compact #homeCard {
+  display: block !important;
+  width: min(1120px, 100%) !important;
+  min-height: 0 !important;
+  padding: 16px 20px !important;
+  margin-bottom: 28px !important;
+  overflow: visible !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+body.index-compact #homeCard .photo-wrap,
+body.index-compact #homeCard .name,
+body.index-compact #homeCard .divider,
+body.index-compact #homeCard .desc,
+body.index-compact #homeCard .open-status {
+  display: none !important;
+}
+
+body.index-compact #homeCard .info {
+  display: block !important;
+  text-align: center !important;
+}
+
+body.index-compact #homeCard .nav-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 0 !important;
+  gap: 12px !important;
+}
+
+/* Portfolio grid is always normal in desktop, compact and mobile */
+.portfolio-strip,
+body.index-compact .portfolio-strip {
+  display: block !important;
+  position: relative !important;
+  width: min(1120px, 100%) !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  z-index: 2 !important;
+  padding-bottom: 90px !important;
+}
+
+.portfolio-title,
+body.index-compact .portfolio-title {
+  display: block !important;
+}
+
+.portfolio-grid,
+body.index-compact .portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 22px !important;
+  overflow: visible !important;
+  align-items: stretch !important;
+}
+
+.portfolio-card,
+body.index-compact .portfolio-card {
+  display: block !important;
+  position: relative !important;
+  overflow: visible !important;
+  min-width: 0 !important;
+  z-index: 1;
+}
+
+.portfolio-card:hover {
+  z-index: 30;
+}
+
+.portfolio-thumb-frame {
+  overflow: hidden !important;
+}
+
+/* Avoid scroll jank from heavy scale while preserving feedback */
+.portfolio-card:hover,
+body.index-compact .portfolio-card:hover {
+  transform: translateY(-5px) scale(1.02) !important;
+}
+
+/* Hide old compact quick buttons if they exist */
+.portfolio-quick-actions,
+body.index-compact .portfolio-quick-actions {
+  display: none !important;
+}
+
+/* Mobile: keep cards in columns when there is room, otherwise one column */
+@media (max-width: 920px) {
+  body.index-compact .hero {
+    padding-top: 86px !important;
+  }
+
+  .portfolio-grid,
+  body.index-compact .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  body.index-compact #homeCard {
+    padding: 14px !important;
+  }
+
+  body.index-compact #homeCard .nav-buttons {
+    flex-wrap: wrap !important;
+  }
+}
+
+
+footer.footer-copy {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: block !important;
+  visibility: visible !important;
+  text-align: center;
+  padding: 10px 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: blur(16px);
+  opacity: .42;
+  z-index: 80;
+  transition: opacity .35s ease;
+}
+footer.footer-copy:hover { opacity: 1; }
+
+
+/* FINAL SCROLL FIX: native scrolling only, compact mode neutralized */
+html {
+  scroll-behavior: auto !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+body.index-compact {
+  overflow-x: hidden !important;
+}
+
+/* Compact mode must not change layout anymore */
+body.index-compact .hero,
+.hero {
+  place-items: center !important;
+  align-items: initial !important;
+  padding-top: 90px !important;
+  overflow: visible !important;
+}
+
+body.index-compact #homeCard,
+#homeCard {
+  display: grid !important;
+  grid-template-columns: 300px 1fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+  width: min(1120px, 100%) !important;
+  padding: 42px !important;
+  margin-bottom: 0 !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: hidden !important;
+}
+
+body.index-compact #homeCard .photo-wrap,
+body.index-compact #homeCard .name,
+body.index-compact #homeCard .divider,
+body.index-compact #homeCard .desc,
+body.index-compact #homeCard .open-status,
+body.index-compact #homeCard .info {
+  display: revert !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body.index-compact #homeCard .info {
+  display: block !important;
+  text-align: left !important;
+}
+
+body.index-compact #homeCard .nav-buttons,
+#homeCard .nav-buttons {
+  display: flex !important;
+  margin-top: 34px !important;
+  justify-content: flex-start !important;
+}
+
+/* Keep portfolio grid stable, no sticky/quick compact behavior */
+.portfolio-strip,
+body.index-compact .portfolio-strip {
+  display: block !important;
+  position: relative !important;
+  bottom: auto !important;
+  width: min(1120px, 100%) !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  padding-bottom: 70px !important;
+}
+
+.portfolio-grid,
+body.index-compact .portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 22px !important;
+  overflow: visible !important;
+}
+
+.portfolio-quick-actions,
+body.index-compact .portfolio-quick-actions {
+  display: none !important;
+}
+
+/* Reduce scroll stutter from hover transforms and heavy animations */
+.portfolio-card:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 12px 32px rgba(91,124,255,.10) !important;
+}
+
+.portfolio-thumb,
+.portfolio-thumb-frame .portfolio-thumb,
+.portfolio-slide {
+  animation-duration: 30s !important;
+}
+
+/* Sticky footer can cause paint/jank, make it normal footer */
+footer.footer-copy {
+  position: relative !important;
+  bottom: auto !important;
+  opacity: .65 !important;
+}
+
+/* Mobile stable layout */
+@media (max-width: 920px) {
+  body.index-compact #homeCard,
+  #homeCard {
+    grid-template-columns: 1fr !important;
+    padding: 28px !important;
+    gap: 30px !important;
+  }
+
+  body.index-compact #homeCard .info,
+  #homeCard .info {
+    text-align: center !important;
+  }
+
+  body.index-compact #homeCard .nav-buttons,
+  #homeCard .nav-buttons {
+    justify-content: center !important;
+  }
+
+  body.index-compact #homeCard .photo-wrap,
+  #homeCard .photo-wrap {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  .portfolio-grid,
+  body.index-compact .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+
+
+/* Compact mode fully neutralized: same layout as normal */
+body.index-compact #homeCard,
+#homeCard {
+  display: grid !important;
+  grid-template-columns: 300px 1fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+  width: min(1120px, 100%) !important;
+  padding: 42px !important;
+  border-radius: 42px !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.index-compact #homeCard .photo-wrap,
+body.index-compact #homeCard .name,
+body.index-compact #homeCard .divider,
+body.index-compact #homeCard .desc,
+body.index-compact #homeCard .open-status,
+body.index-compact #homeCard .info {
+  display: revert !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body.index-compact #homeCard .info,
+#homeCard .info {
+  display: block !important;
+  text-align: left !important;
+}
+
+body.index-compact #homeCard .nav-buttons,
+#homeCard .nav-buttons {
+  display: flex !important;
+  justify-content: flex-start !important;
+  margin-top: 34px !important;
+}
+
+body.index-compact .hero,
+.hero {
+  place-items: center !important;
+  overflow: visible !important;
+}
+
+.portfolio-grid,
+body.index-compact .portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 22px !important;
+  overflow: visible !important;
+}
+
+.portfolio-strip,
+body.index-compact .portfolio-strip {
+  display: block !important;
+  position: relative !important;
+  width: min(1120px, 100%) !important;
+  overflow: visible !important;
+}
+
+body.index-compact .portfolio-quick-actions {
+  display: none !important;
+}
+
+@media (max-width: 920px) {
+  body.index-compact #homeCard,
+  #homeCard {
+    grid-template-columns: 1fr !important;
+    padding: 28px !important;
+    gap: 30px !important;
+  }
+
+  body.index-compact #homeCard .info,
+  #homeCard .info {
+    text-align: center !important;
+  }
+
+  body.index-compact #homeCard .nav-buttons,
+  #homeCard .nav-buttons {
+    justify-content: center !important;
+  }
+
+  body.index-compact #homeCard .photo-wrap,
+  #homeCard .photo-wrap {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  .portfolio-grid,
+  body.index-compact .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  }
+}
+
+
+/* FINAL slideshow fix: one image visible at a time, no gray gaps */
+.portfolio-slideshow {
+  position: relative !important;
+  overflow: hidden !important;
+  background: rgba(0,0,0,.18) !important;
+}
+
+.portfolio-slideshow .portfolio-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 112% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  transform: translateX(0) scale(1.04) !important;
+  animation-name: cleanPortfolioSlide !important;
+  animation-duration: 15s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  animation-fill-mode: both !important;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(1) {
+  animation-delay: 0s !important;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(2) {
+  animation-delay: 5s !important;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(3) {
+  animation-delay: 10s !important;
+}
+
+.portfolio-slideshow .portfolio-slide:nth-child(n+4) {
+  display: none !important;
+}
+
+@keyframes cleanPortfolioSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(0) scale(1.04);
+  }
+  4% {
+    opacity: 1;
+  }
+  29% {
+    opacity: 1;
+    transform: translateX(-8%) scale(1.04);
+  }
+  33% {
+    opacity: 0;
+    transform: translateX(-10%) scale(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10%) scale(1.04);
+  }
+}
+
+/* Two-slide thumbs like Bob: use half-cycle timing */
+.portfolio-slideshow .portfolio-slide:nth-child(only-child) {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* Ensure first frame is visible immediately before animation paints */
+.portfolio-slideshow .portfolio-slide:first-child {
+  opacity: 1;
+}
+
+
+/* JS-controlled slideshow recovery */
+.portfolio-slideshow {
+  position: relative !important;
+  overflow: hidden !important;
+  background: rgba(0,0,0,.18) !important;
+}
+
+.portfolio-slideshow .portfolio-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 112% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  display: block !important;
+  animation: none !important;
+  transform: translateX(0) scale(1.04) !important;
+  transition: opacity .45s ease, transform 8s ease-in-out !important;
+}
+
+.portfolio-slideshow .portfolio-slide.is-active {
+  opacity: 1 !important;
+  transform: translateX(-8%) scale(1.04) !important;
+  z-index: 2;
+}
+
+.portfolio-slideshow .portfolio-slide:first-child {
+  opacity: 1 !important;
+  z-index: 1;
+}
+
+
+/* Hard containment for slideshow thumbnails */
+.portfolio-card {
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+.portfolio-thumb-frame,
+.portfolio-slideshow {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  contain: paint !important;
+  z-index: 0 !important;
+}
+
+.portfolio-slideshow .portfolio-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 0 !important;
+  display: block !important;
+  animation: none !important;
+  transform: scale(1.04) !important;
+  transition: opacity .45s ease, transform 5s ease-in-out !important;
+  pointer-events: none !important;
+}
+
+.portfolio-slideshow .portfolio-slide.is-active {
+  opacity: 1 !important;
+  transform: translateX(-4%) scale(1.04) !important;
+  z-index: 2 !important;
+}
+
+.portfolio-slideshow .portfolio-slide:first-child {
+  opacity: 1;
+}
+
+.portfolio-card:hover {
+  overflow: hidden !important;
+}
+
+
+/* Single-image slideshow: no stacking/overlap */
+.portfolio-slideshow {
+  position: relative !important;
+  overflow: hidden !important;
+  contain: paint !important;
+}
+
+.portfolio-slideshow .portfolio-slide {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  opacity: 0 !important;
+  animation: none !important;
+  transform: scale(1.04) !important;
+  transition: opacity .35s ease, transform 4.5s ease-in-out !important;
+  z-index: 1 !important;
+}
+
+.portfolio-slideshow .portfolio-slide.is-active {
+  opacity: 1 !important;
+  transform: translateX(-4%) scale(1.04) !important;
 }
 
 </style>
 </head>
 
-<body>
+<body class="dark">
 
-<div class="container">
-
-  <!-- INDEX -->
-  <div id="homeCard">
-    <img class="photo" src="https://renmatsi.artstation.com/assets/images/profile.jpg">
-    <div class="info">
-      <h1>Renan Matos</h1>
-      <p>3D Character Artist</p>
+<div class="top-actions">
+  <div class="lang-wrapper">
+    <button class="circle-btn" id="langMain">EN</button>
+    <div class="lang-menu" id="langMenu">
+      <button class="circle-btn lang-en" data-lang="en">EN</button>
+      <button class="circle-btn lang-br" data-lang="br">BR</button>
+      <button class="circle-btn lang-es" data-lang="es">ES</button>
     </div>
   </div>
 
-  <!-- PORTFOLIO -->
-  <div class="portfolio-grid" id="portfolio"></div>
-
+  <button class="circle-btn" id="themeToggle" aria-label="Toggle day/night theme">☾</button>
+  <button class="circle-btn" id="contrastToggle" aria-label="Toggle black and white contrast theme">@</button>
 </div>
 
-<footer id="footer"></footer>
+<main class="hero">
 
-<script>
-
-/* =========================
-   DATA
-========================= */
-
-const projects = [
-  {
-    title: "Drone Soldier",
-    desc: "Realtime character",
-    slides: [
-      "https://images.unsplash.com/photo-1",
-      "https://images.unsplash.com/photo-2",
-      "https://images.unsplash.com/photo-3"
-    ]
-  },
-  {
-    title: "Male Character",
-    desc: "Realistic sculpt",
-    slides: [
-      "https://images.unsplash.com/photo-4",
-      "https://images.unsplash.com/photo-5"
-    ]
-  }
-];
-
-/* =========================
-   RENDER
-========================= */
-
-function renderPortfolio() {
-  const container = document.getElementById("portfolio");
-
-  container.innerHTML = projects.map(p => `
-    <div class="portfolio-card">
-
-      <div class="portfolio-thumb-frame portfolio-slideshow"
-           data-slides='${JSON.stringify(p.slides)}'>
-        <img class="portfolio-slide"
-             src="${p.slides[0]}"
-             loading="lazy">
-      </div>
-
-      <div class="card-content">
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
-      </div>
-
+<section class="main-card" id="homeCard">
+  <div class="photo-wrap">
+    <img class="photo" src="https://cdn.jsdelivr.net/gh/renmatsi/renmatsi.github.io/profile01.jpeg" alt="Renan Matos" decoding="async">
+    <div class="open-status">
+      <span class="open-dot"></span>
+      <span id="openToWorkText">OPEN TO WORK</span>
     </div>
-  `).join("");
+  </div>
+
+  <div class="info">
+    <h1 class="name">
+      <span class="renan">RENAN</span><br>
+      <span class="matos">MATOS</span>
+    </h1>
+
+    <div class="divider"></div>
+    <p class="desc" id="description"></p>
+
+    <div class="nav-buttons">
+      <button id="skillsBtn" class="btn-skills" data-panel="skills"></button>
+      <button id="experienceBtn" class="btn-exp" data-panel="experience"></button>
+      <button id="tutorialsBtn" class="btn-tutorials is-disabled" data-panel="tutorials" disabled></button>
+      <button id="contactBtn" class="btn-contact" data-panel="contact"></button>
+    </div>
+  </div>
+
+</section>
+
+<section class="portfolio-strip" id="portfolioStrip">
+  <h2 class="portfolio-title" id="portfolioTitle"></h2>
+  <div class="portfolio-grid" id="portfolioContent"></div>
+  <div class="portfolio-quick-actions" id="portfolioQuickActions"></div>
+</section>
+
+<section class="panel-card" id="skillsPanel">
+  <h2 class="panel-title" id="skillsTitle"></h2>
+  <div class="panel-grid">
+    <div class="skill-columns" id="skillsContent"></div>
+    <img class="panel-image" src="https://cdn.jsdelivr.net/gh/renmatsi/renmatsi.github.io/sft.png" alt="Software proficiency" loading="lazy" decoding="async">
+  </div>
+  <div class="panel-actions"><button class="back-btn" id="backFromSkills"></button></div>
+</section>
+
+<section class="panel-card" id="experiencePanel">
+  <h2 class="panel-title"><span id="experienceTitle"></span></h2>
+  <div class="experience-grid" id="experienceContent"></div>
+  <div class="panel-actions"><button class="back-btn" id="backFromExperience"></button></div>
+</section>
+
+
+<section class="panel-card" id="tutorialsPanel">
+  <h2 class="panel-title"><span id="tutorialsTitle"></span></h2>
+  <p class="desc" id="tutorialsText"></p>
+  <div class="experience-grid" id="tutorialsContent"></div>
+  <div class="panel-actions"><button class="back-btn" id="backFromTutorials"></button></div>
+</section>
+
+<section class="panel-card" id="portfolioPanel">
+  <h2 class="panel-title"><span id="portfolioDetailTitle"></span></h2>
+  <div class="portfolio-detail" id="portfolioDetailContent"></div>
+  <div class="panel-actions"><button class="back-btn" id="backFromPortfolio"></button></div>
+</section>
+
+<section class="panel-card" id="contactPanel">
+  <h2 class="panel-title"><span id="contactTitle"></span></h2>
+  <div class="contact-layout">
+    <div>
+      <p class="desc" id="contactText"></p>
+
+      <div class="contact-box">
+        <h3 class="contact-highlight" id="messageTitle"></h3>
+        <textarea class="message-box" id="messageBox"></textarea>
+        <div class="contact-links">
+          <button class="copy-btn" id="copyMessage"></button>
+          <a class="contact-link" id="sendEmailLink" href="#"><span id="sendEmailIcon"></span>Email</a>
+          <a class="contact-link" id="sendWhatsapp1" href="#" target="_blank" rel="noopener"><span id="sendWhatsappIcon"></span>WhatsApp</a>
+          <a class="contact-link" id="sendTelegram" href="#" target="_blank" rel="noopener"><span id="sendTelegramIcon"></span>Telegram</a>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <h3 class="contact-highlight" id="contactMeVia"></h3>
+        <div class="contact-links" id="contactLinks"></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-actions"><button class="back-btn" id="backFromContact"></button></div>
+</section>
+</main>
+
+<footer class="footer-copy"><span id="copyText"></span></footer>
+<script>
+const translations = {
+  en: {
+    description: `Lead-level <strong>3D artist</strong> with nearly a decade of experience in game production,
+    specialized in <strong>AAA-quality character creation</strong>, real-time optimization,
+    pipeline improvement, and team mentorship. Strong background in
+    <strong>stylized and realistic art</strong> for PC and mobile projects.`,
+    skills: "Skills",
+    experience: "Experience",
+    tutorials: "Tutorials & Mentorship",
+    contact: "Contact",
+    back: "Back",
+    skillsTitle: "Skills",
+    experienceTitle: "Experience",
+    tutorialsTitle: "Tutorials & Mentorship",
+    portfolioTitle: "Portfolio",
+    contactTitle: "Contact",
+    tutorialsText: "Personalized guidance for 3D artists, portfolio reviews, production workflow, character pipeline, optimization, and career direction.",
+    contactText: "Write your message below and choose how you want to send it. You can also use the quick contact links for portfolio and professional channels.",
+    contactMeVia: "Contact me via",
+    messageTitle: "Message",
+    messagePlaceholder: "Hi Renan, I saw your portfolio and would like to talk about a 3D art opportunity...",
+    copy: "Copy Message",
+    copied: "Copied",
+    openStatus: "OPEN TO WORK",
+    open: "Open Project",
+    skillsHTML: `
+      <div class="skill-block"><h3>Skills</h3><ul><li>Organic and hard surface modeling</li><li>Digital sculpture</li><li>Hair / Fur</li><li>Alembic hair and haircards</li><li>Cloth simulation</li><li>PBR paint</li><li>Handpaint</li><li>Human anatomy</li><li>UV mapping</li><li>Retopology</li><li>Photogrammetry</li></ul></div>
+      <div class="skill-block"><h3>Languages</h3><ul><li>English — fluent</li><li>Brazilian Portuguese — native</li></ul><br><h3>Education</h3><ul><li>Digital Media Arts College — DMAC, 3D Modeling (2015)</li><li>Cambridge Language Centre — English Language (2023)</li></ul></div>
+      <div class="skill-block"><h3>Software</h3><ul><li>Blender</li><li>Maya</li><li>ZBrush</li><li>Photoshop</li></ul></div>
+      <div class="skill-block"><h3>Additional Tools</h3><ul><li>Substance Painter</li><li>Marvelous Designer</li><li>Illustrator</li><li>Marmoset Toolbag</li><li>Plasticity</li></ul></div>`
+  },
+  br: {
+    description: `Artista <strong>3D</strong> com quase uma década de experiência em produção de jogos,
+    especializado em <strong>criação de personagens com qualidade AAA</strong>, otimização em tempo real,
+    melhoria de pipelines e mentoria de equipes. Forte experiência em arte
+    <strong>estilizada e realista</strong> para projetos de PC e mobile.`,
+    skills: "Habilidades",
+    experience: "Experiência",
+    tutorials: "Tutoriais e Mentoria",
+    contact: "Contato",
+    back: "Voltar",
+    skillsTitle: "Habilidades",
+    experienceTitle: "Experiência",
+    tutorialsTitle: "Tutoriais e Mentoria",
+    portfolioTitle: "Portfólio",
+    contactTitle: "Contato",
+    tutorialsText: "Orientação personalizada para artistas 3D, revisão de portfólio, workflow de produção, pipeline de personagens, otimização e direção de carreira.",
+    contactText: "Escreva sua mensagem abaixo e escolha como deseja enviar. Você também pode usar os links rápidos para portfólio e canais profissionais.",
+    contactMeVia: "Fale comigo via",
+    messageTitle: "Mensagem",
+    messagePlaceholder: "Olá Renan, vi seu portfólio e gostaria de conversar sobre uma oportunidade de arte 3D...",
+    copy: "Copiar Mensagem",
+    copied: "Copiado",
+    openStatus: "OPEN TO WORK",
+    open: "Abrir Projeto",
+    skillsHTML: `
+      <div class="skill-block"><h3>Habilidades</h3><ul><li>Modelagem orgânica e hard surface</li><li>Escultura digital</li><li>Cabelo / pelos</li><li>Alembic hair e haircards</li><li>Simulação de roupas</li><li>Pintura PBR</li><li>Handpaint</li><li>Anatomia humana</li><li>Mapeamento UV</li><li>Retopologia</li><li>Fotogrametria</li></ul></div>
+      <div class="skill-block"><h3>Idiomas</h3><ul><li>Inglês — fluente</li><li>Português brasileiro — nativo</li></ul><br><h3>Educação</h3><ul><li>Digital Media Arts College — DMAC, Modelagem 3D (2015)</li><li>Cambridge Language Centre — Língua Inglesa (2023)</li></ul></div>
+      <div class="skill-block"><h3>Softwares</h3><ul><li>Blender</li><li>Maya</li><li>ZBrush</li><li>Photoshop</li></ul></div>
+      <div class="skill-block"><h3>Ferramentas adicionais</h3><ul><li>Substance Painter</li><li>Marvelous Designer</li><li>Illustrator</li><li>Marmoset Toolbag</li><li>Plasticity</li></ul></div>`
+  },
+  es: {
+    description: `Artista <strong>3D</strong> con casi una década de experiencia en producción de videojuegos,
+    especializado en <strong>creación de personajes con calidad AAA</strong>, optimización en tiempo real,
+    mejora de pipelines y mentoría de equipos. Sólida experiencia en arte
+    <strong>estilizado y realista</strong> para proyectos de PC y mobile.`,
+    skills: "Habilidades",
+    experience: "Experiencia",
+    tutorials: "Tutoriales y Mentoría",
+    contact: "Contacto",
+    back: "Volver",
+    skillsTitle: "Habilidades",
+    experienceTitle: "Experiencia",
+    tutorialsTitle: "Tutoriales y Mentoría",
+    portfolioTitle: "Portafolio",
+    contactTitle: "Contacto",
+    tutorialsText: "Orientación personalizada para artistas 3D, revisión de portafolio, workflow de producción, pipeline de personajes, optimización y dirección de carrera.",
+    contactText: "Escribe tu mensaje abajo y elige cómo enviarlo. También puedes usar los enlaces rápidos para portafolio y canales profesionales.",
+    contactMeVia: "Contáctame vía",
+    messageTitle: "Mensaje",
+    messagePlaceholder: "Hola Renan, vi tu portafolio y me gustaría hablar sobre una oportunidad de arte 3D...",
+    copy: "Copiar Mensaje",
+    copied: "Copiado",
+    openStatus: "OPEN TO WORK",
+    open: "Abrir Proyecto",
+    skillsHTML: `
+      <div class="skill-block"><h3>Habilidades</h3><ul><li>Modelado orgánico y hard surface</li><li>Escultura digital</li><li>Cabello / pelaje</li><li>Alembic hair y haircards</li><li>Simulación de ropa</li><li>Pintura PBR</li><li>Handpaint</li><li>Anatomía humana</li><li>Mapeado UV</li><li>Retopología</li><li>Fotogrametría</li></ul></div>
+      <div class="skill-block"><h3>Idiomas</h3><ul><li>Inglés — fluido</li><li>Portugués brasileño — nativo</li></ul><br><h3>Educación</h3><ul><li>Digital Media Arts College — DMAC, Modelado 3D (2015)</li><li>Cambridge Language Centre — Idioma Inglés (2023)</li></ul></div>
+      <div class="skill-block"><h3>Software</h3><ul><li>Blender</li><li>Maya</li><li>ZBrush</li><li>Photoshop</li></ul></div>
+      <div class="skill-block"><h3>Herramientas adicionales</h3><ul><li>Substance Painter</li><li>Marvelous Designer</li><li>Illustrator</li><li>Marmoset Toolbag</li><li>Plasticity</li></ul></div>`
+  }
+};
+
+
+function getExperienceItems(lang) {
+  const data = {
+    en: [
+      {
+        company: "Gameplay Galaxy - Remote",
+        link: "https://www.gameplaygalaxy.com/",
+        role: "Lead 3D Character Artist",
+        period: "Jan 2023 - Present (3 yrs 2 mos)",
+        bullets: [
+          "Progressed through roles from 3D Character Artist to Senior 3D Character Artist, and currently Lead 3D Character Artist.",
+          "Lead and mentor the character art team, ensuring technical and artistic quality for AAA projects.",
+          "Create high-quality 3D characters from sculpting to texturing, optimized for real-time engines.",
+          "Define visual and technical standards across the character art pipeline.",
+          "Collaborate closely with concept artists, animators, and programmers to deliver cohesive assets."
+        ]
+      },
+      {
+        company: "Fire Games Studios - Remote",
+        link: "https://firegamestudios.com/",
+        role: "3D Artist / 3D Generalist",
+        period: "Jan 2022 - Feb 2023 (1 yr 2 mos)",
+        bullets: [
+          "Modeled characters, props, and environments for in-game use.",
+          "Supported rigging and texturing workflows to enhance visual quality.",
+          "Worked as a generalist, developing versatile assets for prototypes and indie projects."
+        ]
+      },
+      {
+        company: "Fiverr (Freelance) - Remote",
+        link: "https://www.fiverr.com/",
+        role: "3D Modeler",
+        period: "Jan 2020 - May 2022 (2 yrs 5 mos)",
+        bullets: [
+          "Delivered custom 3D assets for international clients across gaming, AR/VR, and animation industries.",
+          "Optimized models for diverse applications and platforms, ensuring performance and quality."
+        ]
+      },
+      {
+        company: "BeByte - Brasília, Brazil - Hybrid",
+        link: "https://bebyte.com.br/",
+        role: "3D Generalist",
+        period: "Sep 2017 - Feb 2022 (4 yrs 6 mos)",
+        bullets: [
+          "End-to-end 3D production: modeling, texturing, rigging, and animation.",
+          "Integrated assets into game engines and provided creative and technical support for production teams."
+        ]
+      }
+    ],
+    br: [
+      {
+        company: "Gameplay Galaxy - Remoto",
+        role: "Lead 3D Character Artist",
+        period: "Jan 2023 - Atual (3 anos 2 meses)",
+        bullets: [
+          "Evoluiu de 3D Character Artist para Senior 3D Character Artist e atualmente Lead 3D Character Artist.",
+          "Lidera e orienta a equipe de character art, garantindo qualidade técnica e artística para projetos AAA.",
+          "Cria personagens 3D de alta qualidade, da escultura à texturização, otimizados para engines em tempo real.",
+          "Define padrões visuais e técnicos em todo o pipeline de character art.",
+          "Colabora diretamente com concept artists, animadores e programadores para entregar assets coesos."
+        ]
+      },
+      {
+        company: "Fire Games Studios - Remoto",
+        role: "3D Artist / 3D Generalist",
+        period: "Jan 2022 - Fev 2023 (1 ano 2 meses)",
+        bullets: [
+          "Modelou personagens, props e ambientes para uso in-game.",
+          "Apoiou workflows de rigging e texturização para elevar a qualidade visual.",
+          "Atuou como generalista, desenvolvendo assets versáteis para protótipos e projetos indie."
+        ]
+      },
+      {
+        company: "Fiverr (Freelance) - Remoto",
+        role: "Modelador 3D",
+        period: "Jan 2020 - Mai 2022 (2 anos 5 meses)",
+        bullets: [
+          "Entregou assets 3D personalizados para clientes internacionais nas áreas de games, AR/VR e animação.",
+          "Otimizou modelos para diferentes aplicações e plataformas, mantendo performance e qualidade."
+        ]
+      },
+      {
+        company: "BeByte - Brasília, Brasil - Híbrido",
+        role: "3D Generalist",
+        period: "Set 2017 - Fev 2022 (4 anos 6 meses)",
+        bullets: [
+          "Produção 3D end-to-end: modelagem, texturização, rigging e animação.",
+          "Integração de assets em game engines e suporte criativo/técnico para equipes de produção."
+        ]
+      }
+    ],
+    es: [
+      {
+        company: "Gameplay Galaxy - Remoto",
+        role: "Lead 3D Character Artist",
+        period: "Ene 2023 - Actualidad (3 años 2 meses)",
+        bullets: [
+          "Progresó desde 3D Character Artist hasta Senior 3D Character Artist, y actualmente Lead 3D Character Artist.",
+          "Lidera y mentoriza al equipo de character art, asegurando calidad técnica y artística para proyectos AAA.",
+          "Crea personajes 3D de alta calidad, desde escultura hasta texturizado, optimizados para motores en tiempo real.",
+          "Define estándares visuales y técnicos en todo el pipeline de character art.",
+          "Colabora estrechamente con concept artists, animadores y programadores para entregar assets coherentes."
+        ]
+      },
+      {
+        company: "Fire Games Studios - Remoto",
+        role: "3D Artist / 3D Generalist",
+        period: "Ene 2022 - Feb 2023 (1 año 2 meses)",
+        bullets: [
+          "Modeló personajes, props y entornos para uso in-game.",
+          "Apoyó workflows de rigging y texturizado para mejorar la calidad visual.",
+          "Trabajó como generalista, desarrollando assets versátiles para prototipos y proyectos indie."
+        ]
+      },
+      {
+        company: "Fiverr (Freelance) - Remoto",
+        role: "Modelador 3D",
+        period: "Ene 2020 - May 2022 (2 años 5 meses)",
+        bullets: [
+          "Entregó assets 3D personalizados para clientes internacionales en juegos, AR/VR y animación.",
+          "Optimizó modelos para diversas aplicaciones y plataformas, asegurando rendimiento y calidad."
+        ]
+      },
+      {
+        company: "BeByte - Brasília, Brasil - Híbrido",
+        role: "3D Generalist",
+        period: "Sep 2017 - Feb 2022 (4 años 6 meses)",
+        bullets: [
+          "Producción 3D end-to-end: modelado, texturizado, rigging y animación.",
+          "Integró assets en game engines y brindó soporte creativo/técnico a equipos de producción."
+        ]
+      }
+    ]
+  };
+
+  return data[lang] || data.en;
 }
 
-/* =========================
-   SLIDES (FIX FINAL)
-========================= */
+const projects = [
+  { title: "EO", desc: "3D character and game production contribution.", link: "https://store.steampowered.com/agecheck/app/2075340/" },
+  { title: "Robótica Espacial", desc: "Educational / interactive 3D production project.", link: "https://roboticaespacial.com.br/" },
+  { title: "Trial Xtreme", desc: "Stylized real-time character production for mobile game pipeline.", link: "https://trialxtreme.com/" },
+  { title: "Squad", desc: "Realistic production environment and game asset contribution.", link: "https://www.joinsquad.com/" }
+];
 
-function setupSlides() {
-  document.querySelectorAll(".portfolio-slideshow").forEach(el => {
 
-    let slides = JSON.parse(el.dataset.slides);
-    let img = el.querySelector("img");
+function getPortfolioItems(lang) {
+  const data = {
+    en: [
+      {
+        title: "Male Character",
+        video: "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001-1033_1.mp4",
+        featured: true,
+        tags: ["Featured", "Realistic", "Groom", "Marvelous Designer", "ZBrush", "Blender"],
+        desc: "Realistic male character project focused on anatomy, grooming, cloth production, sculpting quality and high-end presentation.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001-1033_1.mp4",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(1).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/ccc.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(7).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(6).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(5).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(4).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(1).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(8).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(7).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(6).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(5).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(4).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(1).png"
+        ]
+      },
+      {
+        title: "Drone Soldier",
+        image: "https://media.canva.com/v2/download/name:8.png/uri:ifs%3A%2F%2FM%2Ffc6cc924e2b3475b9aacc5b4e8710480?csig=AAAAAAAAAAAAAAAAAAAAADzyE2ttf95tUYpN33dW7F2KWXGbJp9ZHbjaWSKjNbQG&exp=1777288919&signer=media-rpc&token=AAIAAU0AIGZjNmNjOTI0ZTJiMzQ3NWI5YWFjYzViNGU4NzEwNDgwAAAAAAGdz1GE8XQv_9Dp4keojoQ5XZoPsJ1PlpmLWrPEl4wzYNZbwnyl",
+        featured: true,
+        thumbPan: "vertical",
+        tags: ["Featured", "Realtime", "Groom", "Marvelous Designer", "ZBrush", "Haircards", "Blender", "Substance Painter"],
+        desc: "Realtime character project focused on tactical design, grooming, haircards, cloth production and game-ready presentation.",
+        gallery: [
+          "https://media.canva.com/v2/download/name:8.png/uri:ifs%3A%2F%2FM%2Ffc6cc924e2b3475b9aacc5b4e8710480?csig=AAAAAAAAAAAAAAAAAAAAADzyE2ttf95tUYpN33dW7F2KWXGbJp9ZHbjaWSKjNbQG&exp=1777288919&signer=media-rpc&token=AAIAAU0AIGZjNmNjOTI0ZTJiMzQ3NWI5YWFjYzViNGU4NzEwNDgwAAAAAAGdz1GE8XQv_9Dp4keojoQ5XZoPsJ1PlpmLWrPEl4wzYNZbwnyl",
+          "https://media.canva.com/v2/download/name:1.png/uri:ifs%3A%2F%2FM%2F953d1d3a2de649f59b90d856874ed9cf?csig=AAAAAAAAAAAAAAAAAAAAAELR5ILBnRCugbUFGNSLUZB7o-Z1pay8cVK14ibkCCzq&exp=1777288913&signer=media-rpc&token=AAIAAU0AIDk1M2QxZDNhMmRlNjQ5ZjU5YjkwZDg1Njg3NGVkOWNmAAAAAAGdz1FsZQ6oqJEq5J50G_xvWrDBJa6Zo1d15OHJr0mp_NQGfoGt",
+          "https://media.canva.com/v2/download/name:002.jpg/uri:ifs%3A%2F%2FM%2Ff14e02d984c54cc694c1b062e6c54d0a?csig=AAAAAAAAAAAAAAAAAAAAAMDpP3me1G6c1wtOT5z0XW_A0Gg_sVCy1mOnJBxyPIAg&exp=1777288914&signer=media-rpc&token=AAIAAU0AIGYxNGUwMmQ5ODRjNTRjYzY5NGMxYjA2MmU2YzU0ZDBhAAAAAAGdz1FynKGiDtF7sblJWV6TRwaaPlPP-v0bvMJxDvvoPS11LE89",
+          "https://media.canva.com/v2/download/name:001.jpg/uri:ifs%3A%2F%2FM%2F3444fa0393d74ce1a557d960706fb2e6?csig=AAAAAAAAAAAAAAAAAAAAACZp5ql2nEHs11cQjjPZ9JQj9xOFH7oaMUTCDibWo5TP&exp=1777288916&signer=media-rpc&token=AAIAAU0AIDM0NDRmYTAzOTNkNzRjZTFhNTU3ZDk2MDcwNmZiMmU2AAAAAAGdz1F4ocQcScpUlirkpq2meFUttIWOlDYRpM_kEUqI0qAP5M8N",
+          "https://media.canva.com/v2/download/name:9.png/uri:ifs%3A%2F%2FM%2Fc74542bcd8724a4b8caee59c4af89ee0?csig=AAAAAAAAAAAAAAAAAAAAANFwooomeptZd6RhSKibzrBTsSpQMi6KXBcuiGvwLZOI&exp=1777288917&signer=media-rpc&token=AAIAAU0AIGM3NDU0MmJjZDg3MjRhNGI4Y2FlZTU5YzRhZjg5ZWUwAAAAAAGdz1F-JQ3amaVOV0BZVGzK86A2VE9m9xHonfkvag0Lq5o3wY86",
+          "https://media.canva.com/v2/download/name:wire1.png/uri:ifs%3A%2F%2FM%2F7faba361a8c74549ab2de02633ebc4a7?csig=AAAAAAAAAAAAAAAAAAAAAGbnMz_IazeVixsOzPSsb-EfmVYuPzQLS7kjok87DBUU&exp=1777288866&signer=media-rpc&token=AAIAAU0AIDdmYWJhMzYxYThjNzQ1NDlhYjJkZTAyNjMzZWJjNGE3AAAAAAGdz1C1OznEkcsQYClnTA60yyGRJGL_WCFcxq_-c-Rtb8fS89J0",
+          "https://media.canva.com/v2/download/name:wire1.png/uri:ifs%3A%2F%2FM%2F85d7abe950714d51b51850abbb5a06b8?csig=AAAAAAAAAAAAAAAAAAAAAEGMZNRVyoJTNqnKoOqaA5POsiD25MbzH3IYCRPJPgno&exp=1777288892&signer=media-rpc&token=AAIAAU0AIDg1ZDdhYmU5NTA3MTRkNTFiNTE4NTBhYmJiNWEwNmI4AAAAAAGdz1EdSJtsK2RgtXub_MhkG0mjbkSGp0zHljisk5xCglMkioFc",
+          "https://media.canva.com/v2/download/name:wire2.png/uri:ifs%3A%2F%2FM%2F943c222c45054230b226ad3fb8206ae5?csig=AAAAAAAAAAAAAAAAAAAAAB24KU274F062Rw5aJMtZ55oSsxGiHTOvoxcNkApMSlT&exp=1777288894&signer=media-rpc&token=AAIAAU0AIDk0M2MyMjJjNDUwNTQyMzBiMjI2YWQzZmI4MjA2YWU1AAAAAAGdz1EjX3I3qVY0bGLtr-W9eiaf1ELm0LmDgYtYaHFTiNh7YYsm",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181918.png/uri:ifs%3A%2F%2FM%2F0fc38ff5a6d3449ab6a09b5dca6eed19?csig=AAAAAAAAAAAAAAAAAAAAALK2KzdngBKY9guot5Rla2Q9m_Dm7o5HNzJbLSOdRu7G&exp=1777288867&signer=media-rpc&token=AAIAAU0AIDBmYzM4ZmY1YTZkMzQ0OWFiNmEwOWI1ZGNhNmVlZDE5AAAAAAGdz1C7hbPqCrWSpgiKAJJ8wfTiyzuFKuXgjvFSSXO6KahZvjxp",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181737.png/uri:ifs%3A%2F%2FM%2F01ee34b071fa4098bd1c2b104d384ce3?csig=AAAAAAAAAAAAAAAAAAAAAIHl4k0LTrDPS5Z5jITchWgJZNc1WY3eYrf9sS8m0a3o&exp=1777288869&signer=media-rpc&token=AAIAAU0AIDAxZWUzNGIwNzFmYTQwOThiZDFjMmIxMDRkMzg0Y2UzAAAAAAGdz1DBBJt-mwK8xDCCIwDUFMSWLv-Gy2YkJJiFge-vng1mTO7H",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181719.png/uri:ifs%3A%2F%2FM%2F89e8e48b1ad64a5aa959500c4c6f7d1a?csig=AAAAAAAAAAAAAAAAAAAAAFcJcdJ5AbLksqeJhK26zWcrRytBpd51DMyKkbX_oIK5&exp=1777288870&signer=media-rpc&token=AAIAAU0AIDg5ZThlNDhiMWFkNjRhNWFhOTU5NTAwYzRjNmY3ZDFhAAAAAAGdz1DHmFIXRvlCsmYbHf8av3dm6H_3o1u78Ux3-rJqWSK7PwuG",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181726.png/uri:ifs%3A%2F%2FM%2F35fd198a8d714357ba45fe8137bc84d4?csig=AAAAAAAAAAAAAAAAAAAAAFX7rBIQTjk9_CfZsV3LR71POXzB-uJrvxwmJELKPcD9&exp=1777288873&signer=media-rpc&token=AAIAAU0AIDM1ZmQxOThhOGQ3MTQzNTdiYTQ1ZmU4MTM3YmM4NGQ0AAAAAAGdz1DQd2s0V1am1BNxVL59Piw36CKGmyTT89Pn04tuweOWzn6w",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181501.png/uri:ifs%3A%2F%2FM%2Fea376ff8e6aa40a2b6beafca30f0a48f?csig=AAAAAAAAAAAAAAAAAAAAAK2hWdpprDLe1nzP4t9SUSnPf9DiTMhD7RDGtGXJxG7f&exp=1777288874&signer=media-rpc&token=AAIAAU0AIGVhMzc2ZmY4ZTZhYTQwYTJiNmJlYWZjYTMwZjBhNDhmAAAAAAGdz1DW3GqR_gqkWlg_yVGMOAXYDoRlBndFjjbfOmPLwa5dKYWc"
+        ]
+      },
+      {
+        title: "Tiny Hero",
+        image: "https://cdna.artstation.com/p/assets/images/images/047/354/852/large/renan-matos-sem-titulo-1.jpg?1647389260",
+        tags: ["Stylized", "Character", "Game Ready", "Blender", "Substance Painter"],
+        desc: "Stylized character focused on readability, appealing proportions and clean real-time presentation. Designed to balance charm, clarity and production efficiency.",
+        gallery: [
+          "https://cdna.artstation.com/p/assets/images/images/047/354/862/large/renan-matos-untitled.jpg?1647389196",
+          "https://cdnb.artstation.com/p/assets/images/images/047/354/869/large/renan-matos-untitled0.jpg?1647389206",
+          "https://cdna.artstation.com/p/assets/images/images/047/354/872/large/renan-matos-untitled2.jpg?1647389212",
+          "https://cdna.artstation.com/p/assets/images/images/047/354/874/large/renan-matos-untitled3.jpg?1647389218"
+        ]
+      },
+      {
+        title: "Pantufa",
+        video: "https://cdn.artstation.com/p/video_sources/000/403/624/2.mp4",
+        tags: ["Stylized", "Character", "Creature", "Blender", "Substance Painter"],
+        desc: "Stylized character/creature project focused on personality, appealing shapes and clean presentation for portfolio showcase.",
+        gallery: [
+          "https://cdn.artstation.com/p/video_sources/000/403/624/2.mp4",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/845/large/renan-matos-06-sharpenai-focus.jpg?1624860836",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/909/large/renan-matos-03.jpg?1624860623",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/913/large/renan-matos-04.jpg?1624860628",
+          "https://cdna.artstation.com/p/assets/images/images/039/063/916/large/renan-matos-05.jpg?1624860638"
+        ]
+      },
+      {
+        title: "Ranay - Golden Demon",
+        image: "https://cdna.artstation.com/p/assets/images/images/043/560/228/large/renan-matos-untitled-1.jpg?1637623584",
+        link: "https://renmatsi.artstation.com/projects/WmKgrN?album_id=3083348",
+        tags: ["Stylized", "Character", "Creature", "Blender", "Substance Painter"],
+        desc: "Stylized character focused on strong silhouette, expressive shapes and high-quality presentation.",
+        gallery: [
+          "https://cdna.artstation.com/p/assets/images/images/043/560/228/large/renan-matos-untitled-1.jpg?1637623584",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/245/large/renan-matos-render-1.jpg?1637623370",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/257/large/renan-matos-untitled0.jpg?1637623406",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/277/large/renan-matos-untitled22.jpg?1637623453",
+          "https://cdna.artstation.com/p/assets/images/images/043/560/288/large/renan-matos-untitled1.jpg?1637623483"
+        ]
+      },
+      {
+        title: "Priestess",
+        image: "https://cdnb.artstation.com/p/assets/images/images/057/912/829/large/renan-matos-000009.jpg?1672950889",
+        link: "https://renmatsi.artstation.com/projects/o2avxk?album_id=3083348",
+        tags: ["Realistic", "Character", "Cyberpunk", "Blender", "Substance Painter", "Topology", "Wireframe"],
+        desc: "Realistic cyberpunk character focused on detailed forms, strong visual identity and high-quality portfolio presentation.",
+        gallery: [
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/805/large/renan-matos-0007.jpg?1672951112",
+          "https://cdna.artstation.com/p/assets/images/images/057/912/816/large/renan-matos-00008.jpg?1672950869",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/829/large/renan-matos-000009.jpg?1672950889",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/789/large/renan-matos-003-render.jpg?1672950812",
+          "https://cdna.artstation.com/p/assets/images/images/057/912/754/large/renan-matos-001-render.jpg?1672950814",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/833/large/renan-matos-untitled.jpg?1672950909",
+          "https://cdna.artstation.com/p/assets/images/images/057/913/046/large/renan-matos-wire.jpg?1672951423"
+        ]
+      },
+      {
+        title: "Bart",
+        video: "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bart.mp4",
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Stylized", "Character", "Mobile Game", "Realtime"],
+        desc: "Stylized character model created for Trial Xtreme Freedom, focused on strong readability, clean shapes and real-time mobile presentation.",
+        viewer: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/00.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/07.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/06.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/05.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/04.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/03.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/02.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/01.png"
+        ],
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/00.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/07.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/06.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/05.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/04.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/03.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/02.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/01.png"
+        ]
+      },
+      {
+        title: "Bob",
+        slides: [
+          "https://a.storyblok.com/f/317806/3840x2160/a506b56ebf/cmpd-bobcity-06_new.jpg",
+          "https://a.storyblok.com/f/317806/3840x2160/cb4e1606f7/76786384-9518-4d9d-960d-117572e4ad68.jpeg/m/fit-in/3840x2160/filters:quality(80)"
+        ],
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Stylized", "Character", "Mobile Game", "Realtime"],
+        desc: "Stylized character model used in Trial Xtreme Freedom, built for clear shape language, strong readability and real-time mobile performance.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob0.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob5.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob6.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob7.png"
+        ]
+      },
+      {
+        title: "Cody",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody2.png"
+        ],
+                link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Stylized", "Character", "Mobile Game", "Realtime"],
+        desc: "Stylized character created for Trial Xtreme Freedom, focused on personality, readability and clean real-time mobile performance.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody0.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody4.png"
+        ]
+      },
+      {
+        title: "Kayla",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla2.png"
+        ],
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Stylized", "Character", "Mobile Game", "Realtime"],
+        desc: "Stylized character used in Trial Xtreme Freedom, focused on personality, readability and real-time performance.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla0.png"
+        ]
+      },
+      {
+        title: "Chronicles of the Stone Age",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0009.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0008.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0006.png"
+        ],
+        tags: ["Game", "Stylized", "Environment", "Props", "Realtime"],
+        desc: "Stylized assets and environments developed for Chronicles of the Stone Age, focused on strong shapes, readability and cohesive visual language.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0010.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0009.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0008.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0007.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0006.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0005.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0004.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0003.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0002.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001.png"
+        ]
+      },],
+    br: [
+      {
+        title: "Male Character",
+        video: "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001-1033_1.mp4",
+        featured: true,
+        tags: ["Destaque", "Realista", "Groom", "Marvelous Designer", "ZBrush", "Blender"],
+        desc: "Projeto de personagem masculino realista com foco em anatomia, grooming, produção de roupas, qualidade de escultura e apresentação high-end.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001-1033_1.mp4",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(1).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/ccc.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(7).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(6).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(5).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(4).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(1).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(8).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(7).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(6).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(5).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(4).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(1).png"
+        ]
+      },
+      {
+        title: "Drone Soldier",
+        image: "https://media.canva.com/v2/download/name:8.png/uri:ifs%3A%2F%2FM%2Ffc6cc924e2b3475b9aacc5b4e8710480?csig=AAAAAAAAAAAAAAAAAAAAADzyE2ttf95tUYpN33dW7F2KWXGbJp9ZHbjaWSKjNbQG&exp=1777288919&signer=media-rpc&token=AAIAAU0AIGZjNmNjOTI0ZTJiMzQ3NWI5YWFjYzViNGU4NzEwNDgwAAAAAAGdz1GE8XQv_9Dp4keojoQ5XZoPsJ1PlpmLWrPEl4wzYNZbwnyl",
+        featured: true,
+        thumbPan: "vertical",
+        tags: ["Destaque", "Tempo Real", "Groom", "Marvelous Designer", "ZBrush", "Haircards", "Blender", "Substance Painter"],
+        desc: "Projeto de personagem em tempo real com foco em design tático, grooming, haircards, produção de roupas e apresentação game-ready.",
+        gallery: [
+          "https://media.canva.com/v2/download/name:8.png/uri:ifs%3A%2F%2FM%2Ffc6cc924e2b3475b9aacc5b4e8710480?csig=AAAAAAAAAAAAAAAAAAAAADzyE2ttf95tUYpN33dW7F2KWXGbJp9ZHbjaWSKjNbQG&exp=1777288919&signer=media-rpc&token=AAIAAU0AIGZjNmNjOTI0ZTJiMzQ3NWI5YWFjYzViNGU4NzEwNDgwAAAAAAGdz1GE8XQv_9Dp4keojoQ5XZoPsJ1PlpmLWrPEl4wzYNZbwnyl",
+          "https://media.canva.com/v2/download/name:1.png/uri:ifs%3A%2F%2FM%2F953d1d3a2de649f59b90d856874ed9cf?csig=AAAAAAAAAAAAAAAAAAAAAELR5ILBnRCugbUFGNSLUZB7o-Z1pay8cVK14ibkCCzq&exp=1777288913&signer=media-rpc&token=AAIAAU0AIDk1M2QxZDNhMmRlNjQ5ZjU5YjkwZDg1Njg3NGVkOWNmAAAAAAGdz1FsZQ6oqJEq5J50G_xvWrDBJa6Zo1d15OHJr0mp_NQGfoGt",
+          "https://media.canva.com/v2/download/name:002.jpg/uri:ifs%3A%2F%2FM%2Ff14e02d984c54cc694c1b062e6c54d0a?csig=AAAAAAAAAAAAAAAAAAAAAMDpP3me1G6c1wtOT5z0XW_A0Gg_sVCy1mOnJBxyPIAg&exp=1777288914&signer=media-rpc&token=AAIAAU0AIGYxNGUwMmQ5ODRjNTRjYzY5NGMxYjA2MmU2YzU0ZDBhAAAAAAGdz1FynKGiDtF7sblJWV6TRwaaPlPP-v0bvMJxDvvoPS11LE89",
+          "https://media.canva.com/v2/download/name:001.jpg/uri:ifs%3A%2F%2FM%2F3444fa0393d74ce1a557d960706fb2e6?csig=AAAAAAAAAAAAAAAAAAAAACZp5ql2nEHs11cQjjPZ9JQj9xOFH7oaMUTCDibWo5TP&exp=1777288916&signer=media-rpc&token=AAIAAU0AIDM0NDRmYTAzOTNkNzRjZTFhNTU3ZDk2MDcwNmZiMmU2AAAAAAGdz1F4ocQcScpUlirkpq2meFUttIWOlDYRpM_kEUqI0qAP5M8N",
+          "https://media.canva.com/v2/download/name:9.png/uri:ifs%3A%2F%2FM%2Fc74542bcd8724a4b8caee59c4af89ee0?csig=AAAAAAAAAAAAAAAAAAAAANFwooomeptZd6RhSKibzrBTsSpQMi6KXBcuiGvwLZOI&exp=1777288917&signer=media-rpc&token=AAIAAU0AIGM3NDU0MmJjZDg3MjRhNGI4Y2FlZTU5YzRhZjg5ZWUwAAAAAAGdz1F-JQ3amaVOV0BZVGzK86A2VE9m9xHonfkvag0Lq5o3wY86",
+          "https://media.canva.com/v2/download/name:wire1.png/uri:ifs%3A%2F%2FM%2F7faba361a8c74549ab2de02633ebc4a7?csig=AAAAAAAAAAAAAAAAAAAAAGbnMz_IazeVixsOzPSsb-EfmVYuPzQLS7kjok87DBUU&exp=1777288866&signer=media-rpc&token=AAIAAU0AIDdmYWJhMzYxYThjNzQ1NDlhYjJkZTAyNjMzZWJjNGE3AAAAAAGdz1C1OznEkcsQYClnTA60yyGRJGL_WCFcxq_-c-Rtb8fS89J0",
+          "https://media.canva.com/v2/download/name:wire1.png/uri:ifs%3A%2F%2FM%2F85d7abe950714d51b51850abbb5a06b8?csig=AAAAAAAAAAAAAAAAAAAAAEGMZNRVyoJTNqnKoOqaA5POsiD25MbzH3IYCRPJPgno&exp=1777288892&signer=media-rpc&token=AAIAAU0AIDg1ZDdhYmU5NTA3MTRkNTFiNTE4NTBhYmJiNWEwNmI4AAAAAAGdz1EdSJtsK2RgtXub_MhkG0mjbkSGp0zHljisk5xCglMkioFc",
+          "https://media.canva.com/v2/download/name:wire2.png/uri:ifs%3A%2F%2FM%2F943c222c45054230b226ad3fb8206ae5?csig=AAAAAAAAAAAAAAAAAAAAAB24KU274F062Rw5aJMtZ55oSsxGiHTOvoxcNkApMSlT&exp=1777288894&signer=media-rpc&token=AAIAAU0AIDk0M2MyMjJjNDUwNTQyMzBiMjI2YWQzZmI4MjA2YWU1AAAAAAGdz1EjX3I3qVY0bGLtr-W9eiaf1ELm0LmDgYtYaHFTiNh7YYsm",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181918.png/uri:ifs%3A%2F%2FM%2F0fc38ff5a6d3449ab6a09b5dca6eed19?csig=AAAAAAAAAAAAAAAAAAAAALK2KzdngBKY9guot5Rla2Q9m_Dm7o5HNzJbLSOdRu7G&exp=1777288867&signer=media-rpc&token=AAIAAU0AIDBmYzM4ZmY1YTZkMzQ0OWFiNmEwOWI1ZGNhNmVlZDE5AAAAAAGdz1C7hbPqCrWSpgiKAJJ8wfTiyzuFKuXgjvFSSXO6KahZvjxp",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181737.png/uri:ifs%3A%2F%2FM%2F01ee34b071fa4098bd1c2b104d384ce3?csig=AAAAAAAAAAAAAAAAAAAAAIHl4k0LTrDPS5Z5jITchWgJZNc1WY3eYrf9sS8m0a3o&exp=1777288869&signer=media-rpc&token=AAIAAU0AIDAxZWUzNGIwNzFmYTQwOThiZDFjMmIxMDRkMzg0Y2UzAAAAAAGdz1DBBJt-mwK8xDCCIwDUFMSWLv-Gy2YkJJiFge-vng1mTO7H",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181719.png/uri:ifs%3A%2F%2FM%2F89e8e48b1ad64a5aa959500c4c6f7d1a?csig=AAAAAAAAAAAAAAAAAAAAAFcJcdJ5AbLksqeJhK26zWcrRytBpd51DMyKkbX_oIK5&exp=1777288870&signer=media-rpc&token=AAIAAU0AIDg5ZThlNDhiMWFkNjRhNWFhOTU5NTAwYzRjNmY3ZDFhAAAAAAGdz1DHmFIXRvlCsmYbHf8av3dm6H_3o1u78Ux3-rJqWSK7PwuG",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181726.png/uri:ifs%3A%2F%2FM%2F35fd198a8d714357ba45fe8137bc84d4?csig=AAAAAAAAAAAAAAAAAAAAAFX7rBIQTjk9_CfZsV3LR71POXzB-uJrvxwmJELKPcD9&exp=1777288873&signer=media-rpc&token=AAIAAU0AIDM1ZmQxOThhOGQ3MTQzNTdiYTQ1ZmU4MTM3YmM4NGQ0AAAAAAGdz1DQd2s0V1am1BNxVL59Piw36CKGmyTT89Pn04tuweOWzn6w",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181501.png/uri:ifs%3A%2F%2FM%2Fea376ff8e6aa40a2b6beafca30f0a48f?csig=AAAAAAAAAAAAAAAAAAAAAK2hWdpprDLe1nzP4t9SUSnPf9DiTMhD7RDGtGXJxG7f&exp=1777288874&signer=media-rpc&token=AAIAAU0AIGVhMzc2ZmY4ZTZhYTQwYTJiNmJlYWZjYTMwZjBhNDhmAAAAAAGdz1DW3GqR_gqkWlg_yVGMOAXYDoRlBndFjjbfOmPLwa5dKYWc"
+        ]
+      },
+      {
+        title: "Tiny Hero",
+        image: "https://cdna.artstation.com/p/assets/images/images/047/354/852/large/renan-matos-sem-titulo-1.jpg?1647389260",
+        tags: ["Estilizado", "Personagem", "Game Ready", "Blender", "Substance Painter"],
+        desc: "Personagem estilizado focado em leitura visual, proporções atraentes e apresentação limpa em tempo real. Criado para equilibrar charme, clareza e eficiência de produção.",
+        gallery: [
+          "https://cdna.artstation.com/p/assets/images/images/047/354/862/large/renan-matos-untitled.jpg?1647389196",
+          "https://cdnb.artstation.com/p/assets/images/images/047/354/869/large/renan-matos-untitled0.jpg?1647389206",
+          "https://cdna.artstation.com/p/assets/images/images/047/354/872/large/renan-matos-untitled2.jpg?1647389212",
+          "https://cdna.artstation.com/p/assets/images/images/047/354/874/large/renan-matos-untitled3.jpg?1647389218"
+        ]
+      },
+      {
+        title: "Pantufa",
+        video: "https://cdn.artstation.com/p/video_sources/000/403/624/2.mp4",
+        tags: ["Estilizado", "Personagem", "Criatura", "Blender", "Substance Painter"],
+        desc: "Projeto de personagem/criatura estilizada com foco em personalidade, formas atraentes e apresentação limpa para portfólio.",
+        gallery: [
+          "https://cdn.artstation.com/p/video_sources/000/403/624/2.mp4",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/845/large/renan-matos-06-sharpenai-focus.jpg?1624860836",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/909/large/renan-matos-03.jpg?1624860623",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/913/large/renan-matos-04.jpg?1624860628",
+          "https://cdna.artstation.com/p/assets/images/images/039/063/916/large/renan-matos-05.jpg?1624860638"
+        ]
+      },
+      {
+        title: "Ranay - Golden Demon",
+        image: "https://cdna.artstation.com/p/assets/images/images/043/560/228/large/renan-matos-untitled-1.jpg?1637623584",
+        link: "https://renmatsi.artstation.com/projects/WmKgrN?album_id=3083348",
+        tags: ["Estilizado", "Personagem", "Criatura", "Blender", "Substance Painter"],
+        desc: "Personagem estilizado com foco em silhueta forte, formas expressivas e apresentação de alta qualidade.",
+        gallery: [
+          "https://cdna.artstation.com/p/assets/images/images/043/560/228/large/renan-matos-untitled-1.jpg?1637623584",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/245/large/renan-matos-render-1.jpg?1637623370",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/257/large/renan-matos-untitled0.jpg?1637623406",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/277/large/renan-matos-untitled22.jpg?1637623453",
+          "https://cdna.artstation.com/p/assets/images/images/043/560/288/large/renan-matos-untitled1.jpg?1637623483"
+        ]
+      },
+      {
+        title: "Priestess",
+        image: "https://cdnb.artstation.com/p/assets/images/images/057/912/829/large/renan-matos-000009.jpg?1672950889",
+        link: "https://renmatsi.artstation.com/projects/o2avxk?album_id=3083348",
+        tags: ["Realista", "Personagem", "Cyberpunk", "Blender", "Substance Painter", "Topologia", "Wireframe"],
+        desc: "Personagem cyberpunk realista com foco em detalhes, identidade visual forte e apresentação de alta qualidade para portfólio.",
+        gallery: [
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/805/large/renan-matos-0007.jpg?1672951112",
+          "https://cdna.artstation.com/p/assets/images/images/057/912/816/large/renan-matos-00008.jpg?1672950869",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/829/large/renan-matos-000009.jpg?1672950889",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/789/large/renan-matos-003-render.jpg?1672950812",
+          "https://cdna.artstation.com/p/assets/images/images/057/912/754/large/renan-matos-001-render.jpg?1672950814",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/833/large/renan-matos-untitled.jpg?1672950909",
+          "https://cdna.artstation.com/p/assets/images/images/057/913/046/large/renan-matos-wire.jpg?1672951423"
+        ]
+      },
+      {
+        title: "Bart",
+        video: "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bart.mp4",
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personagem", "Mobile Game", "Tempo Real"],
+        desc: "Modelo de personagem estilizado usado no jogo Trial Xtreme Freedom, com foco em leitura visual forte, formas limpas e apresentação em tempo real para mobile.",
+        viewer: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/00.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/07.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/06.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/05.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/04.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/03.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/02.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/01.png"
+        ],
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/00.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/07.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/06.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/05.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/04.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/03.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/02.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/01.png"
+        ]
+      },
+      {
+        title: "Bob",
+        slides: [
+          "https://a.storyblok.com/f/317806/3840x2160/a506b56ebf/cmpd-bobcity-06_new.jpg",
+          "https://a.storyblok.com/f/317806/3840x2160/cb4e1606f7/76786384-9518-4d9d-960d-117572e4ad68.jpeg/m/fit-in/3840x2160/filters:quality(80)"
+        ],
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personagem", "Mobile Game", "Tempo Real"],
+        desc: "Modelo de personagem estilizado usado no jogo Trial Xtreme Freedom, criado para linguagem visual clara, leitura forte e performance em tempo real para mobile.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob0.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob5.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob6.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob7.png"
+        ]
+      },
+      {
+        title: "Cody",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody2.png"
+        ],
+                link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personagem", "Mobile Game", "Tempo Real"],
+        desc: "Personagem estilizado criado para Trial Xtreme Freedom, com foco em personalidade, leitura visual e performance limpa em tempo real para mobile.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody0.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody4.png"
+        ]
+      },
+      {
+        title: "Kayla",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla2.png"
+        ],
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personagem", "Mobile Game", "Tempo Real"],
+        desc: "Personagem estilizado usado no jogo Trial Xtreme Freedom, com foco em personalidade, leitura visual e performance em tempo real.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla0.png"
+        ]
+      },
+      {
+        title: "Chronicles of the Stone Age",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0009.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0008.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0006.png"
+        ],
+        tags: ["Game", "Estilizado", "Ambiente", "Props", "Tempo Real"],
+        desc: "Assets e ambientes estilizados desenvolvidos para Chronicles of the Stone Age, com foco em formas fortes, leitura visual e consistência estética.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0010.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0009.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0008.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0007.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0006.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0005.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0004.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0003.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0002.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001.png"
+        ]
+      },],
+    es: [
+      {
+        title: "Male Character",
+        video: "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001-1033_1.mp4",
+        featured: true,
+        tags: ["Destacado", "Realista", "Groom", "Marvelous Designer", "ZBrush", "Blender"],
+        desc: "Proyecto de personaje masculino realista enfocado en anatomía, grooming, producción de ropa, calidad de escultura y presentación high-end.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001-1033_1.mp4",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cs%20(1).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/ccc.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(7).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(6).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(5).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(4).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/cc%20(1).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(8).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(7).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(6).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(5).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(4).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(3).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(2).png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/c%20(1).png"
+        ]
+      },
+      {
+        title: "Drone Soldier",
+        image: "https://media.canva.com/v2/download/name:8.png/uri:ifs%3A%2F%2FM%2Ffc6cc924e2b3475b9aacc5b4e8710480?csig=AAAAAAAAAAAAAAAAAAAAADzyE2ttf95tUYpN33dW7F2KWXGbJp9ZHbjaWSKjNbQG&exp=1777288919&signer=media-rpc&token=AAIAAU0AIGZjNmNjOTI0ZTJiMzQ3NWI5YWFjYzViNGU4NzEwNDgwAAAAAAGdz1GE8XQv_9Dp4keojoQ5XZoPsJ1PlpmLWrPEl4wzYNZbwnyl",
+        featured: true,
+        thumbPan: "vertical",
+        tags: ["Destacado", "Tiempo Real", "Groom", "Marvelous Designer", "ZBrush", "Haircards", "Blender", "Substance Painter"],
+        desc: "Proyecto de personaje en tiempo real enfocado en diseño táctico, grooming, haircards, producción de ropa y presentación game-ready.",
+        gallery: [
+          "https://media.canva.com/v2/download/name:8.png/uri:ifs%3A%2F%2FM%2Ffc6cc924e2b3475b9aacc5b4e8710480?csig=AAAAAAAAAAAAAAAAAAAAADzyE2ttf95tUYpN33dW7F2KWXGbJp9ZHbjaWSKjNbQG&exp=1777288919&signer=media-rpc&token=AAIAAU0AIGZjNmNjOTI0ZTJiMzQ3NWI5YWFjYzViNGU4NzEwNDgwAAAAAAGdz1GE8XQv_9Dp4keojoQ5XZoPsJ1PlpmLWrPEl4wzYNZbwnyl",
+          "https://media.canva.com/v2/download/name:1.png/uri:ifs%3A%2F%2FM%2F953d1d3a2de649f59b90d856874ed9cf?csig=AAAAAAAAAAAAAAAAAAAAAELR5ILBnRCugbUFGNSLUZB7o-Z1pay8cVK14ibkCCzq&exp=1777288913&signer=media-rpc&token=AAIAAU0AIDk1M2QxZDNhMmRlNjQ5ZjU5YjkwZDg1Njg3NGVkOWNmAAAAAAGdz1FsZQ6oqJEq5J50G_xvWrDBJa6Zo1d15OHJr0mp_NQGfoGt",
+          "https://media.canva.com/v2/download/name:002.jpg/uri:ifs%3A%2F%2FM%2Ff14e02d984c54cc694c1b062e6c54d0a?csig=AAAAAAAAAAAAAAAAAAAAAMDpP3me1G6c1wtOT5z0XW_A0Gg_sVCy1mOnJBxyPIAg&exp=1777288914&signer=media-rpc&token=AAIAAU0AIGYxNGUwMmQ5ODRjNTRjYzY5NGMxYjA2MmU2YzU0ZDBhAAAAAAGdz1FynKGiDtF7sblJWV6TRwaaPlPP-v0bvMJxDvvoPS11LE89",
+          "https://media.canva.com/v2/download/name:001.jpg/uri:ifs%3A%2F%2FM%2F3444fa0393d74ce1a557d960706fb2e6?csig=AAAAAAAAAAAAAAAAAAAAACZp5ql2nEHs11cQjjPZ9JQj9xOFH7oaMUTCDibWo5TP&exp=1777288916&signer=media-rpc&token=AAIAAU0AIDM0NDRmYTAzOTNkNzRjZTFhNTU3ZDk2MDcwNmZiMmU2AAAAAAGdz1F4ocQcScpUlirkpq2meFUttIWOlDYRpM_kEUqI0qAP5M8N",
+          "https://media.canva.com/v2/download/name:9.png/uri:ifs%3A%2F%2FM%2Fc74542bcd8724a4b8caee59c4af89ee0?csig=AAAAAAAAAAAAAAAAAAAAANFwooomeptZd6RhSKibzrBTsSpQMi6KXBcuiGvwLZOI&exp=1777288917&signer=media-rpc&token=AAIAAU0AIGM3NDU0MmJjZDg3MjRhNGI4Y2FlZTU5YzRhZjg5ZWUwAAAAAAGdz1F-JQ3amaVOV0BZVGzK86A2VE9m9xHonfkvag0Lq5o3wY86",
+          "https://media.canva.com/v2/download/name:wire1.png/uri:ifs%3A%2F%2FM%2F7faba361a8c74549ab2de02633ebc4a7?csig=AAAAAAAAAAAAAAAAAAAAAGbnMz_IazeVixsOzPSsb-EfmVYuPzQLS7kjok87DBUU&exp=1777288866&signer=media-rpc&token=AAIAAU0AIDdmYWJhMzYxYThjNzQ1NDlhYjJkZTAyNjMzZWJjNGE3AAAAAAGdz1C1OznEkcsQYClnTA60yyGRJGL_WCFcxq_-c-Rtb8fS89J0",
+          "https://media.canva.com/v2/download/name:wire1.png/uri:ifs%3A%2F%2FM%2F85d7abe950714d51b51850abbb5a06b8?csig=AAAAAAAAAAAAAAAAAAAAAEGMZNRVyoJTNqnKoOqaA5POsiD25MbzH3IYCRPJPgno&exp=1777288892&signer=media-rpc&token=AAIAAU0AIDg1ZDdhYmU5NTA3MTRkNTFiNTE4NTBhYmJiNWEwNmI4AAAAAAGdz1EdSJtsK2RgtXub_MhkG0mjbkSGp0zHljisk5xCglMkioFc",
+          "https://media.canva.com/v2/download/name:wire2.png/uri:ifs%3A%2F%2FM%2F943c222c45054230b226ad3fb8206ae5?csig=AAAAAAAAAAAAAAAAAAAAAB24KU274F062Rw5aJMtZ55oSsxGiHTOvoxcNkApMSlT&exp=1777288894&signer=media-rpc&token=AAIAAU0AIDk0M2MyMjJjNDUwNTQyMzBiMjI2YWQzZmI4MjA2YWU1AAAAAAGdz1EjX3I3qVY0bGLtr-W9eiaf1ELm0LmDgYtYaHFTiNh7YYsm",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181918.png/uri:ifs%3A%2F%2FM%2F0fc38ff5a6d3449ab6a09b5dca6eed19?csig=AAAAAAAAAAAAAAAAAAAAALK2KzdngBKY9guot5Rla2Q9m_Dm7o5HNzJbLSOdRu7G&exp=1777288867&signer=media-rpc&token=AAIAAU0AIDBmYzM4ZmY1YTZkMzQ0OWFiNmEwOWI1ZGNhNmVlZDE5AAAAAAGdz1C7hbPqCrWSpgiKAJJ8wfTiyzuFKuXgjvFSSXO6KahZvjxp",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181737.png/uri:ifs%3A%2F%2FM%2F01ee34b071fa4098bd1c2b104d384ce3?csig=AAAAAAAAAAAAAAAAAAAAAIHl4k0LTrDPS5Z5jITchWgJZNc1WY3eYrf9sS8m0a3o&exp=1777288869&signer=media-rpc&token=AAIAAU0AIDAxZWUzNGIwNzFmYTQwOThiZDFjMmIxMDRkMzg0Y2UzAAAAAAGdz1DBBJt-mwK8xDCCIwDUFMSWLv-Gy2YkJJiFge-vng1mTO7H",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181719.png/uri:ifs%3A%2F%2FM%2F89e8e48b1ad64a5aa959500c4c6f7d1a?csig=AAAAAAAAAAAAAAAAAAAAAFcJcdJ5AbLksqeJhK26zWcrRytBpd51DMyKkbX_oIK5&exp=1777288870&signer=media-rpc&token=AAIAAU0AIDg5ZThlNDhiMWFkNjRhNWFhOTU5NTAwYzRjNmY3ZDFhAAAAAAGdz1DHmFIXRvlCsmYbHf8av3dm6H_3o1u78Ux3-rJqWSK7PwuG",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181726.png/uri:ifs%3A%2F%2FM%2F35fd198a8d714357ba45fe8137bc84d4?csig=AAAAAAAAAAAAAAAAAAAAAFX7rBIQTjk9_CfZsV3LR71POXzB-uJrvxwmJELKPcD9&exp=1777288873&signer=media-rpc&token=AAIAAU0AIDM1ZmQxOThhOGQ3MTQzNTdiYTQ1ZmU4MTM3YmM4NGQ0AAAAAAGdz1DQd2s0V1am1BNxVL59Piw36CKGmyTT89Pn04tuweOWzn6w",
+          "https://media.canva.com/v2/download/name:Captura+de+tela+2025-09-18+181501.png/uri:ifs%3A%2F%2FM%2Fea376ff8e6aa40a2b6beafca30f0a48f?csig=AAAAAAAAAAAAAAAAAAAAAK2hWdpprDLe1nzP4t9SUSnPf9DiTMhD7RDGtGXJxG7f&exp=1777288874&signer=media-rpc&token=AAIAAU0AIGVhMzc2ZmY4ZTZhYTQwYTJiNmJlYWZjYTMwZjBhNDhmAAAAAAGdz1DW3GqR_gqkWlg_yVGMOAXYDoRlBndFjjbfOmPLwa5dKYWc"
+        ]
+      },
+      {
+        title: "Tiny Hero",
+        image: "https://cdna.artstation.com/p/assets/images/images/047/354/852/large/renan-matos-sem-titulo-1.jpg?1647389260",
+        tags: ["Estilizado", "Personaje", "Game Ready", "Blender", "Substance Painter"],
+        desc: "Personaje estilizado enfocado en lectura visual, proporciones atractivas y presentación limpia en tiempo real. Diseñado para equilibrar encanto, claridad y eficiencia de producción.",
+        gallery: [
+          "https://cdna.artstation.com/p/assets/images/images/047/354/862/large/renan-matos-untitled.jpg?1647389196",
+          "https://cdnb.artstation.com/p/assets/images/images/047/354/869/large/renan-matos-untitled0.jpg?1647389206",
+          "https://cdna.artstation.com/p/assets/images/images/047/354/872/large/renan-matos-untitled2.jpg?1647389212",
+          "https://cdna.artstation.com/p/assets/images/images/047/354/874/large/renan-matos-untitled3.jpg?1647389218"
+        ]
+      },
+      {
+        title: "Pantufa",
+        video: "https://cdn.artstation.com/p/video_sources/000/403/624/2.mp4",
+        tags: ["Estilizado", "Personaje", "Criatura", "Blender", "Substance Painter"],
+        desc: "Proyecto de personaje/criatura estilizada enfocado en personalidad, formas atractivas y presentación limpia para portafolio.",
+        gallery: [
+          "https://cdn.artstation.com/p/video_sources/000/403/624/2.mp4",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/845/large/renan-matos-06-sharpenai-focus.jpg?1624860836",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/909/large/renan-matos-03.jpg?1624860623",
+          "https://cdnb.artstation.com/p/assets/images/images/039/063/913/large/renan-matos-04.jpg?1624860628",
+          "https://cdna.artstation.com/p/assets/images/images/039/063/916/large/renan-matos-05.jpg?1624860638"
+        ]
+      },
+      {
+        title: "Ranay - Golden Demon",
+        image: "https://cdna.artstation.com/p/assets/images/images/043/560/228/large/renan-matos-untitled-1.jpg?1637623584",
+        link: "https://renmatsi.artstation.com/projects/WmKgrN?album_id=3083348",
+        tags: ["Estilizado", "Personaje", "Criatura", "Blender", "Substance Painter"],
+        desc: "Personaje estilizado enfocado en silueta fuerte, formas expresivas y presentación de alta calidad.",
+        gallery: [
+          "https://cdna.artstation.com/p/assets/images/images/043/560/228/large/renan-matos-untitled-1.jpg?1637623584",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/245/large/renan-matos-render-1.jpg?1637623370",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/257/large/renan-matos-untitled0.jpg?1637623406",
+          "https://cdnb.artstation.com/p/assets/images/images/043/560/277/large/renan-matos-untitled22.jpg?1637623453",
+          "https://cdna.artstation.com/p/assets/images/images/043/560/288/large/renan-matos-untitled1.jpg?1637623483"
+        ]
+      },
+      {
+        title: "Priestess",
+        image: "https://cdnb.artstation.com/p/assets/images/images/057/912/829/large/renan-matos-000009.jpg?1672950889",
+        link: "https://renmatsi.artstation.com/projects/o2avxk?album_id=3083348",
+        tags: ["Realista", "Personaje", "Cyberpunk", "Blender", "Substance Painter", "Topología", "Wireframe"],
+        desc: "Personaje cyberpunk realista enfocado en detalles, identidad visual fuerte y presentación de alta calidad para portafolio.",
+        gallery: [
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/805/large/renan-matos-0007.jpg?1672951112",
+          "https://cdna.artstation.com/p/assets/images/images/057/912/816/large/renan-matos-00008.jpg?1672950869",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/829/large/renan-matos-000009.jpg?1672950889",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/789/large/renan-matos-003-render.jpg?1672950812",
+          "https://cdna.artstation.com/p/assets/images/images/057/912/754/large/renan-matos-001-render.jpg?1672950814",
+          "https://cdnb.artstation.com/p/assets/images/images/057/912/833/large/renan-matos-untitled.jpg?1672950909",
+          "https://cdna.artstation.com/p/assets/images/images/057/913/046/large/renan-matos-wire.jpg?1672951423"
+        ]
+      },
+      {
+        title: "Bart",
+        video: "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bart.mp4",
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personaje", "Mobile Game", "Tiempo Real"],
+        desc: "Modelo de personaje estilizado usado en Trial Xtreme Freedom, enfocado en lectura visual fuerte, formas limpias y presentación en tiempo real para mobile.",
+        viewer: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/00.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/07.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/06.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/05.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/04.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/03.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/02.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/01.png"
+        ],
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/00.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/07.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/06.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/05.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/04.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/03.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/02.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/01.png"
+        ]
+      },
+      {
+        title: "Bob",
+        slides: [
+          "https://a.storyblok.com/f/317806/3840x2160/a506b56ebf/cmpd-bobcity-06_new.jpg",
+          "https://a.storyblok.com/f/317806/3840x2160/cb4e1606f7/76786384-9518-4d9d-960d-117572e4ad68.jpeg/m/fit-in/3840x2160/filters:quality(80)"
+        ],
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personaje", "Mobile Game", "Tiempo Real"],
+        desc: "Modelo de personaje estilizado usado en Trial Xtreme Freedom, creado para lenguaje visual claro, lectura fuerte y rendimiento en tiempo real para mobile.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob0.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob5.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob6.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/bob7.png"
+        ]
+      },
+      {
+        title: "Cody",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody2.png"
+        ],
+                link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personaje", "Mobile Game", "Tiempo Real"],
+        desc: "Personaje estilizado creado para Trial Xtreme Freedom, enfocado en personalidad, lectura visual y rendimiento limpio en tiempo real para mobile.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody0.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Cody4.png"
+        ]
+      },
+      {
+        title: "Kayla",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla2.png"
+        ],
+        link: "https://trialxtreme.com/",
+        tags: ["Trial Xtreme Freedom", "Estilizado", "Personaje", "Mobile Game", "Tiempo Real"],
+        desc: "Personaje estilizado usado en Trial Xtreme Freedom, enfocado en personalidad, lectura visual y rendimiento en tiempo real.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla4.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla3.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla2.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla1.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/Kayla0.png"
+        ]
+      },
+      {
+        title: "Chronicles of the Stone Age",
+        slides: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0009.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0008.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0006.png"
+        ],
+        tags: ["Game", "Estilizado", "Entorno", "Props", "Tiempo Real"],
+        desc: "Assets y entornos estilizados desarrollados para Chronicles of the Stone Age, enfocados en formas fuertes, lectura visual y consistencia estética.",
+        gallery: [
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0010.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0009.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0008.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0007.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0006.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0005.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0004.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0003.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0002.png",
+          "https://raw.githubusercontent.com/renmatsi/renmatsi.github.io/main/0001.png"
+        ]
+      },]
+  };
 
-    let i = 0;
+  return data[lang] || data.en;
+}
 
-    if (slides.length <= 1) return;
 
-    setInterval(() => {
-      i = (i + 1) % slides.length;
+function isVideoMedia(src) {
+  return typeof src === "string" && src.toLowerCase().split("?")[0].endsWith(".mp4");
+}
 
-      img.style.opacity = 0;
+function renderPortfolioThumb(item) {
+  if (item.video) {
+    return `<div class="portfolio-thumb-frame"><video class="portfolio-thumb lazy-video" data-src="${item.video}" muted loop playsinline preload="none"></video></div>`;
+  }
 
-      setTimeout(() => {
-        img.src = slides[i];
-        img.style.opacity = 1;
-      }, 150);
+  if (item.thumbComposite && item.gallery && item.gallery.length) {
+    const bg = item.gallery[item.gallery.length - 1];
+    const face = item.gallery[0];
+    return `<div class="portfolio-thumb-frame cody-thumb"><img src="${bg}" class="cody-bg" alt="" loading="lazy" decoding="async"><img src="${face}" class="cody-face" alt="${item.title}" loading="lazy" decoding="async"></div>`;
+  }
 
-    }, 3500);
+  if (item.slides && item.slides.length) {
+    const encodedSlides = encodeURIComponent(JSON.stringify(item.slides));
+    return `<div class="portfolio-thumb-frame portfolio-slideshow" data-slides="${encodedSlides}"><img class="portfolio-slide is-active" src="${item.slides[0]}" alt="${item.title} slide" loading="lazy" decoding="async"></div>`;
+  }
 
+  if (item.image) {
+    const panClass = item.thumbPan === "vertical" ? " thumb-pan-vertical" : "";
+    return `<div class="portfolio-thumb-frame${panClass}"><img class="portfolio-thumb" src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"></div>`;
+  }
+
+  return `<div class="portfolio-placeholder">IMAGE</div>`;
+}
+
+function renderDetailMainMedia(item) {
+  if (item.video) {
+    return `<video class="lazy-video" data-src="${item.video}" muted loop playsinline controls preload="none"></video>`;
+  }
+
+  if (item.image) {
+    return `<a class="portfolio-image-link" href="${item.image}" target="_blank" rel="noopener"><img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"></a>`;
+  }
+
+  return `<div class="portfolio-placeholder">IMAGE</div>`;
+}
+
+function renderGalleryMedia(src, title) {
+  if (isVideoMedia(src)) {
+    return `<video class="lazy-video" data-src="${src}" muted loop playsinline controls preload="none"></video>`;
+  }
+
+  return `<a class="portfolio-image-link" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${title}" loading="lazy" decoding="async"></a>`;
+}
+
+
+
+function renderFake3DViewer(item) {
+  const frames = item.viewer || [];
+  if (!frames.length) return "";
+
+  return `
+    <div class="fake3d-viewer" data-viewer>
+      <div class="fake3d-stage">
+        <img src="${frames[0]}" alt="${item.title} rotation preview" data-viewer-image>
+      </div>
+      <div class="fake3d-controls">
+        <span>Rotate preview</span>
+        <input type="range" min="0" max="${frames.length - 1}" value="0" step="1" data-viewer-range>
+        <span>Zoom</span>
+        <input type="range" min="100" max="400" value="100" step="5" data-viewer-zoom>
+      </div>
+    </div>
+  `;
+}
+
+function initFake3DViewers() {
+  document.querySelectorAll("[data-viewer]").forEach(viewer => {
+    const frames = getPortfolioItems(currentLang).find(item => item.viewer && item.title === document.getElementById("portfolioDetailTitle").textContent)?.viewer || [];
+    const image = viewer.querySelector("[data-viewer-image]");
+    const range = viewer.querySelector("[data-viewer-range]");
+    const zoom = viewer.querySelector("[data-viewer-zoom]");
+    if (!frames.length || !image || !range) return;
+
+    const applyZoom = () => {
+      const zoomValue = zoom ? Number(zoom.value) / 100 : 1;
+      image.style.transform = `scale(${zoomValue})`;
+    };
+
+    const updateFrame = value => {
+      const index = Math.max(0, Math.min(frames.length - 1, Number(value)));
+      image.src = frames[index];
+      applyZoom();
+    };
+
+    range.addEventListener("input", () => updateFrame(range.value));
+    if (zoom) zoom.addEventListener("input", applyZoom);
+
+    viewer.addEventListener("wheel", event => {
+      event.preventDefault();
+      const direction = event.deltaY > 0 ? 1 : -1;
+      range.value = Math.max(0, Math.min(frames.length - 1, Number(range.value) + direction));
+      updateFrame(range.value);
+    }, { passive: false });
+
+    let isDragging = false;
+    let lastX = 0;
+
+    viewer.addEventListener("pointerdown", event => {
+      isDragging = true;
+      lastX = event.clientX;
+      viewer.setPointerCapture(event.pointerId);
+    });
+
+    viewer.addEventListener("pointermove", event => {
+      if (!isDragging) return;
+      const delta = event.clientX - lastX;
+      if (Math.abs(delta) > 18) {
+        const direction = delta > 0 ? 1 : -1;
+        range.value = Math.max(0, Math.min(frames.length - 1, Number(range.value) + direction));
+        updateFrame(range.value);
+        lastX = event.clientX;
+      }
+    });
+
+    viewer.addEventListener("pointerup", () => {
+      isDragging = false;
+    });
   });
 }
 
-/* =========================
-   INIT
-========================= */
 
-renderPortfolio();
-setupSlides();
+function renderPortfolio() {
+  const portfolioItems = getPortfolioItems(currentLang);
 
-/* FOOTER */
-document.getElementById("footer").innerText =
-  "© Renan Matos TM " + new Date().getFullYear();
+  document.getElementById("portfolioContent").innerHTML = portfolioItems.map((item, index) => `
+    <article class="portfolio-card" data-portfolio="${index}" data-featured="${item.featured ? "true" : "false"}">
+      ${renderPortfolioThumb(item)}
+      <h3>${item.title}</h3>
+      <p>${item.desc}</p>
+      <div class="tag-row">${item.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+    </article>
+  `).join("");
 
+  document.querySelectorAll(".portfolio-card").forEach(card => {
+    card.addEventListener("click", () => openPortfolioItem(Number(card.dataset.portfolio)));
+  });
+
+  document.getElementById("portfolioQuickActions").innerHTML = portfolioItems.map((item, index) => `
+    <button class="project-link" type="button" data-portfolio-short="${index}">${item.title}</button>
+  `).join("");
+
+  document.querySelectorAll("[data-portfolio-short]").forEach(button => {
+    button.addEventListener("click", () => openPortfolioItem(Number(button.dataset.portfolioShort)));
+  });
+}
+
+function openPortfolioItem(index) {
+  const portfolioItems = getPortfolioItems(currentLang);
+  const item = portfolioItems[index];
+  document.getElementById("portfolioDetailTitle").textContent = item.title;
+  document.getElementById("portfolioDetailContent").innerHTML = `
+    <div>
+      ${item.viewer ? renderFake3DViewer(item) : ""}
+      ${renderDetailMainMedia(item)}
+      ${item.gallery ? `
+        <div class="portfolio-gallery">
+          ${item.gallery.map(media => renderGalleryMedia(media, item.title)).join("")}
+        </div>
+      ` : ""}
+    </div>
+    <div>
+      <div class="tag-row">${item.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+      <p>${item.desc}</p>
+      ${item.link ? `<a class="project-link" href="${item.link}" target="_blank" rel="noopener">${item.link.includes("trialxtreme") ? "View Game ↗" : "View on ArtStation ↗"}</a>` : ""}
+    </div>
+  `;
+  openPanel("portfolio");
+  setupLazyVideos();
+  initFake3DViewers();
+}
+
+function renderTutorials() {
+  document.getElementById("tutorialsContent").innerHTML = `
+    <div class="project-card">
+      <h3>Portfolio Review</h3>
+      <p>Focused feedback on presentation, project selection, visual hierarchy and hiring-readiness.</p>
+    </div>
+    <div class="project-card">
+      <h3>Character Pipeline</h3>
+      <p>Guidance on sculpting, retopology, UVs, texturing, grooming, haircards and real-time optimization.</p>
+    </div>
+    <div class="project-card">
+      <h3>Career Direction</h3>
+      <p>Mentorship for positioning, applications, interviews and building a stronger 3D artist profile.</p>
+    </div>
+    <div class="project-card">
+      <h3>Production Workflow</h3>
+      <p>Practical support for Blender, ZBrush, Substance Painter, Marvelous Designer and game-ready assets.</p>
+    </div>
+  `;
+}
+
+
+const contactButtons = [
+  { label: "Email", href: "mailto:renanmatos220594@outlook.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/renmatsi/" },
+  { label: "ArtStation", href: "https://renmatsi.artstation.com/" },
+  { label: "Instagram", href: "https://instagram.com/renmatsi" },
+  { label: "WhatsApp", href: "https://wa.me/5585981950915" },
+  { label: "Telegram", href: "https://t.me/5585981950915" }
+];
+
+const homeCard = document.getElementById("homeCard");
+const panels = {
+  skills: document.getElementById("skillsPanel"),
+  experience: document.getElementById("experiencePanel"),
+  tutorials: document.getElementById("tutorialsPanel"),
+  portfolio: document.getElementById("portfolioPanel"),
+  contact: document.getElementById("contactPanel")
+};
+
+let currentLang = "en";
+
+function renderExperience() {
+  const items = getExperienceItems(currentLang);
+
+  document.getElementById("experienceContent").innerHTML = `
+    <div class="experience-resume">
+      ${items.map(item => `
+        <article class="resume-item">
+          <div class="resume-head">
+            <h3 class="resume-company">
+  <a href="${item.link || '#'}" target="_blank" rel="noopener">
+    ${item.company}
+  </a>
+</h3>
+            <p class="resume-role">${item.role}</p>
+            <p class="resume-meta">${item.period}</p>
+          </div>
+          <ul>${item.bullets.map(bullet => `<li>${bullet}</li>`).join("")}</ul>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+
+function contactIcon(label) {
+  const key = label.toLowerCase();
+  if (key.includes("email")) return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M4 7l8 6 8-6"></path></svg></span>`;
+  if (key.includes("linkedin")) return `<span class="contact-icon linkedin" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"></rect><text x="8" y="16">in</text></svg></span>`;
+  if (key.includes("artstation")) return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17h16"></path><path d="M8 17l4-8 4 8"></path><path d="M10 13h4"></path></svg></span>`;
+  if (key.includes("instagram")) return `<span class="contact-icon instagram" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.2"></circle><path d="M17 7.2h.01"></path></svg></span>`;
+  if (key.includes("whatsapp")) return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.2 18.2l-1 3 3.2-.9A8 8 0 1 0 4 12c0 2.3.9 4.4 2.2 6.2z"></path><path d="M9.2 8.8c.4 3 2 4.8 5.1 6"></path><path d="M9.2 8.8l1.2-.6 1 2-1 .7"></path><path d="M14.3 14.8l.7-1 2 1-.6 1.2"></path></svg></span>`;
+  if (key.includes("telegram")) return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 4L3 11.2l6.8 2.2L12.2 20l3.3-5.2L21 4z"></path><path d="M9.8 13.4L21 4"></path></svg></span>`;
+  return "";
+}
+
+
+function renderContactLinks() {
+  document.getElementById("contactLinks").innerHTML = contactButtons.map(item => `
+    <a class="contact-link" href="${item.href}" target="_blank" rel="noopener">${contactIcon(item.label)}${item.label}</a>
+  `).join("");
+}
+
+function updateMessageLinks() {
+  const msg = encodeURIComponent(document.getElementById("messageBox").value);
+  const subject = encodeURIComponent("3D Art Opportunity");
+  document.getElementById("sendEmailLink").href = `mailto:renanmatos220594@outlook.com?subject=${subject}&body=${msg}`;
+  document.getElementById("sendWhatsapp1").href = `https://wa.me/5585981950915?text=${msg}`;
+  document.getElementById("sendTelegram").href = `https://t.me/share/url?url=&text=${msg}`;
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.getElementById("description").innerHTML = t.description;
+  document.getElementById("skillsBtn").textContent = t.skills;
+  document.getElementById("experienceBtn").textContent = t.experience;
+  document.getElementById("tutorialsBtn").textContent = t.tutorials;
+  document.getElementById("contactBtn").textContent = t.contact;
+  document.getElementById("skillsTitle").textContent = t.skillsTitle;
+  document.getElementById("experienceTitle").textContent = t.experienceTitle;
+  document.getElementById("tutorialsTitle").textContent = t.tutorialsTitle;
+  document.getElementById("tutorialsText").textContent = t.tutorialsText;
+  document.getElementById("portfolioTitle").textContent = t.portfolioTitle;
+  document.getElementById("contactTitle").textContent = t.contactTitle;
+  document.getElementById("contactText").textContent = t.contactText;
+  document.getElementById("contactMeVia").textContent = t.contactMeVia;
+  document.getElementById("messageTitle").textContent = t.messageTitle;
+  document.getElementById("messageBox").placeholder = t.messagePlaceholder;
+  document.getElementById("copyMessage").textContent = t.copy;
+  document.getElementById("openToWorkText").textContent = t.openStatus;
+  document.getElementById("skillsContent").innerHTML = t.skillsHTML;
+  document.getElementById("backFromSkills").textContent = t.back;
+  document.getElementById("backFromExperience").textContent = t.back;
+  document.getElementById("backFromTutorials").textContent = t.back;
+  document.getElementById("backFromPortfolio").textContent = t.back;
+  document.getElementById("backFromContact").textContent = t.back;
+  document.getElementById("langMain").textContent = lang.toUpperCase();
+  document.documentElement.lang = lang === "br" ? "pt-BR" : lang;
+  renderExperience();
+  renderPortfolio();
+  setupPortfolioSlides();
+  renderTutorials();
+  renderContactLinks();
+  injectSendIcons();
+  updateMessageLinks();
+  setupLazyVideos();
+  closeLangMenu();
+}
+
+function openPanel(panelName) {
+  homeCard.style.display = "none";
+  document.getElementById("portfolioStrip").style.display = "none";
+  document.body.classList.remove("index-compact");
+  Object.values(panels).forEach(panel => panel.classList.remove("active"));
+  panels[panelName].classList.add("active");
+}
+
+function backHome() {
+  Object.values(panels).forEach(panel => panel.classList.remove("active"));
+  homeCard.style.display = "grid";
+  document.getElementById("portfolioStrip").style.display = "block";
+  document.body.classList.remove("index-compact");
+}
+
+function closeLangMenu() {
+  document.getElementById("langMenu").classList.remove("show");
+}
+
+document.getElementById("langMain").addEventListener("click", e => {
+  e.stopPropagation();
+  document.getElementById("langMenu").classList.toggle("show");
+});
+
+document.querySelectorAll(".lang-menu button").forEach(button => {
+  button.addEventListener("click", e => {
+    e.stopPropagation();
+    setLanguage(button.dataset.lang);
+  });
+});
+
+document.addEventListener("click", closeLangMenu);
+
+let contrastMode = "off";
+
+function updateThemeButtons() {
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.textContent = document.body.classList.contains("dark") ? "☾" : "☀";
+}
+
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.remove("terminal-dark", "terminal-light");
+  contrastMode = "off";
+  document.body.classList.toggle("dark");
+  updateThemeButtons();
+
+
+});
+
+document.getElementById("contrastToggle").addEventListener("click", () => {
+  const isTerminalDark = document.body.classList.contains("terminal-dark");
+
+  document.body.classList.remove("terminal-dark", "terminal-light");
+
+  if (contrastMode === "off") {
+    contrastMode = document.body.classList.contains("dark") ? "terminal-dark" : "terminal-light";
+  } else if (isTerminalDark) {
+    contrastMode = "terminal-light";
+  } else {
+    contrastMode = "terminal-dark";
+  }
+
+  if (contrastMode === "terminal-dark") {
+    document.body.classList.add("terminal-dark", "dark");
+  } else {
+    document.body.classList.remove("dark");
+    document.body.classList.add("terminal-light");
+  }
+
+  updateThemeButtons();
+});
+
+document.querySelectorAll(".nav-buttons button").forEach(button => {
+  button.addEventListener("click", () => {
+    if (button.disabled) return;
+    openPanel(button.dataset.panel);
+  });
+});
+
+document.querySelectorAll(".back-btn").forEach(button => {
+  button.addEventListener("click", backHome);
+});
+
+document.getElementById("messageBox").addEventListener("input", updateMessageLinks);
+
+document.getElementById("copyMessage").addEventListener("click", async () => {
+  const t = translations[currentLang];
+  try {
+    await navigator.clipboard.writeText(document.getElementById("messageBox").value);
+    document.getElementById("copyMessage").textContent = t.copied;
+    setTimeout(() => document.getElementById("copyMessage").textContent = t.copy, 1200);
+  } catch (e) {
+    document.getElementById("messageBox").select();
+    document.execCommand("copy");
+  }
+});
+
+
+/* Scroll layout changes disabled: native scroll only */
+function isHomeVisible() {
+  return homeCard && homeCard.style.display !== "none";
+}
+
+function updateCompactIndex() {
+  document.body.classList.remove("index-compact");
+}
+
+function injectSendIcons() {
+  document.getElementById("sendEmailIcon").innerHTML = contactIcon("Email");
+  document.getElementById("sendWhatsappIcon").innerHTML = contactIcon("WhatsApp");
+  document.getElementById("sendTelegramIcon").innerHTML = contactIcon("Telegram");
+}
+
+
+
+
+function setupPortfolioSlides() {
+  document.querySelectorAll(".portfolio-slideshow").forEach(slideshow => {
+    const img = slideshow.querySelector(".portfolio-slide");
+    if (!img || slideshow.dataset.ready === "true") return;
+
+    let slides = [];
+    try {
+      slides = JSON.parse(decodeURIComponent(slideshow.dataset.slides || "[]"));
+    } catch (e) {
+      slides = [];
+    }
+
+    if (!slides.length) return;
+
+    slideshow.dataset.ready = "true";
+    let index = 0;
+    img.src = slides[0];
+
+    if (slides.length <= 1) return;
+
+    window.setInterval(() => {
+      index = (index + 1) % slides.length;
+      img.classList.remove("is-active");
+
+      window.setTimeout(() => {
+        img.src = slides[index];
+        img.classList.add("is-active");
+      }, 180);
+    }, 4500);
+  });
+}
+function setupLazyVideos() {
+  const videos = document.querySelectorAll("video.lazy-video");
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(video => {
+      if (!video.src && video.dataset.src) video.src = video.dataset.src;
+      video.load();
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        if (!video.src && video.dataset.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: "160px 0px",
+    threshold: 0.15
+  });
+
+  videos.forEach(video => observer.observe(video));
+}
+
+setLanguage("en");
+setupPortfolioSlides();
+setupLazyVideos();
+updateThemeButtons();
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("copyText");
+  if (el) el.textContent = `© Renan Matos TM ${new Date().getFullYear()}`;
+});
 </script>
 
 </body>
