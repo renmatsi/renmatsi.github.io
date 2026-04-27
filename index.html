@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renan Matos</title>
 
-<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000881c720e91176452e8550585%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D4dfd317a506855c8f4cd976caee96c06787d40ccc1c2c1f5348776d6f43b8af5%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_000000007a24720e9abed40c02db4921%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D3789a8fe1cc1c310f96977999ca911cee67482ab37e9d49140a4ac8a2cdae0d5%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -1925,281 +1925,6 @@ body.index-compact footer.footer-copy:hover {
   }
 }
 
-
-/* SAFE COMPACT MODE — small index nav only, no clipping */
-body.index-compact .hero {
-  place-items: start center !important;
-  align-items: start !important;
-  overflow: visible !important;
-  padding-top: 90px !important;
-}
-
-body.index-compact #homeCard {
-  display: block !important;
-  width: min(1120px, 100%) !important;
-  min-height: 0 !important;
-  padding: 16px 20px !important;
-  margin-bottom: 28px !important;
-  overflow: visible !important;
-  transform: none !important;
-  opacity: 1 !important;
-}
-
-body.index-compact #homeCard .photo-wrap,
-body.index-compact #homeCard .name,
-body.index-compact #homeCard .divider,
-body.index-compact #homeCard .desc,
-body.index-compact #homeCard .open-status {
-  display: none !important;
-}
-
-body.index-compact #homeCard .info {
-  display: block !important;
-  text-align: center !important;
-}
-
-body.index-compact #homeCard .nav-buttons {
-  display: flex !important;
-  justify-content: center !important;
-  margin-top: 0 !important;
-  gap: 12px !important;
-}
-
-/* Portfolio grid is always normal in desktop, compact and mobile */
-.portfolio-strip,
-body.index-compact .portfolio-strip {
-  display: block !important;
-  position: relative !important;
-  width: min(1120px, 100%) !important;
-  overflow: visible !important;
-  pointer-events: auto !important;
-  z-index: 2 !important;
-  padding-bottom: 90px !important;
-}
-
-.portfolio-title,
-body.index-compact .portfolio-title {
-  display: block !important;
-}
-
-.portfolio-grid,
-body.index-compact .portfolio-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-  gap: 22px !important;
-  overflow: visible !important;
-  align-items: stretch !important;
-}
-
-.portfolio-card,
-body.index-compact .portfolio-card {
-  display: block !important;
-  position: relative !important;
-  overflow: visible !important;
-  min-width: 0 !important;
-  z-index: 1;
-}
-
-.portfolio-card:hover {
-  z-index: 30;
-}
-
-.portfolio-thumb-frame {
-  overflow: hidden !important;
-}
-
-/* Avoid scroll jank from heavy scale while preserving feedback */
-.portfolio-card:hover,
-body.index-compact .portfolio-card:hover {
-  transform: translateY(-5px) scale(1.02) !important;
-}
-
-/* Hide old compact quick buttons if they exist */
-.portfolio-quick-actions,
-body.index-compact .portfolio-quick-actions {
-  display: none !important;
-}
-
-/* Mobile: keep cards in columns when there is room, otherwise one column */
-@media (max-width: 920px) {
-  body.index-compact .hero {
-    padding-top: 86px !important;
-  }
-
-  .portfolio-grid,
-  body.index-compact .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-    gap: 16px !important;
-  }
-
-  body.index-compact #homeCard {
-    padding: 14px !important;
-  }
-
-  body.index-compact #homeCard .nav-buttons {
-    flex-wrap: wrap !important;
-  }
-}
-
-
-footer.footer-copy {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  display: block !important;
-  visibility: visible !important;
-  text-align: center;
-  padding: 10px 12px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  background: color-mix(in srgb, var(--bg) 84%, transparent);
-  backdrop-filter: blur(16px);
-  opacity: .42;
-  z-index: 80;
-  transition: opacity .35s ease;
-}
-footer.footer-copy:hover { opacity: 1; }
-
-
-/* FINAL SCROLL FIX: native scrolling only, compact mode neutralized */
-html {
-  scroll-behavior: auto !important;
-}
-
-body {
-  overflow-x: hidden !important;
-}
-
-body.index-compact {
-  overflow-x: hidden !important;
-}
-
-/* Compact mode must not change layout anymore */
-body.index-compact .hero,
-.hero {
-  place-items: center !important;
-  align-items: initial !important;
-  padding-top: 90px !important;
-  overflow: visible !important;
-}
-
-body.index-compact #homeCard,
-#homeCard {
-  display: grid !important;
-  grid-template-columns: 300px 1fr !important;
-  gap: 48px !important;
-  align-items: center !important;
-  width: min(1120px, 100%) !important;
-  padding: 42px !important;
-  margin-bottom: 0 !important;
-  transform: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  overflow: hidden !important;
-}
-
-body.index-compact #homeCard .photo-wrap,
-body.index-compact #homeCard .name,
-body.index-compact #homeCard .divider,
-body.index-compact #homeCard .desc,
-body.index-compact #homeCard .open-status,
-body.index-compact #homeCard .info {
-  display: revert !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-body.index-compact #homeCard .info {
-  display: block !important;
-  text-align: left !important;
-}
-
-body.index-compact #homeCard .nav-buttons,
-#homeCard .nav-buttons {
-  display: flex !important;
-  margin-top: 34px !important;
-  justify-content: flex-start !important;
-}
-
-/* Keep portfolio grid stable, no sticky/quick compact behavior */
-.portfolio-strip,
-body.index-compact .portfolio-strip {
-  display: block !important;
-  position: relative !important;
-  bottom: auto !important;
-  width: min(1120px, 100%) !important;
-  overflow: visible !important;
-  pointer-events: auto !important;
-  padding-bottom: 70px !important;
-}
-
-.portfolio-grid,
-body.index-compact .portfolio-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-  gap: 22px !important;
-  overflow: visible !important;
-}
-
-.portfolio-quick-actions,
-body.index-compact .portfolio-quick-actions {
-  display: none !important;
-}
-
-/* Reduce scroll stutter from hover transforms and heavy animations */
-.portfolio-card:hover {
-  transform: translateY(-4px) scale(1.01) !important;
-  box-shadow: 0 12px 32px rgba(91,124,255,.10) !important;
-}
-
-.portfolio-thumb,
-.portfolio-thumb-frame .portfolio-thumb,
-.portfolio-slide {
-  animation-duration: 30s !important;
-}
-
-/* Sticky footer can cause paint/jank, make it normal footer */
-footer.footer-copy {
-  position: relative !important;
-  bottom: auto !important;
-  opacity: .65 !important;
-}
-
-/* Mobile stable layout */
-@media (max-width: 920px) {
-  body.index-compact #homeCard,
-  #homeCard {
-    grid-template-columns: 1fr !important;
-    padding: 28px !important;
-    gap: 30px !important;
-  }
-
-  body.index-compact #homeCard .info,
-  #homeCard .info {
-    text-align: center !important;
-  }
-
-  body.index-compact #homeCard .nav-buttons,
-  #homeCard .nav-buttons {
-    justify-content: center !important;
-  }
-
-  body.index-compact #homeCard .photo-wrap,
-  #homeCard .photo-wrap {
-    max-width: 280px !important;
-    margin: 0 auto !important;
-  }
-
-  .portfolio-grid,
-  body.index-compact .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-    gap: 16px !important;
-  }
-}
-
 </style>
 </head>
 
@@ -2311,7 +2036,11 @@ footer.footer-copy {
 </section>
 </main>
 
-<footer class="footer-copy"><span id="copyText"></span></footer>
+<footer class="footer-copy">
+  <span id="copyText"></span>
+</footer>
+
+
 <script>
 const translations = {
   en: {
@@ -3601,14 +3330,41 @@ document.getElementById("copyMessage").addEventListener("click", async () => {
 });
 
 
-/* Scroll layout changes disabled: native scroll only */
 function isHomeVisible() {
   return homeCard && homeCard.style.display !== "none";
 }
 
+let lastScrollY = window.scrollY;
+let __scrollTicking = false;
+
 function updateCompactIndex() {
-  document.body.classList.remove("index-compact");
+  if (!isHomeVisible()) {
+    document.body.classList.remove("index-compact");
+    lastScrollY = window.scrollY;
+    __scrollTicking = false;
+    return;
+  }
+
+  const currentY = window.scrollY;
+  const threshold = 140;
+  const scrollingDown = currentY > lastScrollY;
+
+  if (currentY > threshold && scrollingDown) {
+    document.body.classList.add("index-compact");
+  } else if (currentY < threshold || !scrollingDown) {
+    document.body.classList.remove("index-compact");
+  }
+
+  lastScrollY = currentY;
+  __scrollTicking = false;
 }
+
+window.addEventListener("scroll", () => {
+  if (!__scrollTicking) {
+    window.requestAnimationFrame(updateCompactIndex);
+    __scrollTicking = true;
+  }
+}, { passive: true });
 
 function injectSendIcons() {
   document.getElementById("sendEmailIcon").innerHTML = contactIcon("Email");
@@ -3660,11 +3416,10 @@ setLanguage("en");
 setupLazyVideos();
 updateThemeButtons();
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
+  const year = new Date().getFullYear();
   const el = document.getElementById("copyText");
-  if (el) el.textContent = `© Renan Matos TM ${new Date().getFullYear()}`;
+  if (el) el.textContent = `© Renan Matos TM ${year}`;
 });
 </script>
 
