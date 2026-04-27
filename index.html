@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renan Matos</title>
 
-<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000b67c720ea141757a6d9582aa%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D2b3d2ec0e3517259f735e90d1bf1674c7828057dd642363907c53b97a8fac5c9%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000881c720e91176452e8550585%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D4dfd317a506855c8f4cd976caee96c06787d40ccc1c2c1f5348776d6f43b8af5%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -2200,284 +2200,6 @@ footer.footer-copy {
   }
 }
 
-
-/* Compact mode fully neutralized: same layout as normal */
-body.index-compact #homeCard,
-#homeCard {
-  display: grid !important;
-  grid-template-columns: 300px 1fr !important;
-  gap: 48px !important;
-  align-items: center !important;
-  width: min(1120px, 100%) !important;
-  padding: 42px !important;
-  border-radius: 42px !important;
-  transform: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-body.index-compact #homeCard .photo-wrap,
-body.index-compact #homeCard .name,
-body.index-compact #homeCard .divider,
-body.index-compact #homeCard .desc,
-body.index-compact #homeCard .open-status,
-body.index-compact #homeCard .info {
-  display: revert !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-body.index-compact #homeCard .info,
-#homeCard .info {
-  display: block !important;
-  text-align: left !important;
-}
-
-body.index-compact #homeCard .nav-buttons,
-#homeCard .nav-buttons {
-  display: flex !important;
-  justify-content: flex-start !important;
-  margin-top: 34px !important;
-}
-
-body.index-compact .hero,
-.hero {
-  place-items: center !important;
-  overflow: visible !important;
-}
-
-.portfolio-grid,
-body.index-compact .portfolio-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-  gap: 22px !important;
-  overflow: visible !important;
-}
-
-.portfolio-strip,
-body.index-compact .portfolio-strip {
-  display: block !important;
-  position: relative !important;
-  width: min(1120px, 100%) !important;
-  overflow: visible !important;
-}
-
-body.index-compact .portfolio-quick-actions {
-  display: none !important;
-}
-
-@media (max-width: 920px) {
-  body.index-compact #homeCard,
-  #homeCard {
-    grid-template-columns: 1fr !important;
-    padding: 28px !important;
-    gap: 30px !important;
-  }
-
-  body.index-compact #homeCard .info,
-  #homeCard .info {
-    text-align: center !important;
-  }
-
-  body.index-compact #homeCard .nav-buttons,
-  #homeCard .nav-buttons {
-    justify-content: center !important;
-  }
-
-  body.index-compact #homeCard .photo-wrap,
-  #homeCard .photo-wrap {
-    max-width: 280px !important;
-    margin: 0 auto !important;
-  }
-
-  .portfolio-grid,
-  body.index-compact .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-  }
-}
-
-
-/* FINAL slideshow fix: one image visible at a time, no gray gaps */
-.portfolio-slideshow {
-  position: relative !important;
-  overflow: hidden !important;
-  background: rgba(0,0,0,.18) !important;
-}
-
-.portfolio-slideshow .portfolio-slide {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 112% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  opacity: 0 !important;
-  border: 0 !important;
-  transform: translateX(0) scale(1.04) !important;
-  animation-name: cleanPortfolioSlide !important;
-  animation-duration: 15s !important;
-  animation-timing-function: ease-in-out !important;
-  animation-iteration-count: infinite !important;
-  animation-fill-mode: both !important;
-}
-
-.portfolio-slideshow .portfolio-slide:nth-child(1) {
-  animation-delay: 0s !important;
-}
-
-.portfolio-slideshow .portfolio-slide:nth-child(2) {
-  animation-delay: 5s !important;
-}
-
-.portfolio-slideshow .portfolio-slide:nth-child(3) {
-  animation-delay: 10s !important;
-}
-
-.portfolio-slideshow .portfolio-slide:nth-child(n+4) {
-  display: none !important;
-}
-
-@keyframes cleanPortfolioSlide {
-  0% {
-    opacity: 0;
-    transform: translateX(0) scale(1.04);
-  }
-  4% {
-    opacity: 1;
-  }
-  29% {
-    opacity: 1;
-    transform: translateX(-8%) scale(1.04);
-  }
-  33% {
-    opacity: 0;
-    transform: translateX(-10%) scale(1.04);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-10%) scale(1.04);
-  }
-}
-
-/* Two-slide thumbs like Bob: use half-cycle timing */
-.portfolio-slideshow .portfolio-slide:nth-child(only-child) {
-  opacity: 1 !important;
-  animation: none !important;
-}
-
-/* Ensure first frame is visible immediately before animation paints */
-.portfolio-slideshow .portfolio-slide:first-child {
-  opacity: 1;
-}
-
-
-/* JS-controlled slideshow recovery */
-.portfolio-slideshow {
-  position: relative !important;
-  overflow: hidden !important;
-  background: rgba(0,0,0,.18) !important;
-}
-
-.portfolio-slideshow .portfolio-slide {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 112% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border: 0 !important;
-  opacity: 0 !important;
-  display: block !important;
-  animation: none !important;
-  transform: translateX(0) scale(1.04) !important;
-  transition: opacity .45s ease, transform 8s ease-in-out !important;
-}
-
-.portfolio-slideshow .portfolio-slide.is-active {
-  opacity: 1 !important;
-  transform: translateX(-8%) scale(1.04) !important;
-  z-index: 2;
-}
-
-.portfolio-slideshow .portfolio-slide:first-child {
-  opacity: 1 !important;
-  z-index: 1;
-}
-
-
-/* Hard containment for slideshow thumbnails */
-.portfolio-card {
-  overflow: hidden !important;
-  isolation: isolate !important;
-}
-
-.portfolio-thumb-frame,
-.portfolio-slideshow {
-  position: relative !important;
-  width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
-  overflow: hidden !important;
-  border-radius: 18px !important;
-  contain: paint !important;
-  z-index: 0 !important;
-}
-
-.portfolio-slideshow .portfolio-slide {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  object-fit: cover !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  opacity: 0 !important;
-  display: block !important;
-  animation: none !important;
-  transform: scale(1.04) !important;
-  transition: opacity .45s ease, transform 5s ease-in-out !important;
-  pointer-events: none !important;
-}
-
-.portfolio-slideshow .portfolio-slide.is-active {
-  opacity: 1 !important;
-  transform: translateX(-4%) scale(1.04) !important;
-  z-index: 2 !important;
-}
-
-.portfolio-slideshow .portfolio-slide:first-child {
-  opacity: 1;
-}
-
-.portfolio-card:hover {
-  overflow: hidden !important;
-}
-
-
-/* Single-image slideshow: no stacking/overlap */
-.portfolio-slideshow {
-  position: relative !important;
-  overflow: hidden !important;
-  contain: paint !important;
-}
-
-.portfolio-slideshow .portfolio-slide {
-  position: relative !important;
-  inset: auto !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-  opacity: 0 !important;
-  animation: none !important;
-  transform: scale(1.04) !important;
-  transition: opacity .35s ease, transform 4.5s ease-in-out !important;
-  z-index: 1 !important;
-}
-
-.portfolio-slideshow .portfolio-slide.is-active {
-  opacity: 1 !important;
-  transform: translateX(-4%) scale(1.04) !important;
-}
-
 </style>
 </head>
 
@@ -3493,8 +3215,7 @@ function renderPortfolioThumb(item) {
   }
 
   if (item.slides && item.slides.length) {
-    const encodedSlides = encodeURIComponent(JSON.stringify(item.slides));
-    return `<div class="portfolio-thumb-frame portfolio-slideshow" data-slides="${encodedSlides}"><img class="portfolio-slide is-active" src="${item.slides[0]}" alt="${item.title} slide" loading="lazy" decoding="async"></div>`;
+    return `<div class="portfolio-thumb-frame portfolio-slideshow">${item.slides.map((src, index) => `<img class="portfolio-slide ${index === 0 ? "active" : ""}" src="${src}" alt="${item.title} slide ${index + 1}" loading="lazy" decoding="async">`).join("")}</div>`;
   }
 
   if (item.image) {
@@ -3774,7 +3495,6 @@ function setLanguage(lang) {
   document.documentElement.lang = lang === "br" ? "pt-BR" : lang;
   renderExperience();
   renderPortfolio();
-  setupPortfolioSlides();
   renderTutorials();
   renderContactLinks();
   injectSendIcons();
@@ -3898,38 +3618,6 @@ function injectSendIcons() {
 
 
 
-
-function setupPortfolioSlides() {
-  document.querySelectorAll(".portfolio-slideshow").forEach(slideshow => {
-    const img = slideshow.querySelector(".portfolio-slide");
-    if (!img || slideshow.dataset.ready === "true") return;
-
-    let slides = [];
-    try {
-      slides = JSON.parse(decodeURIComponent(slideshow.dataset.slides || "[]"));
-    } catch (e) {
-      slides = [];
-    }
-
-    if (!slides.length) return;
-
-    slideshow.dataset.ready = "true";
-    let index = 0;
-    img.src = slides[0];
-
-    if (slides.length <= 1) return;
-
-    window.setInterval(() => {
-      index = (index + 1) % slides.length;
-      img.classList.remove("is-active");
-
-      window.setTimeout(() => {
-        img.src = slides[index];
-        img.classList.add("is-active");
-      }, 180);
-    }, 4500);
-  });
-}
 function setupLazyVideos() {
   const videos = document.querySelectorAll("video.lazy-video");
 
@@ -3969,7 +3657,6 @@ function setupLazyVideos() {
 }
 
 setLanguage("en");
-setupPortfolioSlides();
 setupLazyVideos();
 updateThemeButtons();
 
