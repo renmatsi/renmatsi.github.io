@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renan Matos</title>
 
-<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_000000007a24720e9abed40c02db4921%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D3789a8fe1cc1c310f96977999ca911cee67482ab37e9d49140a4ac8a2cdae0d5%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000a74c71f5b13d525160757cdb%26ts%3D493690%26p%3Dfs%26cid%3D1%26sig%3D0d44b02cd23fa05df082bcdf66cf4e8dbe0d7259ddd514e7a4c49c9e8d9f52b0%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777286225362&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -1824,107 +1824,6 @@ body.index-compact .portfolio-quick-actions {
   }
 }
 
-
-/* Footer copyright */
-.footer-copy {
-  width: min(1120px, 100%);
-  text-align: center;
-  padding: 32px 12px 48px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  opacity: .65;
-  border-top: 1px solid var(--border);
-  backdrop-filter: blur(10px);
-  transition: opacity .3s ease;
-  margin-top: 26px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.footer-copy:hover {
-  opacity: 1;
-}
-
-/* Smooth non-destructive index compact behavior */
-#homeCard {
-  transition:
-    transform .45s cubic-bezier(.22,1,.36,1),
-    opacity .35s ease,
-    padding .35s ease,
-    margin .35s ease;
-}
-
-body.index-compact #homeCard {
-  display: block !important;
-  visibility: visible !important;
-  transform: translateY(-6px) scale(.985);
-  opacity: .94;
-}
-
-body.index-compact #homeCard .nav-buttons {
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-body.index-compact #homeCard .info {
-  display: block !important;
-}
-
-body.index-compact #homeCard .photo-wrap,
-body.index-compact #homeCard .name,
-body.index-compact #homeCard .divider,
-body.index-compact #homeCard .desc,
-body.index-compact #homeCard .open-status {
-  display: none !important;
-}
-
-body.index-compact .hero {
-  place-items: start center;
-}
-
-
-/* Sticky copyright footer */
-footer.footer-copy {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: block !important;
-  visibility: visible !important;
-  text-align: center;
-  padding: 12px 14px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: blur(18px);
-  opacity: .42;
-  z-index: 80;
-  transition: opacity .35s ease, transform .35s ease;
-}
-
-footer.footer-copy:hover {
-  opacity: 1;
-}
-
-body.index-compact footer.footer-copy {
-  opacity: .28;
-}
-
-body.index-compact footer.footer-copy:hover {
-  opacity: 1;
-}
-
-@media (max-width: 920px) {
-  footer.footer-copy {
-    font-size: 10px;
-    padding: 10px 8px;
-  }
-}
-
 </style>
 </head>
 
@@ -2034,11 +1933,8 @@ body.index-compact footer.footer-copy:hover {
   </div>
   <div class="panel-actions"><button class="back-btn" id="backFromContact"></button></div>
 </section>
-</main>
 
-<footer class="footer-copy">
-  <span id="copyText"></span>
-</footer>
+</main>
 
 
 <script>
@@ -3277,8 +3173,6 @@ document.getElementById("themeToggle").addEventListener("click", () => {
   contrastMode = "off";
   document.body.classList.toggle("dark");
   updateThemeButtons();
-
-
 });
 
 document.getElementById("contrastToggle").addEventListener("click", () => {
@@ -3334,34 +3228,18 @@ function isHomeVisible() {
   return homeCard && homeCard.style.display !== "none";
 }
 
-let lastScrollY = window.scrollY;
-let __scrollTicking = false;
-
 function updateCompactIndex() {
-  if (!isHomeVisible()) {
-    document.body.classList.remove("index-compact");
-    lastScrollY = window.scrollY;
-    __scrollTicking = false;
-    return;
-  }
-
-  const currentY = window.scrollY;
-  const threshold = 140;
-  const scrollingDown = currentY > lastScrollY;
-
-  if (currentY > threshold && scrollingDown) {
-    document.body.classList.add("index-compact");
-  } else if (currentY < threshold || !scrollingDown) {
-    document.body.classList.remove("index-compact");
-  }
-
-  lastScrollY = currentY;
-  __scrollTicking = false;
+  const shouldCompact = window.scrollY > 120 && isHomeVisible();
+  document.body.classList.toggle("index-compact", shouldCompact);
 }
 
+let __scrollTicking = false;
 window.addEventListener("scroll", () => {
   if (!__scrollTicking) {
-    window.requestAnimationFrame(updateCompactIndex);
+    window.requestAnimationFrame(() => {
+      updateCompactIndex();
+      __scrollTicking = false;
+    });
     __scrollTicking = true;
   }
 }, { passive: true });
@@ -3415,12 +3293,6 @@ function setupLazyVideos() {
 setLanguage("en");
 setupLazyVideos();
 updateThemeButtons();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const year = new Date().getFullYear();
-  const el = document.getElementById("copyText");
-  if (el) el.textContent = `© Renan Matos TM ${year}`;
-});
 </script>
 
 </body>
