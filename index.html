@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renan Matos</title>
 
-<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777262021961&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000421071f5b4556e07a6110b96%26ts%3D493689%26p%3Dfs%26cid%3D1%26sig%3Dcaa402a01ffbf467a3a9a69f3a7f13803e08981270657bde1adf9b3ea423a5d6%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777262021961&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777262021961&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000a74c71f5b13d525160757cdb%26ts%3D493689%26p%3Dfs%26cid%3D1%26sig%3D885b864c6fee39df2de8a13dbcadab3fd47307ec55b700c403bc9eba1c71ec60%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777262021961&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -750,6 +750,7 @@ body.index-compact #homeCard {
   width: min(1120px, 100%);
   padding: 18px 24px;
   display: block !important;
+  overflow: visible !important;
   transition: padding .35s ease, transform .35s ease, opacity .35s ease;
 }
 
@@ -1702,6 +1703,127 @@ body.index-compact #homeCard .nav-buttons {
   100% { transform: translateY(-19.35%) scale(1.03); }
 }
 
+
+/* Compact view fix: do not clip portfolio cards */
+body.index-compact .hero {
+  overflow: visible !important;
+}
+
+body.index-compact #homeCard {
+  overflow: visible !important;
+  margin-bottom: 28px;
+}
+
+body.index-compact .portfolio-strip {
+  overflow: visible !important;
+  padding-bottom: 90px;
+}
+
+body.index-compact .portfolio-grid {
+  overflow: visible !important;
+  align-items: stretch;
+}
+
+body.index-compact .portfolio-card {
+  overflow: visible;
+  contain: none;
+}
+
+body.index-compact .portfolio-thumb-frame {
+  overflow: hidden;
+}
+
+.portfolio-strip,
+.portfolio-grid {
+  overflow: visible;
+}
+
+.portfolio-card {
+  isolation: isolate;
+}
+
+.portfolio-card:hover {
+  z-index: 30;
+}
+
+
+/* Strong compact/mobile portfolio grid fix */
+.hero,
+.portfolio-strip,
+.portfolio-grid,
+.main-card,
+.panel-card {
+  overflow: visible !important;
+}
+
+.portfolio-strip {
+  width: min(1120px, 100%) !important;
+  margin-top: 20px;
+  padding-bottom: 90px;
+}
+
+.portfolio-grid,
+body.index-compact .portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 20px !important;
+  overflow: visible !important;
+  align-items: stretch !important;
+}
+
+.portfolio-card,
+body.index-compact .portfolio-card {
+  position: relative !important;
+  z-index: 1;
+  overflow: visible !important;
+  min-width: 0;
+}
+
+.portfolio-card:hover,
+body.index-compact .portfolio-card:hover {
+  z-index: 50;
+  transform: translateY(-7px) scale(1.035);
+}
+
+.portfolio-thumb-frame {
+  overflow: hidden !important;
+}
+
+body.index-compact #homeCard {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 24px;
+  overflow: visible !important;
+}
+
+body.index-compact .portfolio-strip {
+  display: block !important;
+  position: relative !important;
+  bottom: auto !important;
+  z-index: 2;
+  pointer-events: auto !important;
+}
+
+body.index-compact .portfolio-title {
+  display: block !important;
+}
+
+body.index-compact .portfolio-quick-actions {
+  display: none !important;
+}
+
+@media (max-width: 920px) {
+  .portfolio-grid,
+  body.index-compact .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .portfolio-strip {
+    width: 100% !important;
+  }
+}
+
 </style>
 </head>
 
@@ -1725,7 +1847,7 @@ body.index-compact #homeCard .nav-buttons {
 
 <section class="main-card" id="homeCard">
   <div class="photo-wrap">
-    <img class="photo" src="https://cdn.jsdelivr.net/gh/renmatsi/renmatsi.github.io/profile01.jpeg" alt="Renan Matos">
+    <img class="photo" src="https://cdn.jsdelivr.net/gh/renmatsi/renmatsi.github.io/profile01.jpeg" alt="Renan Matos" decoding="async">
     <div class="open-status">
       <span class="open-dot"></span>
       <span id="openToWorkText">OPEN TO WORK</span>
@@ -1761,7 +1883,7 @@ body.index-compact #homeCard .nav-buttons {
   <h2 class="panel-title" id="skillsTitle"></h2>
   <div class="panel-grid">
     <div class="skill-columns" id="skillsContent"></div>
-    <img class="panel-image" src="https://cdn.jsdelivr.net/gh/renmatsi/renmatsi.github.io/sft.png" alt="Software proficiency">
+    <img class="panel-image" src="https://cdn.jsdelivr.net/gh/renmatsi/renmatsi.github.io/sft.png" alt="Software proficiency" loading="lazy" decoding="async">
   </div>
   <div class="panel-actions"><button class="back-btn" id="backFromSkills"></button></div>
 </section>
@@ -2708,22 +2830,22 @@ function isVideoMedia(src) {
 
 function renderPortfolioThumb(item) {
   if (item.video) {
-    return `<div class="portfolio-thumb-frame"><video class="portfolio-thumb" src="${item.video}" autoplay muted loop playsinline preload="metadata"></video></div>`;
+    return `<div class="portfolio-thumb-frame"><video class="portfolio-thumb lazy-video" data-src="${item.video}" muted loop playsinline preload="none"></video></div>`;
   }
 
   if (item.thumbComposite && item.gallery && item.gallery.length) {
     const bg = item.gallery[item.gallery.length - 1];
     const face = item.gallery[0];
-    return `<div class="portfolio-thumb-frame cody-thumb"><img src="${bg}" class="cody-bg" alt=""><img src="${face}" class="cody-face" alt="${item.title}"></div>`;
+    return `<div class="portfolio-thumb-frame cody-thumb"><img src="${bg}" class="cody-bg" alt="" loading="lazy" decoding="async"><img src="${face}" class="cody-face" alt="${item.title}" loading="lazy" decoding="async"></div>`;
   }
 
   if (item.slides && item.slides.length) {
-    return `<div class="portfolio-thumb-frame portfolio-slideshow">${item.slides.map((src, index) => `<img class="portfolio-slide ${index === 0 ? "active" : ""}" src="${src}" alt="${item.title} slide ${index + 1}">`).join("")}</div>`;
+    return `<div class="portfolio-thumb-frame portfolio-slideshow">${item.slides.map((src, index) => `<img class="portfolio-slide ${index === 0 ? "active" : ""}" src="${src}" alt="${item.title} slide ${index + 1}" loading="lazy" decoding="async">`).join("")}</div>`;
   }
 
   if (item.image) {
     const panClass = item.thumbPan === "vertical" ? " thumb-pan-vertical" : "";
-    return `<div class="portfolio-thumb-frame${panClass}"><img class="portfolio-thumb" src="${item.image}" alt="${item.title}"></div>`;
+    return `<div class="portfolio-thumb-frame${panClass}"><img class="portfolio-thumb" src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"></div>`;
   }
 
   return `<div class="portfolio-placeholder">IMAGE</div>`;
@@ -2731,11 +2853,11 @@ function renderPortfolioThumb(item) {
 
 function renderDetailMainMedia(item) {
   if (item.video) {
-    return `<video src="${item.video}" autoplay muted loop playsinline controls preload="metadata"></video>`;
+    return `<video class="lazy-video" data-src="${item.video}" muted loop playsinline controls preload="none"></video>`;
   }
 
   if (item.image) {
-    return `<a class="portfolio-image-link" href="${item.image}" target="_blank" rel="noopener"><img src="${item.image}" alt="${item.title}"></a>`;
+    return `<a class="portfolio-image-link" href="${item.image}" target="_blank" rel="noopener"><img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"></a>`;
   }
 
   return `<div class="portfolio-placeholder">IMAGE</div>`;
@@ -2743,10 +2865,10 @@ function renderDetailMainMedia(item) {
 
 function renderGalleryMedia(src, title) {
   if (isVideoMedia(src)) {
-    return `<video src="${src}" autoplay muted loop playsinline controls preload="metadata"></video>`;
+    return `<video class="lazy-video" data-src="${src}" muted loop playsinline controls preload="none"></video>`;
   }
 
-  return `<a class="portfolio-image-link" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${title}"></a>`;
+  return `<a class="portfolio-image-link" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${title}" loading="lazy" decoding="async"></a>`;
 }
 
 
@@ -2872,6 +2994,7 @@ function openPortfolioItem(index) {
     </div>
   `;
   openPanel("portfolio");
+  setupLazyVideos();
   initFake3DViewers();
 }
 
@@ -3001,6 +3124,7 @@ function setLanguage(lang) {
   renderContactLinks();
   injectSendIcons();
   updateMessageLinks();
+  setupLazyVideos();
   closeLangMenu();
 }
 
@@ -3127,7 +3251,47 @@ function injectSendIcons() {
 }
 
 
+
+function setupLazyVideos() {
+  const videos = document.querySelectorAll("video.lazy-video");
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(video => {
+      if (!video.src && video.dataset.src) video.src = video.dataset.src;
+      video.load();
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        if (!video.src && video.dataset.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: "160px 0px",
+    threshold: 0.15
+  });
+
+  videos.forEach(video => observer.observe(video));
+}
+
 setLanguage("en");
+setupLazyVideos();
 updateThemeButtons();
 </script>
 
