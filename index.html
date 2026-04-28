@@ -1972,7 +1972,7 @@ body {
 }
 
 </style>
-<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777393971321&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000d13c71f5a014b1f75029b193%26ts%3D493720%26p%3Dfs%26cid%3D1%26sig%3Df1555cb92e2b4476e49cb6c5cf86b720449f4e6c6c19dc64df92ce1714b3518a%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777393971321&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script></head>
+<script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777393971321&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000b6c071fb9698d97379bd765a%26ts%3D493721%26p%3Dfs%26cid%3D1%26sig%3Df8205ffab9b02c8fe3fd12a72ed7c059350ddb5b9f585ec6c6f96ac14356168a%26v%3D0&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="0141cd3cc3a14f35b56ccb87728" src="//local.adguard.org?ts=1777393971321&amp;name=AdGuard%20Extra%20%28Beta%29&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;type=user-script"></script></head>
 
 <body class="dark">
 
@@ -3400,6 +3400,159 @@ updateThemeButtons();
   window.addEventListener("load", keepNaturalScroll, { passive: true });
   window.addEventListener("resize", keepNaturalScroll, { passive: true });
   window.addEventListener("scroll", keepNaturalScroll, { passive: true });
+})();
+</script>
+
+
+
+<style id="portfolio-click-hotfix">
+  #portfolioContent,
+  #portfolioContent .portfolio-card,
+  #portfolioContent .portfolio-card * {
+    pointer-events: auto !important;
+  }
+
+  #portfolioContent .portfolio-card {
+    cursor: pointer !important;
+    touch-action: manipulation;
+  }
+</style>
+
+<script id="portfolio-click-hotfix-script">
+/* Robust portfolio opening: fixes cases where CSS/layout patches remove or block card listeners. */
+(function () {
+  function getPortfolioIndexFromEvent(event) {
+    var card = event.target && event.target.closest ? event.target.closest('#portfolioContent .portfolio-card') : null;
+    if (!card) return null;
+    var value = card.getAttribute('data-portfolio');
+    var index = Number(value);
+    return Number.isFinite(index) ? index : null;
+  }
+
+  function openFromEvent(event) {
+    var index = getPortfolioIndexFromEvent(event);
+    if (index === null) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (typeof window.openPortfolioItem === 'function') {
+      window.openPortfolioItem(index);
+    }
+  }
+
+  document.addEventListener('click', openFromEvent, true);
+  document.addEventListener('keydown', function (event) {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    var index = getPortfolioIndexFromEvent(event);
+    if (index === null) return;
+    openFromEvent(event);
+  }, true);
+
+  function improveAccessibility() {
+    document.querySelectorAll('#portfolioContent .portfolio-card').forEach(function (card) {
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', improveAccessibility);
+  window.addEventListener('load', improveAccessibility);
+  var originalRender = window.renderPortfolio;
+  if (typeof originalRender === 'function') {
+    window.renderPortfolio = function () {
+      originalRender.apply(this, arguments);
+      improveAccessibility();
+    };
+  }
+})();
+</script>
+
+
+<style id="portfolio-detail-overlay-fix">
+body.panel-open #homeCard,
+body.panel-open #portfolioStrip {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+body.panel-open .hero {
+  display: block !important;
+  min-height: auto !important;
+  padding-top: 90px !important;
+}
+body.panel-open .panel-card {
+  display: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+body.panel-open .panel-card.active {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+body.panel-open #portfolioPanel.active {
+  width: min(1380px, 100%) !important;
+}
+@media (max-width: 920px) {
+  body.panel-open .hero { padding: 74px 12px 80px !important; }
+  body.panel-open #portfolioPanel.active { width: 100% !important; }
+}
+</style>
+
+<script id="portfolio-detail-overlay-fix-script">
+(function () {
+  function forcePanelOpen(panelName) {
+    var home = document.getElementById('homeCard');
+    var strip = document.getElementById('portfolioStrip');
+    document.body.classList.add('panel-open');
+    document.body.classList.remove('index-compact');
+    if (home) home.style.setProperty('display', 'none', 'important');
+    if (strip) strip.style.setProperty('display', 'none', 'important');
+    document.querySelectorAll('.panel-card').forEach(function (panel) {
+      panel.classList.remove('active');
+      panel.style.setProperty('display', 'none', 'important');
+    });
+    var target = document.getElementById(panelName + 'Panel');
+    if (target) {
+      target.classList.add('active');
+      target.style.setProperty('display', 'block', 'important');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function forceBackHome() {
+    var home = document.getElementById('homeCard');
+    var strip = document.getElementById('portfolioStrip');
+    document.body.classList.remove('panel-open');
+    document.body.classList.remove('index-compact');
+    document.querySelectorAll('.panel-card').forEach(function (panel) {
+      panel.classList.remove('active');
+      panel.style.setProperty('display', 'none', 'important');
+    });
+    if (home) home.style.setProperty('display', 'grid', 'important');
+    if (strip) strip.style.setProperty('display', 'block', 'important');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.openPanel = forcePanelOpen;
+  window.backHome = forceBackHome;
+
+  document.addEventListener('click', function (event) {
+    var navButton = event.target && event.target.closest ? event.target.closest('.nav-buttons button[data-panel]') : null;
+    if (navButton && !navButton.disabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      forcePanelOpen(navButton.getAttribute('data-panel'));
+      return;
+    }
+    var backButton = event.target && event.target.closest ? event.target.closest('.back-btn') : null;
+    if (backButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      forceBackHome();
+    }
+  }, true);
 })();
 </script>
 
