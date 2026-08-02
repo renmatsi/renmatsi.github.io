@@ -349,7 +349,23 @@
         layout: "wide",
         cover: "assets/work/revolver/turnaround.webp",
         main: image("assets/work/revolver/turnaround.webp", "Multi-angle presentation of a realistic revolver asset", "Apresentação em múltiplos ângulos de um revólver realista"),
-        facts: importedFacts("Independent hard-surface weapon asset", "Asset independente de arma hard-surface", "Multi-angle presentation", "Apresentação em múltiplos ângulos"),
+        facts: {
+          en: [
+            { key: "source", label: "Archive source", value: "Existing local portfolio archive" },
+            { key: "type", label: "Project type", value: "Independent hard-surface weapon asset" },
+            { key: "evidence", label: "Evidence shown", value: "Multi-angle presentation" }
+          ],
+          pt: [
+            { key: "source", label: "Fonte do acervo", value: "Acervo local existente do portfólio" },
+            { key: "type", label: "Tipo de projeto", value: "Asset independente de arma hard-surface" },
+            { key: "evidence", label: "Evidências mostradas", value: "Apresentação em múltiplos ângulos" }
+          ],
+          es: [
+            { key: "source", label: "Fuente del archivo", value: "Archivo local existente del portafolio" },
+            { key: "type", label: "Tipo de proyecto", value: "Asset independiente de arma hard-surface" },
+            { key: "evidence", label: "Evidencias mostradas", value: "Presentación desde múltiples ángulos" }
+          ]
+        },
         category: localized("Hard-surface weapon", "Arma hard-surface", "Arma hard-surface"),
         copy: copy("Revolver", localized("An independent hard-surface revolver asset presented from multiple production angles.", "Asset independente de revólver hard-surface apresentado por vários ângulos de produção.", "Asset independiente de revólver hard-surface presentado desde varios ángulos de producción."), localized(["Hard Surface", "Weapon", "Asset"], ["Hard Surface", "Arma", "Asset"], ["Hard Surface", "Arma", "Asset"]))
       },
