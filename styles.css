@@ -1057,7 +1057,7 @@ a { color: inherit; }
 .project-facts dt { margin-bottom: 8px; color: var(--accent); font-size: 8px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 .project-facts dd { margin: 0; color: var(--white); font-size: 12px; line-height: 1.55; }
 
-.case-study { display: grid; gap: clamp(72px, 10vw, 150px); margin-top: clamp(72px, 10vw, 150px); }
+.case-content { display: grid; gap: clamp(72px, 10vw, 150px); margin-top: clamp(72px, 10vw, 150px); }
 .case-section { display: grid; gap: 26px; }
 .case-section-header { display: grid; grid-template-columns: minmax(120px, 0.32fr) minmax(280px, 1fr); gap: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
 .case-section-header > p { margin: 0; color: var(--accent); font-size: 8px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }

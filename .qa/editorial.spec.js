@@ -12,13 +12,13 @@ test('homepage opens directly on the art catalog', async ({ page }) => {
   await expect(page.locator('.hero')).toHaveCount(0);
   const firstFeaturedBox = await page.locator('#projectsGrid .project-card').first().boundingBox();
   expect(firstFeaturedBox.y).toBeLessThan(600);
-  await expect(page.locator('[data-project="male-character"] img')).toHaveAttribute('src', 'assets/work/male-character/portrait.webp');
+  await expect(page.locator('[data-project="male-character"] img')).toHaveAttribute('src', 'assets/work/male-character/canva-cover.webp');
 });
 
 test('homepage presents one ordered art catalog without visible classifications', async ({ page }) => {
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
 
-  await expect(page.locator('#projectsGrid .project-card')).toHaveCount(6);
+  await expect(page.locator('#projectsGrid .project-card')).toHaveCount(16);
   await expect(page.locator('.portfolio-group-heading')).toHaveCount(0);
   await expect(page.locator('#archiveDisclosure')).toHaveCount(0);
 
@@ -26,10 +26,20 @@ test('homepage presents one ordered art catalog without visible classifications'
   expect(visibleProjectIds).toEqual([
     'male-character',
     'priestess',
+    'tactical-operative',
+    'nordic-warrior',
     'trial-xtreme-freedom',
+    'tiny-hero',
+    'stone-age-family',
+    'pirate-ship',
+    'stylized-armory',
+    'revolver',
     'ranay',
     'pantufa',
-    'tiny-hero'
+    'athletic-girl',
+    'neon-sentinel',
+    'realistic-portraits',
+    'hooded-wanderer'
   ]);
 });
 
@@ -40,7 +50,7 @@ test('featured case exposes contribution and a deliberate visual narrative', asy
   const dialog = page.locator('#projectDialog');
   await expect(dialog).toBeVisible();
   await expect(dialog.locator('[data-fact="contribution"]')).toContainText('Character creation');
-  await expect(dialog.locator('[data-fact="context"]')).toContainText('Personal');
+  await expect(dialog.locator('[data-fact="context"]')).toContainText('Character artwork');
 
   const surfaceRadii = await dialog.locator('.dialog-main-media, .project-facts, .case-media').evaluateAll(elements =>
     elements.map(element => getComputedStyle(element).borderTopLeftRadius)
@@ -54,18 +64,18 @@ test('featured case exposes contribution and a deliberate visual narrative', asy
   await expect(dialog.locator('.case-section')).toHaveCount(4);
   await expect(dialog.locator('.case-section h3')).toHaveText([
     'Final character',
-    'Anatomy & surface',
-    'Wardrobe & materials',
-    'Prop study'
+    'Wardrobe',
+    'Boot construction',
+    'Anatomy & surface'
   ]);
 
   const altText = await dialog.locator('.case-media img').evaluateAll(images => images.map(image => image.alt));
-  expect(altText.length).toBeGreaterThanOrEqual(8);
-  expect(altText.length).toBeLessThanOrEqual(10);
+  expect(altText.length).toBe(13);
   expect(altText.every(Boolean)).toBe(true);
+  await expect(dialog.getByText('Prop study', { exact: true })).toHaveCount(0);
 });
 
-test('production case groups four characters and states authorship boundaries', async ({ page }) => {
+test('production case groups the complete rider lineup and states authorship boundaries', async ({ page }) => {
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
 
   const card = page.locator('[data-project="trial-xtreme-freedom"]');
@@ -76,13 +86,44 @@ test('production case groups four characters and states authorship boundaries', 
   await expect(dialog.locator('[data-fact="contribution"]')).toContainText('Selected character work');
   await expect(dialog.locator('[data-fact="context"]')).toContainText('Trial Xtreme Freedom');
   await expect(dialog.locator('[data-fact="boundaries"]')).toContainText('No claim');
-  await expect(dialog.locator('.case-section h3')).toHaveText(['Bart', 'Bob', 'Cody', 'Kayla']);
+  await expect(dialog.locator('.case-section h3')).toHaveText([
+    'Streetwear rider',
+    'Formal rider',
+    'Motocross rider',
+    'Beach rider',
+    'Athlete rider'
+  ]);
 
   const imageSources = await dialog.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')));
   expect(imageSources.some(source => source && source.includes('assets/covers/bob.webp'))).toBe(false);
   const altText = await dialog.locator('.case-media img').evaluateAll(images => images.map(image => image.alt));
-  expect(altText.length).toBe(13);
+  expect(altText.length).toBe(20);
   expect(altText.every(Boolean)).toBe(true);
+});
+
+test('stylized armory is an independent project with all weapon families', async ({ page }) => {
+  await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
+  await page.locator('[data-project="stylized-armory"]').click();
+
+  const dialog = page.locator('#projectDialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('.case-section h3')).toHaveText(['Axes', 'Shields', 'Blades']);
+  await expect(dialog.locator('[data-fact="evidence"]')).toContainText('10 axes · 5 shields · 11 blades');
+  await expect(dialog.locator('.case-media img')).toHaveCount(25);
+
+  const importedSources = await dialog.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')));
+  expect(importedSources.every(src => src.startsWith('assets/work/stylized-armory/'))).toBe(true);
+});
+
+test('revolver is published as an independent hard-surface asset', async ({ page }) => {
+  await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
+  await page.locator('[data-project="revolver"]').click();
+
+  const dialog = page.locator('#projectDialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('#dialogTitle')).toHaveText('Revolver');
+  await expect(dialog.locator('.dialog-main img')).toHaveAttribute('src', 'assets/work/revolver/turnaround.webp');
+  await expect(dialog.locator('[data-fact="type"]')).toContainText('Independent hard-surface weapon asset');
 });
 
 test('resume is machine-readable, evidence-based and downloadable', async ({ page }) => {
@@ -114,15 +155,16 @@ test('second featured project has local evidence and explicit project context', 
   const dialog = page.locator('#projectDialog');
   await expect(dialog).toBeVisible();
   await expect(dialog.locator('[data-fact="contribution"]')).toContainText('3D character artwork');
-  await expect(dialog.locator('[data-fact="context"]')).toContainText('Personal character study');
+  await expect(dialog.locator('[data-fact="context"]')).toContainText('Character artwork');
   await expect(dialog.locator('.case-section h3')).toHaveText([
+    'Feature portrait',
     'Final presentation',
     'Form and materials',
     'Topology evidence'
   ]);
 
   const sources = await dialog.locator('.case-media img').evaluateAll(images => images.map(image => image.getAttribute('src')));
-  expect(sources.length).toBe(7);
+  expect(sources.length).toBe(8);
   expect(sources.every(src => src.startsWith('assets/work/priestess/'))).toBe(true);
   const altText = await dialog.locator('.case-media img').evaluateAll(images => images.map(image => image.getAttribute('alt')?.trim()));
   expect(altText.every(Boolean)).toBe(true);
@@ -132,7 +174,7 @@ test('mobile catalog is single-column, named and free of horizontal overflow', a
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
 
-  await expect(page.locator('#projectsGrid .project-card')).toHaveCount(6);
+  await expect(page.locator('#projectsGrid .project-card')).toHaveCount(16);
   const firstCard = await page.locator('#projectsGrid .project-card').first().boundingBox();
   const secondCard = await page.locator('#projectsGrid .project-card').nth(1).boundingBox();
   expect(Math.abs(firstCard.x - secondCard.x)).toBeLessThan(2);

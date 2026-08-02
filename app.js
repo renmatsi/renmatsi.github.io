@@ -28,7 +28,7 @@ const localeData = {
       archiveKicker: "Earlier work",
       archiveTitle: "Archive",
       archiveCount: "3 projects",
-      archiveIntro: "Selected earlier studies preserved as a record of range and development. They do not define the current portfolio bar.",
+      archiveIntro: "Selected earlier artworks preserved as a record of range and development. They do not define the current portfolio bar.",
       openProject: "Open project"
     },
     about: {
@@ -87,7 +87,7 @@ const localeData = {
       archiveKicker: "Trabalhos anteriores",
       archiveTitle: "Arquivo",
       archiveCount: "3 projetos",
-      archiveIntro: "Estudos anteriores preservados como registro de alcance e evolução. Eles não definem a barra atual do portfólio.",
+      archiveIntro: "Artworks anteriores preservadas como registro de alcance e evolução. Elas não definem a barra atual do portfólio.",
       openProject: "Abrir projeto"
     },
     about: {
@@ -146,7 +146,7 @@ const localeData = {
       archiveKicker: "Trabajos anteriores",
       archiveTitle: "Archivo",
       archiveCount: "3 proyectos",
-      archiveIntro: "Estudios anteriores preservados como registro de alcance y evolución. No definen el nivel actual del portafolio.",
+      archiveIntro: "Artworks anteriores preservadas como registro de alcance y evolución. No definen el nivel actual del portafolio.",
       openProject: "Abrir proyecto"
     },
     about: {
@@ -265,18 +265,18 @@ const projects = [
     facts: {
       en: [
         { key: "contribution", label: "My contribution", value: "Character creation and presentation" },
-        { key: "context", label: "Project context", value: "Personal character study · 2026" },
-        { key: "focus", label: "Visual focus", value: "Anatomy · Grooming · Wardrobe · Materials · Props" }
+        { key: "context", label: "Project context", value: "Character artwork · 2026" },
+        { key: "focus", label: "Visual focus", value: "Anatomy · Grooming · Wardrobe · Materials" }
       ],
       pt: [
         { key: "contribution", label: "Minha contribuição", value: "Criação e apresentação do personagem" },
-        { key: "context", label: "Contexto do projeto", value: "Estudo pessoal de personagem · 2026" },
-        { key: "focus", label: "Foco visual", value: "Anatomia · Grooming · Roupa · Materiais · Props" }
+        { key: "context", label: "Contexto do projeto", value: "Artwork de personagem · 2026" },
+        { key: "focus", label: "Foco visual", value: "Anatomia · Grooming · Roupa · Materiais" }
       ],
       es: [
         { key: "contribution", label: "Mi contribución", value: "Creación y presentación del personaje" },
-        { key: "context", label: "Contexto del proyecto", value: "Estudio personal de personaje · 2026" },
-        { key: "focus", label: "Enfoque visual", value: "Anatomía · Grooming · Vestuario · Materiales · Props" }
+        { key: "context", label: "Contexto del proyecto", value: "Artwork de personaje · 2026" },
+        { key: "focus", label: "Enfoque visual", value: "Anatomía · Grooming · Vestuario · Materiales" }
       ]
     },
     sections: [
@@ -317,24 +317,13 @@ const projects = [
           { type: "image", src: "assets/work/male-character/wardrobe-back.webp", alt: { en: "Back view of the character's jacket and clothing layers", pt: "Vista posterior da jaqueta e das camadas de roupa do personagem", es: "Vista posterior de la chaqueta y las capas de ropa del personaje" } },
           { type: "image", src: "assets/work/male-character/boots.webp", alt: { en: "Close view of the character's boots and lower outfit", pt: "Vista aproximada das botas e da parte inferior da roupa", es: "Vista cercana de las botas y la parte inferior del vestuario" } }
         ]
-      },
-      {
-        id: "props",
-        copy: {
-          en: { title: "Prop study", description: "A dedicated lineup presents the associated hard-surface prop set." },
-          pt: { title: "Estudo de props", description: "Uma prancha dedicada apresenta o conjunto de props hard-surface associado ao personagem." },
-          es: { title: "Estudio de props", description: "Una lámina dedicada presenta el conjunto de props hard-surface asociado al personaje." }
-        },
-        media: [
-          { type: "image", src: "assets/work/male-character/props.webp", alt: { en: "Lineup of hard-surface props created for the character", pt: "Prancha de props hard-surface criados para o personagem", es: "Lámina de props hard-surface creados para el personaje" } }
-        ]
       }
     ],
     category: { en: "Realistic character", pt: "Personagem realista", es: "Personaje realista" },
     copy: {
-      en: { title: "Male Character", description: "A realistic character study focused on anatomy, grooming, cloth production, material definition and high-end presentation.", tags: ["Realistic", "Groom", "Marvelous Designer", "ZBrush", "Blender"] },
-      pt: { title: "Male Character", description: "Estudo de personagem realista com foco em anatomia, grooming, produção de roupas, definição de materiais e apresentação high-end.", tags: ["Realista", "Groom", "Marvelous Designer", "ZBrush", "Blender"] },
-      es: { title: "Male Character", description: "Estudio de personaje realista enfocado en anatomía, grooming, producción de ropa, definición de materiales y presentación high-end.", tags: ["Realista", "Groom", "Marvelous Designer", "ZBrush", "Blender"] }
+      en: { title: "Male Character", description: "A realistic character artwork focused on anatomy, grooming, cloth production, material definition and high-end presentation.", tags: ["Realistic", "Groom", "Marvelous Designer", "ZBrush", "Blender"] },
+      pt: { title: "Male Character", description: "Artwork de personagem realista com foco em anatomia, grooming, produção de roupas, definição de materiais e apresentação high-end.", tags: ["Realista", "Groom", "Marvelous Designer", "ZBrush", "Blender"] },
+      es: { title: "Male Character", description: "Artwork de personaje realista enfocado en anatomía, grooming, producción de ropa, definición de materiales y presentación high-end.", tags: ["Realista", "Groom", "Marvelous Designer", "ZBrush", "Blender"] }
     }
   },
   {
@@ -351,17 +340,17 @@ const projects = [
     facts: {
       en: [
         { key: "contribution", label: "My contribution", value: "3D character artwork and portfolio presentation" },
-        { key: "context", label: "Project context", value: "Personal character study · 2023" },
+        { key: "context", label: "Project context", value: "Character artwork · 2023" },
         { key: "evidence", label: "Evidence shown", value: "Final renders · material views · wireframe" }
       ],
       pt: [
         { key: "contribution", label: "Minha contribuição", value: "Arte 3D da personagem e apresentação de portfólio" },
-        { key: "context", label: "Contexto do projeto", value: "Estudo pessoal de personagem · 2023" },
+        { key: "context", label: "Contexto do projeto", value: "Artwork de personagem · 2023" },
         { key: "evidence", label: "Evidências mostradas", value: "Renders finais · vistas de materiais · wireframe" }
       ],
       es: [
         { key: "contribution", label: "Mi contribución", value: "Arte 3D del personaje y presentación de portafolio" },
-        { key: "context", label: "Contexto del proyecto", value: "Estudio personal de personaje · 2023" },
+        { key: "context", label: "Contexto del proyecto", value: "Artwork de personaje · 2023" },
         { key: "evidence", label: "Evidencias mostradas", value: "Renders finales · vistas de materiales · wireframe" }
       ]
     },
@@ -405,11 +394,11 @@ const projects = [
       }
     ],
     external: { url: "https://www.artstation.com/artwork/o2avxk", type: "artstation" },
-    category: { en: "Realistic character · Personal work", pt: "Personagem realista · Trabalho pessoal", es: "Personaje realista · Trabajo personal" },
+    category: { en: "Realistic character", pt: "Personagem realista", es: "Personaje realista" },
     copy: {
-      en: { title: "Priestess", description: "A personal character study presented through final renders, neutral and material views, and published wireframe evidence.", tags: ["Realistic Character", "Personal Study", "Materials", "Wireframe"] },
-      pt: { title: "Priestess", description: "Estudo pessoal de personagem apresentado por renders finais, vistas neutras e de materiais e evidência publicada de wireframe.", tags: ["Personagem realista", "Estudo pessoal", "Materiais", "Wireframe"] },
-      es: { title: "Priestess", description: "Estudio personal de personaje presentado mediante renders finales, vistas neutras y de materiales y evidencia publicada de wireframe.", tags: ["Personaje realista", "Estudio personal", "Materiales", "Wireframe"] }
+      en: { title: "Priestess", description: "Character artwork presented through final renders, neutral and material views, and published wireframe evidence.", tags: ["Realistic Character", "Character Artwork", "Materials", "Wireframe"] },
+      pt: { title: "Priestess", description: "Artwork de personagem apresentada por renders finais, vistas neutras e de materiais e evidência publicada de wireframe.", tags: ["Personagem realista", "Character Artwork", "Materiais", "Wireframe"] },
+      es: { title: "Priestess", description: "Artwork de personaje presentada mediante renders finales, vistas neutras y de materiales y evidencia publicada de wireframe.", tags: ["Personaje realista", "Character Artwork", "Materiales", "Wireframe"] }
     }
   },
   {
@@ -579,6 +568,10 @@ const projects = [
   }
 ];
 
+if (typeof window.applyCanvaMigration === "function") {
+  window.applyCanvaMigration(projects);
+}
+
 const elements = {
   header: document.getElementById("siteHeader"),
   menuToggle: document.getElementById("menuToggle"),
@@ -692,7 +685,7 @@ function projectFactsMarkup(project) {
 
 function projectSectionsMarkup(project) {
   if (!project.sections) return "";
-  return `<div class="case-study">${project.sections.map(section => {
+  return `<div class="case-content">${project.sections.map(section => {
     const sectionCopy = section.copy[currentLanguage];
     const media = section.media.map((item, index) => `
       <figure class="case-media">${mediaMarkup(item, "", `${sectionCopy.title} — ${index + 1}`)}</figure>`).join("");
