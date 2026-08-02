@@ -116,13 +116,46 @@
     ));
 
     const tinyHero = byId("tiny-hero");
-    tinyHero.cover = "assets/work/tiny-hero/canva-feature.webp";
+    tinyHero.cover = "assets/covers/tiny-hero-hd.webp";
+    tinyHero.main = image("assets/work/tiny-hero/turnaround.jpg", "Turnaround and portrait presentation of Tiny Hero", "Apresentação de turnaround e retrato de Tiny Hero");
+    tinyHero.sections = [
+      section("character", localized("Character presentation", "Apresentação do personagem", "Presentación del personaje"), localized("Front, three-quarter and back views document the full stylized character and weapon.", "Vistas frontal, em três quartos e posterior documentam o personagem estilizado completo e sua arma.", "Vistas frontal, en tres cuartos y posterior documentan el personaje estilizado completo y su arma."), [
+        image("assets/work/tiny-hero/front-sword.jpg", "Front view of Tiny Hero holding the sword", "Vista frontal de Tiny Hero segurando a espada"),
+        image("assets/work/tiny-hero/three-quarter-sword.jpg", "Three-quarter view of Tiny Hero holding the sword", "Vista em três quartos de Tiny Hero segurando a espada"),
+        image("assets/work/tiny-hero/back.jpg", "Back view of Tiny Hero", "Vista posterior de Tiny Hero"),
+        image("assets/work/tiny-hero/portrait.jpg", "Close portrait of Tiny Hero", "Retrato aproximado de Tiny Hero"),
+        image("assets/work/tiny-hero/canva-feature.webp", "Tiny Hero presentation recovered from the original portfolio", "Apresentação de Tiny Hero recuperada do portfólio original")
+      ])
+    ];
 
     const ranay = byId("ranay");
-    ranay.cover = "assets/work/ranay/canva-feature.webp";
+    ranay.cover = "assets/covers/ranay-hd.webp";
+    ranay.main = image("assets/work/ranay/cinematic.jpg", "Cinematic final render of Ranay", "Render final cinematográfico de Ranay");
+    ranay.sections = [
+      section("final", localized("Final character", "Personagem final", "Personaje final"), localized("Final armor and portrait renders establish the complete character presentation.", "Renders finais de armadura e retrato estabelecem a apresentação completa da personagem.", "Renders finales de armadura y retrato establecen la presentación completa del personaje."), [
+        image("assets/work/ranay/armor-front.jpg", "Front presentation of Ranay's armor", "Apresentação frontal da armadura de Ranay"),
+        image("assets/work/ranay/portrait-light.jpg", "Neutral-light portrait of Ranay", "Retrato de Ranay com luz neutra"),
+        image("assets/work/ranay/portrait-dark.jpg", "Dark-background portrait of Ranay", "Retrato de Ranay com fundo escuro"),
+        image("assets/work/ranay/canva-feature.webp", "Ranay presentation recovered from the original portfolio", "Apresentação de Ranay recuperada do portfólio original")
+      ]),
+      section("sculpt", localized("Sculpt presentation", "Apresentação da escultura", "Presentación de la escultura"), localized("A neutral sculpt render exposes form and armor construction without final lighting.", "Um render neutro da escultura expõe forma e construção da armadura sem a iluminação final.", "Un render neutro de la escultura expone forma y construcción de la armadura sin iluminación final."), [
+        image("assets/work/ranay/sculpt.jpg", "Neutral sculpt render of Ranay", "Render neutro da escultura de Ranay")
+      ])
+    ];
 
     const pantufa = byId("pantufa");
-    pantufa.cover = "assets/work/pantufa/canva-feature.webp";
+    pantufa.cover = "assets/covers/pantufa-hd.webp";
+    pantufa.main.poster = "assets/covers/pantufa-hd.webp";
+    pantufa.sections = [
+      section("presentation", localized("Character presentation", "Apresentação do personagem", "Presentación del personaje"), localized("Full-body, portrait and companion views complete the original character presentation.", "Vistas de corpo inteiro, retrato e companheiros completam a apresentação original do personagem.", "Vistas de cuerpo completo, retrato y compañeros completan la presentación original del personaje."), [
+        image("assets/work/pantufa/hero.jpg", "Front and back presentation of Pantufa", "Apresentação frontal e posterior de Pantufa"),
+        image("assets/work/pantufa/full-body.jpg", "Full-body hero render of Pantufa", "Render principal de corpo inteiro de Pantufa"),
+        image("assets/work/pantufa/portrait.jpg", "Close portrait of Pantufa", "Retrato aproximado de Pantufa"),
+        image("assets/work/pantufa/companions.jpg", "Companion creature heads from Pantufa", "Cabeças das criaturas companheiras de Pantufa"),
+        image("assets/work/pantufa/canva-feature.webp", "Pantufa presentation recovered from the original portfolio", "Apresentação de Pantufa recuperada do portfólio original")
+      ])
+    ];
+    pantufa.external = { url: "https://renmatsi.artstation.com/projects/g2an4x", type: "artstation" };
 
     const trial = byId("trial-xtreme-freedom");
     trial.sections = [
@@ -193,21 +226,55 @@
         year: "Archive",
         projectType: "archive",
         layout: "tall",
-        cover: "assets/work/tactical-operative/cover.webp",
-        main: video("assets/work/tactical-operative/character-turntable.mp4", "assets/work/tactical-operative/full-front.webp"),
-        facts: importedFacts("Realistic character and hard-surface set", "Personagem realista e conjunto hard-surface", "Character views · visor · watch · weapon", "Vistas do personagem · visor · relógio · arma"),
+        cover: "assets/covers/tactical-operative-hd.webp",
+        main: image("assets/work/tactical-operative/hero-green.webp", "Final render of the tactical operative and drone equipment", "Render final do personagem tático e equipamentos de drone"),
+        facts: importedFacts("Realistic character and hard-surface set", "Personagem realista e conjunto hard-surface", "HD renders · character views · topology · sculpt · equipment", "Renders HD · vistas do personagem · topologia · escultura · equipamentos"),
         sections: [
-          section("character", localized("Character", "Personagem", "Personaje"), localized("Full-body views establish the tactical silhouette and equipment placement.", "Vistas de corpo inteiro estabelecem a silhueta tática e o posicionamento dos equipamentos.", "Vistas de cuerpo completo establecen la silueta táctica y la colocación del equipo."), [
-            image("assets/work/tactical-operative/full-front.webp", "Front view of the tactical operative", "Vista frontal do personagem tático"),
-            image("assets/work/tactical-operative/full-three-quarter.webp", "Three-quarter view of the tactical operative", "Vista em três quartos do personagem tático")
+          section("final-renders", localized("Final renders", "Renders finais", "Renders finales"), localized("High-resolution final renders present the character, visor and drone equipment under controlled lighting.", "Renders finais em alta resolução apresentam personagem, visor e equipamentos de drone sob iluminação controlada.", "Renders finales en alta resolución presentan personaje, visor y equipo de dron bajo iluminación controlada."), [
+            image("assets/work/tactical-operative/hero-green-alt.webp", "Alternate green-lit final render", "Render final alternativo sob luz verde"),
+            image("assets/work/tactical-operative/visor-red.webp", "Red-lit close render of the tactical visor", "Render aproximado do visor tático sob luz vermelha"),
+            image("assets/work/tactical-operative/presentation-board.webp", "Wide presentation board of the tactical operative", "Prancha ampla de apresentação do personagem tático"),
+            image("assets/work/tactical-operative/cover.webp", "Tactical Operative presentation recovered from the original portfolio", "Apresentação de Tactical Operative recuperada do portfólio original")
+          ]),
+          section("character", localized("Character turnaround", "Turnaround do personagem", "Turnaround del personaje"), localized("Front, side and back renders establish silhouette, costume layering and equipment placement.", "Renders frontal, laterais e posterior estabelecem silhueta, camadas do figurino e posicionamento dos equipamentos.", "Renders frontal, laterales y posterior establecen silueta, capas del vestuario y colocación del equipo."), [
+            image("assets/work/tactical-operative/presentation-front.webp", "Front presentation of the tactical operative", "Apresentação frontal do personagem tático"),
+            image("assets/work/tactical-operative/presentation-left.webp", "Left presentation of the tactical operative", "Apresentação lateral esquerda do personagem tático"),
+            image("assets/work/tactical-operative/presentation-right.webp", "Right presentation of the tactical operative", "Apresentação lateral direita do personagem tático"),
+            image("assets/work/tactical-operative/presentation-back.webp", "Back presentation of the tactical operative", "Apresentação posterior do personagem tático")
+          ]),
+          section("portrait", localized("Portrait and silhouette", "Retrato e silhueta", "Retrato y silueta"), localized("Three close views clarify facial work, hair, visor interface and costume materials.", "Três vistas aproximadas detalham rosto, cabelo, interface do visor e materiais do figurino.", "Tres vistas cercanas detallan rostro, cabello, interfaz del visor y materiales del vestuario."), [
+            image("assets/work/tactical-operative/portrait-front.webp", "Front portrait of the tactical operative", "Retrato frontal do personagem tático"),
+            image("assets/work/tactical-operative/portrait-right.webp", "Right portrait of the tactical operative", "Retrato direito do personagem tático"),
+            image("assets/work/tactical-operative/portrait-left.webp", "Left portrait of the tactical operative", "Retrato esquerdo do personagem tático"),
+            image("assets/work/tactical-operative/full-front-hd.webp", "Full-body front render of the tactical operative", "Render frontal de corpo inteiro do personagem tático"),
+            image("assets/work/tactical-operative/full-three-quarter-hd.webp", "Full-body three-quarter render of the tactical operative", "Render de corpo inteiro em três quartos do personagem tático")
+          ]),
+          section("topology", localized("Topology", "Topologia", "Topología"), localized("Full-body wireframes and focused details expose topology across clothing, face, hand, boots and wearable equipment.", "Wireframes de corpo inteiro e detalhes focados expõem a topologia de roupa, rosto, mão, botas e equipamento vestível.", "Wireframes de cuerpo completo y detalles enfocados exponen la topología de ropa, rostro, mano, botas y equipo vestible."), [
+            image("assets/work/tactical-operative/wire-body-front.webp", "Front full-body topology", "Topologia frontal de corpo inteiro"),
+            image("assets/work/tactical-operative/wire-body-back.webp", "Back full-body topology", "Topologia posterior de corpo inteiro"),
+            image("assets/work/tactical-operative/wire-head.webp", "Head topology detail", "Detalhe de topologia da cabeça"),
+            image("assets/work/tactical-operative/wire-hand.webp", "Hand topology detail", "Detalhe de topologia da mão"),
+            image("assets/work/tactical-operative/wire-boots.webp", "Boot topology detail", "Detalhe de topologia das botas"),
+            image("assets/work/tactical-operative/wire-watch.webp", "Watch topology detail", "Detalhe de topologia do relógio"),
+            image("assets/work/tactical-operative/wire-teeth.webp", "Teeth topology detail", "Detalhe de topologia dos dentes")
+          ]),
+          section("sculpt", localized("Sculpt and construction", "Escultura e construção", "Escultura y construcción"), localized("Selected ZBrush captures document clothing, footwear, head and groom construction without repeating every UI view.", "Capturas selecionadas do ZBrush documentam construção de roupa, calçado, cabeça e groom sem repetir todas as vistas de interface.", "Capturas seleccionadas de ZBrush documentan construcción de ropa, calzado, cabeza y groom sin repetir todas las vistas de interfaz."), [
+            image("assets/work/tactical-operative/zbrush-shirt.webp", "ZBrush shirt construction", "Construção da camisa no ZBrush"),
+            image("assets/work/tactical-operative/zbrush-pants.webp", "ZBrush pants construction", "Construção da calça no ZBrush"),
+            image("assets/work/tactical-operative/zbrush-boot.webp", "ZBrush boot construction", "Construção da bota no ZBrush"),
+            image("assets/work/tactical-operative/zbrush-jacket.webp", "ZBrush jacket construction", "Construção da jaqueta no ZBrush"),
+            image("assets/work/tactical-operative/zbrush-head.webp", "ZBrush head sculpt", "Escultura da cabeça no ZBrush"),
+            image("assets/work/tactical-operative/groom-back.webp", "Back view of the groom construction", "Vista posterior da construção do groom")
           ]),
           section("equipment", localized("Equipment", "Equipamentos", "Equipamiento"), localized("Turntables isolate the visor, watch and compact weapon as a coherent hard-surface set.", "Turntables isolam visor, relógio e arma compacta como um conjunto hard-surface coerente.", "Los turntables aíslan visor, reloj y arma compacta como un conjunto hard-surface coherente."), [
+            video("assets/work/tactical-operative/character-turntable.mp4", "assets/work/tactical-operative/full-front-hd.webp"),
             video("assets/work/tactical-operative/visor-closeup.mp4"),
             video("assets/work/tactical-operative/visor-turntable.mp4"),
             video("assets/work/tactical-operative/watch-turntable.mp4"),
             video("assets/work/tactical-operative/weapon-turntable.mp4")
           ])
         ],
+        external: { url: "https://drive.google.com/drive/folders/1z3wIvXhVl57asSekBrjZIqNq6ge3oh1z?usp=sharing", type: "download" },
         category: localized("Realistic character", "Personagem realista", "Personaje realista"),
         copy: copy("Tactical Operative", localized("A realistic tactical character presented together with the visor, wearable device and weapon created for the same visual set.", "Personagem tático realista apresentado com visor, dispositivo vestível e arma do mesmo conjunto visual.", "Personaje táctico realista presentado junto al visor, dispositivo y arma del mismo conjunto visual."), localized(["Realistic", "Character", "Hard Surface", "Real-time"], ["Realista", "Personagem", "Hard Surface", "Tempo real"], ["Realista", "Personaje", "Hard Surface", "Tiempo real"]))
       },
@@ -300,7 +367,7 @@
         year: "Archive",
         projectType: "archive",
         layout: "square",
-        cover: "assets/work/stylized-armory/axe-ornate.webp",
+        cover: "assets/covers/stylized-armory-collage.webp",
         main: image("assets/work/stylized-armory/axe-ornate.webp", "Ornate stylized axe", "Machado estilizado ornamentado"),
         facts: importedFacts("Independent stylized prop collection", "Coleção independente de props estilizados", "10 axes · 5 shields · 11 blades", "10 machados · 5 escudos · 11 lâminas"),
         sections: [

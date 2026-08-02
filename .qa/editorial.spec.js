@@ -103,7 +103,9 @@ test('production case groups the complete rider lineup and states authorship bou
 
 test('stylized armory is an independent project with all weapon families', async ({ page }) => {
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
-  await page.locator('[data-project="stylized-armory"]').click();
+  const card = page.locator('[data-project="stylized-armory"]');
+  await expect(card.locator('img')).toHaveAttribute('src', 'assets/covers/stylized-armory-collage.webp');
+  await card.click();
 
   const dialog = page.locator('#projectDialog');
   await expect(dialog).toBeVisible();
@@ -113,6 +115,63 @@ test('stylized armory is an independent project with all weapon families', async
 
   const importedSources = await dialog.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')));
   expect(importedSources.every(src => src.startsWith('assets/work/stylized-armory/'))).toBe(true);
+});
+
+test('new project covers are straight 4:3 editorial assets', async ({ page }) => {
+  await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
+
+  const expectedCovers = {
+    'tactical-operative': 'assets/covers/tactical-operative-hd.webp',
+    'stylized-armory': 'assets/covers/stylized-armory-collage.webp',
+    'tiny-hero': 'assets/covers/tiny-hero-hd.webp',
+    ranay: 'assets/covers/ranay-hd.webp',
+    pantufa: 'assets/covers/pantufa-hd.webp'
+  };
+
+  for (const [project, source] of Object.entries(expectedCovers)) {
+    const image = page.locator(`[data-project="${project}"] img`);
+    await expect(image).toHaveAttribute('src', source);
+    const dimensions = await image.evaluate(element => [element.naturalWidth, element.naturalHeight]);
+    expect(dimensions).toEqual([1600, 1200]);
+  }
+});
+
+test('every catalog image remains fully contained inside its thumbnail', async ({ page }) => {
+  await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
+
+  const images = page.locator('#projectsGrid .project-card img');
+  await expect(images).toHaveCount(16);
+  const objectFits = await images.evaluateAll(elements => elements.map(element => getComputedStyle(element).objectFit));
+  expect(objectFits.every(value => value === 'contain')).toBe(true);
+
+  const firstCard = page.locator('#projectsGrid .project-card').first();
+  await firstCard.hover();
+  const transform = await firstCard.locator('img').evaluate(element => getComputedStyle(element).transform);
+  expect(transform).toBe('none');
+});
+
+test('tactical operative exposes the recovered HD narrative and original masters', async ({ page }) => {
+  await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
+  await page.locator('[data-project="tactical-operative"]').click();
+
+  const dialog = page.locator('#projectDialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('.case-section h3')).toHaveText([
+    'Final renders',
+    'Character turnaround',
+    'Portrait and silhouette',
+    'Topology',
+    'Sculpt and construction',
+    'Equipment'
+  ]);
+  await expect(dialog.locator('.case-media img')).toHaveCount(26);
+  const localSources = await dialog.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')));
+  expect(localSources.every(src => src.startsWith('assets/'))).toBe(true);
+  const altText = await dialog.locator('.case-media img').evaluateAll(images => images.map(image => image.alt.trim()));
+  expect(altText.every(Boolean)).toBe(true);
+  const download = dialog.locator('.dialog-external');
+  await expect(download).toHaveText('Download original masters ↗');
+  await expect(download).toHaveAttribute('href', /drive\.google\.com\/drive\/folders\/1z3wIvXhVl57asSekBrjZIqNq6ge3oh1z/);
 });
 
 test('revolver is published as an independent hard-surface asset', async ({ page }) => {
@@ -176,6 +235,8 @@ test('mobile catalog is single-column, named and free of horizontal overflow', a
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
 
   await expect(page.locator('#projectsGrid .project-card')).toHaveCount(16);
+  const mobileObjectFits = await page.locator('#projectsGrid .project-card img').evaluateAll(elements => elements.map(element => getComputedStyle(element).objectFit));
+  expect(mobileObjectFits.every(value => value === 'contain')).toBe(true);
   const firstCard = await page.locator('#projectsGrid .project-card').first().boundingBox();
   const secondCard = await page.locator('#projectsGrid .project-card').nth(1).boundingBox();
   expect(Math.abs(firstCard.x - secondCard.x)).toBeLessThan(2);
