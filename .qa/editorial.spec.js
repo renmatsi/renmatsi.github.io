@@ -42,6 +42,15 @@ test('featured case exposes contribution and a deliberate visual narrative', asy
   await expect(dialog.locator('[data-fact="contribution"]')).toContainText('Character creation');
   await expect(dialog.locator('[data-fact="context"]')).toContainText('Personal');
 
+  const surfaceRadii = await dialog.locator('.dialog-main-media, .project-facts, .case-media').evaluateAll(elements =>
+    elements.map(element => getComputedStyle(element).borderTopLeftRadius)
+  );
+  expect(surfaceRadii.length).toBeGreaterThan(2);
+  expect(surfaceRadii.every(radius => radius === '16px')).toBe(true);
+
+  const tagRadius = await dialog.locator('.dialog-tags span').first().evaluate(element => getComputedStyle(element).borderTopLeftRadius);
+  expect(tagRadius).toBe('999px');
+
   await expect(dialog.locator('.case-section')).toHaveCount(4);
   await expect(dialog.locator('.case-section h3')).toHaveText([
     'Final character',
