@@ -1,0 +1,144 @@
+:root {
+  --ink: #151515;
+  --muted: #575757;
+  --line: #d7d2c8;
+  --paper: #f7f5ef;
+  --accent: #e4572e;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  width: min(960px, calc(100% - 40px));
+  margin: 0 auto;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 18px; top: 12px; z-index: 10; padding: 9px 12px; color: white; background: var(--ink); }
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  align-items: end;
+  padding: 56px 0 30px;
+  border-bottom: 3px solid var(--ink);
+}
+
+.eyebrow,
+.role { margin: 0; }
+.eyebrow { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { margin: 8px 0 2px; font-size: clamp(42px, 7vw, 72px); letter-spacing: -0.055em; line-height: 0.95; }
+.role { color: var(--accent); font-size: 20px; font-weight: 700; }
+.resume-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.resume-actions a { padding: 9px 12px; border: 1px solid var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; }
+.resume-actions .download { color: white; background: var(--ink); }
+
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.resume-section {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 36px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-section > h2 {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.summary > p,
+.skill-groups { margin: 0; }
+.summary > p { max-width: 690px; font-size: 17px; }
+.skill-groups { display: grid; gap: 12px; }
+.skill-groups p { margin: 0; }
+
+.job,
+.evidence article { grid-column: 2; }
+.job + .job,
+.evidence article + article { margin-top: 28px; padding-top: 26px; border-top: 1px solid var(--line); }
+.job header,
+.evidence article header { display: flex; justify-content: space-between; gap: 24px; align-items: start; }
+.job h3,
+.evidence h3 { margin: 0; font-size: 20px; }
+.job header p,
+.progression,
+.evidence p { margin: 2px 0 0; color: var(--muted); }
+.job time,
+.evidence time { flex: 0 0 auto; font-size: 12px; font-weight: 700; }
+.progression { margin-top: 8px; font-size: 12px; font-style: italic; }
+.print-continuation { display: none; }
+ul { margin: 14px 0 0; padding-left: 19px; }
+li + li { margin-top: 6px; }
+.evidence article > a { display: inline-block; margin-top: 8px; font-size: 12px; }
+footer { padding: 22px 0 42px; color: var(--muted); font-size: 11px; }
+footer p { margin: 0; }
+
+@media (max-width: 720px) {
+  body { width: min(100% - 28px, 960px); }
+  .resume-header { display: grid; padding-top: 34px; }
+  .resume-section { grid-template-columns: 1fr; gap: 18px; }
+  .job,
+  .evidence article { grid-column: 1; }
+  .job header,
+  .evidence article header { display: grid; gap: 5px; }
+}
+
+@media print {
+  @page { size: A4; margin: 12mm 13mm; }
+  body { width: auto; margin: 0; color: #111; background: white; font-size: 9.2pt; line-height: 1.38; }
+  .skip-link,
+  .resume-actions { display: none; }
+  .resume-header { padding: 0 0 12pt; border-bottom-width: 2pt; }
+  .eyebrow { font-size: 7pt; }
+  h1 { margin-top: 5pt; font-size: 31pt; }
+  .role { font-size: 13pt; }
+  .contact-line { gap: 3pt 12pt; padding: 8pt 0; font-size: 7.5pt; }
+  .resume-section { grid-template-columns: 108pt minmax(0, 1fr); gap: 18pt; padding: 13pt 0; }
+  .resume-section > h2 { font-size: 8pt; }
+  .summary > p { font-size: 10pt; }
+  .skill-groups { gap: 5pt; }
+  .job,
+  .evidence article { grid-column: 2; break-inside: avoid; }
+  .page-break-print { break-before: page; }
+  .print-continuation {
+    display: block;
+    margin: 0 0 10pt;
+    color: #555;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .job + .job,
+  .evidence article + article { margin-top: 11pt; padding-top: 10pt; }
+  .job h3,
+  .evidence h3 { font-size: 11pt; }
+  .job header p,
+  .progression,
+  .evidence p { font-size: 8.5pt; }
+  .job time,
+  .evidence time { font-size: 7.5pt; }
+  ul { margin-top: 6pt; padding-left: 13pt; }
+  li + li { margin-top: 2pt; }
+  a { text-decoration: none; }
+  footer { padding: 10pt 0 0; font-size: 7pt; }
+}
