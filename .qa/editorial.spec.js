@@ -123,6 +123,7 @@ test('revolver is published as an independent hard-surface asset', async ({ page
   await expect(dialog).toBeVisible();
   await expect(dialog.locator('#dialogTitle')).toHaveText('Revolver');
   await expect(dialog.locator('.dialog-main img')).toHaveAttribute('src', 'assets/work/revolver/turnaround.webp');
+  await expect(dialog.locator('[data-fact="source"]')).toContainText('Existing local portfolio archive');
   await expect(dialog.locator('[data-fact="type"]')).toContainText('Independent hard-surface weapon asset');
 });
 
