@@ -23,8 +23,8 @@ def fail(message):
 
 def main():
     entries = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    if len(entries) != 105:
-        fail(f"expected 105 entries, found {len(entries)}")
+    if len(entries) != 103:
+        fail(f"expected 103 deduplicated entries, found {len(entries)}")
 
     source_ids = [entry["source_index"] for entry in entries]
     targets = [entry["target"] for entry in entries]

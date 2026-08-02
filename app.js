@@ -60,7 +60,7 @@ const localeData = {
       emailLabel: "Email me"
     },
     footer: { backTop: "Back to top ↑" },
-    project: { featured: "Featured", externalArtstation: "View on ArtStation ↗", externalGame: "View game ↗", close: "Close project" }
+    project: { featured: "Featured", externalArtstation: "View on ArtStation ↗", externalGame: "View game ↗", externalDownload: "Download original masters ↗", close: "Close project" }
   },
   pt: {
     documentTitle: "Renan Matos — Lead 3D Character Artist",
@@ -119,7 +119,7 @@ const localeData = {
       emailLabel: "Enviar e-mail"
     },
     footer: { backTop: "Voltar ao topo ↑" },
-    project: { featured: "Destaque", externalArtstation: "Ver no ArtStation ↗", externalGame: "Ver jogo ↗", close: "Fechar projeto" }
+    project: { featured: "Destaque", externalArtstation: "Ver no ArtStation ↗", externalGame: "Ver jogo ↗", externalDownload: "Baixar masters originais ↗", close: "Fechar projeto" }
   },
   es: {
     documentTitle: "Renan Matos — Lead 3D Character Artist",
@@ -178,7 +178,7 @@ const localeData = {
       emailLabel: "Enviar correo"
     },
     footer: { backTop: "Volver arriba ↑" },
-    project: { featured: "Destacado", externalArtstation: "Ver en ArtStation ↗", externalGame: "Ver juego ↗", close: "Cerrar proyecto" }
+    project: { featured: "Destacado", externalArtstation: "Ver en ArtStation ↗", externalGame: "Ver juego ↗", externalDownload: "Descargar masters originales ↗", close: "Cerrar proyecto" }
   }
 };
 
@@ -703,7 +703,12 @@ function projectSectionsMarkup(project) {
 function buildDialog(project) {
   const t = localeData[currentLanguage];
   const copy = project.copy[currentLanguage];
-  const externalLabel = project.external?.type === "game" ? t.project.externalGame : t.project.externalArtstation;
+  const externalLabels = {
+    game: t.project.externalGame,
+    download: t.project.externalDownload,
+    artstation: t.project.externalArtstation
+  };
+  const externalLabel = externalLabels[project.external?.type] || t.project.externalArtstation;
   const gallery = project.sections ? "" : (project.gallery || []).map((media, index) => mediaMarkup(media, index % 5 === 0 && index > 0 ? "gallery-wide" : "", `${copy.title} — view ${index + 1}`)).join("");
 
   elements.dialogClose.setAttribute("aria-label", t.project.close);

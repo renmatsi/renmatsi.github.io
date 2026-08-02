@@ -606,8 +606,8 @@ a { color: inherit; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 900ms var(--ease), filter 500ms ease;
+  object-fit: contain;
+  transition: filter 500ms ease;
 }
 
 .project-card[data-project="priestess"] img { object-position: center 24%; }
@@ -618,7 +618,7 @@ a { color: inherit; }
 .project-card[data-project="kayla"] img { object-position: center 22%; }
 
 .project-card:hover img,
-.project-card:focus-visible img { transform: scale(1.045); }
+.project-card:focus-visible img { filter: brightness(1.04); }
 .project-card:hover::after,
 .project-card:focus-visible::after { background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0.9) 100%); }
 
