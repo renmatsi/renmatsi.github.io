@@ -560,9 +560,9 @@ a { color: inherit; }
 }
 
 .project-card[data-project="male-character"] img {
-  padding: clamp(10px, 2vw, 28px) clamp(18px, 3vw, 46px) 0;
+  padding: clamp(20px, 2.4vw, 36px);
   object-fit: contain;
-  object-position: center bottom;
+  object-position: 70% center;
 }
 
 .archive-disclosure {

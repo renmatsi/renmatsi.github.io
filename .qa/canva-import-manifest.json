@@ -802,17 +802,7 @@
     "bytes": 477602,
     "sha256": "a931881cfdcf9e3098ae18c34611d8b0d22258984d16bc3ddca2c424d2150f23"
   },
-  {
-    "source_index": "I075",
-    "project": "male-character",
-    "target": "assets/work/male-character/canva-cover.webp",
-    "kind": "image",
-    "width": 658,
-    "height": 800,
-    "alpha": true,
-    "bytes": 464844,
-    "sha256": "12cc83279dec13c5e813e4fbdfeb0ea6ed045fdf2f5402848808eaf5ae0bf63b"
-  },
+
   {
     "source_index": "I076",
     "project": "male-character",
