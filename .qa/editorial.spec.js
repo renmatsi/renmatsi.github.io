@@ -12,7 +12,8 @@ test('homepage opens directly on the art catalog', async ({ page }) => {
   await expect(page.locator('.hero')).toHaveCount(0);
   const firstFeaturedBox = await page.locator('#projectsGrid .project-card').first().boundingBox();
   expect(firstFeaturedBox.y).toBeLessThan(600);
-  await expect(page.locator('[data-project="male-character"] img')).toHaveAttribute('src', 'assets/work/male-character/canva-cover.webp');
+  await expect(page.locator('[data-project="male-character"] img')).toHaveAttribute('src', 'assets/work/male-character/final-full.webp');
+  await expect(page.locator('[data-project="male-character"] img')).toHaveJSProperty('naturalWidth', 1800);
 });
 
 test('homepage presents one ordered art catalog without visible classifications', async ({ page }) => {

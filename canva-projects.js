@@ -38,7 +38,7 @@
     const byId = id => projects.find(project => project.id === id);
 
     const male = byId("male-character");
-    male.cover = "assets/work/male-character/canva-cover.webp";
+    male.cover = "assets/work/male-character/final-full.webp";
     male.main = video("assets/work/male-character/canva-turntable.mp4", "assets/work/male-character/portrait-front-canva.webp");
     male.facts.en[2].value = "Anatomy · Grooming · Wardrobe · Materials";
     male.facts.pt[2].value = "Anatomia · Grooming · Roupa · Materiais";

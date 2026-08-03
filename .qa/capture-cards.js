@@ -4,7 +4,7 @@ const path = require('path');
 
 const output = 'C:/Users/Renan/Documents/Brain/Hermes/Auditorias/portfolio-renan/fidelity-qa';
 fs.mkdirSync(output, { recursive: true });
-const projects = ['tactical-operative', 'stylized-armory', 'pantufa', 'tiny-hero', 'ranay'];
+const projects = ['male-character', 'tactical-operative', 'stylized-armory', 'pantufa', 'tiny-hero', 'ranay'];
 
 (async () => {
   const browser = await chromium.launch({ channel: 'msedge', headless: true });
