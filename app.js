@@ -572,6 +572,29 @@ if (typeof window.applyCanvaMigration === "function") {
   window.applyCanvaMigration(projects);
 }
 
+const catalogCovers = {
+  "male-character": "assets/covers/catalog/male-character.webp",
+  priestess: "assets/covers/catalog/priestess.webp",
+  "tactical-operative": "assets/covers/catalog/tactical-operative.webp",
+  "nordic-warrior": "assets/covers/catalog/nordic-warrior.webp",
+  "trial-xtreme-freedom": "assets/covers/catalog/trial-xtreme-freedom.webp",
+  "tiny-hero": "assets/covers/catalog/tiny-hero.webp",
+  "stone-age-family": "assets/covers/catalog/stone-age-family.webp",
+  "pirate-ship": "assets/covers/catalog/pirate-ship.webp",
+  "stylized-armory": "assets/covers/catalog/stylized-armory.webp",
+  revolver: "assets/covers/catalog/revolver.webp",
+  ranay: "assets/covers/catalog/ranay.webp",
+  pantufa: "assets/covers/catalog/pantufa.webp",
+  "athletic-girl": "assets/covers/catalog/athletic-girl.webp",
+  "neon-sentinel": "assets/covers/catalog/neon-sentinel.webp",
+  "realistic-portraits": "assets/covers/catalog/realistic-portraits.webp",
+  "hooded-wanderer": "assets/covers/catalog/hooded-wanderer.webp"
+};
+
+projects.forEach(project => {
+  project.cover = catalogCovers[project.id];
+});
+
 const elements = {
   header: document.getElementById("siteHeader"),
   menuToggle: document.getElementById("menuToggle"),

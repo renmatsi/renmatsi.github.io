@@ -12,8 +12,8 @@ test('homepage opens directly on the art catalog', async ({ page }) => {
   await expect(page.locator('.hero')).toHaveCount(0);
   const firstFeaturedBox = await page.locator('#projectsGrid .project-card').first().boundingBox();
   expect(firstFeaturedBox.y).toBeLessThan(600);
-  await expect(page.locator('[data-project="male-character"] img')).toHaveAttribute('src', 'assets/work/male-character/final-full.webp');
-  await expect(page.locator('[data-project="male-character"] img')).toHaveJSProperty('naturalWidth', 1800);
+  await expect(page.locator('[data-project="male-character"] img')).toHaveAttribute('src', 'assets/covers/catalog/male-character.webp');
+  await expect(page.locator('[data-project="male-character"] img')).toHaveJSProperty('naturalWidth', 1600);
 });
 
 test('homepage presents one ordered art catalog without visible classifications', async ({ page }) => {
@@ -80,7 +80,7 @@ test('production case groups the complete rider lineup and states authorship bou
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
 
   const card = page.locator('[data-project="trial-xtreme-freedom"]');
-  await expect(card.locator('img')).toHaveAttribute('src', 'assets/covers/trial-xtreme.webp');
+  await expect(card.locator('img')).toHaveAttribute('src', 'assets/covers/catalog/trial-xtreme-freedom.webp');
   await card.click();
 
   const dialog = page.locator('#projectDialog');
@@ -105,7 +105,7 @@ test('production case groups the complete rider lineup and states authorship bou
 test('stylized armory is an independent project with all weapon families', async ({ page }) => {
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
   const card = page.locator('[data-project="stylized-armory"]');
-  await expect(card.locator('img')).toHaveAttribute('src', 'assets/covers/stylized-armory-collage.webp');
+  await expect(card.locator('img')).toHaveAttribute('src', 'assets/covers/catalog/stylized-armory.webp');
   await card.click();
 
   const dialog = page.locator('#projectDialog');
@@ -118,22 +118,39 @@ test('stylized armory is an independent project with all weapon families', async
   expect(importedSources.every(src => src.startsWith('assets/work/stylized-armory/'))).toBe(true);
 });
 
-test('new project covers are straight 4:3 editorial assets', async ({ page }) => {
+test('every project uses a dedicated cover matching its card aspect', async ({ page }) => {
   await page.goto('http://127.0.0.1:8765/', { waitUntil: 'networkidle' });
 
   const expectedCovers = {
-    'tactical-operative': 'assets/covers/tactical-operative-hd.webp',
-    'stylized-armory': 'assets/covers/stylized-armory-collage.webp',
-    'tiny-hero': 'assets/covers/tiny-hero-hd.webp',
-    ranay: 'assets/covers/ranay-hd.webp',
-    pantufa: 'assets/covers/pantufa-hd.webp'
+    'male-character': [1600, 1000],
+    priestess: [1280, 1600],
+    'tactical-operative': [1280, 1600],
+    'nordic-warrior': [1600, 1200],
+    'trial-xtreme-freedom': [1600, 1200],
+    'tiny-hero': [1600, 1200],
+    'stone-age-family': [1600, 1200],
+    'pirate-ship': [1600, 1200],
+    'stylized-armory': [1600, 1200],
+    revolver: [1600, 1200],
+    ranay: [1600, 1200],
+    pantufa: [1600, 1200],
+    'athletic-girl': [1600, 1200],
+    'neon-sentinel': [1600, 1200],
+    'realistic-portraits': [1600, 1200],
+    'hooded-wanderer': [1600, 1200]
   };
 
-  for (const [project, source] of Object.entries(expectedCovers)) {
+  for (const [project, expectedDimensions] of Object.entries(expectedCovers)) {
+    const source = `assets/covers/catalog/${project}.webp`;
     const image = page.locator(`[data-project="${project}"] img`);
     await expect(image).toHaveAttribute('src', source);
-    const dimensions = await image.evaluate(element => [element.naturalWidth, element.naturalHeight]);
-    expect(dimensions).toEqual([1600, 1200]);
+    const dimensions = await page.evaluate(src => new Promise((resolve, reject) => {
+      const probe = new Image();
+      probe.onload = () => resolve([probe.naturalWidth, probe.naturalHeight]);
+      probe.onerror = reject;
+      probe.src = src;
+    }), source);
+    expect(dimensions).toEqual(expectedDimensions);
   }
 });
 
@@ -238,6 +255,12 @@ test('mobile catalog is single-column, named and free of horizontal overflow', a
   await expect(page.locator('#projectsGrid .project-card')).toHaveCount(16);
   const mobileObjectFits = await page.locator('#projectsGrid .project-card img').evaluateAll(elements => elements.map(element => getComputedStyle(element).objectFit));
   expect(mobileObjectFits.every(value => value === 'contain')).toBe(true);
+  const aspectMismatches = await page.locator('#projectsGrid .project-card').evaluateAll(cards => cards.filter(card => {
+    const image = card.querySelector('img');
+    const rect = card.getBoundingClientRect();
+    return Math.abs(image.naturalWidth / image.naturalHeight - rect.width / rect.height) > 0.01;
+  }).map(card => card.dataset.project));
+  expect(aspectMismatches).toEqual([]);
   const firstCard = await page.locator('#projectsGrid .project-card').first().boundingBox();
   const secondCard = await page.locator('#projectsGrid .project-card').nth(1).boundingBox();
   expect(Math.abs(firstCard.x - secondCard.x)).toBeLessThan(2);

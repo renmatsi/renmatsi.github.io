@@ -559,12 +559,6 @@ a { color: inherit; }
     radial-gradient(circle at 50% 38%, #55534e 0%, #34332f 48%, #1b1b19 100%);
 }
 
-.project-card[data-project="male-character"] img {
-  padding: clamp(20px, 2.4vw, 36px);
-  object-fit: contain;
-  object-position: 70% center;
-}
-
 .archive-disclosure {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -1238,9 +1232,9 @@ a { color: inherit; }
   .project-card--square,
   .project-card--tall,
   .project-card--production { --span: 1; grid-column: 1; min-height: 0; aspect-ratio: 4 / 3; }
+  .project-card[data-project="male-character"] { aspect-ratio: 8 / 5; }
   .project-card[data-project="priestess"],
-  .project-card[data-project="ranay"],
-  .project-card[data-project="pantufa"] { aspect-ratio: 4 / 5; }
+  .project-card[data-project="tactical-operative"] { aspect-ratio: 4 / 5; }
   .project-copy h3,
   .project-card--tall .project-copy h3,
   .project-card--square .project-copy h3 { font-size: 29px; }
