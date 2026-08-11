@@ -9,6 +9,9 @@ DATA = ROOT / "data" / "resume.json"
 HTML = ROOT / "resume.html"
 INDEX = ROOT / "index.html"
 APP = ROOT / "app.js"
+ARTICLE = ROOT / "articles" / "o-3d-comeca-antes-da-modelagem.html"
+ARTICLE_CSS = ROOT / "articles" / "article.css"
+ARTICLE_JS = ROOT / "articles" / "article.js"
 PDF = ROOT / "assets" / "resume" / "Renan-Matos-Senior-3D-Character-Artist.pdf"
 STALE_PDF = ROOT / "assets" / "resume" / "Renan-Matos-Lead-3D-Character-Artist.pdf"
 
@@ -100,6 +103,34 @@ class ResumeCanonicalDataTests(unittest.TestCase):
 
 
 class HomepageToolsTests(unittest.TestCase):
+    def test_about_portrait_links_to_published_article(self):
+        index = INDEX.read_text(encoding="utf-8")
+        portrait_start = index.index('<div class="about-portrait reveal">')
+        portrait_end = index.index('</div>', portrait_start)
+        portrait = index[portrait_start:portrait_end]
+        href = 'href="articles/o-3d-comeca-antes-da-modelagem.html?lang=en"'
+
+        self.assertIn(href, portrait)
+        self.assertLess(portrait.index('<img '), portrait.index(href))
+        self.assertTrue(ARTICLE.exists())
+        self.assertTrue(ARTICLE_CSS.exists())
+        self.assertTrue(ARTICLE_JS.exists())
+        self.assertIn('o-3d-comeca-antes-da-modelagem.html?lang=${currentLanguage}', APP.read_text(encoding="utf-8"))
+
+        article = ARTICLE.read_text(encoding="utf-8")
+        self.assertIn('<html lang="pt-BR">', article)
+        self.assertEqual(article.count('class="article-content"'), 3)
+        for language in ["en", "pt", "es"]:
+            self.assertIn(f'data-language="{language}"', article)
+            self.assertIn(f'data-article-lang="{language}"', article)
+        self.assertIn('3D Starts Before Modeling', article)
+        self.assertIn('O 3D começa antes da modelagem', article)
+        self.assertIn('El 3D empieza antes del modelado', article)
+        self.assertIn('A narrativa é a base da minha criação.', article)
+        self.assertIn('Estética não é só sobre ser belo', article)
+        self.assertIn('Liderar é reduzir ambiguidade', article)
+        self.assertIn('href="../index.html#about"', article)
+
     def test_homepage_exposes_tools_navigation_and_wip_catalog(self):
         index = INDEX.read_text(encoding="utf-8")
         app = APP.read_text(encoding="utf-8")

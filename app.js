@@ -46,6 +46,8 @@ const localeData = {
       title: "Character craft backed by production experience.",
       captionRole: "Senior 3D Character Artist",
       captionLocation: "Based in Brazil · Working remotely",
+      articleKicker: "Article · EN / PT / ES",
+      articleTitle: "3D Starts Before Modeling",
       paragraphs: [
         "I am a Senior 3D Character Artist working across realistic and stylized production pipelines for PC and mobile games.",
         "My work covers the complete character journey — sculpting, anatomy, garment creation, grooming, retopology, UVs, PBR texturing and real-time optimization — alongside pipeline development and artist mentorship."
@@ -115,6 +117,8 @@ const localeData = {
       title: "Criação de personagens apoiada por experiência de produção.",
       captionRole: "Senior 3D Character Artist",
       captionLocation: "Brasil · Trabalho remoto",
+      articleKicker: "Artigo · EN / PT / ES",
+      articleTitle: "O 3D começa antes da modelagem",
       paragraphs: [
         "Sou Senior 3D Character Artist e atuo em pipelines de produção realistas e estilizados para jogos de PC e mobile.",
         "Meu trabalho cobre toda a jornada do personagem — escultura, anatomia, criação de roupas, grooming, retopologia, UVs, texturização PBR e otimização em tempo real — além de desenvolvimento de pipeline e mentoria de artistas."
@@ -184,6 +188,8 @@ const localeData = {
       title: "Creación de personajes respaldada por experiencia de producción.",
       captionRole: "Senior 3D Character Artist",
       captionLocation: "Brasil · Trabajo remoto",
+      articleKicker: "Artículo · EN / PT / ES",
+      articleTitle: "El 3D empieza antes del modelado",
       paragraphs: [
         "Soy Senior 3D Character Artist y trabajo en pipelines de producción realistas y estilizados para juegos de PC y mobile.",
         "Mi trabajo cubre todo el recorrido del personaje — escultura, anatomía, creación de ropa, grooming, retopología, UVs, texturizado PBR y optimización en tiempo real — además de desarrollo de pipelines y mentoría de artistas."
@@ -686,6 +692,7 @@ const elements = {
   projectsGrid: document.getElementById("projectsGrid"),
   toolsGrid: document.getElementById("toolsGrid"),
   aboutText: document.getElementById("aboutText"),
+  aboutArticleLink: document.getElementById("aboutArticleLink"),
   capabilityList: document.getElementById("capabilityList"),
   experienceList: document.getElementById("experienceList"),
   dialog: document.getElementById("projectDialog"),
@@ -895,6 +902,8 @@ function applyTranslations() {
     if (element.id === "heroTitle") element.innerHTML = value;
     else element.textContent = value;
   });
+
+  elements.aboutArticleLink.href = `articles/o-3d-comeca-antes-da-modelagem.html?lang=${currentLanguage}`;
 
   elements.languageCurrent.textContent = currentLanguage.toUpperCase();
   elements.languageMenu.querySelectorAll("[data-lang]").forEach(button => {
