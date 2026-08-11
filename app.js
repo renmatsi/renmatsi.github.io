@@ -37,6 +37,7 @@ const localeData = {
       intro: "Blender add-ons built to turn repetitive production steps into reusable artist workflows.",
       status: "Work in progress",
       release: "Gumroad release planned",
+      availability: "Release details to be announced",
       request: "Request preview",
       disclaimer: "Early builds are not distributed publicly yet. Temporary links open a direct preview request."
     },
@@ -105,6 +106,7 @@ const localeData = {
       intro: "Add-ons para Blender criados para transformar etapas repetitivas de produção em workflows reutilizáveis para artistas.",
       status: "Em desenvolvimento",
       release: "Lançamento no Gumroad planejado",
+      availability: "Detalhes de lançamento serão anunciados",
       request: "Solicitar preview",
       disclaimer: "As builds iniciais ainda não são distribuídas publicamente. Os links temporários abrem uma solicitação direta de preview."
     },
@@ -173,6 +175,7 @@ const localeData = {
       intro: "Add-ons para Blender creados para convertir etapas repetitivas de producción en workflows reutilizables para artistas.",
       status: "En desarrollo",
       release: "Lanzamiento en Gumroad planificado",
+      availability: "Los detalles del lanzamiento se anunciarán próximamente",
       request: "Solicitar preview",
       disclaimer: "Las builds iniciales todavía no se distribuyen públicamente. Los enlaces temporales abren una solicitud directa de preview."
     },
@@ -213,6 +216,7 @@ const toolData = [
   {
     id: "cuttr",
     name: "Cuttr",
+    release: "gumroad",
     href: "mailto:renanmatos220594@outlook.com?subject=Cuttr%20Preview",
     tags: ["Blender 5.2", "Python", "Topology"],
     description: {
@@ -224,6 +228,7 @@ const toolData = [
   {
     id: "weaver",
     name: "Weaver",
+    release: "gumroad",
     href: "mailto:renanmatos220594@outlook.com?subject=Weaver%20Preview",
     tags: ["Blender 5.2", "Geometry Nodes", "Procedural"],
     description: {
@@ -235,12 +240,25 @@ const toolData = [
   {
     id: "knot-forge",
     name: "Knot Forge",
+    release: "gumroad",
     href: "mailto:renanmatos220594@outlook.com?subject=Knot%20Forge%20Preview",
     tags: ["Blender 5.2", "Python", "Parametric"],
     description: {
       en: "Parametric 3D knot generation spanning Celtic graphs, torus knots and production-ready curve or mesh output.",
       pt: "Geração paramétrica de nós 3D, de grafos celtas a torus knots, com saída pronta em curva ou malha.",
       es: "Generación paramétrica de nudos 3D, desde grafos celtas hasta torus knots, con salida lista en curva o malla."
+    }
+  },
+  {
+    id: "stitcher",
+    name: "Stitcher",
+    release: "undisclosed",
+    href: "mailto:renanmatos220594@outlook.com?subject=Stitcher%20Preview",
+    tags: ["Blender", "Python", "Non-destructive"],
+    description: {
+      en: "Edge-based procedural stitching with multiple seam types, advanced modifiers and experimental holes and line deformation on the base surface.",
+      pt: "Costura procedural baseada em arestas, com vários tipos de costura, modificadores avançados e suporte experimental a furos e linhas na superfície-base.",
+      es: "Costura procedural basada en aristas, con múltiples tipos de costura, modificadores avanzados y soporte experimental para agujeros y líneas en la superficie base."
     }
   }
 ];
@@ -739,7 +757,7 @@ function renderTools() {
         <span class="tool-status"><i aria-hidden="true"></i>${t.status}</span>
       </div>
       <div class="tool-card__body">
-        <p class="tool-card__release">${t.release}</p>
+        <p class="tool-card__release">${tool.release === "gumroad" ? t.release : t.availability}</p>
         <h3>${tool.name}</h3>
         <p class="tool-card__description">${tool.description[currentLanguage]}</p>
         <ul class="tool-tags" aria-label="Technology stack">

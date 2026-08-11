@@ -23,7 +23,7 @@ class ResumeCanonicalDataTests(unittest.TestCase):
         payload = json.loads(DATA.read_text(encoding="utf-8"))
         self.assertIn("technical_projects", payload)
         names = {project["name"] for project in payload["technical_projects"]}
-        self.assertEqual(names, {"Cuttr", "Weaver", "Knot Forge"})
+        self.assertEqual(names, {"Cuttr", "Weaver", "Knot Forge", "Stitcher"})
         self.assertIn("Python", payload["software"])
 
     def test_resume_html_uses_canonical_facts_and_omits_superseded_claims(self):
@@ -44,6 +44,7 @@ class ResumeCanonicalDataTests(unittest.TestCase):
             "Cuttr",
             "Weaver",
             "Knot Forge",
+            "Stitcher",
             "Python",
         ]
         for value in required:
@@ -72,6 +73,7 @@ class ResumeCanonicalDataTests(unittest.TestCase):
             "Cuttr",
             "Weaver",
             "Knot Forge",
+            "Stitcher",
         ]:
             self.assertIn(value, text)
         for stale in ["Jan 2023 — Present", "Male Character", "Trial Xtreme Freedom"]:
@@ -104,9 +106,11 @@ class HomepageToolsTests(unittest.TestCase):
         self.assertIn('href="#tools"', index)
         self.assertIn('id="tools"', index)
         self.assertIn('id="toolsGrid"', index)
-        for name in ["Cuttr", "Weaver", "Knot Forge"]:
+        for name in ["Cuttr", "Weaver", "Knot Forge", "Stitcher"]:
             self.assertIn(f'name: "{name}"', app)
             self.assertIn(f"subject={name.replace(' ', '%20')}%20Preview", app)
+        self.assertIn('release: "undisclosed"', app)
+        self.assertIn("Release details to be announced", app)
         for localized_status in ["Gumroad release planned", "Lançamento no Gumroad planejado", "Lanzamiento en Gumroad planificado"]:
             self.assertIn(localized_status, app)
 

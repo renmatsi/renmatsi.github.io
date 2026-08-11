@@ -113,6 +113,11 @@
       "name": "Knot Forge",
       "description": "Parametric 3D knot generator for Blender 5.2",
       "url": null
+    },
+    {
+      "name": "Stitcher",
+      "description": "Non-destructive, edge-based procedural stitching add-on for Blender with advanced modifiers and experimental base-surface deformation support",
+      "url": null
     }
   ],
   "education": [],
