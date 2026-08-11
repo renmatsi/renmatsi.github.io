@@ -126,9 +126,14 @@ class HomepageToolsTests(unittest.TestCase):
         self.assertIn('3D Starts Before Modeling', article)
         self.assertIn('O 3D começa antes da modelagem', article)
         self.assertIn('El 3D empieza antes del modelado', article)
-        self.assertIn('A narrativa é a base da minha criação.', article)
-        self.assertIn('Estética não é só sobre ser belo', article)
-        self.assertIn('Liderar é reduzir ambiguidade', article)
+        self.assertIn('Narrativa como base', article)
+        self.assertIn('A estética deve gerar impacto', article)
+        self.assertIn('Traduzir uma ideia para o 3D', article)
+        self.assertIn('Liderança deve ser o eixo', article)
+        self.assertIn('A técnica deve servir ao projeto', article)
+        self.assertEqual(article.count('class="article-section"'), 18)
+        self.assertIn('Narrative as a foundation', article)
+        self.assertIn('El liderazgo debe ser el eje', article)
         self.assertIn('href="../index.html#about"', article)
 
     def test_homepage_exposes_tools_navigation_and_wip_catalog(self):
