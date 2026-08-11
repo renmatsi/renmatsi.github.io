@@ -675,6 +675,149 @@ a { color: inherit; }
   transform: rotate(0);
 }
 
+/* Artist tools */
+.tools-section {
+  padding: clamp(110px, 13vw, 190px) 0;
+  color: var(--white);
+  background: #11110f;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.tool-card {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(430px, 42vw, 620px);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 42px);
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #151513;
+  transition: background 280ms ease;
+}
+
+.tool-card::before {
+  content: attr(data-tool);
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.16em;
+  color: rgba(246, 244, 239, 0.025);
+  font-size: clamp(80px, 10vw, 150px);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.75;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.tool-card:hover { background: #1b1b18; }
+
+.tool-card__meta,
+.tool-status,
+.tool-card__link {
+  display: flex;
+  align-items: center;
+}
+
+.tool-card__meta {
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.tool-status { gap: 8px; color: #d5d1c8; }
+.tool-status i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(218, 255, 0, 0.09); }
+
+.tool-card__body {
+  position: relative;
+  z-index: 1;
+  margin: auto 0;
+  padding: 52px 0;
+}
+
+.tool-card__release {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.tool-card h3 {
+  margin: 0;
+  font-size: clamp(42px, 4.2vw, 68px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.tool-card__description {
+  max-width: 440px;
+  margin: 28px 0 0;
+  color: #b9b6ae;
+  font-size: 14px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool-tags li {
+  padding: 7px 9px;
+  border: 1px solid rgba(246, 244, 239, 0.2);
+  color: #d0cdc5;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tool-card__link {
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.tool-card__link i { color: var(--accent); font-size: 20px; font-style: normal; transition: transform 220ms var(--ease); }
+.tool-card__link:hover i { transform: translate(4px, -4px); }
+
+.tools-note {
+  max-width: 720px;
+  margin: 26px 0 0 auto;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
 /* About */
 .about-section {
   padding: clamp(110px, 13vw, 190px) 0;
@@ -697,7 +840,6 @@ a { color: inherit; }
   display: block;
   object-fit: cover;
   object-position: center 22%;
-  filter: saturate(0.72) contrast(1.04);
 }
 
 .about-portrait p {
@@ -1150,6 +1292,9 @@ a { color: inherit; }
   .project-card--tall { --span: 6; aspect-ratio: 4 / 3; }
   .project-card--production { --span: 12; aspect-ratio: 16 / 8; }
 
+  .tools-grid { grid-template-columns: 1fr; }
+  .tool-card { min-height: 430px; }
+
   .about-layout { grid-template-columns: minmax(280px, 0.72fr) minmax(390px, 1.28fr); gap: 60px; }
   .about-text { margin-left: 0; }
   .experience-item { grid-template-columns: 140px minmax(210px, 0.8fr) minmax(280px, 1.5fr); gap: 30px; }
@@ -1207,6 +1352,7 @@ a { color: inherit; }
   .scroll-cue { display: none; }
 
   .work-section,
+  .tools-section,
   .experience-section,
   .about-section,
   .contact-section { padding: 96px 0; }
@@ -1242,6 +1388,11 @@ a { color: inherit; }
   .archive-disclosure summary { min-height: 98px; }
   .archive-disclosure summary > span:last-child > span { display: none; }
   .projects-grid--archive .project-card { min-height: 0; }
+
+  .tool-card { min-height: 400px; padding: 26px 22px; }
+  .tool-card h3 { font-size: 48px; }
+  .tool-card__body { padding: 48px 0; }
+  .tools-note { margin-left: 0; }
 
   .about-layout { display: block; }
   .about-portrait { position: relative; top: auto; margin-bottom: 72px; }

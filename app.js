@@ -4,15 +4,15 @@ document.documentElement.classList.add("js");
 
 const localeData = {
   en: {
-    documentTitle: "Renan Matos — Lead 3D Character Artist",
-    description: "Portfolio of Renan Matos, Lead 3D Character Artist specializing in realistic and stylized characters for games.",
-    nav: { work: "Work", about: "About", experience: "Experience", resume: "Resume", contact: "Contact" },
+    documentTitle: "Renan Matos — Senior 3D Character Artist",
+    description: "Portfolio of Renan Matos, Senior 3D Character Artist specializing in realistic and stylized characters for games.",
+    nav: { work: "Work", tools: "Tools", about: "About", experience: "Experience", resume: "Resume", contact: "Contact" },
     hero: {
       available: "Open to work",
       location: "Brazil · Remote",
-      role: "Lead 3D Character Artist",
+      role: "Senior 3D Character Artist",
       title: "Character art from sculpt to engine.",
-      summary: "Nearly a decade creating realistic and stylized characters for PC and mobile games — with production, optimization and team leadership experience.",
+      summary: "Realistic and stylized character production for PC and mobile games, backed by optimization, pipeline and team-leadership experience.",
       ctaWork: "View selected work",
       ctaContact: "Start a conversation",
       scroll: "Selected work"
@@ -31,20 +31,29 @@ const localeData = {
       archiveIntro: "Selected earlier artworks preserved as a record of range and development. They do not define the current portfolio bar.",
       openProject: "Open project"
     },
+    tools: {
+      kicker: "Artist tools",
+      title: "Tools in development",
+      intro: "Blender add-ons built to turn repetitive production steps into reusable artist workflows.",
+      status: "Work in progress",
+      release: "Gumroad release planned",
+      request: "Request preview",
+      disclaimer: "Early builds are not distributed publicly yet. Temporary links open a direct preview request."
+    },
     about: {
       kicker: "Profile",
-      title: "Art direction backed by production experience.",
-      captionRole: "Lead 3D Character Artist",
+      title: "Character craft backed by production experience.",
+      captionRole: "Senior 3D Character Artist",
       captionLocation: "Based in Brazil · Working remotely",
       paragraphs: [
-        "I am a 3D character artist with nearly a decade of game-production experience, working across realistic and stylized pipelines for PC and mobile.",
-        "My work covers the complete character journey — sculpting, anatomy, cloth, grooming, retopology, UVs, texturing and real-time optimization — alongside pipeline development and team mentorship."
+        "I am a Senior 3D Character Artist working across realistic and stylized production pipelines for PC and mobile games.",
+        "My work covers the complete character journey — sculpting, anatomy, garment creation, grooming, retopology, UVs, PBR texturing and real-time optimization — alongside pipeline development and artist mentorship."
       ],
       capabilities: [
-        ["Character art", "Organic and hard-surface modeling, digital sculpture, anatomy, cloth simulation, hair, fur and hair cards."],
-        ["Real-time", "Retopology, UV mapping, PBR and hand-painted texturing, photogrammetry and game-ready optimization."],
+        ["Character art", "Realistic and stylized characters, anatomy, digital sculpting, garment creation, cloth simulation, grooming and hard-surface props."],
+        ["Real-time", "Retopology, UV mapping, baking, PBR texturing, game-ready optimization and engine integration."],
         ["Leadership", "Visual and technical standards, pipeline improvement, cross-discipline collaboration and artist mentorship."],
-        ["Tools", "Blender, Maya, ZBrush, Substance Painter, Marvelous Designer, Marmoset Toolbag, Photoshop and Plasticity."],
+        ["Tools", "ZBrush, Blender, Maya, Substance 3D Painter, Marvelous Designer, Marmoset Toolbag, Photoshop and Python."],
         ["Languages", "English — fluent · Brazilian Portuguese — native"]
       ]
     },
@@ -56,22 +65,22 @@ const localeData = {
     contact: {
       kicker: "Contact",
       title: "Let’s build something worth looking at.",
-      text: "Available for character art, lead-level opportunities, consulting and portfolio mentorship.",
+      text: "Available for remote Senior 3D Character Artist opportunities, consulting and portfolio mentorship.",
       emailLabel: "Email me"
     },
     footer: { backTop: "Back to top ↑" },
     project: { featured: "Featured", externalArtstation: "View on ArtStation ↗", externalGame: "View game ↗", externalDownload: "Download original masters ↗", close: "Close project" }
   },
   pt: {
-    documentTitle: "Renan Matos — Lead 3D Character Artist",
-    description: "Portfólio de Renan Matos, Lead 3D Character Artist especializado em personagens realistas e estilizados para jogos.",
-    nav: { work: "Trabalhos", about: "Sobre", experience: "Experiência", resume: "Currículo", contact: "Contato" },
+    documentTitle: "Renan Matos — Senior 3D Character Artist",
+    description: "Portfólio de Renan Matos, Senior 3D Character Artist especializado em personagens realistas e estilizados para jogos.",
+    nav: { work: "Trabalhos", tools: "Ferramentas", about: "Sobre", experience: "Experiência", resume: "Currículo", contact: "Contato" },
     hero: {
       available: "Disponível para trabalho",
       location: "Brasil · Remoto",
-      role: "Lead 3D Character Artist",
+      role: "Senior 3D Character Artist",
       title: "Personagens da escultura à engine.",
-      summary: "Quase uma década criando personagens realistas e estilizados para jogos de PC e mobile — com experiência em produção, otimização e liderança de equipes.",
+      summary: "Produção de personagens realistas e estilizados para jogos de PC e mobile, apoiada por experiência em otimização, pipeline e liderança de equipe.",
       ctaWork: "Ver trabalhos selecionados",
       ctaContact: "Iniciar uma conversa",
       scroll: "Trabalhos selecionados"
@@ -90,20 +99,29 @@ const localeData = {
       archiveIntro: "Artworks anteriores preservadas como registro de alcance e evolução. Elas não definem a barra atual do portfólio.",
       openProject: "Abrir projeto"
     },
+    tools: {
+      kicker: "Ferramentas do artista",
+      title: "Ferramentas em desenvolvimento",
+      intro: "Add-ons para Blender criados para transformar etapas repetitivas de produção em workflows reutilizáveis para artistas.",
+      status: "Em desenvolvimento",
+      release: "Lançamento no Gumroad planejado",
+      request: "Solicitar preview",
+      disclaimer: "As builds iniciais ainda não são distribuídas publicamente. Os links temporários abrem uma solicitação direta de preview."
+    },
     about: {
       kicker: "Perfil",
-      title: "Direção artística apoiada por experiência de produção.",
-      captionRole: "Lead 3D Character Artist",
+      title: "Criação de personagens apoiada por experiência de produção.",
+      captionRole: "Senior 3D Character Artist",
       captionLocation: "Brasil · Trabalho remoto",
       paragraphs: [
-        "Sou artista 3D de personagens com quase uma década de experiência em produção de jogos, atuando em pipelines realistas e estilizados para PC e mobile.",
-        "Meu trabalho cobre toda a jornada do personagem — escultura, anatomia, roupas, grooming, retopologia, UVs, texturização e otimização em tempo real — além de desenvolvimento de pipeline e mentoria de equipes."
+        "Sou Senior 3D Character Artist e atuo em pipelines de produção realistas e estilizados para jogos de PC e mobile.",
+        "Meu trabalho cobre toda a jornada do personagem — escultura, anatomia, criação de roupas, grooming, retopologia, UVs, texturização PBR e otimização em tempo real — além de desenvolvimento de pipeline e mentoria de artistas."
       ],
       capabilities: [
-        ["Character art", "Modelagem orgânica e hard surface, escultura digital, anatomia, simulação de roupas, cabelo, pelos e hair cards."],
-        ["Tempo real", "Retopologia, mapeamento UV, texturização PBR e hand-painted, fotogrametria e otimização game-ready."],
+        ["Character art", "Personagens realistas e estilizados, anatomia, escultura digital, criação de roupas, simulação de tecido, grooming e props hard surface."],
+        ["Tempo real", "Retopologia, mapeamento UV, baking, texturização PBR, otimização game-ready e integração em engine."],
         ["Liderança", "Padrões visuais e técnicos, melhoria de pipeline, colaboração multidisciplinar e mentoria de artistas."],
-        ["Ferramentas", "Blender, Maya, ZBrush, Substance Painter, Marvelous Designer, Marmoset Toolbag, Photoshop e Plasticity."],
+        ["Ferramentas", "ZBrush, Blender, Maya, Substance 3D Painter, Marvelous Designer, Marmoset Toolbag, Photoshop e Python."],
         ["Idiomas", "Inglês — fluente · Português brasileiro — nativo"]
       ]
     },
@@ -115,22 +133,22 @@ const localeData = {
     contact: {
       kicker: "Contato",
       title: "Vamos construir algo que mereça ser visto.",
-      text: "Disponível para character art, oportunidades de liderança, consultoria e mentoria de portfólio.",
+      text: "Disponível para oportunidades remotas de Senior 3D Character Artist, consultoria e mentoria de portfólio.",
       emailLabel: "Enviar e-mail"
     },
     footer: { backTop: "Voltar ao topo ↑" },
     project: { featured: "Destaque", externalArtstation: "Ver no ArtStation ↗", externalGame: "Ver jogo ↗", externalDownload: "Baixar masters originais ↗", close: "Fechar projeto" }
   },
   es: {
-    documentTitle: "Renan Matos — Lead 3D Character Artist",
-    description: "Portafolio de Renan Matos, Lead 3D Character Artist especializado en personajes realistas y estilizados para videojuegos.",
-    nav: { work: "Trabajos", about: "Acerca de", experience: "Experiencia", resume: "CV", contact: "Contacto" },
+    documentTitle: "Renan Matos — Senior 3D Character Artist",
+    description: "Portafolio de Renan Matos, Senior 3D Character Artist especializado en personajes realistas y estilizados para videojuegos.",
+    nav: { work: "Trabajos", tools: "Herramientas", about: "Acerca de", experience: "Experiencia", resume: "CV", contact: "Contacto" },
     hero: {
       available: "Disponible para trabajar",
       location: "Brasil · Remoto",
-      role: "Lead 3D Character Artist",
+      role: "Senior 3D Character Artist",
       title: "Personajes de la escultura al motor.",
-      summary: "Casi una década creando personajes realistas y estilizados para juegos de PC y mobile — con experiencia en producción, optimización y liderazgo de equipos.",
+      summary: "Producción de personajes realistas y estilizados para juegos de PC y mobile, respaldada por experiencia en optimización, pipeline y liderazgo de equipos.",
       ctaWork: "Ver trabajos seleccionados",
       ctaContact: "Iniciar una conversación",
       scroll: "Trabajos seleccionados"
@@ -149,20 +167,29 @@ const localeData = {
       archiveIntro: "Artworks anteriores preservadas como registro de alcance y evolución. No definen el nivel actual del portafolio.",
       openProject: "Abrir proyecto"
     },
+    tools: {
+      kicker: "Herramientas del artista",
+      title: "Herramientas en desarrollo",
+      intro: "Add-ons para Blender creados para convertir etapas repetitivas de producción en workflows reutilizables para artistas.",
+      status: "En desarrollo",
+      release: "Lanzamiento en Gumroad planificado",
+      request: "Solicitar preview",
+      disclaimer: "Las builds iniciales todavía no se distribuyen públicamente. Los enlaces temporales abren una solicitud directa de preview."
+    },
     about: {
       kicker: "Perfil",
-      title: "Dirección artística respaldada por experiencia de producción.",
-      captionRole: "Lead 3D Character Artist",
+      title: "Creación de personajes respaldada por experiencia de producción.",
+      captionRole: "Senior 3D Character Artist",
       captionLocation: "Brasil · Trabajo remoto",
       paragraphs: [
-        "Soy artista 3D de personajes con casi una década de experiencia en producción de videojuegos, trabajando en pipelines realistas y estilizados para PC y mobile.",
-        "Mi trabajo cubre todo el recorrido del personaje — escultura, anatomía, ropa, grooming, retopología, UVs, texturizado y optimización en tiempo real — además de desarrollo de pipelines y mentoría de equipos."
+        "Soy Senior 3D Character Artist y trabajo en pipelines de producción realistas y estilizados para juegos de PC y mobile.",
+        "Mi trabajo cubre todo el recorrido del personaje — escultura, anatomía, creación de ropa, grooming, retopología, UVs, texturizado PBR y optimización en tiempo real — además de desarrollo de pipelines y mentoría de artistas."
       ],
       capabilities: [
-        ["Character art", "Modelado orgánico y hard surface, escultura digital, anatomía, simulación de ropa, cabello, pelaje y hair cards."],
-        ["Tiempo real", "Retopología, mapeado UV, texturizado PBR y hand-painted, fotogrametría y optimización game-ready."],
+        ["Character art", "Personajes realistas y estilizados, anatomía, escultura digital, creación de ropa, simulación de tejido, grooming y props hard surface."],
+        ["Tiempo real", "Retopología, mapeado UV, baking, texturizado PBR, optimización game-ready e integración en motor."],
         ["Liderazgo", "Estándares visuales y técnicos, mejora de pipelines, colaboración multidisciplinaria y mentoría de artistas."],
-        ["Herramientas", "Blender, Maya, ZBrush, Substance Painter, Marvelous Designer, Marmoset Toolbag, Photoshop y Plasticity."],
+        ["Herramientas", "ZBrush, Blender, Maya, Substance 3D Painter, Marvelous Designer, Marmoset Toolbag, Photoshop y Python."],
         ["Idiomas", "Inglés — fluido · Portugués brasileño — nativo"]
       ]
     },
@@ -174,7 +201,7 @@ const localeData = {
     contact: {
       kicker: "Contacto",
       title: "Construyamos algo que merezca ser visto.",
-      text: "Disponible para character art, oportunidades de liderazgo, consultoría y mentoría de portafolio.",
+      text: "Disponible para oportunidades remotas de Senior 3D Character Artist, consultoría y mentoría de portafolio.",
       emailLabel: "Enviar correo"
     },
     footer: { backTop: "Volver arriba ↑" },
@@ -182,27 +209,63 @@ const localeData = {
   }
 };
 
+const toolData = [
+  {
+    id: "cuttr",
+    name: "Cuttr",
+    href: "mailto:renanmatos220594@outlook.com?subject=Cuttr%20Preview",
+    tags: ["Blender 5.2", "Python", "Topology"],
+    description: {
+      en: "Parametric topology stamping for controlled cuts, panels and repeatable hard-surface details.",
+      pt: "Estampagem paramétrica de topologia para cortes, painéis e detalhes hard surface reutilizáveis.",
+      es: "Estampado paramétrico de topología para cortes, paneles y detalles hard surface reutilizables."
+    }
+  },
+  {
+    id: "weaver",
+    name: "Weaver",
+    href: "mailto:renanmatos220594@outlook.com?subject=Weaver%20Preview",
+    tags: ["Blender 5.2", "Geometry Nodes", "Procedural"],
+    description: {
+      en: "One-click procedural fabric and weave generation with isolated modes and artist-controlled native settings.",
+      pt: "Geração procedural de tecidos e tramas em um clique, com modos isolados e controles nativos para artistas.",
+      es: "Generación procedural de tejidos y tramas en un clic, con modos aislados y controles nativos para artistas."
+    }
+  },
+  {
+    id: "knot-forge",
+    name: "Knot Forge",
+    href: "mailto:renanmatos220594@outlook.com?subject=Knot%20Forge%20Preview",
+    tags: ["Blender 5.2", "Python", "Parametric"],
+    description: {
+      en: "Parametric 3D knot generation spanning Celtic graphs, torus knots and production-ready curve or mesh output.",
+      pt: "Geração paramétrica de nós 3D, de grafos celtas a torus knots, com saída pronta em curva ou malha.",
+      es: "Generación paramétrica de nudos 3D, desde grafos celtas hasta torus knots, con salida lista en curva o malla."
+    }
+  }
+];
+
 const experienceData = [
   {
     company: "Gameplay Galaxy",
     url: "https://www.gameplaygalaxy.com/",
-    period: { en: "Jan 2023 — Present", pt: "Jan 2023 — Atual", es: "Ene 2023 — Actualidad" },
+    period: { en: "Jan 2023 — May 2026", pt: "Jan 2023 — Mai 2026", es: "Ene 2023 — May 2026" },
     role: { en: "Lead 3D Character Artist · Remote", pt: "Lead 3D Character Artist · Remoto", es: "Lead 3D Character Artist · Remoto" },
     bullets: {
       en: [
-        "Progressed from 3D Character Artist to Senior and currently Lead 3D Character Artist.",
-        "Lead and mentor the character art team while defining artistic and technical standards for character production.",
-        "Create game-ready characters from sculpting through texturing and work closely with concept, animation and engineering."
+        "Led and mentored the character art team through production planning, feedback, quality reviews and workflow improvements.",
+        "Created realistic and stylized characters and production assets optimized for real-time rendering on PC and mobile.",
+        "Collaborated remotely with concept, animation, engineering and production teams across international projects."
       ],
       pt: [
-        "Evolução de 3D Character Artist para Senior e atualmente Lead 3D Character Artist.",
-        "Liderança e mentoria da equipe de character art, definindo padrões artísticos e técnicos para produção de personagens.",
-        "Criação de personagens game-ready da escultura à texturização, em colaboração com conceito, animação e engenharia."
+        "Liderança e mentoria da equipe de character art em planejamento, feedback, revisão de qualidade e melhoria de workflows.",
+        "Criação de personagens realistas e estilizados e assets de produção otimizados para renderização em tempo real no PC e mobile.",
+        "Colaboração remota com equipes de conceito, animação, engenharia e produção em projetos internacionais."
       ],
       es: [
-        "Progresión de 3D Character Artist a Senior y actualmente Lead 3D Character Artist.",
-        "Liderazgo y mentoría del equipo de character art, definiendo estándares artísticos y técnicos para producción de personajes.",
-        "Creación de personajes game-ready desde la escultura hasta el texturizado, colaborando con concepto, animación e ingeniería."
+        "Lideré y orienté al equipo de character art en planificación, feedback, revisiones de calidad y mejoras de workflow.",
+        "Creé personajes realistas y estilizados y assets de producción optimizados para renderizado en tiempo real en PC y mobile.",
+        "Colaboré remotamente con equipos de concepto, animación, ingeniería y producción en proyectos internacionales."
       ]
     }
   },
@@ -232,11 +295,11 @@ const experienceData = [
     company: "BeByte",
     url: "https://bebyte.com.br/",
     period: { en: "Sep 2017 — Feb 2022", pt: "Set 2017 — Fev 2022", es: "Sep 2017 — Feb 2022" },
-    role: { en: "3D Generalist · Brasília", pt: "3D Generalist · Brasília", es: "3D Generalist · Brasília" },
+    role: { en: "3D Generalist → Lead 3D Artist · Brasília", pt: "3D Generalist → Lead 3D Artist · Brasília", es: "3D Generalist → Lead 3D Artist · Brasília" },
     bullets: {
-      en: ["End-to-end 3D production spanning modeling, texturing, rigging and animation.", "Integrated assets into game engines and supported production teams technically and creatively."],
-      pt: ["Produção 3D end-to-end: modelagem, texturização, rigging e animação.", "Integração de assets em game engines e suporte técnico e criativo às equipes de produção."],
-      es: ["Producción 3D end-to-end: modelado, texturizado, rigging y animación.", "Integración de assets en motores de juego y soporte técnico y creativo a equipos de producción."]
+      en: ["Promoted from 3D Generalist to Lead 3D Artist after approximately three months.", "Led art production while remaining hands-on across modeling, sculpting, texturing, rendering, animation support and asset delivery."],
+      pt: ["Promoção de 3D Generalist para Lead 3D Artist após aproximadamente três meses.", "Liderança da produção artística com atuação prática em modelagem, escultura, texturização, render, suporte à animação e entrega de assets."],
+      es: ["Promoción de 3D Generalist a Lead 3D Artist después de aproximadamente tres meses.", "Lideré la producción artística con trabajo práctico en modelado, escultura, texturizado, render, soporte de animación y entrega de assets."]
     }
   }
 ];
@@ -603,6 +666,7 @@ const elements = {
   languageCurrent: document.getElementById("languageCurrent"),
   languageMenu: document.getElementById("languageMenu"),
   projectsGrid: document.getElementById("projectsGrid"),
+  toolsGrid: document.getElementById("toolsGrid"),
   aboutText: document.getElementById("aboutText"),
   capabilityList: document.getElementById("capabilityList"),
   experienceList: document.getElementById("experienceList"),
@@ -664,6 +728,29 @@ function renderProjects() {
   elements.projectsGrid.querySelectorAll("[data-project]").forEach(button => {
     button.addEventListener("click", () => openProject(button.dataset.project));
   });
+}
+
+function renderTools() {
+  const t = localeData[currentLanguage].tools;
+  elements.toolsGrid.innerHTML = toolData.map((tool, index) => `
+    <article class="tool-card reveal" data-tool="${tool.id}">
+      <div class="tool-card__meta">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <span class="tool-status"><i aria-hidden="true"></i>${t.status}</span>
+      </div>
+      <div class="tool-card__body">
+        <p class="tool-card__release">${t.release}</p>
+        <h3>${tool.name}</h3>
+        <p class="tool-card__description">${tool.description[currentLanguage]}</p>
+        <ul class="tool-tags" aria-label="Technology stack">
+          ${tool.tags.map(tag => `<li>${tag}</li>`).join("")}
+        </ul>
+      </div>
+      <a class="tool-card__link" href="${tool.href}" aria-label="${escapeAttribute(t.request)} — ${tool.name}">
+        <span>${t.request}</span><i aria-hidden="true">↗</i>
+      </a>
+    </article>
+  `).join("");
 }
 
 function renderAbout() {
@@ -798,6 +885,7 @@ function applyTranslations() {
   });
 
   renderProjects();
+  renderTools();
   renderAbout();
   renderExperience();
   setupRevealObserver();

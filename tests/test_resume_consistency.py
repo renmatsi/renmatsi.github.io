@@ -7,6 +7,8 @@ import fitz
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "resume.json"
 HTML = ROOT / "resume.html"
+INDEX = ROOT / "index.html"
+APP = ROOT / "app.js"
 PDF = ROOT / "assets" / "resume" / "Renan-Matos-Senior-3D-Character-Artist.pdf"
 STALE_PDF = ROOT / "assets" / "resume" / "Renan-Matos-Lead-3D-Character-Artist.pdf"
 
@@ -93,6 +95,30 @@ class ResumeCanonicalDataTests(unittest.TestCase):
 
     def test_superseded_lead_resume_is_not_public(self):
         self.assertFalse(STALE_PDF.exists(), "The superseded Lead resume must not remain publicly accessible")
+
+
+class HomepageToolsTests(unittest.TestCase):
+    def test_homepage_exposes_tools_navigation_and_wip_catalog(self):
+        index = INDEX.read_text(encoding="utf-8")
+        app = APP.read_text(encoding="utf-8")
+        self.assertIn('href="#tools"', index)
+        self.assertIn('id="tools"', index)
+        self.assertIn('id="toolsGrid"', index)
+        for name in ["Cuttr", "Weaver", "Knot Forge"]:
+            self.assertIn(f'name: "{name}"', app)
+            self.assertIn(f"subject={name.replace(' ', '%20')}%20Preview", app)
+        for localized_status in ["Gumroad release planned", "Lançamento no Gumroad planejado", "Lanzamiento en Gumroad planificado"]:
+            self.assertIn(localized_status, app)
+
+    def test_homepage_uses_canonical_role_and_gameplay_dates(self):
+        payload = json.loads(DATA.read_text(encoding="utf-8"))
+        index = INDEX.read_text(encoding="utf-8")
+        app = APP.read_text(encoding="utf-8")
+        self.assertIn(payload["identity"]["target_role"], index)
+        self.assertIn('"jobTitle": "Senior 3D Character Artist"', index)
+        self.assertIn('period: { en: "Jan 2023 — May 2026"', app)
+        self.assertNotIn("Jan 2023 — Present", app)
+        self.assertNotIn("Progressed from 3D Character Artist to Senior", app)
 
 
 if __name__ == "__main__":
