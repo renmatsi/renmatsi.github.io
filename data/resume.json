@@ -1,0 +1,129 @@
+{
+  "identity": {
+    "name": "Renan Matos",
+    "target_role": "Senior 3D Character Artist",
+    "location": "Brazil",
+    "availability": "Remote",
+    "relocation": null
+  },
+  "contacts": {
+    "email": "renanmatos220594@outlook.com",
+    "portfolio": "https://renmatsi.github.io/",
+    "linkedin": "https://www.linkedin.com/in/renmatsi/",
+    "artstation": "https://renmatsi.artstation.com/",
+    "github": "https://github.com/renmatsi"
+  },
+  "summary": "Senior 3D Character Artist with professional experience creating real-time characters and assets for games. Former Lead 3D Character Artist at Gameplay Galaxy, with hands-on work across sculpting, anatomy, garment creation, grooming, retopology, UVs, PBR texturing and engine integration. Experienced in leading artists, organizing production workflows and adapting visual quality to technical requirements.",
+  "experience": [
+    {
+      "company": "Gameplay Galaxy",
+      "role": "Lead 3D Character Artist",
+      "location": "Remote",
+      "start": "2023-01",
+      "end": "2026-05",
+      "period": "Jan 2023 — May 2026",
+      "bullets": [
+        "Led and mentored the character-art team while remaining directly involved in production.",
+        "Created game-ready characters across sculpting, garment creation, grooming, retopology, UVs and PBR texturing.",
+        "Collaborated with concept, animation and engineering throughout character production and integration."
+      ]
+    },
+    {
+      "company": "Fire Games Studios",
+      "role": "3D Artist / 3D Generalist",
+      "location": "Remote",
+      "start": "2022-01",
+      "end": "2023-02",
+      "period": "Jan 2022 — Feb 2023",
+      "bullets": [
+        "Modeled and textured characters, props and environments for in-game use.",
+        "Supported rigging, integration and generalist workflows for prototypes and indie productions."
+      ]
+    },
+    {
+      "company": "Fiverr · Freelance",
+      "role": "3D Modeler",
+      "location": "Remote",
+      "start": "2020-01",
+      "end": "2022-05",
+      "period": "Jan 2020 — May 2022",
+      "bullets": [
+        "Delivered custom 3D assets for international clients across games, AR/VR and animation.",
+        "Adapted assets to different visual styles, production needs and target platforms."
+      ]
+    },
+    {
+      "company": "BeByte",
+      "role": "3D Generalist → Lead",
+      "location": "Brasília · Hybrid",
+      "start": "2017-09",
+      "end": "2022-02",
+      "period": "Sep 2017 — Feb 2022",
+      "bullets": [
+        "Promoted from 3D Generalist to Lead after approximately three months with the company.",
+        "Worked across modeling, texturing, rigging, animation and game-engine integration.",
+        "Led artists and helped organize production workflows while remaining hands-on with 3D delivery."
+      ]
+    }
+  ],
+  "expertise": {
+    "Character art": [
+      "Realistic and stylized characters",
+      "Anatomy and digital sculpting",
+      "Garment creation and cloth simulation",
+      "Grooming",
+      "Hard-surface props"
+    ],
+    "Production": [
+      "Retopology",
+      "UV mapping",
+      "Baking",
+      "PBR texturing",
+      "Real-time optimization",
+      "Engine integration"
+    ],
+    "Leadership": [
+      "Team guidance and mentoring",
+      "Production workflow organization",
+      "Cross-functional collaboration"
+    ]
+  },
+  "software": [
+    "ZBrush",
+    "Blender",
+    "Maya",
+    "Substance 3D Painter",
+    "Marvelous Designer",
+    "Marmoset Toolbag",
+    "Photoshop",
+    "Python"
+  ],
+  "technical_projects": [
+    {
+      "name": "Cuttr",
+      "description": "Parametric topology-stamping add-on for Blender 5.2",
+      "url": null
+    },
+    {
+      "name": "Weaver",
+      "description": "Procedural fabric and weave generator for Blender 5.2",
+      "url": null
+    },
+    {
+      "name": "Knot Forge",
+      "description": "Parametric 3D knot generator for Blender 5.2",
+      "url": null
+    }
+  ],
+  "education": [],
+  "languages": [
+    "Portuguese — Native",
+    "English — Fluent"
+  ],
+  "projects": [],
+  "variants": {
+    "leadership": true,
+    "web3": false,
+    "generative_ai": false
+  }
+}

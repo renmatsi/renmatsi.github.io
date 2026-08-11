@@ -103,42 +103,32 @@ footer p { margin: 0; }
 }
 
 @media print {
-  @page { size: A4; margin: 12mm 13mm; }
-  body { width: auto; margin: 0; color: #111; background: white; font-size: 9.2pt; line-height: 1.38; }
+  @page { size: A4; margin: 9mm 11mm; }
+  body { width: auto; margin: 0; color: #111; background: white; font-size: 8.3pt; line-height: 1.28; }
   .skip-link,
   .resume-actions { display: none; }
-  .resume-header { padding: 0 0 12pt; border-bottom-width: 2pt; }
+  .resume-header { padding: 0 0 8pt; border-bottom-width: 2pt; }
   .eyebrow { font-size: 7pt; }
-  h1 { margin-top: 5pt; font-size: 31pt; }
-  .role { font-size: 13pt; }
-  .contact-line { gap: 3pt 12pt; padding: 8pt 0; font-size: 7.5pt; }
-  .resume-section { grid-template-columns: 108pt minmax(0, 1fr); gap: 18pt; padding: 13pt 0; }
-  .resume-section > h2 { font-size: 8pt; }
-  .summary > p { font-size: 10pt; }
-  .skill-groups { gap: 5pt; }
+  h1 { margin-top: 4pt; font-size: 27pt; }
+  .role { font-size: 11.5pt; }
+  .contact-line { gap: 2pt 10pt; padding: 6pt 0; font-size: 6.8pt; }
+  .resume-section { grid-template-columns: 94pt minmax(0, 1fr); gap: 14pt; padding: 8pt 0; }
+  .resume-section > h2 { font-size: 7.4pt; }
+  .summary > p { font-size: 8.8pt; }
+  .skill-groups { gap: 3pt; }
   .job,
   .evidence article { grid-column: 2; break-inside: avoid; }
-  .page-break-print { break-before: page; }
-  .print-continuation {
-    display: block;
-    margin: 0 0 10pt;
-    color: #555;
-    font-size: 7pt;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
   .job + .job,
-  .evidence article + article { margin-top: 11pt; padding-top: 10pt; }
+  .evidence article + article { margin-top: 6pt; padding-top: 6pt; }
   .job h3,
-  .evidence h3 { font-size: 11pt; }
+  .evidence h3 { font-size: 9.8pt; }
   .job header p,
   .progression,
-  .evidence p { font-size: 8.5pt; }
+  .evidence p { font-size: 7.8pt; }
   .job time,
-  .evidence time { font-size: 7.5pt; }
-  ul { margin-top: 6pt; padding-left: 13pt; }
-  li + li { margin-top: 2pt; }
+  .evidence time { font-size: 6.8pt; }
+  ul { margin-top: 4pt; padding-left: 11pt; }
+  li + li { margin-top: 1pt; }
   a { text-decoration: none; }
-  footer { padding: 10pt 0 0; font-size: 7pt; }
+  footer { padding: 6pt 0 0; font-size: 6.5pt; }
 }
