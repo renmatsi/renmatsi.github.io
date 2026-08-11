@@ -106,6 +106,8 @@ class HomepageToolsTests(unittest.TestCase):
         self.assertIn('href="#tools"', index)
         self.assertIn('id="tools"', index)
         self.assertIn('id="toolsGrid"', index)
+        self.assertLess(index.index('id="experience"'), index.index('id="tools"'))
+        self.assertLess(index.index('id="tools"'), index.index('id="contact"'))
         for name in ["Cuttr", "Weaver", "Knot Forge", "Stitcher"]:
             self.assertIn(f'name: "{name}"', app)
             self.assertIn(f"subject={name.replace(' ', '%20')}%20Preview", app)
