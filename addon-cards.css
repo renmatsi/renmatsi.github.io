@@ -1,0 +1,215 @@
+/* Renan Matos — addon card identity system */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  border: 0;
+}
+
+.tool-card.addon-identity-card {
+  --tool-g1: #ff7a00;
+  --tool-g2: #ff2558;
+
+  container-type: inline-size;
+  position: relative;
+  min-width: 0;
+  min-height: 380px;
+  display: block;
+  padding: 28px 26px 26px;
+  overflow: hidden;
+  isolation: isolate;
+
+  border: 1px solid rgba(246, 244, 239, 0.14);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      440px 280px at 14% 118%,
+      color-mix(in srgb, var(--tool-g2) 12%, transparent),
+      color-mix(in srgb, var(--tool-g1) 6%, transparent) 44%,
+      transparent 72%
+    ),
+    #0a0a0a;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.015),
+    0 16px 40px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 280ms var(--ease),
+    border-color 280ms ease,
+    background-color 280ms ease;
+}
+
+.tool-card.addon-identity-card:hover {
+  background:
+    radial-gradient(
+      440px 280px at 14% 118%,
+      color-mix(in srgb, var(--tool-g2) 15%, transparent),
+      color-mix(in srgb, var(--tool-g1) 7%, transparent) 44%,
+      transparent 72%
+    ),
+    #0d0d0c;
+  border-color: rgba(246, 244, 239, 0.20);
+  transform: translateY(-2px);
+}
+
+/* Fine gradient line */
+.tool-card.addon-identity-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: 2px;
+  border-radius: 24px 24px 0 0;
+  background: linear-gradient(90deg, var(--tool-g1), var(--tool-g2));
+  pointer-events: none;
+}
+
+/* Very subtle ghost word */
+.tool-card.addon-identity-card::before {
+  content: attr(data-tool);
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.16em;
+  z-index: -1;
+
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(246, 244, 239, 0.04);
+  font-size: clamp(66px, 24cqw, 112px);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.78;
+  text-transform: uppercase;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.tool-card.addon-identity-card .tool-card__body {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-card.addon-identity-card h3 {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+
+  margin: 8px 0 24px -2px;
+  padding: 18px 12px 20px 0;
+  overflow: visible;
+
+  font-family: "Creativo Local", "Comfortaa", "Archivo", sans-serif;
+  font-size: clamp(66px, 20cqw, 104px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+  text-transform: lowercase;
+
+  background: linear-gradient(105deg, var(--tool-g1) 0%, var(--tool-g2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Extra vertical breathing room for the tallest wordmarks */
+.tool-card.addon-identity-card[data-tool="stitchr"] h3,
+.tool-card.addon-identity-card[data-tool="groomr"] h3 {
+  font-size: clamp(62px, 18.5cqw, 98px);
+  line-height: 1.18;
+  padding-top: 22px;
+  padding-bottom: 24px;
+}
+
+.tool-card.addon-identity-card .tool-card__description {
+  position: relative;
+  z-index: 1;
+  max-width: 34ch;
+  margin: 0;
+
+  color: #a3a3a3;
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.tool-card.addon-identity-card[data-tool="cuttr"] {
+  --tool-g1: #ff7a00;
+  --tool-g2: #ff2558;
+}
+
+.tool-card.addon-identity-card[data-tool="weavr"] {
+  --tool-g1: #7d52ff;
+  --tool-g2: #00b7ff;
+}
+
+.tool-card.addon-identity-card[data-tool="stitchr"] {
+  --tool-g1: #ff3f91;
+  --tool-g2: #ff9336;
+}
+
+.tool-card.addon-identity-card[data-tool="groomr"] {
+  --tool-g1: #00c9d2;
+  --tool-g2: #63e36e;
+}
+
+.tool-card.addon-identity-card[data-tool="drawr"] {
+  --tool-g1: #cbff37;
+  --tool-g2: #ffab00;
+}
+
+/* Remove the old card UI completely. */
+.tool-card__meta,
+.tool-status,
+.tool-card__release,
+.tool-tags,
+.tool-card__link,
+.tools-note {
+  display: none !important;
+}
+
+@media (max-width: 1120px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tool-card.addon-identity-card {
+    min-height: 340px;
+    border-radius: 20px;
+  }
+
+  .tool-card.addon-identity-card::after {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .tool-card.addon-identity-card h3 {
+    font-size: clamp(68px, 21cqw, 100px);
+  }
+
+  .tool-card.addon-identity-card[data-tool="stitchr"] h3,
+  .tool-card.addon-identity-card[data-tool="groomr"] h3 {
+    font-size: clamp(64px, 19.5cqw, 94px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card.addon-identity-card {
+    transition: none;
+  }
+
+  .tool-card.addon-identity-card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,20 @@
+ATUALIZAÇÃO DOS CARDS DE ADDONS
+
+Arquivos deste pacote:
+- index.html
+- addon-cards.css
+- addon-cards.js
+
+No repositório renmatsi/renmatsi.github.io:
+1. Faça upload dos 3 arquivos na raiz do repositório.
+2. Quando o GitHub perguntar, confirme a substituição de index.html.
+3. Clique em Commit changes.
+
+Os arquivos app.js e styles.css existentes NÃO precisam ser substituídos.
+A atualização é aditiva para reduzir o risco de quebrar o restante do portfólio.
+
+Cards incluídos:
+Cuttr, Weavr, Stitchr, Groomr e Drawr.
+
+Removidos visualmente da seção:
+Knot Forge, status, contagem, tags, release e CTA/preview.
