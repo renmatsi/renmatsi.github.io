@@ -33,7 +33,7 @@ const localeData = {
     },
     tools: {
       kicker: "Add-ons",
-      title: "Blender add-ons",
+      title: "Add-ons",
       intro: "Small production tools I build for modeling, hair, cloth and topology.",
       status: "Work in progress",
       release: "Gumroad release planned",
@@ -104,7 +104,7 @@ const localeData = {
     },
     tools: {
       kicker: "Add-ons",
-      title: "Add-ons para Blender",
+      title: "Add-ons",
       intro: "Ferramentas que desenvolvo para modelagem, cabelo, tecido e topologia.",
       status: "Em desenvolvimento",
       release: "Lançamento no Gumroad planejado",
@@ -175,7 +175,7 @@ const localeData = {
     },
     tools: {
       kicker: "Add-ons",
-      title: "Add-ons para Blender",
+      title: "Add-ons",
       intro: "Herramientas que desarrollo para modelado, cabello, tela y topología.",
       status: "En desarrollo",
       release: "Lanzamiento en Gumroad planificado",

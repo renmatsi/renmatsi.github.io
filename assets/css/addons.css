@@ -240,3 +240,17 @@
 .tools-note {
   display: none !important;
 }
+
+
+/* === IRIS STUDIO CARD === */
+.tool-card.addon-identity-card[data-tool="iris-studio"] {
+  --tool-g1: #6b5cff;
+  --tool-g2: #28c7ff;
+}
+
+.tool-card.addon-identity-card[data-tool="iris-studio"] h3 {
+  text-transform: none !important;
+  letter-spacing: -0.045em !important;
+  font-family: "Archivo", sans-serif !important;
+  font-size: clamp(24px, 2.25vw, 38px) !important;
+}
