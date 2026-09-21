@@ -101,22 +101,27 @@
   "technical_projects": [
     {
       "name": "Cuttr",
-      "description": "Parametric topology-stamping add-on for Blender 5.2",
+      "description": "Controlled topology cuts and panel details for Blender",
       "url": null
     },
     {
-      "name": "Weaver",
-      "description": "Procedural fabric and weave generator for Blender 5.2",
+      "name": "Weavr",
+      "description": "Procedural fabric and weave generation for Blender",
       "url": null
     },
     {
-      "name": "Knot Forge",
-      "description": "Parametric 3D knot generator for Blender 5.2",
+      "name": "Stitchr",
+      "description": "Surface-aware procedural seams and stitching for Blender",
       "url": null
     },
     {
-      "name": "Stitcher",
-      "description": "Non-destructive, edge-based procedural stitching add-on for Blender with advanced modifiers and experimental base-surface deformation support",
+      "name": "Groomr",
+      "description": "Guide-driven hair-card grooming with physics and collision controls",
+      "url": null
+    },
+    {
+      "name": "Drawr",
+      "description": "Raised and engraved surface-detail drawing for Blender",
       "url": null
     }
   ],
