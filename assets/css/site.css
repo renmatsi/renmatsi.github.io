@@ -1587,3 +1587,27 @@ a { color: inherit; }
 .contact-primary {
   padding-right: 0;
 }
+
+
+/* === BRAND RENAN M PORTFOLIO === */
+.brand {
+  gap: 0;
+}
+
+.brand-mark {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.brand-role {
+  display: none !important;
+}
+
+@media (max-width: 780px) {
+  .brand-mark {
+    font-size: 13px;
+  }
+}
