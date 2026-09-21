@@ -254,3 +254,85 @@
   font-family: "Archivo", sans-serif !important;
   font-size: clamp(24px, 2.25vw, 38px) !important;
 }
+
+
+/* === ORGANIZED TOOLS GRID 2026 === */
+
+/* Six tools: exact 3 x 2 desktop composition. */
+.tools-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: stretch;
+}
+
+.tool-card.addon-identity-card {
+  min-height: 168px !important;
+  width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  padding: 20px 22px !important;
+}
+
+.tool-card.addon-identity-card .tool-card__body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Use the requested product names exactly as written. */
+.tool-card.addon-identity-card h3,
+.tool-card.addon-identity-card[data-tool="stitchr"] h3,
+.tool-card.addon-identity-card[data-tool="groomr"] h3,
+.tool-card.addon-identity-card[data-tool="iris-studio"] h3 {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+  text-transform: none !important;
+  white-space: nowrap;
+  font-family: "Archivo", sans-serif !important;
+  font-size: clamp(28px, 2.45vw, 44px) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Iris Studio: first card / software identity. */
+.tool-card.addon-identity-card[data-tool="iris-studio"] {
+  --tool-g1: #6b5cff;
+  --tool-g2: #28c7ff;
+}
+
+/* Keep the ghost identity but make it quieter and aligned. */
+.tool-card.addon-identity-card::before {
+  right: -0.03em;
+  bottom: -0.18em;
+  opacity: .72;
+}
+
+@media (max-width: 1120px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .tools-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .tool-card.addon-identity-card {
+    min-height: 138px !important;
+  }
+
+  .tool-card.addon-identity-card h3,
+  .tool-card.addon-identity-card[data-tool="stitchr"] h3,
+  .tool-card.addon-identity-card[data-tool="groomr"] h3,
+  .tool-card.addon-identity-card[data-tool="iris-studio"] h3 {
+    font-size: clamp(27px, 9vw, 42px) !important;
+  }
+}
