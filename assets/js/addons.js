@@ -3,42 +3,6 @@
 (() => {
   const tools = [
     {
-      id: "cuttr",
-      name: "cuttr",
-      description: {
-        en: "Cuts and panel details without rebuilding the surrounding topology.",
-        pt: "Cria cortes e painéis sem exigir a reconstrução da topologia ao redor.",
-        es: "Crea cortes y paneles sin exigir reconstruir la topología alrededor."
-      }
-    },
-    {
-      id: "weavr",
-      name: "weavr",
-      description: {
-        en: "Builds controllable woven patterns for fabric and braided surfaces.",
-        pt: "Cria tramas controláveis para tecidos e superfícies trançadas.",
-        es: "Crea tramas controlables para tejidos y superficies trenzadas."
-      }
-    },
-    {
-      id: "stitchr",
-      name: "stitchr",
-      description: {
-        en: "Creates seams and stitches that follow the surface instead of floating over it.",
-        pt: "Cria costuras e pontos que acompanham a superfície em vez de flutuar sobre ela.",
-        es: "Crea costuras y puntadas que siguen la superficie en lugar de flotar sobre ella."
-      }
-    },
-    {
-      id: "groomr",
-      name: "groomr",
-      description: {
-        en: "Shapes hair cards from guides with physics, collision and artist controls.",
-        pt: "Molda hair cards a partir de guias com física, colisão e controles para o artista.",
-        es: "Da forma a hair cards a partir de guías con física, colisión y controles para el artista."
-      }
-    },
-    {
       id: "iris-studio",
       name: "Iris Studio",
       description: {
@@ -48,8 +12,44 @@
       }
     },
     {
+      id: "groomr",
+      name: "Groomr",
+      description: {
+        en: "Shapes hair cards from guides with physics, collision and artist controls.",
+        pt: "Molda hair cards a partir de guias com física, colisão e controles para o artista.",
+        es: "Da forma a hair cards a partir de guías con física, colisión y controles para el artista."
+      }
+    },
+    {
+      id: "stitchr",
+      name: "Stitcher",
+      description: {
+        en: "Creates seams and stitches that follow the surface instead of floating over it.",
+        pt: "Cria costuras e pontos que acompanham a superfície em vez de flutuar sobre ela.",
+        es: "Crea costuras y puntadas que siguen la superficie en lugar de flotar sobre ella."
+      }
+    },
+    {
+      id: "weavr",
+      name: "Weavr",
+      description: {
+        en: "Builds controllable woven patterns for fabric and braided surfaces.",
+        pt: "Cria tramas controláveis para tecidos e superfícies trançadas.",
+        es: "Crea tramas controlables para tejidos y superficies trenzadas."
+      }
+    },
+    {
+      id: "cuttr",
+      name: "Cuttr",
+      description: {
+        en: "Cuts and panel details without rebuilding the surrounding topology.",
+        pt: "Cria cortes e painéis sem exigir a reconstrução da topologia ao redor.",
+        es: "Crea cortes y paneles sin exigir reconstruir la topología alrededor."
+      }
+    },
+    {
       id: "drawr",
-      name: "drawr",
+      name: "Drawr",
       description: {
         en: "Draws raised or engraved details directly over a model.",
         pt: "Desenha relevos ou gravações diretamente sobre o modelo.",
