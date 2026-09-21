@@ -39,6 +39,15 @@
       }
     },
     {
+      id: "iris-studio",
+      name: "Iris Studio",
+      description: {
+        en: "Procedural eye and iris creation with 3D preview and texture-map export.",
+        pt: "Criação procedural de olhos e íris com preview 3D e exportação de mapas.",
+        es: "Creación procedural de ojos e iris con vista 3D y exportación de mapas."
+      }
+    },
+    {
       id: "drawr",
       name: "drawr",
       description: {

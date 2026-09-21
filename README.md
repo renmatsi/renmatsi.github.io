@@ -27,5 +27,5 @@ Avoid generic portfolio slogans, repeated capability claims and decorative metad
 
 ## Add-ons
 
-The visible add-on set is: Cuttr, Weavr, Stitchr, Groomr and Drawr.
+The visible tools set is: Cuttr, Weavr, Stitchr, Groomr, Iris Studio and Drawr.
 `assets/js/addons.js` is the single renderer/source of truth for the add-on cards.
