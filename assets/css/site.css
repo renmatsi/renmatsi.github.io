@@ -1499,3 +1499,91 @@ a { color: inherit; }
   }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* === ULTRA CLEAN 2026 === */
+
+.section-index,
+.section-kicker,
+.section-intro,
+.project-meta,
+.project-arrow,
+.dialog-description,
+.dialog-tags,
+.tools-note,
+.about-portrait > p,
+.experience-detail,
+.case-section-header > p {
+  display: none !important;
+}
+
+.section-heading,
+.section-heading--minimal,
+.section-heading--stacked {
+  display: block !important;
+  margin-bottom: 24px !important;
+}
+
+.section-heading h1,
+.section-heading h2,
+.section-heading--minimal h1,
+.section-heading--minimal h2,
+.about-copy h2 {
+  margin: 0 !important;
+}
+
+.section-heading--stacked .section-index {
+  margin: 0 !important;
+}
+
+.project-copy {
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+}
+
+.project-copy h3 {
+  font-size: clamp(17px, 1.55vw, 25px) !important;
+  line-height: 1 !important;
+}
+
+.about-article-link small,
+.capability-list {
+  display: none !important;
+}
+
+.about-article-link {
+  padding: 14px 0;
+}
+
+.about-article-link i {
+  display: none !important;
+}
+
+.experience-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.about-links span,
+.contact-grid span,
+.contact-primary i,
+.dialog-external i {
+  display: none !important;
+}
+
+.case-section-header {
+  display: block !important;
+  margin-bottom: 20px !important;
+}
+
+.case-section-header div > p {
+  display: none !important;
+}
+
+.case-section-header h3 {
+  margin: 0 !important;
+}
+
+.contact-primary {
+  padding-right: 0;
+}

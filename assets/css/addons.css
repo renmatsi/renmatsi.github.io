@@ -213,3 +213,30 @@
     transform: none;
   }
 }
+
+/* === ULTRA CLEAN ADDONS 2026 === */
+
+.tool-card.addon-identity-card {
+  min-height: 150px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 18px 20px !important;
+}
+
+.tool-card.addon-identity-card h3,
+.tool-card.addon-identity-card[data-tool="stitchr"] h3,
+.tool-card.addon-identity-card[data-tool="groomr"] h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: clamp(28px, 2.5vw, 42px) !important;
+}
+
+.tool-card.addon-identity-card .tool-card__description,
+.tool-card__meta,
+.tool-status,
+.tool-card__release,
+.tool-tags,
+.tool-card__link,
+.tools-note {
+  display: none !important;
+}
