@@ -682,7 +682,7 @@ function renderProjects() {
     const copy = project.copy[currentLanguage];
     return `
       <button class="project-card ${layoutClasses[project.layout]} reveal" type="button" data-project="${project.id}" aria-label="${escapeAttribute(t.work.openProject)}: ${escapeAttribute(copy.title)}">
-        <img src="${project.cover}" alt="" width="1800" height="1200" loading="lazy" decoding="async"><span>${number}</span></span>
+        <img src="${project.cover}" alt="" width="1800" height="1200" loading="lazy" decoding="async">
         <span class="project-copy"><h3>${copy.title}</h3></span>
       </button>`;
   }).join("");
