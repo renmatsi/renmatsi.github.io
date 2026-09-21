@@ -71,7 +71,6 @@
                aria-label="${tool.name}">
         <div class="tool-card__body">
           <h3>${tool.name}</h3>
-          <p class="tool-card__description">${tool.description[lang]}</p>
         </div>
       </article>
     `).join("");

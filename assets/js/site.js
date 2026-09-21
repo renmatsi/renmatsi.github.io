@@ -71,8 +71,8 @@ const localeData = {
       text: "Available for remote Senior 3D Character Artist roles, consulting and portfolio mentorship.",
       emailLabel: "Email me"
     },
-    footer: { backTop: "Back to top ↑" },
-    project: { featured: "Featured", externalArtstation: "View on ArtStation ↗", externalGame: "View game ↗", externalDownload: "Download original masters ↗", close: "Close project" }
+    footer: { backTop: "Back to top" },
+    project: { featured: "Featured", externalArtstation: "View on ArtStation", externalGame: "View game", externalDownload: "Download original masters", close: "Close project" }
   },
   pt: {
     documentTitle: "Renan Matos — Senior 3D Character Artist",
@@ -142,8 +142,8 @@ const localeData = {
       text: "Estou disponível para vagas remotas de Senior 3D Character Artist, consultoria e mentoria de portfólio.",
       emailLabel: "Enviar e-mail"
     },
-    footer: { backTop: "Voltar ao topo ↑" },
-    project: { featured: "Destaque", externalArtstation: "Ver no ArtStation ↗", externalGame: "Ver jogo ↗", externalDownload: "Baixar masters originais ↗", close: "Fechar projeto" }
+    footer: { backTop: "Voltar ao topo" },
+    project: { featured: "Destaque", externalArtstation: "Ver no ArtStation", externalGame: "Ver jogo", externalDownload: "Baixar masters originais", close: "Fechar projeto" }
   },
   es: {
     documentTitle: "Renan Matos — Senior 3D Character Artist",
@@ -213,8 +213,8 @@ const localeData = {
       text: "Disponible para puestos remotos de Senior 3D Character Artist, consultoría y mentoría de portafolio.",
       emailLabel: "Enviar correo"
     },
-    footer: { backTop: "Volver arriba ↑" },
-    project: { featured: "Destacado", externalArtstation: "Ver en ArtStation ↗", externalGame: "Ver juego ↗", externalDownload: "Descargar masters originales ↗", close: "Cerrar proyecto" }
+    footer: { backTop: "Volver arriba" },
+    project: { featured: "Destacado", externalArtstation: "Ver en ArtStation", externalGame: "Ver juego", externalDownload: "Descargar masters originales", close: "Cerrar proyecto" }
   }
 };
 
@@ -680,13 +680,10 @@ function renderProjects() {
 
   elements.projectsGrid.innerHTML = visibleProjects.map((project, index) => {
     const copy = project.copy[currentLanguage];
-    const number = String(index + 1).padStart(2, "0");
-    const category = project.category[currentLanguage];
     return `
       <button class="project-card ${layoutClasses[project.layout]} reveal" type="button" data-project="${project.id}" aria-label="${escapeAttribute(t.work.openProject)}: ${escapeAttribute(copy.title)}">
-        <img src="${project.cover}" alt="" width="1800" height="1200" loading="lazy" decoding="async">
-        <span class="project-meta"><span>${category} · ${project.year}</span><span>${number}</span></span>
-        <span class="project-copy"><h3>${copy.title}</h3><span class="project-arrow" aria-hidden="true">↗</span></span>
+        <img src="${project.cover}" alt="" width="1800" height="1200" loading="lazy" decoding="async"><span>${number}</span></span>
+        <span class="project-copy"><h3>${copy.title}</h3></span>
       </button>`;
   }).join("");
 
@@ -708,7 +705,7 @@ function renderExperience() {
     <article class="experience-item reveal">
       <p class="experience-period">${item.period[currentLanguage]}</p>
       <div class="experience-heading">
-        <h3><a href="${item.url}" target="_blank" rel="noopener">${item.company} ↗</a></h3>
+        <h3><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></h3>
         <p class="experience-role">${item.role[currentLanguage]}</p>
       </div>
       <div class="experience-detail"><ul>${item.bullets[currentLanguage].map(bullet => `<li>${bullet}</li>`).join("")}</ul></div>
@@ -744,8 +741,7 @@ function projectSectionsMarkup(project) {
     return `
       <section class="case-section" data-section="${escapeAttribute(section.id)}">
         <header class="case-section-header">
-          <p>${project.category[currentLanguage]}</p>
-          <div><h3>${sectionCopy.title}</h3><p>${sectionCopy.description}</p></div>
+          <div><h3>${sectionCopy.title}</h3></div>
         </header>
         <div class="case-media-grid">${media}</div>
       </section>`;
@@ -771,8 +767,6 @@ function buildDialog(project) {
         <h2 id="dialogTitle">${copy.title}</h2>
       </div>
       <div>
-        <p class="dialog-description">${copy.description}</p>
-        <div class="dialog-tags">${copy.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
         ${project.external ? `<a class="dialog-external" href="${project.external.url}" target="_blank" rel="noopener">${externalLabel}</a>` : ""}
       </div>
     </header>
