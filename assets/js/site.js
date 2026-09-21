@@ -6,7 +6,7 @@ const localeData = {
   en: {
     documentTitle: "Renan Matos — Senior 3D Character Artist",
     description: "Portfolio of Renan Matos, Senior 3D Character Artist specializing in realistic and stylized characters for games.",
-    nav: { work: "Work", tools: "Tools", about: "About", experience: "Experience", resume: "Resume", contact: "Contact" },
+    nav: { work: "Work", tools: "Add-ons", about: "About", experience: "Experience", resume: "Resume", contact: "Contact" },
     hero: {
       available: "Open to work",
       location: "Brazil · Remote",
@@ -20,37 +20,37 @@ const localeData = {
     work: {
       kicker: "Portfolio",
       title: "Selected work",
-      intro: "Characters, creatures and game-ready assets across realistic and stylized production.",
+      intro: "Characters, creatures and production assets from personal and shipped game work.",
       featuredTitle: "Featured work",
-      featuredIntro: "Current work selected to represent my present character-art standard.",
+      featuredIntro: "Recent character work.",
       productionTitle: "Production work",
-      productionIntro: "Selected assets grouped by product, with project context and contribution kept explicit.",
+      productionIntro: "Shipped work grouped by project, with my contribution stated clearly.",
       archiveKicker: "Earlier work",
       archiveTitle: "Archive",
       archiveCount: "3 projects",
-      archiveIntro: "Selected earlier artworks preserved as a record of range and development. They do not define the current portfolio bar.",
+      archiveIntro: "Earlier work kept for context and range.",
       openProject: "Open project"
     },
     tools: {
-      kicker: "Artist tools",
-      title: "Tools in development",
-      intro: "Blender add-ons built to turn repetitive production steps into reusable artist workflows.",
+      kicker: "Add-ons",
+      title: "Blender add-ons",
+      intro: "Small production tools I build for modeling, hair, cloth and topology.",
       status: "Work in progress",
       release: "Gumroad release planned",
       availability: "Release details to be announced",
       request: "Request preview",
-      disclaimer: "Early builds are not distributed publicly yet. Temporary links open a direct preview request."
+      disclaimer: "These are private development builds; public releases will be announced here."
     },
     about: {
       kicker: "Profile",
-      title: "Character craft backed by production experience.",
+      title: "Character art for games, from sculpt to real-time.",
       captionRole: "Senior 3D Character Artist",
       captionLocation: "Based in Brazil · Working remotely",
       articleKicker: "Article · EN / PT / ES",
       articleTitle: "3D Starts Before Modeling",
       paragraphs: [
-        "I am a Senior 3D Character Artist working across realistic and stylized production pipelines for PC and mobile games.",
-        "My work covers the complete character journey — sculpting, anatomy, garment creation, grooming, retopology, UVs, PBR texturing and real-time optimization — alongside pipeline development and artist mentorship."
+        "I create realistic and stylized characters for PC and mobile games, with hands-on work across sculpting, anatomy, clothing, grooming, retopology, UVs, texturing and optimization.",
+        "I have also led character teams, reviewed work, improved production workflows and built small Blender tools to remove repetitive steps."
       ],
       capabilities: [
         ["Character art", "Realistic and stylized characters, anatomy, digital sculpting, garment creation, cloth simulation, grooming and hard-surface props."],
@@ -63,12 +63,12 @@ const localeData = {
     experience: {
       kicker: "Career",
       title: "Experience",
-      intro: "Hands-on character production, pipeline ownership and mentorship across game teams."
+      intro: "Character production, team leadership and generalist work across game projects."
     },
     contact: {
       kicker: "Contact",
-      title: "Let’s build something worth looking at.",
-      text: "Available for remote Senior 3D Character Artist opportunities, consulting and portfolio mentorship.",
+      title: "Have a project or role in mind?",
+      text: "Available for remote Senior 3D Character Artist roles, consulting and portfolio mentorship.",
       emailLabel: "Email me"
     },
     footer: { backTop: "Back to top ↑" },
@@ -77,7 +77,7 @@ const localeData = {
   pt: {
     documentTitle: "Renan Matos — Senior 3D Character Artist",
     description: "Portfólio de Renan Matos, Senior 3D Character Artist especializado em personagens realistas e estilizados para jogos.",
-    nav: { work: "Trabalhos", tools: "Ferramentas", about: "Sobre", experience: "Experiência", resume: "Currículo", contact: "Contato" },
+    nav: { work: "Trabalhos", tools: "Add-ons", about: "Sobre", experience: "Experiência", resume: "Currículo", contact: "Contato" },
     hero: {
       available: "Disponível para trabalho",
       location: "Brasil · Remoto",
@@ -91,37 +91,37 @@ const localeData = {
     work: {
       kicker: "Portfólio",
       title: "Trabalhos selecionados",
-      intro: "Personagens, criaturas e assets game-ready em produções realistas e estilizadas.",
+      intro: "Personagens, criaturas e assets de produção em trabalhos pessoais e jogos publicados.",
       featuredTitle: "Trabalhos em destaque",
-      featuredIntro: "Trabalhos atuais selecionados para representar meu padrão presente em character art.",
+      featuredIntro: "Trabalhos recentes de character art.",
       productionTitle: "Trabalho de produção",
-      productionIntro: "Assets selecionados e agrupados por produto, com contexto e contribuição explícitos.",
+      productionIntro: "Trabalhos publicados agrupados por projeto, com minha contribuição descrita de forma clara.",
       archiveKicker: "Trabalhos anteriores",
       archiveTitle: "Arquivo",
       archiveCount: "3 projetos",
-      archiveIntro: "Artworks anteriores preservadas como registro de alcance e evolução. Elas não definem a barra atual do portfólio.",
+      archiveIntro: "Trabalhos anteriores mantidos como contexto da minha evolução e variedade.",
       openProject: "Abrir projeto"
     },
     tools: {
-      kicker: "Ferramentas do artista",
-      title: "Ferramentas em desenvolvimento",
-      intro: "Add-ons para Blender criados para transformar etapas repetitivas de produção em workflows reutilizáveis para artistas.",
+      kicker: "Add-ons",
+      title: "Add-ons para Blender",
+      intro: "Ferramentas que desenvolvo para modelagem, cabelo, tecido e topologia.",
       status: "Em desenvolvimento",
       release: "Lançamento no Gumroad planejado",
       availability: "Detalhes de lançamento serão anunciados",
       request: "Solicitar preview",
-      disclaimer: "As builds iniciais ainda não são distribuídas publicamente. Os links temporários abrem uma solicitação direta de preview."
+      disclaimer: "São builds privadas em desenvolvimento; lançamentos públicos serão anunciados aqui."
     },
     about: {
       kicker: "Perfil",
-      title: "Criação de personagens apoiada por experiência de produção.",
+      title: "Character art para jogos, da escultura ao tempo real.",
       captionRole: "Senior 3D Character Artist",
       captionLocation: "Brasil · Trabalho remoto",
       articleKicker: "Artigo · EN / PT / ES",
       articleTitle: "O 3D começa antes da modelagem",
       paragraphs: [
-        "Sou Senior 3D Character Artist e atuo em pipelines de produção realistas e estilizados para jogos de PC e mobile.",
-        "Meu trabalho cobre toda a jornada do personagem — escultura, anatomia, criação de roupas, grooming, retopologia, UVs, texturização PBR e otimização em tempo real — além de desenvolvimento de pipeline e mentoria de artistas."
+        "Crio personagens realistas e estilizados para jogos de PC e mobile, trabalhando diretamente com escultura, anatomia, roupas, grooming, retopologia, UVs, texturas e otimização.",
+        "Também liderei equipes de character art, revisei trabalhos, melhorei fluxos de produção e desenvolvi ferramentas para Blender voltadas a tarefas repetitivas."
       ],
       capabilities: [
         ["Character art", "Personagens realistas e estilizados, anatomia, escultura digital, criação de roupas, simulação de tecido, grooming e props hard surface."],
@@ -134,12 +134,12 @@ const localeData = {
     experience: {
       kicker: "Carreira",
       title: "Experiência",
-      intro: "Produção prática de personagens, responsabilidade por pipelines e mentoria em equipes de jogos."
+      intro: "Produção de personagens, liderança de equipe e trabalho generalista em projetos de jogos."
     },
     contact: {
       kicker: "Contato",
-      title: "Vamos construir algo que mereça ser visto.",
-      text: "Disponível para oportunidades remotas de Senior 3D Character Artist, consultoria e mentoria de portfólio.",
+      title: "Tem um projeto ou vaga em mente?",
+      text: "Estou disponível para vagas remotas de Senior 3D Character Artist, consultoria e mentoria de portfólio.",
       emailLabel: "Enviar e-mail"
     },
     footer: { backTop: "Voltar ao topo ↑" },
@@ -148,7 +148,7 @@ const localeData = {
   es: {
     documentTitle: "Renan Matos — Senior 3D Character Artist",
     description: "Portafolio de Renan Matos, Senior 3D Character Artist especializado en personajes realistas y estilizados para videojuegos.",
-    nav: { work: "Trabajos", tools: "Herramientas", about: "Acerca de", experience: "Experiencia", resume: "CV", contact: "Contacto" },
+    nav: { work: "Trabajos", tools: "Add-ons", about: "Acerca de", experience: "Experiencia", resume: "CV", contact: "Contacto" },
     hero: {
       available: "Disponible para trabajar",
       location: "Brasil · Remoto",
@@ -162,37 +162,37 @@ const localeData = {
     work: {
       kicker: "Portafolio",
       title: "Trabajos seleccionados",
-      intro: "Personajes, criaturas y assets game-ready en producciones realistas y estilizadas.",
+      intro: "Personajes, criaturas y assets de producción en trabajos personales y juegos publicados.",
       featuredTitle: "Trabajos destacados",
-      featuredIntro: "Trabajos actuales seleccionados para representar mi estándar presente de character art.",
+      featuredIntro: "Trabajo reciente de character art.",
       productionTitle: "Trabajo de producción",
-      productionIntro: "Assets seleccionados y agrupados por producto, con contexto y contribución explícitos.",
+      productionIntro: "Trabajo publicado agrupado por proyecto, con mi contribución descrita claramente.",
       archiveKicker: "Trabajos anteriores",
       archiveTitle: "Archivo",
       archiveCount: "3 proyectos",
-      archiveIntro: "Artworks anteriores preservadas como registro de alcance y evolución. No definen el nivel actual del portafolio.",
+      archiveIntro: "Trabajos anteriores conservados como contexto de mi evolución y variedad.",
       openProject: "Abrir proyecto"
     },
     tools: {
-      kicker: "Herramientas del artista",
-      title: "Herramientas en desarrollo",
-      intro: "Add-ons para Blender creados para convertir etapas repetitivas de producción en workflows reutilizables para artistas.",
+      kicker: "Add-ons",
+      title: "Add-ons para Blender",
+      intro: "Herramientas que desarrollo para modelado, cabello, tela y topología.",
       status: "En desarrollo",
       release: "Lanzamiento en Gumroad planificado",
       availability: "Los detalles del lanzamiento se anunciarán próximamente",
       request: "Solicitar preview",
-      disclaimer: "Las builds iniciales todavía no se distribuyen públicamente. Los enlaces temporales abren una solicitud directa de preview."
+      disclaimer: "Son builds privadas en desarrollo; los lanzamientos públicos se anunciarán aquí."
     },
     about: {
       kicker: "Perfil",
-      title: "Creación de personajes respaldada por experiencia de producción.",
+      title: "Character art para juegos, de la escultura al tiempo real.",
       captionRole: "Senior 3D Character Artist",
       captionLocation: "Brasil · Trabajo remoto",
       articleKicker: "Artículo · EN / PT / ES",
       articleTitle: "El 3D empieza antes del modelado",
       paragraphs: [
-        "Soy Senior 3D Character Artist y trabajo en pipelines de producción realistas y estilizados para juegos de PC y mobile.",
-        "Mi trabajo cubre todo el recorrido del personaje — escultura, anatomía, creación de ropa, grooming, retopología, UVs, texturizado PBR y optimización en tiempo real — además de desarrollo de pipelines y mentoría de artistas."
+        "Creo personajes realistas y estilizados para juegos de PC y mobile, trabajando directamente con escultura, anatomía, ropa, grooming, retopología, UVs, texturas y optimización.",
+        "También he liderado equipos de character art, revisado trabajo, mejorado flujos de producción y desarrollado herramientas de Blender para tareas repetitivas."
       ],
       capabilities: [
         ["Character art", "Personajes realistas y estilizados, anatomía, escultura digital, creación de ropa, simulación de tejido, grooming y props hard surface."],
@@ -205,69 +205,18 @@ const localeData = {
     experience: {
       kicker: "Carrera",
       title: "Experiencia",
-      intro: "Producción práctica de personajes, responsabilidad de pipelines y mentoría en equipos de videojuegos."
+      intro: "Producción de personajes, liderazgo de equipo y trabajo generalista en proyectos de videojuegos."
     },
     contact: {
       kicker: "Contacto",
-      title: "Construyamos algo que merezca ser visto.",
-      text: "Disponible para oportunidades remotas de Senior 3D Character Artist, consultoría y mentoría de portafolio.",
+      title: "¿Tienes un proyecto o una vacante en mente?",
+      text: "Disponible para puestos remotos de Senior 3D Character Artist, consultoría y mentoría de portafolio.",
       emailLabel: "Enviar correo"
     },
     footer: { backTop: "Volver arriba ↑" },
     project: { featured: "Destacado", externalArtstation: "Ver en ArtStation ↗", externalGame: "Ver juego ↗", externalDownload: "Descargar masters originales ↗", close: "Cerrar proyecto" }
   }
 };
-
-const toolData = [
-  {
-    id: "cuttr",
-    name: "Cuttr",
-    release: "gumroad",
-    href: "mailto:renanmatos220594@outlook.com?subject=Cuttr%20Preview",
-    tags: ["Blender 5.2", "Python", "Topology"],
-    description: {
-      en: "Parametric topology stamping for controlled cuts, panels and repeatable hard-surface details.",
-      pt: "Estampagem paramétrica de topologia para cortes, painéis e detalhes hard surface reutilizáveis.",
-      es: "Estampado paramétrico de topología para cortes, paneles y detalles hard surface reutilizables."
-    }
-  },
-  {
-    id: "weaver",
-    name: "Weaver",
-    release: "gumroad",
-    href: "mailto:renanmatos220594@outlook.com?subject=Weaver%20Preview",
-    tags: ["Blender 5.2", "Geometry Nodes", "Procedural"],
-    description: {
-      en: "One-click procedural fabric and weave generation with isolated modes and artist-controlled native settings.",
-      pt: "Geração procedural de tecidos e tramas em um clique, com modos isolados e controles nativos para artistas.",
-      es: "Generación procedural de tejidos y tramas en un clic, con modos aislados y controles nativos para artistas."
-    }
-  },
-  {
-    id: "knot-forge",
-    name: "Knot Forge",
-    release: "gumroad",
-    href: "mailto:renanmatos220594@outlook.com?subject=Knot%20Forge%20Preview",
-    tags: ["Blender 5.2", "Python", "Parametric"],
-    description: {
-      en: "Parametric 3D knot generation spanning Celtic graphs, torus knots and production-ready curve or mesh output.",
-      pt: "Geração paramétrica de nós 3D, de grafos celtas a torus knots, com saída pronta em curva ou malha.",
-      es: "Generación paramétrica de nudos 3D, desde grafos celtas hasta torus knots, con salida lista en curva o malla."
-    }
-  },
-  {
-    id: "stitcher",
-    name: "Stitcher",
-    release: "undisclosed",
-    href: "mailto:renanmatos220594@outlook.com?subject=Stitcher%20Preview",
-    tags: ["Blender", "Python", "Non-destructive"],
-    description: {
-      en: "Edge-based procedural stitching with multiple seam types, advanced modifiers and experimental holes and line deformation on the base surface.",
-      pt: "Costura procedural baseada em arestas, com vários tipos de costura, modificadores avançados e suporte experimental a furos e linhas na superfície-base.",
-      es: "Costura procedural basada en aristas, con múltiples tipos de costura, modificadores avanzados y soporte experimental para agujeros y líneas en la superficie base."
-    }
-  }
-];
 
 const experienceData = [
   {
@@ -326,14 +275,6 @@ const experienceData = [
       es: ["Promoción de 3D Generalist a Lead 3D Artist después de aproximadamente tres meses.", "Lideré la producción artística con trabajo práctico en modelado, escultura, texturizado, render, soporte de animación y entrega de assets."]
     }
   }
-];
-
-const maleGallery = [
-  "cs%20(3).png", "cs%20(2).png", "cs%20(1).png", "ccc.png",
-  "cc%20(7).png", "cc%20(6).png", "cc%20(5).png", "cc%20(4).png",
-  "cc%20(3).png", "cc%20(2).png", "cc%20(1).png",
-  "c%20(8).png", "c%20(7).png", "c%20(6).png", "c%20(5).png",
-  "c%20(4).png", "c%20(3).png", "c%20(2).png", "c%20(1).png"
 ];
 
 const projects = [
@@ -690,7 +631,6 @@ const elements = {
   languageCurrent: document.getElementById("languageCurrent"),
   languageMenu: document.getElementById("languageMenu"),
   projectsGrid: document.getElementById("projectsGrid"),
-  toolsGrid: document.getElementById("toolsGrid"),
   aboutText: document.getElementById("aboutText"),
   aboutArticleLink: document.getElementById("aboutArticleLink"),
   capabilityList: document.getElementById("capabilityList"),
@@ -753,29 +693,6 @@ function renderProjects() {
   elements.projectsGrid.querySelectorAll("[data-project]").forEach(button => {
     button.addEventListener("click", () => openProject(button.dataset.project));
   });
-}
-
-function renderTools() {
-  const t = localeData[currentLanguage].tools;
-  elements.toolsGrid.innerHTML = toolData.map((tool, index) => `
-    <article class="tool-card reveal" data-tool="${tool.id}">
-      <div class="tool-card__meta">
-        <span>${String(index + 1).padStart(2, "0")}</span>
-        <span class="tool-status"><i aria-hidden="true"></i>${t.status}</span>
-      </div>
-      <div class="tool-card__body">
-        <p class="tool-card__release">${tool.release === "gumroad" ? t.release : t.availability}</p>
-        <h3>${tool.name}</h3>
-        <p class="tool-card__description">${tool.description[currentLanguage]}</p>
-        <ul class="tool-tags" aria-label="Technology stack">
-          ${tool.tags.map(tag => `<li>${tag}</li>`).join("")}
-        </ul>
-      </div>
-      <a class="tool-card__link" href="${tool.href}" aria-label="${escapeAttribute(t.request)} — ${tool.name}">
-        <span>${t.request}</span><i aria-hidden="true">↗</i>
-      </a>
-    </article>
-  `).join("");
 }
 
 function renderAbout() {
@@ -912,7 +829,6 @@ function applyTranslations() {
   });
 
   renderProjects();
-  renderTools();
   renderAbout();
   renderExperience();
   setupRevealObserver();

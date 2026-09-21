@@ -4,7 +4,7 @@ This site treats publication as an editorial decision, not as an automatic galle
 
 ## Publication states
 
-Every project in `app.js` must include `status`:
+Every project in `assets/js/site.js` must include `status`:
 
 - `draft` — incomplete data or media; never rendered.
 - `review` — ready for local QA; never rendered in the public grids.
@@ -114,7 +114,7 @@ Do not use an NDA, private link or password to disguise nonexistent work or perm
 
 ## Local review workflow
 
-1. Add the project with `status: "draft"`.
+1. Add the project in `assets/js/site.js` with `status: "draft"`.
 2. Export sanitized assets.
 3. Change to `status: "review"` and inspect locally by temporarily filtering review items only in a dedicated test branch — never by weakening the production filter.
 4. Verify factual copy and credits against source files/public pages.
