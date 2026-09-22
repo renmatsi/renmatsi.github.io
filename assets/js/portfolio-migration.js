@@ -507,22 +507,23 @@
     );
 
     const fixedOrder = {
-      "male-character": 1,
-      priestess: 2,
-      "tactical-operative": 3,
-      "nordic-warrior": 4,
-      "trial-xtreme-freedom": 5,
-      "tiny-hero": 6,
-      "stone-age-family": 7,
-      "pirate-ship": 8,
-      "stylized-armory": 9,
-      revolver: 10,
-      ranay: 11,
-      pantufa: 12,
-      "athletic-girl": 13,
-      "neon-sentinel": 14,
-      "realistic-portraits": 15,
-      "hooded-wanderer": 16
+      "torstein-the-giant": 1,
+      "male-character": 2,
+      priestess: 3,
+      "tactical-operative": 4,
+      "nordic-warrior": 5,
+      "trial-xtreme-freedom": 6,
+      "tiny-hero": 7,
+      "stone-age-family": 8,
+      "pirate-ship": 9,
+      "stylized-armory": 10,
+      revolver: 11,
+      ranay: 12,
+      pantufa: 13,
+      "athletic-girl": 14,
+      "neon-sentinel": 15,
+      "realistic-portraits": 16,
+      "hooded-wanderer": 17
     };
     projects.forEach(project => {
       if (fixedOrder[project.id]) project.catalogOrder = fixedOrder[project.id];

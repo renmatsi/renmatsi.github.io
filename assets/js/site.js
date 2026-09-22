@@ -279,6 +279,66 @@ const experienceData = [
 
 const projects = [
   {
+    id: "torstein-the-giant",
+    status: "published",
+    tier: "featured",
+    order: 1,
+    catalogOrder: 1,
+    year: "2026",
+    projectType: "personal",
+    layout: "large",
+    featured: true,
+    cover: "assets/work/torstein-the-giant/portrait.webp",
+    main: {
+      type: "image",
+      src: "assets/work/torstein-the-giant/portrait.webp",
+      alt: {
+        en: "Portrait of Torstein, a horned frost giant warrior",
+        pt: "Retrato de Torstein, um gigante guerreiro de elmo com chifres",
+        es: "Retrato de Torstein, un gigante guerrero con casco de cuernos"
+      }
+    },
+    facts: {
+      en: [
+        { key: "contribution", label: "My contribution", value: "Character creation and presentation" },
+        { key: "context", label: "Project context", value: "Character artwork · 2026" },
+        { key: "focus", label: "Visual focus", value: "Character design · Grooming · Armor · Materials" }
+      ],
+      pt: [
+        { key: "contribution", label: "Minha contribuição", value: "Criação e apresentação do personagem" },
+        { key: "context", label: "Contexto do projeto", value: "Artwork de personagem · 2026" },
+        { key: "focus", label: "Foco visual", value: "Design de personagem · Grooming · Armadura · Materiais" }
+      ],
+      es: [
+        { key: "contribution", label: "Mi contribución", value: "Creación y presentación del personaje" },
+        { key: "context", label: "Contexto del proyecto", value: "Artwork de personaje · 2026" },
+        { key: "focus", label: "Enfoque visual", value: "Diseño de personaje · Grooming · Armadura · Materiales" }
+      ]
+    },
+    sections: [
+      {
+        id: "final-renders",
+        copy: {
+          en: { title: "Final renders", description: "Final views exploring Torstein's silhouette, expression, armor and materials." },
+          pt: { title: "Renders finais", description: "Vistas finais explorando a silhueta, a expressão, a armadura e os materiais de Torstein." },
+          es: { title: "Renders finales", description: "Vistas finales que exploran la silueta, la expresión, la armadura y los materiales de Torstein." }
+        },
+        media: [
+          { type: "image", src: "assets/work/torstein-the-giant/full-body.webp", alt: { en: "Full-body render of Torstein", pt: "Render de corpo inteiro de Torstein", es: "Render de cuerpo completo de Torstein" } },
+          { type: "image", src: "assets/work/torstein-the-giant/face-closeup.webp", alt: { en: "Close-up of Torstein's face and horned helmet", pt: "Close do rosto e do elmo com chifres de Torstein", es: "Primer plano del rostro y el casco con cuernos de Torstein" } },
+          { type: "image", src: "assets/work/torstein-the-giant/action-pose.webp", alt: { en: "Dynamic pose render of Torstein", pt: "Render de Torstein em pose dinâmica", es: "Render de Torstein en pose dinámica" } },
+          { type: "video", src: "assets/work/torstein-the-giant/turntable.mp4", poster: "assets/work/torstein-the-giant/portrait.webp" }
+        ]
+      }
+    ],
+    category: { en: "Stylized character", pt: "Personagem estilizado", es: "Personaje estilizado" },
+    copy: {
+      en: { title: "Torstein, the Giant", description: "A stylized frost giant warrior built around a powerful silhouette, layered Nordic armor, expressive features and detailed material work.", tags: ["Stylized", "Character", "Grooming", "Armor", "Blender"] },
+      pt: { title: "Torstein, o gigante", description: "Um gigante guerreiro estilizado construído em torno de uma silhueta poderosa, armadura nórdica em camadas, expressão marcante e materiais detalhados.", tags: ["Estilizado", "Personagem", "Grooming", "Armadura", "Blender"] },
+      es: { title: "Torstein, el gigante", description: "Un gigante guerrero estilizado construido alrededor de una silueta poderosa, armadura nórdica en capas, rasgos expresivos y materiales detallados.", tags: ["Estilizado", "Personaje", "Grooming", "Armadura", "Blender"] }
+    }
+  },
+  {
     id: "male-character",
     status: "published",
     tier: "featured",
@@ -601,6 +661,7 @@ if (typeof window.applyCanvaMigration === "function") {
 }
 
 const catalogCovers = {
+  "torstein-the-giant": "assets/covers/catalog/torstein-the-giant.webp",
   "male-character": "assets/covers/catalog/male-character.webp",
   priestess: "assets/covers/catalog/priestess.webp",
   "tactical-operative": "assets/covers/catalog/tactical-operative.webp",
