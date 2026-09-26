@@ -277,9 +277,101 @@ const experienceData = [
   }
 ];
 
-const projects = [];
+const projects = [
+  {
+    id: "big-warrior",
+    status: "published",
+    tier: "featured",
+    order: 1,
+    catalogOrder: 1,
+    year: "2026",
+    projectType: "personal",
+    layout: "large",
+    featured: true,
+    cover: "assets/work/big-warrior/hero-pose.webp",
+    main: {
+      type: "image",
+      src: "assets/work/big-warrior/hero-pose.webp",
+      alt: {
+        en: "Big Warrior in a dynamic full-body pose",
+        pt: "Big Warrior em pose dinâmica de corpo inteiro",
+        es: "Big Warrior en una pose dinámica de cuerpo completo"
+      }
+    },
+    sections: [
+      {
+        id: "final-renders",
+        copy: {
+          en: { title: "Final renders" },
+          pt: { title: "Renders finais" },
+          es: { title: "Renders finales" }
+        },
+        media: [
+          { type: "image", src: "assets/work/big-warrior/hero-closeup.webp", alt: { en: "Close-up of Big Warrior's face and armor", pt: "Close do rosto e da armadura do Big Warrior", es: "Primer plano del rostro y la armadura de Big Warrior" } },
+          { type: "image", src: "assets/work/big-warrior/high-angle-pose.webp", alt: { en: "High-angle character pose", pt: "Pose do personagem em ângulo alto", es: "Pose del personaje en ángulo alto" } },
+          { type: "image", src: "assets/work/big-warrior/battle-stance.webp", alt: { en: "Big Warrior in a battle stance", pt: "Big Warrior em postura de batalha", es: "Big Warrior en postura de batalla" } },
+          { type: "image", src: "assets/work/big-warrior/full-body-front-pose.webp", alt: { en: "Full-body front pose", pt: "Pose frontal de corpo inteiro", es: "Pose frontal de cuerpo completo" } },
+          { type: "image", src: "assets/work/big-warrior/full-body-side-pose.webp", alt: { en: "Full-body side pose", pt: "Pose lateral de corpo inteiro", es: "Pose lateral de cuerpo completo" } },
+          { type: "image", src: "assets/work/big-warrior/full-body-back-pose.webp", alt: { en: "Full-body back pose", pt: "Pose traseira de corpo inteiro", es: "Pose trasera de cuerpo completo" } }
+        ]
+      },
+      {
+        id: "armor-details",
+        copy: {
+          en: { title: "Armor and material details" },
+          pt: { title: "Detalhes de armadura e materiais" },
+          es: { title: "Detalles de armadura y materiales" }
+        },
+        media: [
+          { type: "image", src: "assets/work/big-warrior/armor-detail-left.webp", alt: { en: "Left-side armor and grooming detail", pt: "Detalhe lateral da armadura e do grooming", es: "Detalle lateral de la armadura y el grooming" } },
+          { type: "image", src: "assets/work/big-warrior/armor-detail-front.webp", alt: { en: "Front armor and material detail", pt: "Detalhe frontal da armadura e dos materiais", es: "Detalle frontal de la armadura y los materiales" } }
+        ]
+      },
+      {
+        id: "turnaround",
+        copy: {
+          en: { title: "Character turnaround" },
+          pt: { title: "Turnaround do personagem" },
+          es: { title: "Turnaround del personaje" }
+        },
+        media: [
+          { type: "image", src: "assets/work/big-warrior/turnaround-front.webp", alt: { en: "Front turnaround view", pt: "Vista frontal do turnaround", es: "Vista frontal del turnaround" } },
+          { type: "image", src: "assets/work/big-warrior/turnaround-three-quarter-front.webp", alt: { en: "Front three-quarter turnaround view", pt: "Vista frontal em três quartos do turnaround", es: "Vista frontal en tres cuartos del turnaround" } },
+          { type: "image", src: "assets/work/big-warrior/turnaround-left.webp", alt: { en: "Left turnaround view", pt: "Vista esquerda do turnaround", es: "Vista izquierda del turnaround" } },
+          { type: "image", src: "assets/work/big-warrior/turnaround-right.webp", alt: { en: "Right turnaround view", pt: "Vista direita do turnaround", es: "Vista derecha del turnaround" } },
+          { type: "image", src: "assets/work/big-warrior/turnaround-three-quarter-rear.webp", alt: { en: "Rear three-quarter turnaround view", pt: "Vista traseira em três quartos do turnaround", es: "Vista trasera en tres cuartos del turnaround" } },
+          { type: "image", src: "assets/work/big-warrior/turnaround-back.webp", alt: { en: "Back turnaround view", pt: "Vista traseira do turnaround", es: "Vista trasera del turnaround" } }
+        ]
+      },
+      {
+        id: "look-development",
+        copy: {
+          en: { title: "Turntables and look development" },
+          pt: { title: "Turntables e look development" },
+          es: { title: "Turntables y look development" }
+        },
+        media: [
+          { type: "video", src: "assets/work/big-warrior/beauty-turntable.mp4", poster: "assets/work/big-warrior/hero-pose.webp" },
+          { type: "video", src: "assets/work/big-warrior/beauty-turntable-alt.mp4", poster: "assets/work/big-warrior/battle-stance.webp" },
+          { type: "video", src: "assets/work/big-warrior/albedo-turntable.mp4", poster: "assets/work/big-warrior/turnaround-front.webp" },
+          { type: "video", src: "assets/work/big-warrior/clay-turntable.mp4", poster: "assets/work/big-warrior/full-body-front-pose.webp" },
+          { type: "video", src: "assets/work/big-warrior/normal-turntable.mp4", poster: "assets/work/big-warrior/turnaround-back.webp" },
+          { type: "video", src: "assets/work/big-warrior/wireframe-turntable.mp4", poster: "assets/work/big-warrior/turnaround-three-quarter-rear.webp" }
+        ]
+      }
+    ],
+    category: { en: "Stylized character", pt: "Personagem estilizado", es: "Personaje estilizado" },
+    copy: {
+      en: { title: "Big Warrior", description: "A stylized warrior character developed through expressive poses, layered armor, grooming and a complete look-development study.", tags: ["Stylized", "Character", "Grooming", "Armor", "Blender"] },
+      pt: { title: "Big Warrior", description: "Um personagem guerreiro estilizado desenvolvido por meio de poses expressivas, armadura em camadas, grooming e um estudo completo de look development.", tags: ["Estilizado", "Personagem", "Grooming", "Armadura", "Blender"] },
+      es: { title: "Big Warrior", description: "Un personaje guerrero estilizado desarrollado mediante poses expresivas, armadura en capas, grooming y un estudio completo de look development.", tags: ["Estilizado", "Personaje", "Grooming", "Armadura", "Blender"] }
+    }
+  }
+];
 
-const catalogCovers = {};
+const catalogCovers = {
+  "big-warrior": "assets/work/big-warrior/hero-pose.webp"
+};
 
 projects.forEach(project => {
   project.cover = catalogCovers[project.id];

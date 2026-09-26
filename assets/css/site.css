@@ -559,6 +559,12 @@ a { color: inherit; }
     radial-gradient(circle at 50% 38%, #55534e 0%, #34332f 48%, #1b1b19 100%);
 }
 
+.project-card[data-project="big-warrior"] {
+  --span: 5;
+  min-height: 0;
+  aspect-ratio: 54 / 65;
+}
+
 .archive-disclosure {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
