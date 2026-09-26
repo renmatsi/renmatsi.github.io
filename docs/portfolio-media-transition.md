@@ -1,0 +1,285 @@
+# Portfolio media transition
+
+The old artwork catalog was removed from the current repository tree.
+
+## Preserved
+- `assets/covers/profile-2026.jpg`
+- site interface
+- resume
+- articles
+- Blender Addons and Softwares
+
+## New strategy
+New full-resolution portfolio media will be hosted on Cloudflare R2.
+The GitHub repository should contain code and lightweight structural assets only.
+
+## Removed paths
+- `00.png`
+- `0001-1033_1.mp4`
+- `01.png`
+- `04.png`
+- `Cody0.png`
+- `Cody3.png`
+- `Cody4.png`
+- `Kayla0.png`
+- `Kayla3.png`
+- `Kayla4.png`
+- `archive/legacy-imports/0001.png`
+- `archive/legacy-imports/0002.png`
+- `archive/legacy-imports/0003.png`
+- `archive/legacy-imports/0004.png`
+- `archive/legacy-imports/0005.png`
+- `archive/legacy-imports/0006.png`
+- `archive/legacy-imports/0007.png`
+- `archive/legacy-imports/0008.png`
+- `archive/legacy-imports/0009.png`
+- `archive/legacy-imports/0010.png`
+- `archive/legacy-imports/02.png`
+- `archive/legacy-imports/03.png`
+- `archive/legacy-imports/05.png`
+- `archive/legacy-imports/06.png`
+- `archive/legacy-imports/07.png`
+- `archive/legacy-imports/Cody1.png`
+- `archive/legacy-imports/Cody2.png`
+- `archive/legacy-imports/Kayla1.png`
+- `archive/legacy-imports/Kayla2.png`
+- `archive/legacy-imports/bob1.png`
+- `archive/legacy-imports/bob2.png`
+- `archive/legacy-imports/bob5.png`
+- `archive/legacy-imports/bob6.png`
+- `archive/legacy-imports/c (8).png`
+- `archive/legacy-imports/cc (1).png`
+- `archive/legacy-imports/cc (2).png`
+- `archive/legacy-imports/cc (4).png`
+- `archive/legacy-imports/cc (7).png`
+- `archive/legacy-imports/cs (1).png`
+- `archive/legacy-imports/cs (2).png`
+- `archive/legacy-imports/cs (3).png`
+- `archive/legacy-imports/profile01.jpeg`
+- `archive/legacy-imports/sft.png`
+- `assets/covers/bob.webp`
+- `assets/covers/catalog/athletic-girl.webp`
+- `assets/covers/catalog/hooded-wanderer.webp`
+- `assets/covers/catalog/male-character.webp`
+- `assets/covers/catalog/neon-sentinel.webp`
+- `assets/covers/catalog/nordic-warrior.webp`
+- `assets/covers/catalog/pantufa.webp`
+- `assets/covers/catalog/pirate-ship.webp`
+- `assets/covers/catalog/priestess.webp`
+- `assets/covers/catalog/ranay.webp`
+- `assets/covers/catalog/realistic-portraits.webp`
+- `assets/covers/catalog/revolver.webp`
+- `assets/covers/catalog/stone-age-family.webp`
+- `assets/covers/catalog/stylized-armory.webp`
+- `assets/covers/catalog/tactical-operative.webp`
+- `assets/covers/catalog/tiny-hero.webp`
+- `assets/covers/catalog/torstein-the-giant.webp`
+- `assets/covers/catalog/trial-xtreme-freedom.webp`
+- `assets/covers/male-character.webp`
+- `assets/covers/og-cover.webp`
+- `assets/covers/pantufa-hd.webp`
+- `assets/covers/pantufa.webp`
+- `assets/covers/priestess.webp`
+- `assets/covers/ranay-hd.webp`
+- `assets/covers/ranay.webp`
+- `assets/covers/stylized-armory-collage.webp`
+- `assets/covers/tactical-operative-hd.webp`
+- `assets/covers/tiny-hero-hd.webp`
+- `assets/covers/tiny-hero.webp`
+- `assets/covers/trial-xtreme.webp`
+- `assets/js/portfolio-migration.js`
+- `assets/work/athletic-girl/hero.webp`
+- `assets/work/hooded-wanderer/full-body.webp`
+- `assets/work/hooded-wanderer/portrait.webp`
+- `assets/work/male-character/anatomy-back-canva.webp`
+- `assets/work/male-character/anatomy-back.webp`
+- `assets/work/male-character/anatomy-front-canva.webp`
+- `assets/work/male-character/anatomy-front-three-quarter.webp`
+- `assets/work/male-character/anatomy-front.webp`
+- `assets/work/male-character/anatomy-three-quarter-canva.webp`
+- `assets/work/male-character/anatomy-three-quarter.webp`
+- `assets/work/male-character/boot-front.webp`
+- `assets/work/male-character/boot-side.webp`
+- `assets/work/male-character/boot-three-quarter.webp`
+- `assets/work/male-character/boots-worn.webp`
+- `assets/work/male-character/boots.webp`
+- `assets/work/male-character/canva-turntable.mp4`
+- `assets/work/male-character/final-full.webp`
+- `assets/work/male-character/portrait-front-canva.webp`
+- `assets/work/male-character/portrait-three-quarter.webp`
+- `assets/work/male-character/portrait.webp`
+- `assets/work/male-character/turntable.mp4`
+- `assets/work/male-character/wardrobe-back-canva.webp`
+- `assets/work/male-character/wardrobe-back.webp`
+- `assets/work/male-character/wardrobe-front-canva.webp`
+- `assets/work/male-character/wardrobe-three-quarter-canva.webp`
+- `assets/work/male-character/wardrobe-three-quarter.webp`
+- `assets/work/neon-sentinel/hero.webp`
+- `assets/work/nordic-warrior/cover.webp`
+- `assets/work/nordic-warrior/portrait-back.webp`
+- `assets/work/nordic-warrior/portrait-front.webp`
+- `assets/work/nordic-warrior/sword-front.webp`
+- `assets/work/nordic-warrior/sword-presentation.webp`
+- `assets/work/pantufa/canva-feature.webp`
+- `assets/work/pantufa/companions.jpg`
+- `assets/work/pantufa/full-body.jpg`
+- `assets/work/pantufa/hero.jpg`
+- `assets/work/pantufa/portrait.jpg`
+- `assets/work/pirate-ship/hero-view.webp`
+- `assets/work/pirate-ship/hull-profile.webp`
+- `assets/work/pirate-ship/port-view.webp`
+- `assets/work/pirate-ship/rear-view.webp`
+- `assets/work/pirate-ship/sail-plan.webp`
+- `assets/work/pirate-ship/stern-view.webp`
+- `assets/work/pirate-ship/top-profile.webp`
+- `assets/work/pirate-ship/top-view.webp`
+- `assets/work/pirate-ship/wireframe.webp`
+- `assets/work/priestess/canva-red-portrait.webp`
+- `assets/work/priestess/final-back.webp`
+- `assets/work/priestess/final-front.webp`
+- `assets/work/priestess/form-front.webp`
+- `assets/work/priestess/hero.webp`
+- `assets/work/priestess/material-detail.webp`
+- `assets/work/priestess/materials-back.webp`
+- `assets/work/priestess/materials-front.webp`
+- `assets/work/priestess/wireframe.webp`
+- `assets/work/ranay/armor-front.jpg`
+- `assets/work/ranay/canva-feature.webp`
+- `assets/work/ranay/cinematic.jpg`
+- `assets/work/ranay/portrait-dark.jpg`
+- `assets/work/ranay/portrait-light.jpg`
+- `assets/work/ranay/sculpt.jpg`
+- `assets/work/realistic-portraits/blood-portrait.webp`
+- `assets/work/realistic-portraits/female-head-turntable.mp4`
+- `assets/work/realistic-portraits/male-bust.webp`
+- `assets/work/realistic-portraits/male-head-turntable.mp4`
+- `assets/work/revolver/turnaround.webp`
+- `assets/work/stone-age-family/child-front.webp`
+- `assets/work/stone-age-family/female-back.webp`
+- `assets/work/stone-age-family/female-front.webp`
+- `assets/work/stone-age-family/female-left.webp`
+- `assets/work/stone-age-family/female-right.webp`
+- `assets/work/stone-age-family/male-back.webp`
+- `assets/work/stone-age-family/male-front.webp`
+- `assets/work/stone-age-family/male-hero.webp`
+- `assets/work/stone-age-family/male-left.webp`
+- `assets/work/stone-age-family/male-right.webp`
+- `assets/work/stylized-armory/axe-demonic-wire.webp`
+- `assets/work/stylized-armory/axe-demonic.webp`
+- `assets/work/stylized-armory/axe-frost-wire.webp`
+- `assets/work/stylized-armory/axe-frost.webp`
+- `assets/work/stylized-armory/axe-green-wire.webp`
+- `assets/work/stylized-armory/axe-green.webp`
+- `assets/work/stylized-armory/axe-nordic-wire.webp`
+- `assets/work/stylized-armory/axe-nordic.webp`
+- `assets/work/stylized-armory/axe-ornate-wire.webp`
+- `assets/work/stylized-armory/axe-ornate.webp`
+- `assets/work/stylized-armory/blade-arcane.webp`
+- `assets/work/stylized-armory/blade-bone.webp`
+- `assets/work/stylized-armory/blade-crystal.webp`
+- `assets/work/stylized-armory/blade-curved.webp`
+- `assets/work/stylized-armory/blade-dark.webp`
+- `assets/work/stylized-armory/blade-emerald.webp`
+- `assets/work/stylized-armory/blade-ice.webp`
+- `assets/work/stylized-armory/blade-ivory.webp`
+- `assets/work/stylized-armory/blade-royal.webp`
+- `assets/work/stylized-armory/blade-rune.webp`
+- `assets/work/stylized-armory/blade-violet.webp`
+- `assets/work/stylized-armory/shield-gem.webp`
+- `assets/work/stylized-armory/shield-heraldic.webp`
+- `assets/work/stylized-armory/shield-lava.webp`
+- `assets/work/stylized-armory/shield-round.webp`
+- `assets/work/stylized-armory/shield-void.webp`
+- `assets/work/tactical-operative/character-turntable.mp4`
+- `assets/work/tactical-operative/cover.webp`
+- `assets/work/tactical-operative/full-front-hd.webp`
+- `assets/work/tactical-operative/full-three-quarter-hd.webp`
+- `assets/work/tactical-operative/groom-back.webp`
+- `assets/work/tactical-operative/hero-green-alt.webp`
+- `assets/work/tactical-operative/hero-green.webp`
+- `assets/work/tactical-operative/portrait-front.webp`
+- `assets/work/tactical-operative/portrait-left.webp`
+- `assets/work/tactical-operative/portrait-right.webp`
+- `assets/work/tactical-operative/presentation-back.webp`
+- `assets/work/tactical-operative/presentation-board.webp`
+- `assets/work/tactical-operative/presentation-front.webp`
+- `assets/work/tactical-operative/presentation-left.webp`
+- `assets/work/tactical-operative/presentation-right.webp`
+- `assets/work/tactical-operative/visor-closeup.mp4`
+- `assets/work/tactical-operative/visor-red.webp`
+- `assets/work/tactical-operative/visor-turntable.mp4`
+- `assets/work/tactical-operative/watch-turntable.mp4`
+- `assets/work/tactical-operative/weapon-turntable.mp4`
+- `assets/work/tactical-operative/wire-body-back.webp`
+- `assets/work/tactical-operative/wire-body-front.webp`
+- `assets/work/tactical-operative/wire-boots.webp`
+- `assets/work/tactical-operative/wire-hand.webp`
+- `assets/work/tactical-operative/wire-head.webp`
+- `assets/work/tactical-operative/wire-teeth.webp`
+- `assets/work/tactical-operative/wire-watch.webp`
+- `assets/work/tactical-operative/zbrush-boot.webp`
+- `assets/work/tactical-operative/zbrush-head.webp`
+- `assets/work/tactical-operative/zbrush-jacket.webp`
+- `assets/work/tactical-operative/zbrush-pants.webp`
+- `assets/work/tactical-operative/zbrush-shirt.webp`
+- `assets/work/tiny-hero/back.jpg`
+- `assets/work/tiny-hero/canva-feature.webp`
+- `assets/work/tiny-hero/front-sword.jpg`
+- `assets/work/tiny-hero/portrait.jpg`
+- `assets/work/tiny-hero/three-quarter-sword.jpg`
+- `assets/work/tiny-hero/turnaround.jpg`
+- `assets/work/torstein-the-giant/action-pose.webp`
+- `assets/work/torstein-the-giant/face-closeup.webp`
+- `assets/work/torstein-the-giant/full-body.webp`
+- `assets/work/torstein-the-giant/portrait.webp`
+- `assets/work/torstein-the-giant/turntable.mp4`
+- `assets/work/trial-xtreme/athlete-back-right.webp`
+- `assets/work/trial-xtreme/athlete-back.webp`
+- `assets/work/trial-xtreme/athlete-front.webp`
+- `assets/work/trial-xtreme/athlete-helmet.webp`
+- `assets/work/trial-xtreme/athlete-side.webp`
+- `assets/work/trial-xtreme/bart-back.webp`
+- `assets/work/trial-xtreme/bart-front.webp`
+- `assets/work/trial-xtreme/bart-three-quarter.webp`
+- `assets/work/trial-xtreme/bart-turntable.mp4`
+- `assets/work/trial-xtreme/beach-back-right.webp`
+- `assets/work/trial-xtreme/beach-back.webp`
+- `assets/work/trial-xtreme/beach-front-right.webp`
+- `assets/work/trial-xtreme/beach-front.webp`
+- `assets/work/trial-xtreme/bob-casual-back.webp`
+- `assets/work/trial-xtreme/bob-casual-front.webp`
+- `assets/work/trial-xtreme/bob-rider-back.webp`
+- `assets/work/trial-xtreme/bob-rider-front.webp`
+- `assets/work/trial-xtreme/cody-back.webp`
+- `assets/work/trial-xtreme/cody-front.webp`
+- `assets/work/trial-xtreme/cody-helmet.webp`
+- `assets/work/trial-xtreme/formal-back.webp`
+- `assets/work/trial-xtreme/formal-front.webp`
+- `assets/work/trial-xtreme/formal-left.webp`
+- `assets/work/trial-xtreme/formal-right.webp`
+- `assets/work/trial-xtreme/kayla-back.webp`
+- `assets/work/trial-xtreme/kayla-front.webp`
+- `assets/work/trial-xtreme/kayla-helmet.webp`
+- `assets/work/trial-xtreme/motocross-back-alt.webp`
+- `assets/work/trial-xtreme/motocross-back.webp`
+- `assets/work/trial-xtreme/motocross-front-alt.webp`
+- `assets/work/trial-xtreme/motocross-front.webp`
+- `assets/work/trial-xtreme/streetwear-front.webp`
+- `assets/work/trial-xtreme/streetwear-left.webp`
+- `assets/work/trial-xtreme/streetwear-right.webp`
+- `bart.mp4`
+- `bob0.png`
+- `bob3.png`
+- `bob4.png`
+- `bob7.png`
+- `c (1).png`
+- `c (2).png`
+- `c (3).png`
+- `c (4).png`
+- `c (5).png`
+- `c (6).png`
+- `c (7).png`
+- `cc (3).png`
+- `cc (5).png`
+- `cc (6).png`
+- `ccc.png`

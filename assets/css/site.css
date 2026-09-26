@@ -1611,3 +1611,7 @@ a { color: inherit; }
     font-size: 13px;
   }
 }
+
+
+/* === EMPTY PORTFOLIO TRANSITION === */
+.work-section.is-empty { display: none; }
