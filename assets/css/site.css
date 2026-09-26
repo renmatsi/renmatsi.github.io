@@ -1271,6 +1271,39 @@ a { color: inherit; }
 .case-media img,
 .case-media video { height: 100%; max-height: 86vh; object-fit: contain; }
 
+.case-video { position: relative; height: 100%; }
+.case-video-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  padding: 6px 8px;
+  border-radius: var(--radius-pill);
+  color: rgba(246, 244, 239, 0.8);
+  background: rgba(8, 8, 8, 0.66);
+  backdrop-filter: blur(8px);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.dialog-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 1.4vw, 20px);
+}
+
+#dialogContent[data-project="big-warrior"] .dialog-main-item {
+  aspect-ratio: 54 / 65;
+}
+
+#dialogContent[data-project="big-warrior"] .dialog-main-item a,
+#dialogContent[data-project="big-warrior"] .dialog-main-item img {
+  width: 100%;
+  height: 100%;
+}
+
 .dialog-main-media,
 .dialog-gallery img,
 .dialog-gallery video {
@@ -1480,6 +1513,7 @@ a { color: inherit; }
   .project-facts > div + div { padding-left: 18px; border-top: 1px solid var(--line); border-left: 0; }
   .case-section-header { grid-template-columns: 1fr; gap: 10px; }
   .case-media-grid { grid-template-columns: 1fr; }
+  .dialog-main-grid { grid-template-columns: 1fr; }
   .case-media:first-child:nth-last-child(1) { grid-column: auto; }
   .dialog-gallery { grid-template-columns: 1fr; }
   .dialog-gallery .gallery-wide { grid-column: auto; }
@@ -1513,7 +1547,6 @@ a { color: inherit; }
 .section-intro,
 .project-meta,
 .project-arrow,
-.dialog-description,
 .dialog-tags,
 .tools-note,
 .about-portrait > p,
