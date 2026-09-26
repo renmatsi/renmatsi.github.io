@@ -293,11 +293,15 @@ const projects = [
       type: "image",
       src: "assets/work/big-warrior/hero-pose.webp",
       alt: {
-        en: "Big Warrior in a dynamic full-body pose",
-        pt: "Big Warrior em pose dinâmica de corpo inteiro",
-        es: "Big Warrior en una pose dinámica de cuerpo completo"
+        en: "Torstein in a dynamic full-body pose",
+        pt: "Torstein em pose dinâmica de corpo inteiro",
+        es: "Torstein en una pose dinámica de cuerpo completo"
       }
     },
+    leadMedia: [
+      { type: "image", src: "assets/work/big-warrior/armor-detail-left.webp", alt: { en: "Left-side armor and grooming detail", pt: "Detalhe lateral da armadura e do grooming", es: "Detalle lateral de la armadura y el grooming" } },
+      { type: "image", src: "assets/work/big-warrior/armor-detail-front.webp", alt: { en: "Front armor and material detail", pt: "Detalhe frontal da armadura e dos materiais", es: "Detalle frontal de la armadura y los materiales" } }
+    ],
     sections: [
       {
         id: "final-renders",
@@ -307,24 +311,12 @@ const projects = [
           es: { title: "Renders finales" }
         },
         media: [
-          { type: "image", src: "assets/work/big-warrior/hero-closeup.webp", alt: { en: "Close-up of Big Warrior's face and armor", pt: "Close do rosto e da armadura do Big Warrior", es: "Primer plano del rostro y la armadura de Big Warrior" } },
+          { type: "image", src: "assets/work/big-warrior/hero-closeup.webp", alt: { en: "Close-up of Torstein's face and armor", pt: "Close do rosto e da armadura de Torstein", es: "Primer plano del rostro y la armadura de Torstein" } },
           { type: "image", src: "assets/work/big-warrior/high-angle-pose.webp", alt: { en: "High-angle character pose", pt: "Pose do personagem em ângulo alto", es: "Pose del personaje en ángulo alto" } },
-          { type: "image", src: "assets/work/big-warrior/battle-stance.webp", alt: { en: "Big Warrior in a battle stance", pt: "Big Warrior em postura de batalha", es: "Big Warrior en postura de batalla" } },
+          { type: "image", src: "assets/work/big-warrior/battle-stance.webp", alt: { en: "Torstein in a battle stance", pt: "Torstein em postura de batalha", es: "Torstein en postura de batalla" } },
           { type: "image", src: "assets/work/big-warrior/full-body-front-pose.webp", alt: { en: "Full-body front pose", pt: "Pose frontal de corpo inteiro", es: "Pose frontal de cuerpo completo" } },
           { type: "image", src: "assets/work/big-warrior/full-body-side-pose.webp", alt: { en: "Full-body side pose", pt: "Pose lateral de corpo inteiro", es: "Pose lateral de cuerpo completo" } },
           { type: "image", src: "assets/work/big-warrior/full-body-back-pose.webp", alt: { en: "Full-body back pose", pt: "Pose traseira de corpo inteiro", es: "Pose trasera de cuerpo completo" } }
-        ]
-      },
-      {
-        id: "armor-details",
-        copy: {
-          en: { title: "Armor and material details" },
-          pt: { title: "Detalhes de armadura e materiais" },
-          es: { title: "Detalles de armadura y materiales" }
-        },
-        media: [
-          { type: "image", src: "assets/work/big-warrior/armor-detail-left.webp", alt: { en: "Left-side armor and grooming detail", pt: "Detalhe lateral da armadura e do grooming", es: "Detalle lateral de la armadura y el grooming" } },
-          { type: "image", src: "assets/work/big-warrior/armor-detail-front.webp", alt: { en: "Front armor and material detail", pt: "Detalhe frontal da armadura e dos materiais", es: "Detalle frontal de la armadura y los materiales" } }
         ]
       },
       {
@@ -351,20 +343,20 @@ const projects = [
           es: { title: "Turntables y look development" }
         },
         media: [
-          { type: "video", src: "assets/work/big-warrior/beauty-turntable.mp4", poster: "assets/work/big-warrior/hero-pose.webp" },
-          { type: "video", src: "assets/work/big-warrior/beauty-turntable-alt.mp4", poster: "assets/work/big-warrior/battle-stance.webp" },
-          { type: "video", src: "assets/work/big-warrior/albedo-turntable.mp4", poster: "assets/work/big-warrior/turnaround-front.webp" },
-          { type: "video", src: "assets/work/big-warrior/clay-turntable.mp4", poster: "assets/work/big-warrior/full-body-front-pose.webp" },
-          { type: "video", src: "assets/work/big-warrior/normal-turntable.mp4", poster: "assets/work/big-warrior/turnaround-back.webp" },
-          { type: "video", src: "assets/work/big-warrior/wireframe-turntable.mp4", poster: "assets/work/big-warrior/turnaround-three-quarter-rear.webp" }
+          { type: "video", src: "assets/work/big-warrior/beauty-turntable.mp4", poster: "assets/work/big-warrior/poster-beauty.webp", label: { en: "Beauty turntable", pt: "Turntable beauty", es: "Turntable beauty" } },
+          { type: "video", src: "assets/work/big-warrior/beauty-turntable-alt.mp4", poster: "assets/work/big-warrior/poster-beauty-alt.webp", label: { en: "Beauty turntable · alternate", pt: "Turntable beauty · alternativa", es: "Turntable beauty · alternativa" } },
+          { type: "video", src: "assets/work/big-warrior/albedo-turntable.mp4", poster: "assets/work/big-warrior/poster-albedo.webp", label: { en: "Albedo", pt: "Albedo", es: "Albedo" } },
+          { type: "video", src: "assets/work/big-warrior/clay-turntable.mp4", poster: "assets/work/big-warrior/poster-clay.webp", label: { en: "Clay", pt: "Clay", es: "Clay" } },
+          { type: "video", src: "assets/work/big-warrior/normal-turntable.mp4", poster: "assets/work/big-warrior/poster-normal.webp", label: { en: "Normal map", pt: "Normal map", es: "Normal map" } },
+          { type: "video", src: "assets/work/big-warrior/wireframe-turntable.mp4", poster: "assets/work/big-warrior/poster-wireframe.webp", label: { en: "Wireframe", pt: "Wireframe", es: "Wireframe" } }
         ]
       }
     ],
     category: { en: "Stylized character", pt: "Personagem estilizado", es: "Personaje estilizado" },
     copy: {
-      en: { title: "Big Warrior", description: "A stylized warrior character developed through expressive poses, layered armor, grooming and a complete look-development study.", tags: ["Stylized", "Character", "Grooming", "Armor", "Blender"] },
-      pt: { title: "Big Warrior", description: "Um personagem guerreiro estilizado desenvolvido por meio de poses expressivas, armadura em camadas, grooming e um estudo completo de look development.", tags: ["Estilizado", "Personagem", "Grooming", "Armadura", "Blender"] },
-      es: { title: "Big Warrior", description: "Un personaje guerrero estilizado desarrollado mediante poses expresivas, armadura en capas, grooming y un estudio completo de look development.", tags: ["Estilizado", "Personaje", "Grooming", "Armadura", "Blender"] }
+      en: { title: "Torstein, the Giant", description: "A stylized character created with polygonal modeling in Blender and sculpting in ZBrush, with baking and painting in Substance Painter. Iris Studio, Weavr, Stitchr and Groomr supported the production workflow.", tags: ["Stylized", "Character", "Grooming", "Armor", "Blender"] },
+      pt: { title: "Torstein, o gigante", description: "Personagem estilizado criado com modelagem poligonal no Blender e escultura no ZBrush, com bake e pintura no Substance Painter. Iris Studio, Weavr, Stitchr e Groomr deram suporte ao fluxo de produção.", tags: ["Estilizado", "Personagem", "Grooming", "Armadura", "Blender"] },
+      es: { title: "Torstein, el gigante", description: "Personaje estilizado creado con modelado poligonal en Blender y escultura en ZBrush, con bake y pintura en Substance Painter. Iris Studio, Weavr, Stitchr y Groomr apoyaron el flujo de producción.", tags: ["Estilizado", "Personaje", "Grooming", "Armadura", "Blender"] }
     }
   }
 ];
@@ -472,7 +464,8 @@ function renderExperience() {
 function mediaMarkup(media, className = "", fallbackAlt = "") {
   if (media.type === "video") {
     const poster = media.poster ? ` poster="${escapeAttribute(media.poster)}"` : "";
-    return `<video class="${className}" controls muted playsinline preload="metadata"${poster}><source src="${escapeAttribute(media.src)}" type="video/mp4"></video>`;
+    const label = media.label?.[currentLanguage] || media.label || "";
+    return `<div class="case-video"><video class="${className}" controls muted playsinline preload="metadata"${poster}><source src="${escapeAttribute(media.src)}" type="video/mp4"></video>${label ? `<span class="case-video-label">${label}</span>` : ""}</div>`;
   }
 
   const alt = media.alt?.[currentLanguage] || fallbackAlt;
@@ -514,8 +507,12 @@ function buildDialog(project) {
   };
   const externalLabel = externalLabels[project.external?.type] || t.project.externalArtstation;
   const gallery = project.sections ? "" : (project.gallery || []).map((media, index) => mediaMarkup(media, index % 5 === 0 && index > 0 ? "gallery-wide" : "", `${copy.title} — view ${index + 1}`)).join("");
+  const leadMedia = [project.main, ...(project.leadMedia || [])];
+  const leadClass = leadMedia.length > 1 ? "dialog-main dialog-main-grid" : "dialog-main";
+  const leadMarkup = leadMedia.map((media, index) => `<figure class="case-media dialog-main-item">${mediaMarkup(media, "dialog-main-media", `${copy.title} — main presentation ${index + 1}`)}</figure>`).join("");
 
   elements.dialogClose.setAttribute("aria-label", t.project.close);
+  elements.dialogContent.dataset.project = project.id;
   elements.dialogContent.innerHTML = `
     <header class="dialog-heading">
       <div>
@@ -523,11 +520,12 @@ function buildDialog(project) {
         <h2 id="dialogTitle">${copy.title}</h2>
       </div>
       <div>
+        <p class="dialog-description">${copy.description}</p>
         ${project.external ? `<a class="dialog-external" href="${project.external.url}" target="_blank" rel="noopener">${externalLabel}</a>` : ""}
       </div>
     </header>
     ${projectFactsMarkup(project)}
-    <div class="dialog-main">${mediaMarkup(project.main, "dialog-main-media", `${copy.title} — main presentation`)}</div>
+    <div class="${leadClass}">${leadMarkup}</div>
     ${project.sections ? projectSectionsMarkup(project) : ""}
     ${gallery ? `<div class="dialog-gallery">${gallery}</div>` : ""}
   `;
