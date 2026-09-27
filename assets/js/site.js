@@ -288,7 +288,7 @@ const projects = [
     projectType: "personal",
     layout: "large",
     featured: true,
-    cover: "assets/work/drone-soldier/hero-portrait.webp",
+    cover: "assets/work/drone-soldier/portrait-front.webp",
     main: {
       type: "image",
       src: "assets/work/drone-soldier/hero-portrait.webp",
@@ -410,7 +410,7 @@ const projects = [
 ];
 
 const catalogCovers = {
-  "drone-soldier": "assets/work/drone-soldier/hero-portrait.webp",
+  "drone-soldier": "assets/work/drone-soldier/portrait-front.webp",
   "big-warrior": "assets/work/big-warrior/hero-pose.webp"
 };
 
