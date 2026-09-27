@@ -650,7 +650,12 @@ a { color: inherit; }
   align-items: end;
   justify-content: space-between;
   gap: 20px;
+  opacity: 0.25;
+  transition: opacity 220ms ease;
 }
+
+.project-card:hover .project-copy,
+.project-card:focus-visible .project-copy { opacity: 1; }
 
 .project-copy h3 {
   margin: 0;
