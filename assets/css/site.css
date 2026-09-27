@@ -559,7 +559,8 @@ a { color: inherit; }
     radial-gradient(circle at 50% 38%, #55534e 0%, #34332f 48%, #1b1b19 100%);
 }
 
-.project-card[data-project="big-warrior"] {
+.project-card[data-project="big-warrior"],
+.project-card[data-project="drone-soldier"] {
   --span: 5;
   min-height: 0;
   aspect-ratio: 54 / 65;
@@ -1294,12 +1295,15 @@ a { color: inherit; }
   gap: clamp(8px, 1.4vw, 20px);
 }
 
-#dialogContent[data-project="big-warrior"] .dialog-main-item {
+#dialogContent[data-project="big-warrior"] .dialog-main-item,
+#dialogContent[data-project="drone-soldier"] .dialog-main-item {
   aspect-ratio: 54 / 65;
 }
 
 #dialogContent[data-project="big-warrior"] .dialog-main-item a,
-#dialogContent[data-project="big-warrior"] .dialog-main-item img {
+#dialogContent[data-project="big-warrior"] .dialog-main-item img,
+#dialogContent[data-project="drone-soldier"] .dialog-main-item a,
+#dialogContent[data-project="drone-soldier"] .dialog-main-item img {
   width: 100%;
   height: 100%;
 }
