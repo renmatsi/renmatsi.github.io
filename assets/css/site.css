@@ -459,6 +459,7 @@ a { color: inherit; }
 
 /* Work */
 .work-section {
+  min-height: 100svh;
   padding: calc(var(--header-height) + 28px) 0 clamp(110px, 13vw, 190px);
   background: var(--ink);
 }
