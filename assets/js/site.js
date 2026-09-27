@@ -279,11 +279,59 @@ const experienceData = [
 
 const projects = [
   {
-    id: "big-warrior",
+    id: "drone-soldier",
     status: "published",
     tier: "featured",
     order: 1,
     catalogOrder: 1,
+    year: "2026",
+    projectType: "personal",
+    layout: "large",
+    featured: true,
+    cover: "assets/work/drone-soldier/portrait-front.webp",
+    main: {
+      type: "image",
+      src: "assets/work/drone-soldier/hero-portrait.webp",
+      alt: {
+        en: "Portrait of Drone Soldier",
+        pt: "Retrato do Drone Soldier",
+        es: "Retrato de Drone Soldier"
+      }
+    },
+    leadMedia: [
+      { type: "image", src: "assets/work/drone-soldier/portrait-front.webp", alt: { en: "Front close-up of Drone Soldier", pt: "Close frontal do Drone Soldier", es: "Primer plano frontal de Drone Soldier" } },
+      { type: "image", src: "assets/work/drone-soldier/portrait-profile.webp", alt: { en: "Profile close-up of Drone Soldier", pt: "Close de perfil do Drone Soldier", es: "Primer plano de perfil de Drone Soldier" } }
+    ],
+    sections: [
+      {
+        id: "final-renders",
+        copy: {
+          en: { title: "Final renders" },
+          pt: { title: "Renders finais" },
+          es: { title: "Renders finales" }
+        },
+        media: [
+          { type: "image", src: "assets/work/drone-soldier/hero-three-quarter.webp", alt: { en: "Three-quarter full-body view of Drone Soldier", pt: "Vista de corpo inteiro em três quartos do Drone Soldier", es: "Vista de cuerpo completo en tres cuartos de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/high-angle-three-quarter.webp", alt: { en: "High-angle three-quarter view of Drone Soldier", pt: "Vista em três quartos e ângulo alto do Drone Soldier", es: "Vista en tres cuartos y ángulo alto de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/full-body-side.webp", alt: { en: "Full-body side view of Drone Soldier", pt: "Vista lateral de corpo inteiro do Drone Soldier", es: "Vista lateral de cuerpo completo de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/turnaround-front.webp", alt: { en: "Front turnaround view of Drone Soldier", pt: "Vista frontal do turnaround do Drone Soldier", es: "Vista frontal del turnaround de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/turnaround-back.webp", alt: { en: "Back turnaround view of Drone Soldier", pt: "Vista traseira do turnaround do Drone Soldier", es: "Vista trasera del turnaround de Drone Soldier" } }
+        ]
+      }
+    ],
+    category: { en: "Real-time character", pt: "Personagem real-time", es: "Personaje en tiempo real" },
+    copy: {
+      en: { title: "Drone Soldier", description: "A real-time tactical character focused on a restrained silhouette, layered equipment and detailed material breakup. The character and accessories were built with polygonal modeling in Blender, with baking and texture painting in Substance 3D Painter.", tags: ["Real-time", "Character", "Tactical", "Blender", "Substance 3D Painter"] },
+      pt: { title: "Drone Soldier", description: "Personagem tático real-time com foco em silhueta contida, equipamentos em camadas e variação detalhada de materiais. O personagem e os acessórios foram criados com modelagem poligonal no Blender, com bake e pintura de texturas no Substance 3D Painter.", tags: ["Real-time", "Personagem", "Tático", "Blender", "Substance 3D Painter"] },
+      es: { title: "Drone Soldier", description: "Personaje táctico en tiempo real centrado en una silueta contenida, equipo en capas y una variación detallada de materiales. El personaje y los accesorios se crearon con modelado poligonal en Blender, con bake y pintura de texturas en Substance 3D Painter.", tags: ["Tiempo real", "Personaje", "Táctico", "Blender", "Substance 3D Painter"] }
+    }
+  },
+  {
+    id: "big-warrior",
+    status: "published",
+    tier: "featured",
+    order: 2,
+    catalogOrder: 2,
     year: "2026",
     projectType: "personal",
     layout: "large",
@@ -362,6 +410,7 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "drone-soldier": "assets/work/drone-soldier/portrait-front.webp",
   "big-warrior": "assets/work/big-warrior/hero-pose.webp"
 };
 
