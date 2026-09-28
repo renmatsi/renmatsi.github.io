@@ -288,7 +288,7 @@ const projects = [
     projectType: "personal",
     layout: "large",
     featured: true,
-    cover: "assets/work/drone-soldier/portrait-front.webp",
+    cover: "assets/work/drone-soldier/hero-green.webp",
     main: {
       type: "image",
       src: "assets/work/drone-soldier/hero-portrait.webp",
@@ -315,7 +315,45 @@ const projects = [
           { type: "image", src: "assets/work/drone-soldier/high-angle-three-quarter.webp", alt: { en: "High-angle three-quarter view of Drone Soldier", pt: "Vista em três quartos e ângulo alto do Drone Soldier", es: "Vista en tres cuartos y ángulo alto de Drone Soldier" } },
           { type: "image", src: "assets/work/drone-soldier/full-body-side.webp", alt: { en: "Full-body side view of Drone Soldier", pt: "Vista lateral de corpo inteiro do Drone Soldier", es: "Vista lateral de cuerpo completo de Drone Soldier" } },
           { type: "image", src: "assets/work/drone-soldier/turnaround-front.webp", alt: { en: "Front turnaround view of Drone Soldier", pt: "Vista frontal do turnaround do Drone Soldier", es: "Vista frontal del turnaround de Drone Soldier" } },
-          { type: "image", src: "assets/work/drone-soldier/turnaround-back.webp", alt: { en: "Back turnaround view of Drone Soldier", pt: "Vista traseira do turnaround do Drone Soldier", es: "Vista trasera del turnaround de Drone Soldier" } }
+          { type: "image", src: "assets/work/drone-soldier/turnaround-back.webp", alt: { en: "Back turnaround view of Drone Soldier", pt: "Vista traseira do turnaround do Drone Soldier", es: "Vista trasera del turnaround de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/hero-green.webp", alt: { en: "Drone Soldier in green cinematic lighting", pt: "Drone Soldier em iluminação cinematográfica verde", es: "Drone Soldier con iluminación cinematográfica verde" } },
+          { type: "image", src: "assets/work/drone-soldier/full-body-front.webp", alt: { en: "Front full-body render of Drone Soldier", pt: "Render frontal de corpo inteiro do Drone Soldier", es: "Render frontal de cuerpo completo de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/full-body-three-quarter.webp", alt: { en: "Three-quarter full-body render of Drone Soldier", pt: "Render de corpo inteiro em três quartos do Drone Soldier", es: "Render de cuerpo completo en tres cuartos de Drone Soldier" } },
+          { type: "image", src: "assets/work/drone-soldier/drone-array-front.webp", alt: { en: "Front view with deployed drones", pt: "Vista frontal com drones abertos", es: "Vista frontal con drones desplegados" } },
+          { type: "image", src: "assets/work/drone-soldier/drone-array-three-quarter.webp", alt: { en: "Three-quarter view with deployed drones", pt: "Vista em três quartos com drones abertos", es: "Vista en tres cuartos con drones desplegados" } },
+          { type: "image", src: "assets/work/drone-soldier/drone-array-side.webp", alt: { en: "Side view with deployed drones", pt: "Vista lateral com drones abertos", es: "Vista lateral con drones desplegados" } },
+          { type: "image", src: "assets/work/drone-soldier/drone-array-back.webp", alt: { en: "Back view with deployed drones", pt: "Vista traseira com drones abertos", es: "Vista trasera con drones desplegados" } },
+          { type: "image", src: "assets/work/drone-soldier/turnaround-sheet.webp", wide: true, alt: { en: "Drone Soldier turnaround and drone detail sheet", pt: "Prancha de turnaround e detalhes dos drones", es: "Lámina de turnaround y detalles de los drones" } }
+        ]
+      },
+      {
+        id: "wireframe",
+        copy: {
+          en: { title: "Wireframe" },
+          pt: { title: "Wireframe" },
+          es: { title: "Wireframe" }
+        },
+        media: [
+          { type: "image", src: "assets/work/drone-soldier/wireframe-front.webp", alt: { en: "Front wireframe view", pt: "Vista frontal em wireframe", es: "Vista frontal en wireframe" } },
+          { type: "image", src: "assets/work/drone-soldier/wireframe-back.webp", alt: { en: "Back wireframe view", pt: "Vista traseira em wireframe", es: "Vista trasera en wireframe" } }
+        ]
+      },
+      {
+        id: "turntables",
+        copy: {
+          en: { title: "Turntables and details" },
+          pt: { title: "Turntables e detalhes" },
+          es: { title: "Turntables y detalles" }
+        },
+        media: [
+          { type: "video", src: "assets/work/drone-soldier/full-body-turntable.mp4", poster: "assets/work/drone-soldier/full-body-turntable.webp", label: { en: "Full body", pt: "Corpo inteiro", es: "Cuerpo completo" } },
+          { type: "video", src: "assets/work/drone-soldier/high-angle-turntable.mp4", poster: "assets/work/drone-soldier/high-angle-turntable.webp", label: { en: "High angle", pt: "Ângulo alto", es: "Ángulo alto" } },
+          { type: "video", src: "assets/work/drone-soldier/green-light-turntable.mp4", poster: "assets/work/drone-soldier/green-light-turntable.webp", label: { en: "Green light study", pt: "Estudo de luz verde", es: "Estudio de luz verde" } },
+          { type: "video", src: "assets/work/drone-soldier/headset-profile-turntable.mp4", poster: "assets/work/drone-soldier/headset-profile-turntable.webp", label: { en: "Headset profile", pt: "Perfil com headset", es: "Perfil con headset" } },
+          { type: "video", src: "assets/work/drone-soldier/head-profile-turntable.mp4", poster: "assets/work/drone-soldier/head-profile-turntable.webp", label: { en: "Head profile", pt: "Perfil da cabeça", es: "Perfil de la cabeza" } },
+          { type: "video", src: "assets/work/drone-soldier/drone-headset-turntable.mp4", poster: "assets/work/drone-soldier/drone-headset-turntable.webp", label: { en: "Drone headset", pt: "Headset drone", es: "Headset dron" } },
+          { type: "video", src: "assets/work/drone-soldier/weapon-turntable.mp4", poster: "assets/work/drone-soldier/weapon-turntable.webp", label: { en: "Weapon detail", pt: "Detalhe da arma", es: "Detalle del arma" } },
+          { type: "video", src: "assets/work/drone-soldier/watch-turntable.mp4", poster: "assets/work/drone-soldier/watch-turntable.webp", label: { en: "Watch detail", pt: "Detalhe do relógio", es: "Detalle del reloj" } }
         ]
       }
     ],
@@ -410,7 +448,7 @@ const projects = [
 ];
 
 const catalogCovers = {
-  "drone-soldier": "assets/work/drone-soldier/portrait-front.webp",
+  "drone-soldier": "assets/work/drone-soldier/hero-green.webp",
   "big-warrior": "assets/work/big-warrior/hero-pose.webp"
 };
 
@@ -535,7 +573,7 @@ function projectSectionsMarkup(project) {
   return `<div class="case-content">${project.sections.map(section => {
     const sectionCopy = section.copy[currentLanguage];
     const media = section.media.map((item, index) => `
-      <figure class="case-media">${mediaMarkup(item, "", `${sectionCopy.title} — ${index + 1}`)}</figure>`).join("");
+      <figure class="case-media${item.wide ? " case-media--wide" : ""}">${mediaMarkup(item, "", `${sectionCopy.title} — ${index + 1}`)}</figure>`).join("");
     return `
       <section class="case-section" data-section="${escapeAttribute(section.id)}">
         <header class="case-section-header">
