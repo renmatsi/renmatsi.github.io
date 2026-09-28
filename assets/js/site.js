@@ -4,7 +4,7 @@ document.documentElement.classList.add("js");
 
 const localeData = {
   en: {
-    documentTitle: "Renan M. - 3d Character Artist - Portfolio",
+    documentTitle: "Renan Matos · 3D Character Artist · Portfolio",
     description: "Portfolio of Renan Matos, Senior 3D Character Artist specializing in realistic and stylized characters for games.",
     nav: { work: "Work", tools: "Add-ons", about: "About", experience: "Experience", resume: "Resume", contact: "Contact" },
     hero: {
@@ -75,7 +75,7 @@ const localeData = {
     project: { featured: "Featured", externalArtstation: "View on ArtStation", externalGame: "View game", externalDownload: "Download original masters", close: "Close project" }
   },
   pt: {
-    documentTitle: "Renan M. - 3d Character Artist - Portfolio",
+    documentTitle: "Renan Matos · 3D Character Artist · Portfolio",
     description: "Portfólio de Renan Matos, Senior 3D Character Artist especializado em personagens realistas e estilizados para jogos.",
     nav: { work: "Trabalhos", tools: "Add-ons", about: "Sobre", experience: "Experiência", resume: "Currículo", contact: "Contato" },
     hero: {
@@ -146,7 +146,7 @@ const localeData = {
     project: { featured: "Destaque", externalArtstation: "Ver no ArtStation", externalGame: "Ver jogo", externalDownload: "Baixar masters originais", close: "Fechar projeto" }
   },
   es: {
-    documentTitle: "Renan M. - 3d Character Artist - Portfolio",
+    documentTitle: "Renan Matos · 3D Character Artist · Portfolio",
     description: "Portafolio de Renan Matos, Senior 3D Character Artist especializado en personajes realistas y estilizados para videojuegos.",
     nav: { work: "Trabajos", tools: "Add-ons", about: "Acerca de", experience: "Experiencia", resume: "CV", contact: "Contacto" },
     hero: {
