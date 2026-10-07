@@ -278,6 +278,350 @@ const experienceData = [
 ];
 
 const projects = [
+{
+  "id": "pantufa",
+  "status": "published",
+  "tier": "featured",
+  "layout": "large",
+  "featured": true,
+  "year": "2021",
+  "projectType": "personal",
+  "cover": "assets/work/pantufa/03.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/pantufa/06-sharpenai-focus.webp",
+    "alt": {
+      "en": "Pantufa Power — render 1",
+      "pt": "Pantufa Power — render 1",
+      "es": "Pantufa Power — render 1"
+    }
+  },
+  "leadMedia": [],
+  "sections": [
+    {
+      "id": "renders",
+      "copy": {
+        "en": {
+          "title": "Character views"
+        },
+        "pt": {
+          "title": "Vistas do personagem"
+        },
+        "es": {
+          "title": "Vistas del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/pantufa/03.webp",
+          "alt": {
+            "en": "Pantufa Power — render 2",
+            "pt": "Pantufa Power — render 2",
+            "es": "Pantufa Power — render 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/pantufa/04.webp",
+          "alt": {
+            "en": "Pantufa Power — render 3",
+            "pt": "Pantufa Power — render 3",
+            "es": "Pantufa Power — render 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/pantufa/05.webp",
+          "alt": {
+            "en": "Pantufa Power — render 4",
+            "pt": "Pantufa Power — render 4",
+            "es": "Pantufa Power — render 4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "animation",
+      "copy": {
+        "en": {
+          "title": "Animation"
+        },
+        "pt": {
+          "title": "Animação"
+        },
+        "es": {
+          "title": "Animación"
+        }
+      },
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/work/pantufa/animation.mp4",
+          "poster": "assets/work/pantufa/animation-poster.webp",
+          "label": {
+            "en": "Animation",
+            "pt": "Animação",
+            "es": "Animación"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Stylized character",
+    "pt": "Personagem estilizado",
+    "es": "Personaje estilizado"
+  },
+  "external": {
+    "type": "artstation",
+    "url": "https://www.artstation.com/artwork/g2an4x"
+  },
+  "copy": {
+    "en": {
+      "title": "Pantufa Power",
+      "description": "A stylized fabric character with stitched details, a cape and animal slippers. Character renders and a short animation.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Pantufa Power",
+      "description": "Personagem estilizado de tecido, com detalhes costurados, capa e pantufas de animais. Renders e uma animação curta.",
+      "tags": []
+    },
+    "es": {
+      "title": "Pantufa Power",
+      "description": "Personaje estilizado de tela con detalles cosidos, capa y pantuflas de animales. Renders y una animación corta.",
+      "tags": []
+    }
+  }
+},
+{
+  "id": "priestess",
+  "status": "published",
+  "tier": "featured",
+  "layout": "large",
+  "featured": true,
+  "year": "2023",
+  "projectType": "personal",
+  "cover": "assets/work/priestess/001-render.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/priestess/0007.webp",
+    "alt": {
+      "en": "Priestess — render 1",
+      "pt": "Priestess — render 1",
+      "es": "Priestess — render 1"
+    }
+  },
+  "leadMedia": [],
+  "sections": [
+    {
+      "id": "renders",
+      "copy": {
+        "en": {
+          "title": "Character views"
+        },
+        "pt": {
+          "title": "Vistas do personagem"
+        },
+        "es": {
+          "title": "Vistas del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/priestess/00008.webp",
+          "alt": {
+            "en": "Priestess — render 2",
+            "pt": "Priestess — render 2",
+            "es": "Priestess — render 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/priestess/000009.webp",
+          "alt": {
+            "en": "Priestess — render 3",
+            "pt": "Priestess — render 3",
+            "es": "Priestess — render 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/priestess/003-render.webp",
+          "alt": {
+            "en": "Priestess — render 4",
+            "pt": "Priestess — render 4",
+            "es": "Priestess — render 4"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/priestess/001-render.webp",
+          "alt": {
+            "en": "Priestess — render 5",
+            "pt": "Priestess — render 5",
+            "es": "Priestess — render 5"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/priestess/002-render.webp",
+          "alt": {
+            "en": "Priestess — render 6",
+            "pt": "Priestess — render 6",
+            "es": "Priestess — render 6"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/priestess/untitled.webp",
+          "alt": {
+            "en": "Priestess — render 7",
+            "pt": "Priestess — render 7",
+            "es": "Priestess — render 7"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/priestess/wire.webp",
+          "alt": {
+            "en": "Priestess — render 8",
+            "pt": "Priestess — render 8",
+            "es": "Priestess — render 8"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Realistic character",
+    "pt": "Personagem realista",
+    "es": "Personaje realista"
+  },
+  "external": {
+    "type": "artstation",
+    "url": "https://www.artstation.com/artwork/o2avxk"
+  },
+  "copy": {
+    "en": {
+      "title": "Priestess",
+      "description": "A realistic character portrait with a textured white hood and illuminated facial details. Final renders, lighting studies, sculpt and wireframe.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Priestess",
+      "description": "Retrato de personagem realista com capuz branco texturizado e detalhes luminosos no rosto. Renders finais, estudos de luz, escultura e wireframe.",
+      "tags": []
+    },
+    "es": {
+      "title": "Priestess",
+      "description": "Retrato de personaje realista con capucha blanca texturizada y detalles luminosos en el rostro. Renders finales, estudios de luz, escultura y wireframe.",
+      "tags": []
+    }
+  }
+},
+{
+  "id": "ranay",
+  "status": "published",
+  "tier": "featured",
+  "layout": "large",
+  "featured": true,
+  "year": "2021",
+  "projectType": "personal",
+  "cover": "assets/work/ranay/render-1.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/ranay/untitled-1.webp",
+    "alt": {
+      "en": "Ranay — Golden Demon — render 1",
+      "pt": "Ranay — Golden Demon — render 1",
+      "es": "Ranay — Golden Demon — render 1"
+    }
+  },
+  "leadMedia": [],
+  "sections": [
+    {
+      "id": "renders",
+      "copy": {
+        "en": {
+          "title": "Character views"
+        },
+        "pt": {
+          "title": "Vistas do personagem"
+        },
+        "es": {
+          "title": "Vistas del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/ranay/render-1.webp",
+          "alt": {
+            "en": "Ranay — Golden Demon — render 2",
+            "pt": "Ranay — Golden Demon — render 2",
+            "es": "Ranay — Golden Demon — render 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/ranay/untitled0.webp",
+          "alt": {
+            "en": "Ranay — Golden Demon — render 3",
+            "pt": "Ranay — Golden Demon — render 3",
+            "es": "Ranay — Golden Demon — render 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/ranay/untitled22.webp",
+          "alt": {
+            "en": "Ranay — Golden Demon — render 4",
+            "pt": "Ranay — Golden Demon — render 4",
+            "es": "Ranay — Golden Demon — render 4"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/ranay/untitled1.webp",
+          "alt": {
+            "en": "Ranay — Golden Demon — render 5",
+            "pt": "Ranay — Golden Demon — render 5",
+            "es": "Ranay — Golden Demon — render 5"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Realistic character",
+    "pt": "Personagem realista",
+    "es": "Personaje realista"
+  },
+  "external": {
+    "type": "artstation",
+    "url": "https://www.artstation.com/artwork/WmKgrN"
+  },
+  "copy": {
+    "en": {
+      "title": "Ranay — Golden Demon",
+      "description": "A fantasy character with golden armor. Cinematic presentation, character views and portrait studies.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Ranay — Golden Demon",
+      "description": "Personagem de fantasia com armadura dourada. Apresentação cinematográfica, vistas da personagem e estudos de retrato.",
+      "tags": []
+    },
+    "es": {
+      "title": "Ranay — Golden Demon",
+      "description": "Personaje de fantasía con armadura dorada. Presentación cinematográfica, vistas del personaje y estudios de retrato.",
+      "tags": []
+    }
+  }
+},
   {
   "id": "trial-xtreme-freedom",
   "status": "published",
@@ -2241,17 +2585,122 @@ const projects = [
 ];
 
 const catalogCovers = {
-  "trial-xtreme-freedom": "assets/work/trial-xtreme-freedom/promo-notext-globallaunchimage-01.webp",
-  "hyperlight": "assets/work/hyperlight/hero-cinematic.webp",
-  "red-dress": "assets/work/red-dress/dress-three-quarter-left.webp",
-  "weslley-wanderer": "assets/work/weslley-wanderer/hero-portrait.webp",
-  "denis": "assets/work/denis/denis-cover.webp",
-  "tiny-hero": "assets/work/tiny-hero/hero-cover-021.png",
-  "drone-soldier": "assets/work/drone-soldier/hero-green.webp",
-  "big-warrior": "assets/work/big-warrior/hero-pose.webp"
+  "pantufa": "assets/work/pantufa/catalog-cover.webp",
+  "priestess": "assets/work/priestess/catalog-cover.webp",
+  "ranay": "assets/work/ranay/catalog-cover.webp",
+  "trial-xtreme-freedom": "assets/work/trial-xtreme-freedom/catalog-cover.webp",
+  "hyperlight": "assets/work/hyperlight/catalog-cover.webp",
+  "red-dress": "assets/work/red-dress/catalog-cover.webp",
+  "weslley-wanderer": "assets/work/weslley-wanderer/catalog-cover.webp",
+  "denis": "assets/work/denis/catalog-cover.webp",
+  "tiny-hero": "assets/work/tiny-hero/catalog-cover.webp",
+  "drone-soldier": "assets/work/drone-soldier/catalog-cover.webp",
+  "big-warrior": "assets/work/big-warrior/catalog-cover.webp"
+};
+
+const catalogMetadata = {
+  "drone-soldier": {
+    "style": "realistic",
+    "tags": [
+      "realistic",
+      "character",
+      "hard-surface"
+    ],
+    "catalogOrder": 1
+  },
+  "big-warrior": {
+    "style": "stylized",
+    "tags": [
+      "stylized",
+      "character",
+      "groom"
+    ],
+    "catalogOrder": 0
+  },
+  "tiny-hero": {
+    "style": "stylized",
+    "tags": [
+      "stylized",
+      "character",
+      "groom"
+    ],
+    "catalogOrder": 2
+  },
+  "denis": {
+    "style": "realistic",
+    "tags": [
+      "realistic",
+      "character",
+      "groom"
+    ],
+    "catalogOrder": 3
+  },
+  "weslley-wanderer": {
+    "style": "realistic",
+    "tags": [
+      "realistic",
+      "character",
+      "groom"
+    ],
+    "catalogOrder": 4
+  },
+  "hyperlight": {
+    "style": "stylized",
+    "tags": [
+      "stylized",
+      "character",
+      "hard-surface"
+    ],
+    "catalogOrder": 5
+  },
+  "red-dress": {
+    "style": "realistic",
+    "tags": [
+      "realistic",
+      "costume"
+    ],
+    "catalogOrder": 6
+  },
+  "trial-xtreme-freedom": {
+    "style": "stylized",
+    "tags": [
+      "stylized",
+      "character",
+      "mobile"
+    ],
+    "catalogOrder": 7
+  },
+  "pantufa": {
+    "style": "stylized",
+    "tags": [
+      "stylized",
+      "character",
+      "animation"
+    ],
+    "catalogOrder": 8
+  },
+  "priestess": {
+    "style": "realistic",
+    "tags": [
+      "realistic",
+      "character",
+      "cloth"
+    ],
+    "catalogOrder": 9
+  },
+  "ranay": {
+    "style": "realistic",
+    "tags": [
+      "realistic",
+      "character",
+      "hard-surface"
+    ],
+    "catalogOrder": 10
+  }
 };
 
 projects.forEach(project => {
+  Object.assign(project, catalogMetadata[project.id]);
   project.cover = catalogCovers[project.id];
 });
 
@@ -2278,6 +2727,7 @@ const validLanguages = ["en", "pt", "es"];
 const storedLanguage = localStorage.getItem("portfolio-language");
 let currentLanguage = storedLanguage === "br" ? "pt" : (validLanguages.includes(storedLanguage) ? storedLanguage : "en");
 let currentProjectId = null;
+let currentProjectFilter = "all";
 let revealObserver;
 
 function escapeAttribute(value) {
@@ -2305,9 +2755,24 @@ function setupRevealObserver() {
 
 function renderProjects() {
   const t = localeData[currentLanguage];
+  const labels = {
+    en: { all: "All", realistic: "Realistic", stylized: "Stylized", group: "Project style", character: "Character", "hard-surface": "Hard surface", groom: "Groom", mobile: "Mobile", costume: "Costume", animation: "Animation", cloth: "Cloth" },
+    pt: { all: "Todos", realistic: "Realistas", stylized: "Estilizados", group: "Estilo dos projetos", character: "Character", "hard-surface": "Hard surface", groom: "Groom", mobile: "Mobile", costume: "Figurino", animation: "Animação", cloth: "Tecido" },
+    es: { all: "Todos", realistic: "Realistas", stylized: "Estilizados", group: "Estilo de los proyectos", character: "Character", "hard-surface": "Hard surface", groom: "Groom", mobile: "Mobile", costume: "Vestuario", animation: "Animación", cloth: "Tela" }
+  }[currentLanguage];
+  const tagLabels = { ...labels, realistic: currentLanguage === "en" ? "Realistic" : "Realista", stylized: currentLanguage === "en" ? "Stylized" : "Estilizado" };
+  const filterGroup = document.getElementById("projectFilters");
+  filterGroup.setAttribute("aria-label", labels.group);
+  filterGroup.querySelectorAll("[data-filter]").forEach(button => {
+    const selected = button.dataset.filter === currentProjectFilter;
+    button.textContent = labels[button.dataset.filter];
+    button.setAttribute("aria-selected", String(selected));
+    button.tabIndex = selected ? 0 : -1;
+  });
+  elements.projectsGrid.setAttribute("aria-labelledby", `filter-${currentProjectFilter}`);
   const layoutClasses = { large: "project-card--featured", tall: "project-card--tall", wide: "project-card--wide", square: "project-card--square", production: "project-card--production" };
   const visibleProjects = projects
-    .filter(project => project.status === "published")
+    .filter(project => project.status === "published" && (currentProjectFilter === "all" || project.style === currentProjectFilter))
     .sort((a, b) => a.catalogOrder - b.catalogOrder);
 
   document.getElementById("work")?.classList.toggle("is-empty", visibleProjects.length === 0);
@@ -2316,8 +2781,8 @@ function renderProjects() {
     const copy = project.copy[currentLanguage];
     return `
       <button class="project-card ${layoutClasses[project.layout]} reveal" type="button" data-project="${project.id}" aria-label="${escapeAttribute(t.work.openProject)}: ${escapeAttribute(copy.title)}">
-        <img src="${project.cover}" alt="" width="1800" height="1200" loading="lazy" decoding="async">
-        <span class="project-copy"><h3>${copy.title}</h3></span>
+        <img src="${project.cover}" alt="" width="960" height="1200" loading="lazy" decoding="async">
+        <span class="project-copy"><h3>${copy.title}</h3><span class="project-tags">${project.tags.map(tag => `<span>${tagLabels[tag]}</span>`).join("")}</span></span>
       </button>`;
   }).join("");
 
@@ -2325,6 +2790,29 @@ function renderProjects() {
     button.addEventListener("click", () => openProject(button.dataset.project));
   });
 }
+
+function setProjectFilter(filter) {
+  if (!["all", "realistic", "stylized"].includes(filter)) return;
+  currentProjectFilter = filter;
+  renderProjects();
+  setupRevealObserver();
+}
+
+const projectFilterButtons = [...document.querySelectorAll("#projectFilters [data-filter]")];
+projectFilterButtons.forEach((button, index) => {
+  button.addEventListener("click", () => setProjectFilter(button.dataset.filter));
+  button.addEventListener("keydown", event => {
+    let next;
+    if (event.key === "ArrowRight") next = (index + 1) % projectFilterButtons.length;
+    if (event.key === "ArrowLeft") next = (index - 1 + projectFilterButtons.length) % projectFilterButtons.length;
+    if (event.key === "Home") next = 0;
+    if (event.key === "End") next = projectFilterButtons.length - 1;
+    if (next === undefined) return;
+    event.preventDefault();
+    setProjectFilter(projectFilterButtons[next].dataset.filter);
+    projectFilterButtons[next].focus();
+  });
+});
 
 function renderAbout() {
   const about = localeData[currentLanguage].about;
