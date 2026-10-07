@@ -1836,3 +1836,27 @@ a { color: inherit; }
 
 /* Keep the four published cases in balanced pairs. */
 .projects-grid--catalog .project-card[data-project] { --span: 6; }
+
+/* Weslley keeps each original render fully visible. */
+.project-card[data-project="weslley-wanderer"] { min-height: 0; aspect-ratio: 4 / 5; }
+.project-card[data-project="weslley-wanderer"] img { object-fit: cover; object-position: center top; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hero-portrait.webp"]) { aspect-ratio: 1486 / 1927; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hero-three-quarter.webp"]) { aspect-ratio: 2000 / 3000; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hero-back.webp"]) { aspect-ratio: 1888 / 1924; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hero-profile.webp"]) { aspect-ratio: 1662 / 1914; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hooded-full-body.webp"]) { aspect-ratio: 2000 / 3000; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/character-warm-light.webp"]) { aspect-ratio: 2000 / 3000; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/body-and-skin.webp"]) { aspect-ratio: 2000 / 3000; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/portrait-blood-study.webp"]) { aspect-ratio: 2000 / 3000; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hood-front.webp"]) { aspect-ratio: 1656 / 1621; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/hood-back.webp"]) { aspect-ratio: 1522 / 1413; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/boots.webp"]) { aspect-ratio: 1440 / 1138; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/glove.webp"]) { aspect-ratio: 1049 / 1096; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/vest-side.webp"]) { aspect-ratio: 1269 / 1572; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/vest-front.webp"]) { aspect-ratio: 1367 / 1597; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/vest-three-quarter.webp"]) { aspect-ratio: 1108 / 1533; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(img[src$="/blades.webp"]) { aspect-ratio: 2184 / 1870; }
+#dialogContent[data-project="weslley-wanderer"] .case-media img,
+#dialogContent[data-project="weslley-wanderer"] .case-media video { object-fit: contain; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(source[src$="/hair-preview.mp4"]) { aspect-ratio: 1102 / 964; }
+#dialogContent[data-project="weslley-wanderer"] .case-media:has(source[src$="/hair-and-beard-preview.mp4"]) { aspect-ratio: 1168 / 1596; }
