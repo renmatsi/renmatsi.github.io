@@ -1891,3 +1891,63 @@ a { color: inherit; }
 #dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-three-quarter-right.webp"]) { aspect-ratio: 1687 / 3000; }
 #dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-high-angle.webp"]) { aspect-ratio: 1687 / 3000; }
 #dialogContent[data-project="red-dress"] .case-media img { object-fit: contain; }
+
+/* Trial Xtreme Freedom: credit-aware case, original media proportions. */
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-00.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-02.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-03.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-04.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-05.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-06.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/rider-07.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-00.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-01.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-02.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-03.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-04.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-05.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-06.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/bob-07.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/cody-00.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/cody-01.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/cody-02.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/cody-03.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/cody-04.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/kayla-00.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/kayla-01.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/kayla-02.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/kayla-03.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/kayla-04.webp"]) { aspect-ratio: 2048 / 2048; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-8k-jpeg-splashartasposter-v04.webp"]) { aspect-ratio: 1920 / 1354; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-allriders-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-blackfriday-04.webp"]) { aspect-ratio: 1688 / 3000; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-bobsplashartsliding-05.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-christmasday2024-03.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-nitrohunt-pizzaday-v01.webp"]) { aspect-ratio: 1920 / 1085; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-poiindistance3.webp"]) { aspect-ratio: 1920 / 683; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-clanmodecelebration-notext-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-happybirthdaycakeimage-01.webp"]) { aspect-ratio: 1920 / 1920; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-logoed-duelknockout-16b9.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-multiplflags-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-notext-globallaunchimage-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-notext-globallaunchimage-02.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-notext-riderconstructionsite-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-presentation-slide01-cmbn-01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-thanksgiving2025-notitle-3.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-torquetalk-v02.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-trainaction-v09.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-websiteversionhlemsideprofile-07.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-crossingtheline-v02.webp"]) { aspect-ratio: 1920 / 683; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-crossingtheline.webp"]) { aspect-ratio: 1920 / 683; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-desert02-v01.webp"]) { aspect-ratio: 1920 / 1080; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-pizzaday-notext-v02.webp"]) { aspect-ratio: 1920 / 1920; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-pizzaboxcloseup2.webp"]) { aspect-ratio: 1920 / 1920; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-splashscreen-v01.webp"]) { aspect-ratio: 1920 / 886; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-splashscreen-v04.webp"]) { aspect-ratio: 1920 / 886; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-festivaldancing.webp"]) { aspect-ratio: 1920 / 1040; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media:has(img[src$="/promo-logod-cmpd-bartimage-05.webp"]) { aspect-ratio: 1920 / 1080; }
+.project-card[data-project="trial-xtreme-freedom"] { min-height: 0; aspect-ratio: 4 / 5; }
+.project-card[data-project="trial-xtreme-freedom"] img { object-fit: cover; object-position: center top; }
+#dialogContent[data-project="trial-xtreme-freedom"] .case-media img { object-fit: contain; }
+#dialogContent[data-project="trial-xtreme-freedom"] [data-section="film"] .case-media { aspect-ratio: 16 / 9; }
