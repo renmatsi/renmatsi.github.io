@@ -1860,3 +1860,34 @@ a { color: inherit; }
 #dialogContent[data-project="weslley-wanderer"] .case-media video { object-fit: contain; }
 #dialogContent[data-project="weslley-wanderer"] .case-media:has(source[src$="/hair-preview.mp4"]) { aspect-ratio: 1102 / 964; }
 #dialogContent[data-project="weslley-wanderer"] .case-media:has(source[src$="/hair-and-beard-preview.mp4"]) { aspect-ratio: 1168 / 1596; }
+
+/* Preserve the full original framing in the new project galleries. */
+.project-card[data-project="hyperlight"] { min-height: 0; aspect-ratio: 4 / 5; }
+.project-card[data-project="hyperlight"] img { object-fit: cover; object-position: center top; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/hero-cinematic.webp"]) { aspect-ratio: 1687 / 3000; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/portrait-smile.webp"]) { aspect-ratio: 1200 / 1600; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/trait-variant-01.webp"]) { aspect-ratio: 1080 / 1920; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/trait-variant-02.webp"]) { aspect-ratio: 1080 / 1920; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/trait-variant-03.webp"]) { aspect-ratio: 1080 / 1920; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/trait-variant-04.webp"]) { aspect-ratio: 1080 / 1920; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/posed-variant-01.webp"]) { aspect-ratio: 970 / 1477; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/posed-variant-02.webp"]) { aspect-ratio: 956 / 1480; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/posed-variant-03.webp"]) { aspect-ratio: 1022 / 1501; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/posed-variant-04.webp"]) { aspect-ratio: 946 / 1498; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-01.webp"]) { aspect-ratio: 1022 / 1444; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-02.webp"]) { aspect-ratio: 971 / 1461; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-03.webp"]) { aspect-ratio: 1092 / 1385; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-04.webp"]) { aspect-ratio: 1138 / 1517; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-06.webp"]) { aspect-ratio: 1093 / 1501; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-07.webp"]) { aspect-ratio: 1068 / 1437; }
+#dialogContent[data-project="hyperlight"] .case-media:has(img[src$="/expression-08.webp"]) { aspect-ratio: 1047 / 1446; }
+#dialogContent[data-project="hyperlight"] .case-media img { object-fit: contain; }
+.project-card[data-project="red-dress"] { min-height: 0; aspect-ratio: 4 / 5; }
+.project-card[data-project="red-dress"] img { object-fit: cover; object-position: center top; }
+#dialogContent[data-project="red-dress"] .case-media:has(img[src$="/presentation-sheet.webp"]) { aspect-ratio: 2160 / 844; }
+#dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-front.webp"]) { aspect-ratio: 1687 / 3000; }
+#dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-back.webp"]) { aspect-ratio: 1687 / 3000; }
+#dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-three-quarter-left.webp"]) { aspect-ratio: 1687 / 3000; }
+#dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-three-quarter-right.webp"]) { aspect-ratio: 1687 / 3000; }
+#dialogContent[data-project="red-dress"] .case-media:has(img[src$="/dress-high-angle.webp"]) { aspect-ratio: 1687 / 3000; }
+#dialogContent[data-project="red-dress"] .case-media img { object-fit: contain; }
