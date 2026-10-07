@@ -1811,3 +1811,28 @@ a { color: inherit; }
 #dialogContent[data-project="tiny-hero"] [data-section="blockout"] img {
   object-fit: contain;
 }
+
+/* Denis cover and original square presentation renders. */
+.project-card[data-project="denis"] {
+  --span: 6;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+}
+.project-card[data-project="denis"] img {
+  object-fit: cover;
+  object-position: center top;
+}
+#dialogContent[data-project="denis"] .case-media {
+  aspect-ratio: 1 / 1;
+}
+#dialogContent[data-project="denis"] .case-media--wide {
+  aspect-ratio: 256 / 135;
+}
+#dialogContent[data-project="denis"] .case-media img {
+  object-fit: contain;
+}
+
+#dialogContent[data-project="denis"] [data-section="turntable"] .case-media { aspect-ratio: 16 / 9; }
+
+/* Keep the four published cases in balanced pairs. */
+.projects-grid--catalog .project-card[data-project] { --span: 6; }

@@ -279,6 +279,289 @@ const experienceData = [
 
 const projects = [
   {
+  "id": "denis",
+  "status": "published",
+  "tier": "featured",
+  "order": 1,
+  "catalogOrder": -1,
+  "year": "",
+  "projectType": "personal",
+  "layout": "large",
+  "featured": true,
+  "cover": "assets/work/denis/denis-cover.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/denis/portrait-front.webp",
+    "alt": {
+      "en": "Frontal portrait of Denis",
+      "pt": "Retrato frontal de Denis",
+      "es": "Retrato frontal de Denis"
+    }
+  },
+  "leadMedia": [
+    {
+      "type": "image",
+      "src": "assets/work/denis/full-body-three-quarter.webp",
+      "alt": {
+        "en": "Full-body three-quarter view of Denis",
+        "pt": "Vista de corpo inteiro em três quartos de Denis",
+        "es": "Vista de cuerpo completo en tres cuartos de Denis"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "turntable",
+      "copy": {
+        "en": {
+          "title": "Turntable"
+        },
+        "pt": {
+          "title": "Turntable"
+        },
+        "es": {
+          "title": "Turntable"
+        }
+      },
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/work/denis/character-turntable.mp4",
+          "poster": "assets/work/denis/turntable-poster.webp",
+          "wide": true,
+          "label": {
+            "en": "Character turntable",
+            "pt": "Turntable do personagem",
+            "es": "Turntable del personaje"
+          }
+        }
+      ]
+    },
+    {
+      "id": "character",
+      "copy": {
+        "en": {
+          "title": "Character views"
+        },
+        "pt": {
+          "title": "Vistas do personagem"
+        },
+        "es": {
+          "title": "Vistas del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/denis/full-body-front.webp",
+          "alt": {
+            "en": "Full-body front view of Denis",
+            "pt": "Vista frontal de corpo inteiro de Denis",
+            "es": "Vista frontal de cuerpo completo de Denis"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/full-body-back.webp",
+          "alt": {
+            "en": "Full-body back view of Denis",
+            "pt": "Vista traseira de corpo inteiro de Denis",
+            "es": "Vista trasera de cuerpo completo de Denis"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/portrait-three-quarter.webp",
+          "alt": {
+            "en": "Three-quarter portrait showing hair and beard",
+            "pt": "Retrato em três quartos mostrando cabelo e barba",
+            "es": "Retrato en tres cuartos mostrando cabello y barba"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/character-with-tank-top.webp",
+          "alt": {
+            "en": "Denis wearing a tank top",
+            "pt": "Denis usando regata",
+            "es": "Denis con camiseta sin mangas"
+          }
+        }
+      ]
+    },
+    {
+      "id": "torso",
+      "copy": {
+        "en": {
+          "title": "Body and tattoos"
+        },
+        "pt": {
+          "title": "Corpo e tatuagens"
+        },
+        "es": {
+          "title": "Cuerpo y tatuajes"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/denis/torso-three-quarter-left.webp",
+          "alt": {
+            "en": "Left three-quarter view of the torso and tattoos",
+            "pt": "Vista do torso e tatuagens em três quartos à esquerda",
+            "es": "Vista del torso y tatuajes en tres cuartos a la izquierda"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/torso-three-quarter-right.webp",
+          "alt": {
+            "en": "Right three-quarter view of the torso and tattoos",
+            "pt": "Vista do torso e tatuagens em três quartos à direita",
+            "es": "Vista del torso y tatuajes en tres cuartos a la derecha"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/torso-front.webp",
+          "alt": {
+            "en": "Front view of the torso and tattoos",
+            "pt": "Vista frontal do torso e tatuagens",
+            "es": "Vista frontal del torso y tatuajes"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/torso-back.webp",
+          "alt": {
+            "en": "Back view of the torso and tattoos",
+            "pt": "Vista traseira do torso e tatuagens",
+            "es": "Vista trasera del torso y tatuajes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wardrobe",
+      "copy": {
+        "en": {
+          "title": "Wardrobe details"
+        },
+        "pt": {
+          "title": "Detalhes das roupas"
+        },
+        "es": {
+          "title": "Detalles de la ropa"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/denis/glove-back.webp",
+          "alt": {
+            "en": "Back of the fingerless glove",
+            "pt": "Dorso da luva sem dedos",
+            "es": "Dorso del guante sin dedos"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/glove-palm.webp",
+          "alt": {
+            "en": "Palm of the fingerless glove",
+            "pt": "Palma da luva sem dedos",
+            "es": "Palma del guante sin dedos"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/boots-and-trousers.webp",
+          "alt": {
+            "en": "Boots and trouser details",
+            "pt": "Detalhes das botas e calça",
+            "es": "Detalles de botas y pantalones"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/boot-side.webp",
+          "alt": {
+            "en": "Side view of the boot",
+            "pt": "Vista lateral da bota",
+            "es": "Vista lateral de la bota"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/boot-three-quarter.webp",
+          "alt": {
+            "en": "Three-quarter view of the boot",
+            "pt": "Vista em três quartos da bota",
+            "es": "Vista en tres cuartos de la bota"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/denis/boot-front.webp",
+          "alt": {
+            "en": "Front view of the boot",
+            "pt": "Vista frontal da bota",
+            "es": "Vista frontal de la bota"
+          }
+        }
+      ]
+    },
+    {
+      "id": "weapons",
+      "copy": {
+        "en": {
+          "title": "Weapons"
+        },
+        "pt": {
+          "title": "Armas"
+        },
+        "es": {
+          "title": "Armas"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/denis/weapon-sheet.webp",
+          "alt": {
+            "en": "Weapon presentation sheet",
+            "pt": "Prancha de apresentação das armas",
+            "es": "Lámina de presentación de armas"
+          },
+          "wide": true
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Realistic character",
+    "pt": "Personagem realista",
+    "es": "Personaje realista"
+  },
+  "copy": {
+    "en": {
+      "title": "Denis",
+      "description": "A realistic character with detailed hair, beard, tattoos and worn clothing. Character views, wardrobe details and weapons.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Denis",
+      "description": "Personagem realista com cabelo, barba, tatuagens e roupas com marcas de uso. Vistas do personagem, detalhes das roupas e armas.",
+      "tags": []
+    },
+    "es": {
+      "title": "Denis",
+      "description": "Personaje realista con cabello, barba, tatuajes y ropa con marcas de uso. Vistas del personaje, detalles de la ropa y armas.",
+      "tags": []
+    }
+  }
+},
+  {
   "id": "tiny-hero",
   "status": "published",
   "tier": "featured",
@@ -717,6 +1000,7 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "denis": "assets/work/denis/denis-cover.webp",
   "tiny-hero": "assets/work/tiny-hero/hero-cover-021.png",
   "drone-soldier": "assets/work/drone-soldier/hero-green.webp",
   "big-warrior": "assets/work/big-warrior/hero-pose.webp"
