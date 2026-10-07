@@ -1794,3 +1794,20 @@ a { color: inherit; }
   object-fit: cover;
   object-position: center top;
 }
+
+/* Tiny Hero follows the established portrait framing. */
+.project-card[data-project="tiny-hero"] {
+  --span: 6;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+}
+.project-card[data-project="tiny-hero"] img {
+  object-fit: cover;
+  object-position: center top;
+}
+#dialogContent[data-project="tiny-hero"] .dialog-main-item {
+  aspect-ratio: 4 / 5;
+}
+#dialogContent[data-project="tiny-hero"] [data-section="blockout"] img {
+  object-fit: contain;
+}
