@@ -279,6 +279,635 @@ const experienceData = [
 
 const projects = [
   {
+  "id": "trial-xtreme-freedom",
+  "status": "published",
+  "tier": "production",
+  "order": 1,
+  "catalogOrder": -5,
+  "year": "",
+  "projectType": "production",
+  "layout": "large",
+  "featured": true,
+  "cover": "assets/work/trial-xtreme-freedom/promo-notext-globallaunchimage-01.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/trial-xtreme-freedom/promo-notext-globallaunchimage-01.webp",
+    "alt": {
+      "en": "Trial Xtreme Freedom riders in the launch artwork. Character modeling by Renan Matos; composition by Eduardo Enrique Boesche Quan.",
+      "pt": "Riders de Trial Xtreme Freedom na arte de lançamento. Modelagem dos personagens por Renan Matos; composição por Eduardo Enrique Boesche Quan.",
+      "es": "Riders de Trial Xtreme Freedom en el arte de lanzamiento. Modelado de personajes por Renan Matos; composición por Eduardo Enrique Boesche Quan."
+    }
+  },
+  "sections": [
+    {
+      "id": "rider",
+      "copy": {
+        "en": {
+          "title": "Rider variations"
+        },
+        "pt": {
+          "title": "Variações do rider"
+        },
+        "es": {
+          "title": "Variaciones del rider"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-00.webp",
+          "alt": {
+            "en": "Rider variations character view 1",
+            "pt": "Rider variations: vista do personagem 1",
+            "es": "Rider variations: vista del personaje 1"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-01.webp",
+          "alt": {
+            "en": "Rider variations character view 2",
+            "pt": "Rider variations: vista do personagem 2",
+            "es": "Rider variations: vista del personaje 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-02.webp",
+          "alt": {
+            "en": "Rider variations character view 3",
+            "pt": "Rider variations: vista do personagem 3",
+            "es": "Rider variations: vista del personaje 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-03.webp",
+          "alt": {
+            "en": "Rider variations character view 4",
+            "pt": "Rider variations: vista do personagem 4",
+            "es": "Rider variations: vista del personaje 4"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-04.webp",
+          "alt": {
+            "en": "Rider variations character view 5",
+            "pt": "Rider variations: vista do personagem 5",
+            "es": "Rider variations: vista del personaje 5"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-05.webp",
+          "alt": {
+            "en": "Rider variations character view 6",
+            "pt": "Rider variations: vista do personagem 6",
+            "es": "Rider variations: vista del personaje 6"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-06.webp",
+          "alt": {
+            "en": "Rider variations character view 7",
+            "pt": "Rider variations: vista do personagem 7",
+            "es": "Rider variations: vista del personaje 7"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/rider-07.webp",
+          "alt": {
+            "en": "Rider variations character view 8",
+            "pt": "Rider variations: vista do personagem 8",
+            "es": "Rider variations: vista del personaje 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bob",
+      "copy": {
+        "en": {
+          "title": "Bob"
+        },
+        "pt": {
+          "title": "Bob"
+        },
+        "es": {
+          "title": "Bob"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-00.webp",
+          "alt": {
+            "en": "Bob character view 1",
+            "pt": "Bob: vista do personagem 1",
+            "es": "Bob: vista del personaje 1"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-01.webp",
+          "alt": {
+            "en": "Bob character view 2",
+            "pt": "Bob: vista do personagem 2",
+            "es": "Bob: vista del personaje 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-02.webp",
+          "alt": {
+            "en": "Bob character view 3",
+            "pt": "Bob: vista do personagem 3",
+            "es": "Bob: vista del personaje 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-03.webp",
+          "alt": {
+            "en": "Bob character view 4",
+            "pt": "Bob: vista do personagem 4",
+            "es": "Bob: vista del personaje 4"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-04.webp",
+          "alt": {
+            "en": "Bob character view 5",
+            "pt": "Bob: vista do personagem 5",
+            "es": "Bob: vista del personaje 5"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-05.webp",
+          "alt": {
+            "en": "Bob character view 6",
+            "pt": "Bob: vista do personagem 6",
+            "es": "Bob: vista del personaje 6"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-06.webp",
+          "alt": {
+            "en": "Bob character view 7",
+            "pt": "Bob: vista do personagem 7",
+            "es": "Bob: vista del personaje 7"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/bob-07.webp",
+          "alt": {
+            "en": "Bob character view 8",
+            "pt": "Bob: vista do personagem 8",
+            "es": "Bob: vista del personaje 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cody",
+      "copy": {
+        "en": {
+          "title": "Cody"
+        },
+        "pt": {
+          "title": "Cody"
+        },
+        "es": {
+          "title": "Cody"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/cody-00.webp",
+          "alt": {
+            "en": "Cody character view 1",
+            "pt": "Cody: vista do personagem 1",
+            "es": "Cody: vista del personaje 1"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/cody-01.webp",
+          "alt": {
+            "en": "Cody character view 2",
+            "pt": "Cody: vista do personagem 2",
+            "es": "Cody: vista del personaje 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/cody-02.webp",
+          "alt": {
+            "en": "Cody character view 3",
+            "pt": "Cody: vista do personagem 3",
+            "es": "Cody: vista del personaje 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/cody-03.webp",
+          "alt": {
+            "en": "Cody character view 4",
+            "pt": "Cody: vista do personagem 4",
+            "es": "Cody: vista del personaje 4"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/cody-04.webp",
+          "alt": {
+            "en": "Cody character view 5",
+            "pt": "Cody: vista do personagem 5",
+            "es": "Cody: vista del personaje 5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kayla",
+      "copy": {
+        "en": {
+          "title": "Kayla"
+        },
+        "pt": {
+          "title": "Kayla"
+        },
+        "es": {
+          "title": "Kayla"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/kayla-00.webp",
+          "alt": {
+            "en": "Kayla character view 1",
+            "pt": "Kayla: vista do personagem 1",
+            "es": "Kayla: vista del personaje 1"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/kayla-01.webp",
+          "alt": {
+            "en": "Kayla character view 2",
+            "pt": "Kayla: vista do personagem 2",
+            "es": "Kayla: vista del personaje 2"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/kayla-02.webp",
+          "alt": {
+            "en": "Kayla character view 3",
+            "pt": "Kayla: vista do personagem 3",
+            "es": "Kayla: vista del personaje 3"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/kayla-03.webp",
+          "alt": {
+            "en": "Kayla character view 4",
+            "pt": "Kayla: vista do personagem 4",
+            "es": "Kayla: vista del personaje 4"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/kayla-04.webp",
+          "alt": {
+            "en": "Kayla character view 5",
+            "pt": "Kayla: vista do personagem 5",
+            "es": "Kayla: vista del personaje 5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "promotional",
+      "copy": {
+        "en": {
+          "title": "Promotional artwork"
+        },
+        "pt": {
+          "title": "Artes promocionais"
+        },
+        "es": {
+          "title": "Arte promocional"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-8k-jpeg-splashartasposter-v04.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-allriders-01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-blackfriday-04.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-bobsplashartsliding-05.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-christmasday2024-03.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-nitrohunt-pizzaday-v01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-poiindistance3.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-clanmodecelebration-notext-01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-happybirthdaycakeimage-01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-logoed-duelknockout-16b9.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-multiplflags-01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-notext-globallaunchimage-02.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-notext-riderconstructionsite-01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-presentation-slide01-cmbn-01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-thanksgiving2025-notitle-3.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-torquetalk-v02.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-trainaction-v09.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-websiteversionhlemsideprofile-07.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-crossingtheline-v02.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-crossingtheline.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-desert02-v01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-pizzaday-notext-v02.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-pizzaboxcloseup2.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-splashscreen-v01.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-splashscreen-v04.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-festivaldancing.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/trial-xtreme-freedom/promo-logod-cmpd-bartimage-05.webp",
+          "alt": {
+            "en": "Trial Xtreme Freedom promotional artwork. Character modeling: Renan Matos. Render composition: Eduardo Enrique Boesche Quan.",
+            "pt": "Arte promocional de Trial Xtreme Freedom. Modelagem dos personagens: Renan Matos. Composição do render: Eduardo Enrique Boesche Quan.",
+            "es": "Arte promocional de Trial Xtreme Freedom. Modelado de personajes: Renan Matos. Composición del render: Eduardo Enrique Boesche Quan."
+          }
+        }
+      ]
+    },
+    {
+      "id": "film",
+      "copy": {
+        "en": {
+          "title": "Character film"
+        },
+        "pt": {
+          "title": "Vídeo do personagem"
+        },
+        "es": {
+          "title": "Vídeo del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/work/trial-xtreme-freedom/character-film.mp4",
+          "poster": "assets/work/trial-xtreme-freedom/character-film-poster.webp",
+          "wide": true,
+          "label": {
+            "en": "Character film",
+            "pt": "Vídeo do personagem",
+            "es": "Vídeo del personaje"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Game characters",
+    "pt": "Personagens para jogo",
+    "es": "Personajes para juego"
+  },
+  "copy": {
+    "en": {
+      "title": "Trial Xtreme Freedom Characters",
+      "description": "Characters modeled by Renan Matos for Trial Xtreme Freedom. Promotional render compositions by Eduardo Enrique Boesche Quan. Character views, costume variations and promotional artwork.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Trial Xtreme Freedom Characters",
+      "description": "Personagens modelados por Renan Matos para Trial Xtreme Freedom. Composições dos renders promocionais por Eduardo Enrique Boesche Quan. Vistas dos personagens, variações de roupa e artes promocionais.",
+      "tags": []
+    },
+    "es": {
+      "title": "Trial Xtreme Freedom Characters",
+      "description": "Personajes modelados por Renan Matos para Trial Xtreme Freedom. Composiciones de los renders promocionales por Eduardo Enrique Boesche Quan. Vistas de personajes, variaciones de ropa y arte promocional.",
+      "tags": []
+    }
+  }
+},
+  {
   "id": "hyperlight",
   "status": "published",
   "tier": "featured",
@@ -1612,6 +2241,7 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "trial-xtreme-freedom": "assets/work/trial-xtreme-freedom/promo-notext-globallaunchimage-01.webp",
   "hyperlight": "assets/work/hyperlight/hero-cinematic.webp",
   "red-dress": "assets/work/red-dress/dress-three-quarter-left.webp",
   "weslley-wanderer": "assets/work/weslley-wanderer/hero-portrait.webp",
