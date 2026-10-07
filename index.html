@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261007-trial">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261007-catalog">
   <link rel="stylesheet" href="assets/css/addons.css">
-  <script src="assets/js/site.js?v=20261007-trial" defer></script>
+  <script src="assets/js/site.js?v=20261007-catalog" defer></script>
   <script src="assets/js/addons.js" defer></script>
 
   <script type="application/ld+json">
@@ -85,7 +85,12 @@
     <section class="work-section" id="work" aria-label="Portfolio">
       <div class="page-shell">
         <h1 class="sr-only">Portfolio</h1>
-        <div class="projects-grid projects-grid--catalog" id="projectsGrid" aria-live="polite"></div>
+        <div class="project-filters" id="projectFilters" role="tablist" aria-label="Project style">
+          <button id="filter-all" type="button" role="tab" data-filter="all" aria-controls="projectsGrid" aria-selected="true">All</button>
+          <button id="filter-realistic" type="button" role="tab" data-filter="realistic" aria-controls="projectsGrid" aria-selected="false" tabindex="-1">Realistic</button>
+          <button id="filter-stylized" type="button" role="tab" data-filter="stylized" aria-controls="projectsGrid" aria-selected="false" tabindex="-1">Stylized</button>
+        </div>
+        <div class="projects-grid projects-grid--catalog" id="projectsGrid" role="tabpanel" aria-labelledby="filter-all" aria-live="polite"></div>
       </div>
     </section>
 
