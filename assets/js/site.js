@@ -279,6 +279,352 @@ const experienceData = [
 
 const projects = [
   {
+  "id": "hyperlight",
+  "status": "published",
+  "tier": "featured",
+  "order": 1,
+  "catalogOrder": -4,
+  "year": "",
+  "projectType": "personal",
+  "layout": "large",
+  "featured": true,
+  "cover": "assets/work/hyperlight/hero-cinematic.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/hyperlight/hero-cinematic.webp",
+    "alt": {
+      "en": "Hyperlight in a green-lit futuristic scene",
+      "pt": "Hyperlight em cena futurista com iluminação verde",
+      "es": "Hyperlight en una escena futurista con luz verde"
+    }
+  },
+  "leadMedia": [
+    {
+      "type": "image",
+      "src": "assets/work/hyperlight/portrait-smile.webp",
+      "alt": {
+        "en": "Smiling portrait of Hyperlight",
+        "pt": "Retrato de Hyperlight sorrindo",
+        "es": "Retrato de Hyperlight sonriendo"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "suits",
+      "copy": {
+        "en": {
+          "title": "Suit variations"
+        },
+        "pt": {
+          "title": "Variações do traje"
+        },
+        "es": {
+          "title": "Variaciones del traje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/trait-variant-01.webp",
+          "alt": {
+            "en": "Hyperlight suit variation 1",
+            "pt": "Variação 1 do traje de Hyperlight",
+            "es": "Variación 1 del traje de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/trait-variant-02.webp",
+          "alt": {
+            "en": "Hyperlight suit variation 2",
+            "pt": "Variação 2 do traje de Hyperlight",
+            "es": "Variación 2 del traje de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/trait-variant-03.webp",
+          "alt": {
+            "en": "Hyperlight suit variation 3",
+            "pt": "Variação 3 do traje de Hyperlight",
+            "es": "Variación 3 del traje de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/trait-variant-04.webp",
+          "alt": {
+            "en": "Hyperlight suit variation 4",
+            "pt": "Variação 4 do traje de Hyperlight",
+            "es": "Variación 4 del traje de Hyperlight"
+          }
+        }
+      ]
+    },
+    {
+      "id": "poses",
+      "copy": {
+        "en": {
+          "title": "Character poses"
+        },
+        "pt": {
+          "title": "Poses do personagem"
+        },
+        "es": {
+          "title": "Poses del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/posed-variant-01.webp",
+          "alt": {
+            "en": "Hyperlight pose and suit variation 1",
+            "pt": "Pose e variação 1 do traje de Hyperlight",
+            "es": "Pose y variación 1 del traje de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/posed-variant-02.webp",
+          "alt": {
+            "en": "Hyperlight pose and suit variation 2",
+            "pt": "Pose e variação 2 do traje de Hyperlight",
+            "es": "Pose y variación 2 del traje de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/posed-variant-03.webp",
+          "alt": {
+            "en": "Hyperlight pose and suit variation 3",
+            "pt": "Pose e variação 3 do traje de Hyperlight",
+            "es": "Pose y variación 3 del traje de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/posed-variant-04.webp",
+          "alt": {
+            "en": "Hyperlight pose and suit variation 4",
+            "pt": "Pose e variação 4 do traje de Hyperlight",
+            "es": "Pose y variación 4 del traje de Hyperlight"
+          }
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "copy": {
+        "en": {
+          "title": "Facial expressions"
+        },
+        "pt": {
+          "title": "Expressões faciais"
+        },
+        "es": {
+          "title": "Expresiones faciales"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-01.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 1",
+            "pt": "Expressão facial 1 de Hyperlight",
+            "es": "Expresión facial 1 de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-02.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 2",
+            "pt": "Expressão facial 2 de Hyperlight",
+            "es": "Expresión facial 2 de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-03.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 3",
+            "pt": "Expressão facial 3 de Hyperlight",
+            "es": "Expresión facial 3 de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-04.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 4",
+            "pt": "Expressão facial 4 de Hyperlight",
+            "es": "Expresión facial 4 de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-06.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 6",
+            "pt": "Expressão facial 6 de Hyperlight",
+            "es": "Expresión facial 6 de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-07.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 7",
+            "pt": "Expressão facial 7 de Hyperlight",
+            "es": "Expresión facial 7 de Hyperlight"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/hyperlight/expression-08.webp",
+          "alt": {
+            "en": "Hyperlight facial expression 8",
+            "pt": "Expressão facial 8 de Hyperlight",
+            "es": "Expresión facial 8 de Hyperlight"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Stylized character",
+    "pt": "Personagem estilizado",
+    "es": "Personaje estilizado"
+  },
+  "copy": {
+    "en": {
+      "title": "Hyperlight",
+      "description": "A stylized hero with a blue and green suit, wardrobe variations and facial expressions.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Hyperlight",
+      "description": "Herói estilizado com traje azul e verde, variações de roupa e expressões faciais.",
+      "tags": []
+    },
+    "es": {
+      "title": "Hyperlight",
+      "description": "Héroe estilizado con traje azul y verde, variaciones de ropa y expresiones faciales.",
+      "tags": []
+    }
+  }
+},
+  {
+  "id": "red-dress",
+  "status": "published",
+  "tier": "featured",
+  "order": 1,
+  "catalogOrder": -3,
+  "year": "",
+  "projectType": "personal",
+  "layout": "large",
+  "featured": true,
+  "cover": "assets/work/red-dress/dress-three-quarter-left.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/red-dress/presentation-sheet.webp",
+    "alt": {
+      "en": "Red Dress presentation with detail and full-body views",
+      "pt": "Apresentação de Red Dress com detalhe e vistas de corpo inteiro",
+      "es": "Presentación de Red Dress con detalle y vistas de cuerpo completo"
+    }
+  },
+  "leadMedia": [],
+  "sections": [
+    {
+      "id": "dress",
+      "copy": {
+        "en": {
+          "title": "Dress views"
+        },
+        "pt": {
+          "title": "Vistas do vestido"
+        },
+        "es": {
+          "title": "Vistas del vestido"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/red-dress/dress-front.webp",
+          "alt": {
+            "en": "Front of the red dress",
+            "pt": "Frente do vestido vermelho",
+            "es": "Frente del vestido rojo"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/red-dress/dress-back.webp",
+          "alt": {
+            "en": "Back of the red dress",
+            "pt": "Costas do vestido vermelho",
+            "es": "Espalda del vestido rojo"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/red-dress/dress-three-quarter-left.webp",
+          "alt": {
+            "en": "Left three-quarter view of the dress",
+            "pt": "Vista do vestido em três quartos à esquerda",
+            "es": "Vista del vestido en tres cuartos a la izquierda"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/red-dress/dress-three-quarter-right.webp",
+          "alt": {
+            "en": "Right three-quarter view of the dress",
+            "pt": "Vista do vestido em três quartos à direita",
+            "es": "Vista del vestido en tres cuartos a la derecha"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/red-dress/dress-high-angle.webp",
+          "alt": {
+            "en": "High-angle view of the dress",
+            "pt": "Vista do vestido em ângulo alto",
+            "es": "Vista del vestido desde un ángulo alto"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Costume artwork",
+    "pt": "Criação de figurino",
+    "es": "Arte de vestuario"
+  },
+  "copy": {
+    "en": {
+      "title": "Red Dress",
+      "description": "An ornate red and gold fantasy dress, presented on a mannequin from multiple angles.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Red Dress",
+      "description": "Vestido de fantasia em vermelho e dourado, com detalhes ornamentais, apresentado em manequim por vários ângulos.",
+      "tags": []
+    },
+    "es": {
+      "title": "Red Dress",
+      "description": "Vestido de fantasía rojo y dorado con detalles ornamentales, presentado en un maniquí desde varios ángulos.",
+      "tags": []
+    }
+  }
+},
+  {
   "id": "weslley-wanderer",
   "status": "published",
   "tier": "featured",
@@ -1266,6 +1612,8 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "hyperlight": "assets/work/hyperlight/hero-cinematic.webp",
+  "red-dress": "assets/work/red-dress/dress-three-quarter-left.webp",
   "weslley-wanderer": "assets/work/weslley-wanderer/hero-portrait.webp",
   "denis": "assets/work/denis/denis-cover.webp",
   "tiny-hero": "assets/work/tiny-hero/hero-cover-021.png",
