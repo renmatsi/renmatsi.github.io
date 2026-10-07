@@ -279,6 +279,272 @@ const experienceData = [
 
 const projects = [
   {
+  "id": "weslley-wanderer",
+  "status": "published",
+  "tier": "featured",
+  "order": 1,
+  "catalogOrder": -2,
+  "year": "2025",
+  "projectType": "personal",
+  "layout": "large",
+  "featured": true,
+  "cover": "assets/work/weslley-wanderer/hero-portrait.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/weslley-wanderer/hero-portrait.webp",
+    "alt": {
+      "en": "Portrait of Weslley, wanderer",
+      "pt": "Retrato de Weslley, wanderer",
+      "es": "Retrato de Weslley, wanderer"
+    }
+  },
+  "leadMedia": [
+    {
+      "type": "image",
+      "src": "assets/work/weslley-wanderer/hero-three-quarter.webp",
+      "alt": {
+        "en": "Three-quarter view of Weslley with leather vest and blades",
+        "pt": "Weslley em três quartos com colete de couro e lâminas",
+        "es": "Weslley en tres cuartos con chaleco de cuero y hojas"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "final-renders",
+      "copy": {
+        "en": {
+          "title": "Final renders"
+        },
+        "pt": {
+          "title": "Renders finais"
+        },
+        "es": {
+          "title": "Renders finales"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/hero-profile.webp",
+          "alt": {
+            "en": "Profile showing hair and beard",
+            "pt": "Perfil mostrando cabelo e barba",
+            "es": "Perfil mostrando cabello y barba"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/hero-back.webp",
+          "alt": {
+            "en": "Rear character view",
+            "pt": "Vista traseira do personagem",
+            "es": "Vista trasera del personaje"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/hooded-full-body.webp",
+          "alt": {
+            "en": "Full-body view wearing a hood",
+            "pt": "Vista de corpo inteiro com capuz",
+            "es": "Vista de cuerpo completo con capucha"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/character-warm-light.webp",
+          "alt": {
+            "en": "Character in warm lighting",
+            "pt": "Personagem em iluminação quente",
+            "es": "Personaje con iluminación cálida"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wardrobe",
+      "copy": {
+        "en": {
+          "title": "Wardrobe and blades"
+        },
+        "pt": {
+          "title": "Roupas e lâminas"
+        },
+        "es": {
+          "title": "Ropa y hojas"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/hood-front.webp",
+          "alt": {
+            "en": "Hood and cape, front view",
+            "pt": "Capuz e capa, vista frontal",
+            "es": "Capucha y capa, vista frontal"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/hood-back.webp",
+          "alt": {
+            "en": "Back of the hood and cape",
+            "pt": "Parte traseira do capuz e capa",
+            "es": "Parte trasera de capucha y capa"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/vest-front.webp",
+          "alt": {
+            "en": "Leather vest, front view",
+            "pt": "Colete de couro, vista frontal",
+            "es": "Chaleco de cuero, vista frontal"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/vest-side.webp",
+          "alt": {
+            "en": "Leather vest, side view",
+            "pt": "Colete de couro, vista lateral",
+            "es": "Chaleco de cuero, vista lateral"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/vest-three-quarter.webp",
+          "alt": {
+            "en": "Leather vest, three-quarter view",
+            "pt": "Colete de couro em três quartos",
+            "es": "Chaleco de cuero en tres cuartos"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/boots.webp",
+          "alt": {
+            "en": "Character boots",
+            "pt": "Botas do personagem",
+            "es": "Botas del personaje"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/glove.webp",
+          "alt": {
+            "en": "Glove and hand detail",
+            "pt": "Detalhe da luva e mão",
+            "es": "Detalle del guante y mano"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/blades.webp",
+          "alt": {
+            "en": "Blade presentation",
+            "pt": "Apresentação das lâminas",
+            "es": "Presentación de las hojas"
+          }
+        }
+      ]
+    },
+    {
+      "id": "skin",
+      "copy": {
+        "en": {
+          "title": "Skin and character development"
+        },
+        "pt": {
+          "title": "Pele e desenvolvimento do personagem"
+        },
+        "es": {
+          "title": "Piel y desarrollo del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/body-and-skin.webp",
+          "alt": {
+            "en": "Body and skin presentation",
+            "pt": "Apresentação do corpo e pele",
+            "es": "Presentación del cuerpo y piel"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/weslley-wanderer/portrait-blood-study.webp",
+          "alt": {
+            "en": "Portrait with a blood effect",
+            "pt": "Retrato com efeito de sangue",
+            "es": "Retrato con efecto de sangre"
+          }
+        }
+      ]
+    },
+    {
+      "id": "grooming",
+      "copy": {
+        "en": {
+          "title": "Grooming process"
+        },
+        "pt": {
+          "title": "Processo de grooming"
+        },
+        "es": {
+          "title": "Proceso de grooming"
+        }
+      },
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/work/weslley-wanderer/hair-preview.mp4",
+          "poster": "assets/work/weslley-wanderer/hair-preview.webp",
+          "label": {
+            "en": "Hair preview",
+            "pt": "Preview do cabelo",
+            "es": "Vista previa del cabello"
+          }
+        },
+        {
+          "type": "video",
+          "src": "assets/work/weslley-wanderer/hair-and-beard-preview.mp4",
+          "poster": "assets/work/weslley-wanderer/hair-and-beard-preview.webp",
+          "label": {
+            "en": "Hair and beard preview",
+            "pt": "Preview do cabelo e barba",
+            "es": "Vista previa del cabello y barba"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Character artwork",
+    "pt": "Character art",
+    "es": "Arte de personajes"
+  },
+  "copy": {
+    "en": {
+      "title": "Weslley, wanderer",
+      "description": "A wandering character with leather clothing, blades, detailed skin, hair and beard. Final renders, wardrobe details and grooming previews.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Weslley, wanderer",
+      "description": "Personagem andarilho com roupas de couro, lâminas, pele detalhada, cabelo e barba. Renders finais, detalhes das roupas e previews de grooming.",
+      "tags": []
+    },
+    "es": {
+      "title": "Weslley, wanderer",
+      "description": "Personaje errante con ropa de cuero, hojas, piel detallada, cabello y barba. Renders finales, detalles de ropa y vistas previas de grooming.",
+      "tags": []
+    }
+  }
+},
+  {
   "id": "denis",
   "status": "published",
   "tier": "featured",
@@ -1000,6 +1266,7 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "weslley-wanderer": "assets/work/weslley-wanderer/hero-portrait.webp",
   "denis": "assets/work/denis/denis-cover.webp",
   "tiny-hero": "assets/work/tiny-hero/hero-cover-021.png",
   "drone-soldier": "assets/work/drone-soldier/hero-green.webp",
