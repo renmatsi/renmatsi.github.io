@@ -279,6 +279,275 @@ const experienceData = [
 
 const projects = [
   {
+  "id": "tiny-hero",
+  "status": "published",
+  "tier": "featured",
+  "order": 1,
+  "catalogOrder": 0,
+  "year": "2026",
+  "projectType": "personal",
+  "layout": "large",
+  "featured": true,
+  "cover": "assets/work/tiny-hero/hero-cover-021.png",
+  "main": {
+    "type": "image",
+    "src": "assets/work/tiny-hero/hero-cover-021.png",
+    "alt": {
+      "en": "Tiny Hero with his cat companion",
+      "pt": "Tiny Hero com seu gato companheiro",
+      "es": "Tiny Hero con su gato compañero"
+    }
+  },
+  "sections": [
+    {
+      "id": "final-renders",
+      "copy": {
+        "en": {
+          "title": "Final renders"
+        },
+        "pt": {
+          "title": "Renders finais"
+        },
+        "es": {
+          "title": "Renders finales"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/hero-and-cat.png",
+          "alt": {
+            "en": "Tiny Hero and cat, full-body render",
+            "pt": "Tiny Hero e gato, render de corpo inteiro",
+            "es": "Tiny Hero y gato, render de cuerpo completo"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/hero-and-cat-side.png",
+          "alt": {
+            "en": "Side view of Tiny Hero and cat",
+            "pt": "Vista lateral do Tiny Hero e gato",
+            "es": "Vista lateral de Tiny Hero y gato"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/hero-and-cat-back.png",
+          "alt": {
+            "en": "Rear view of Tiny Hero and cat",
+            "pt": "Vista traseira do Tiny Hero e gato",
+            "es": "Vista trasera de Tiny Hero y gato"
+          }
+        }
+      ]
+    },
+    {
+      "id": "character",
+      "copy": {
+        "en": {
+          "title": "Character views"
+        },
+        "pt": {
+          "title": "Vistas do personagem"
+        },
+        "es": {
+          "title": "Vistas del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/character-front.png",
+          "alt": {
+            "en": "Front view in a neutral pose",
+            "pt": "Vista frontal em pose neutra",
+            "es": "Vista frontal en pose neutra"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/character-left.png",
+          "alt": {
+            "en": "Left side of the character",
+            "pt": "Lado esquerdo do personagem",
+            "es": "Lado izquierdo del personaje"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/character-back.png",
+          "alt": {
+            "en": "Back of the character",
+            "pt": "Costas do personagem",
+            "es": "Espalda del personaje"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/character-right.png",
+          "alt": {
+            "en": "Right side of the character",
+            "pt": "Lado direito do personagem",
+            "es": "Lado derecho del personaje"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cat",
+      "copy": {
+        "en": {
+          "title": "Cat companion"
+        },
+        "pt": {
+          "title": "Gato companheiro"
+        },
+        "es": {
+          "title": "Gato compañero"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/cat-front.png",
+          "alt": {
+            "en": "Front view of the cat",
+            "pt": "Vista frontal do gato",
+            "es": "Vista frontal del gato"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/cat-three-quarter.png",
+          "alt": {
+            "en": "Three-quarter view of the cat",
+            "pt": "Vista em três quartos do gato",
+            "es": "Vista en tres cuartos del gato"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/cat-back.png",
+          "alt": {
+            "en": "Back view of the cat",
+            "pt": "Vista traseira do gato",
+            "es": "Vista trasera del gato"
+          }
+        }
+      ]
+    },
+    {
+      "id": "turntables",
+      "copy": {
+        "en": {
+          "title": "Turntables"
+        },
+        "pt": {
+          "title": "Turntables"
+        },
+        "es": {
+          "title": "Turntables"
+        }
+      },
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/work/tiny-hero/character-turntable.mp4",
+          "label": {
+            "en": "Character",
+            "pt": "Personagem",
+            "es": "Personaje"
+          }
+        },
+        {
+          "type": "video",
+          "src": "assets/work/tiny-hero/character-turntable-alt.mp4",
+          "label": {
+            "en": "Character · alternate",
+            "pt": "Personagem · alternativa",
+            "es": "Personaje · alternativa"
+          }
+        },
+        {
+          "type": "video",
+          "src": "assets/work/tiny-hero/cat-turntable.mp4",
+          "label": {
+            "en": "Cat",
+            "pt": "Gato",
+            "es": "Gato"
+          }
+        },
+        {
+          "type": "video",
+          "src": "assets/work/tiny-hero/wireframe-turntable.mp4",
+          "label": {
+            "en": "Wireframe",
+            "pt": "Wireframe",
+            "es": "Wireframe"
+          }
+        }
+      ]
+    },
+    {
+      "id": "blockout",
+      "copy": {
+        "en": {
+          "title": "Blockout"
+        },
+        "pt": {
+          "title": "Blockout"
+        },
+        "es": {
+          "title": "Blockout"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/tiny-hero/blockout.png",
+          "alt": {
+            "en": "Blockout of Tiny Hero and cat",
+            "pt": "Blockout do Tiny Hero e gato",
+            "es": "Blockout de Tiny Hero y gato"
+          }
+        },
+        {
+          "type": "video",
+          "src": "assets/work/tiny-hero/blockout.mp4",
+          "label": {
+            "en": "Blockout",
+            "pt": "Blockout",
+            "es": "Blockout"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Stylized character",
+    "pt": "Personagem estilizado",
+    "es": "Personaje estilizado"
+  },
+  "copy": {
+    "en": {
+      "title": "Tiny Hero",
+      "description": "A stylized young adventurer and his cat companion. Final renders, character views, turntables, wireframe and blockout.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Tiny Hero",
+      "description": "Um jovem aventureiro estilizado e seu gato companheiro. Renders finais, vistas dos personagens, turntables, wireframe e blockout.",
+      "tags": []
+    },
+    "es": {
+      "title": "Tiny Hero",
+      "description": "Un joven aventurero estilizado y su gato compañero. Renders finales, vistas de los personajes, turntables, wireframe y blockout.",
+      "tags": []
+    }
+  }
+},
+  {
     id: "drone-soldier",
     status: "published",
     tier: "featured",
@@ -448,6 +717,7 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "tiny-hero": "assets/work/tiny-hero/hero-cover-021.png",
   "drone-soldier": "assets/work/drone-soldier/hero-green.webp",
   "big-warrior": "assets/work/big-warrior/hero-pose.webp"
 };
