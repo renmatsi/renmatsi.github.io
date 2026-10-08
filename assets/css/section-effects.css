@@ -1,0 +1,115 @@
+/* Scroll entrance for the editorial sections below the project gallery. */
+.about-layout {
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: clamp(48px, 7vw, 104px);
+}
+
+.about-portrait {
+  width: 240px;
+  max-width: 100%;
+  top: calc(var(--header-height) + 32px);
+}
+
+.about-portrait img {
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
+  max-height: none;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 26%;
+  border-radius: 50%;
+}
+
+.section-scroll-effects {
+  position: relative;
+  isolation: isolate;
+  background: var(--section-from);
+}
+
+.section-scroll-effects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--section-to);
+  opacity: var(--section-progress, 1);
+  transition: opacity 140ms linear;
+}
+
+.section-scroll-effects > .page-shell {
+  position: relative;
+  z-index: 1;
+}
+
+#about.section-scroll-effects {
+  --section-from: var(--ink);
+  --section-to: var(--paper);
+}
+
+#experience.section-scroll-effects {
+  --section-from: var(--paper);
+  --section-to: var(--ink);
+}
+
+#tools.section-scroll-effects {
+  --section-from: var(--ink);
+  --section-to: var(--ink-soft);
+}
+
+#contact.section-scroll-effects {
+  --section-from: var(--ink-soft);
+  --section-to: var(--accent);
+}
+
+.js .section-scroll-effects .scroll-reveal {
+  opacity: var(--reveal-progress, 1);
+  transform: translateY(calc(24px * (1 - var(--reveal-progress, 1))));
+  transition: opacity 140ms linear, transform 140ms linear;
+}
+
+.js .section-scroll-effects .scroll-reveal:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1100px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 780px) {
+  .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .about-portrait {
+    position: relative;
+    top: auto;
+    width: 180px;
+    margin: 0;
+  }
+
+  .about-portrait img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-scroll-effects::before {
+    opacity: 1;
+    transition: none;
+  }
+
+  .js .section-scroll-effects .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

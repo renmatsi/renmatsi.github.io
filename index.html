@@ -18,10 +18,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261008-slideshow">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261008-scroll">
   <link rel="stylesheet" href="assets/css/addons.css">
+  <link rel="stylesheet" href="assets/css/section-effects.css?v=20261008-scroll">
   <script src="assets/js/site.js?v=20261008-slideshow" defer></script>
-  <script src="assets/js/artwork-slideshow.js?v=20261008-slideshow" defer></script>
+  <script src="assets/js/artwork-slideshow.js?v=20261008-scroll" defer></script>
+  <script src="assets/js/section-effects.js?v=20261008-scroll" defer></script>
   <script src="assets/js/addons.js" defer></script>
 
   <script type="application/ld+json">
@@ -90,7 +92,11 @@
       </div>
       <div class="page-shell artwork-controls">
         <a class="artwork-project" id="artworkProject" href="#project-big-warrior">Torstein, the Giant</a>
-        <button class="artwork-pause" id="artworkPause" type="button" aria-pressed="false" hidden>Pause</button>
+        <div class="artwork-navigation">
+          <button class="artwork-button" id="artworkPrevious" type="button" aria-label="Previous artwork"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button class="artwork-button artwork-pause" id="artworkPause" type="button" aria-label="Pause artwork slideshow" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
+          <button class="artwork-button" id="artworkNext" type="button" aria-label="Next artwork"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
       </div>
     </section>
     <section class="work-section" id="work" aria-label="Portfolio">

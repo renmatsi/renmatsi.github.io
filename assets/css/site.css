@@ -2037,9 +2037,10 @@ a { color: inherit; }
 .artwork-header {
   position: relative;
   width: 100%;
-  height: 100svh;
-  min-height: 480px;
-  max-height: 1100px;
+  height: 25svh;
+  min-height: 0;
+  max-height: none;
+  transition: height 900ms var(--ease);
   overflow: hidden;
   background: var(--ink);
 }
@@ -2073,7 +2074,7 @@ a { color: inherit; }
 }
 .artwork-controls {
   position: absolute;
-  bottom: 34px;
+  bottom: 8px;
   left: 0;
   right: 0;
   display: flex;
@@ -2081,22 +2082,36 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 20px;
 }
-.artwork-project, .artwork-pause {
+.artwork-project {
   color: var(--muted);
   font-size: 12px;
   font-weight: 400;
   text-decoration: none;
 }
-.artwork-project:hover, .artwork-pause:hover { color: var(--white); }
-.artwork-pause { padding: 10px 0 10px 16px; background: transparent; border: 0; cursor: pointer; }
+.artwork-project:hover, .artwork-button:hover { color: var(--white); }
+.artwork-project { max-width: calc(100% - 140px); }
+.artwork-navigation { display: flex; align-items: center; gap: 4px; }
+.artwork-button { width: 36px; height: 36px; display: grid; place-items: center; padding: 8px; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.artwork-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.artwork-button:disabled { opacity: .4; }
+.artwork-header.is-expanded { height: 100svh; }
+@media (min-width: 781px) {
+  .artwork-header:not(.is-expanded) .artwork-slide img { object-position: var(--compact-focus, center 18%); }
+}
+.site-nav { padding: 10px 18px; border-radius: 8px; background: rgba(8,8,8,.28); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .artwork-pause[hidden] { display: none; }
 .artwork-header + .work-section { padding-top: 24px; }
 @media (max-width: 600px) {
-  .artwork-header { min-height: 420px; height: 85svh; }
-  .artwork-controls { bottom: 20px; }
-  .artwork-project, .artwork-pause { font-size: 11px; }
+  .artwork-header { height: 25svh; }
+  .artwork-controls { bottom: 4px; }
+  .artwork-project { font-size: 10px; }
+  .artwork-button { width: 40px; height: 40px; }
+}
+@media (max-width: 780px) {
+  .site-nav { padding: 14px var(--gutter) 28px; border-radius: 0; background: rgba(8,8,8,.8); }
 }
 @media (prefers-reduced-motion: reduce) {
+  .artwork-header { transition: none; }
   .artwork-slide { transition: none; }
   .artwork-slide.is-moving img { animation: none; }
 }
