@@ -8,9 +8,26 @@
   const pause = document.getElementById("artworkPause");
   const previous = document.getElementById("artworkPrevious");
   const next = document.getElementById("artworkNext");
-  const artworks = projects.filter(project => project.status === "published");
+  const seen = new Set();
+  const artworks = projects.filter(project => project.status === "published").flatMap(project => {
+    const media = [project.main, ...(project.leadMedia || []), ...(project.gallery || []), ...(project.sections || []).flatMap(section => section.media || [])];
+    return media.filter(item => {
+      if (!item || !["image", "video"].includes(item.type) || seen.has(item.src)) return false;
+      seen.add(item.src);
+      return true;
+    }).map(item => ({ project, media: item, key: item.src }));
+  });
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const compactFocus = { "big-warrior": 10, "denis": 31, "drone-soldier": 35, "hyperlight": 18, "pantufa": 18, "priestess": 28, "ranay": 6, "red-dress": 27, "tiny-hero": 23, "trial-xtreme-freedom": 0, "weslley-wanderer": 29 };
+  const motions = [
+    ["down", "translate3d(0,-3%,0) scale(1.03)", "translate3d(0,3%,0) scale(1.03)"],
+    ["up", "translate3d(0,3%,0) scale(1.03)", "translate3d(0,-3%,0) scale(1.03)"],
+    ["left", "translate3d(3%,0,0) scale(1.03)", "translate3d(-3%,0,0) scale(1.03)"],
+    ["right", "translate3d(-3%,0,0) scale(1.03)", "translate3d(3%,0,0) scale(1.03)"],
+    ["zoom-in", "scale(1)", "scale(1.12)"],
+    ["zoom-out", "scale(1.12)", "scale(1)"]
+  ];
+  let lastMotion = "";
   let queue = [], history = [], historyIndex = -1;
   let current = null, activePanel = 0, paused = reducedMotion.matches;
   let inView = true, timer, transitioning = false, ready = false;
@@ -22,7 +39,7 @@
         const j = Math.floor(Math.random() * (i + 1));
         [queue[i], queue[j]] = [queue[j], queue[i]];
       }
-      if (queue.length > 1 && queue[0].id === current?.id) [queue[0], queue[1]] = [queue[1], queue[0]];
+      if (queue.length > 1 && queue[0].key === current?.key) [queue[0], queue[1]] = [queue[1], queue[0]];
     }
     return queue.shift();
   }
@@ -45,12 +62,69 @@
     pause.setAttribute("aria-pressed", String(paused));
     previous.setAttribute("aria-label", text.previous);
     next.setAttribute("aria-label", text.next);
-    if (current) link.textContent = current.copy[currentLanguage].title;
+    if (current) link.textContent = current.project.copy[currentLanguage].title;
+  }
+
+  function sourceFor(artwork) {
+    const media = artwork.media;
+    return media.type === "image" && media.src.endsWith(".png")
+      ? media.src.replace("assets/work/", "assets/slideshow/").replace(/\.png$/, ".webp")
+      : media.src;
+  }
+
+  function clearPanel(panel) {
+    panel.classList.remove("is-current", "is-moving");
+    panel.querySelectorAll("video").forEach(video => { video.pause(); video.removeAttribute("src"); video.load(); });
+    panel.replaceChildren();
+  }
+
+  async function loadMedia(panel, artwork) {
+    clearPanel(panel);
+    const media = document.createElement(artwork.media.type === "video" ? "video" : "img");
+    media.className = "artwork-media";
+    panel.append(media);
+    if (media instanceof HTMLImageElement) {
+      media.alt = "";
+      media.src = sourceFor(artwork);
+      await media.decode();
+    } else {
+      media.muted = true;
+      media.loop = true;
+      media.playsInline = true;
+      media.preload = "auto";
+      if (artwork.media.poster) media.poster = artwork.media.poster;
+      await new Promise((resolve, reject) => {
+        let timeout;
+        const clean = () => { clearTimeout(timeout); media.removeEventListener("loadeddata", loaded); media.removeEventListener("error", failed); };
+        const loaded = () => { clean(); resolve(); };
+        const failed = () => { clean(); reject(new Error("Artwork video unavailable")); };
+        media.addEventListener("loadeddata", loaded, { once: true });
+        media.addEventListener("error", failed, { once: true });
+        timeout = setTimeout(failed, 15000);
+        media.src = artwork.media.src;
+        media.load();
+      });
+    }
+  }
+
+  function chooseMotion(panel) {
+    const options = motions.filter(motion => motion[0] !== lastMotion);
+    const [name, from, to] = options[Math.floor(Math.random() * options.length)];
+    lastMotion = name;
+    panel.dataset.motion = name;
+    panel.style.setProperty("--motion-from", from);
+    panel.style.setProperty("--motion-to", to);
   }
 
   function schedule() {
     clearTimeout(timer);
-    header.classList.toggle("is-playing", canPlay());
+    const playing = canPlay();
+    header.classList.toggle("is-playing", playing);
+    panels.forEach(panel => panel.querySelectorAll("video").forEach(video => {
+      if (playing && panel.classList.contains("is-moving")) {
+        if (video.paused) video.play().then(() => { if (!canPlay()) video.pause(); }).catch(() => {});
+      } else video.pause();
+    }));
     if (canPlay() && !transitioning) timer = setTimeout(() => move(1, false), 20000);
   }
 
@@ -60,7 +134,7 @@
       return value.trim().endsWith("ms") ? number : number * 1000;
     });
     const duration = Math.max(...durations);
-    if (!duration) return Promise.resolve();
+    if (reducedMotion.matches || !duration) return Promise.resolve();
     return new Promise(resolve => {
       let timeout;
       const finish = () => { clearTimeout(timeout); panel.removeEventListener("transitionend", ended); resolve(); };
@@ -83,13 +157,12 @@
     const hadPrevious = ready;
     const nextPanel = ready ? 1 - activePanel : activePanel;
     const panel = panels[nextPanel];
-    const image = panel.querySelector("img");
     try {
-      image.src = `assets/slideshow/${artwork.id}.webp`;
-      await image.decode();
-      if (ready && !manual && !canPlay()) { if (fresh) queue.unshift(artwork); return; }
+      await loadMedia(panel, artwork);
+      if (ready && !manual && !canPlay()) { if (fresh) queue.unshift(artwork); clearPanel(panel); return; }
       panel.classList.remove("is-current", "is-moving");
-      panel.style.setProperty("--compact-focus", `center ${compactFocus[artwork.id] ?? 18}%`);
+      panel.style.setProperty("--compact-focus", `center ${compactFocus[artwork.project.id] ?? 18}%`);
+      chooseMotion(panel);
       void panel.offsetWidth;
       panel.classList.add("is-current", "is-moving");
       if (ready) panels[activePanel].classList.remove("is-current");
@@ -98,15 +171,21 @@
       historyIndex = target;
       activePanel = nextPanel;
       current = artwork;
-      header.dataset.project = artwork.id;
-      link.href = `#project-${artwork.id}`;
+      header.dataset.project = artwork.project.id;
+      header.dataset.media = artwork.key;
+      header.dataset.type = artwork.media.type;
+      link.href = `#project-${artwork.project.id}`;
       ready = true;
       pause.hidden = false;
       updateLabels();
       const upcoming = history[historyIndex + 1] || queue[0];
-      if (upcoming) { const preload = new Image(); preload.src = `assets/slideshow/${upcoming.id}.webp`; preload.decode().catch(() => {}); }
+      const preloadSource = upcoming && (upcoming.media.type === "video" ? upcoming.media.poster : sourceFor(upcoming));
+      if (preloadSource) { const preload = new Image(); preload.src = preloadSource; }
+      schedule();
       if (hadPrevious) await waitForFade(panel);
+      if (hadPrevious) clearPanel(panels[1 - activePanel]);
     } catch {
+      clearPanel(panel);
       if (!ready) { ready = true; pause.hidden = false; }
     } finally {
       transitioning = false;
