@@ -54,6 +54,22 @@
     if (canPlay() && !transitioning) timer = setTimeout(() => move(1, false), 20000);
   }
 
+  function waitForFade(panel) {
+    const durations = getComputedStyle(panel).transitionDuration.split(",").map(value => {
+      const number = parseFloat(value);
+      return value.trim().endsWith("ms") ? number : number * 1000;
+    });
+    const duration = Math.max(...durations);
+    if (!duration) return Promise.resolve();
+    return new Promise(resolve => {
+      let timeout;
+      const finish = () => { clearTimeout(timeout); panel.removeEventListener("transitionend", ended); resolve(); };
+      const ended = event => { if (event.target === panel && event.propertyName === "opacity") finish(); };
+      panel.addEventListener("transitionend", ended);
+      timeout = setTimeout(finish, duration + 100);
+    });
+  }
+
   async function move(direction, manual) {
     if (transitioning) return;
     clearTimeout(timer);
@@ -64,6 +80,7 @@
     let artwork;
     if (target >= 0 && target < history.length) artwork = history[target];
     else { artwork = nextArtwork(); fresh = true; }
+    const hadPrevious = ready;
     const nextPanel = ready ? 1 - activePanel : activePanel;
     const panel = panels[nextPanel];
     const image = panel.querySelector("img");
@@ -88,6 +105,7 @@
       updateLabels();
       const upcoming = history[historyIndex + 1] || queue[0];
       if (upcoming) { const preload = new Image(); preload.src = `assets/slideshow/${upcoming.id}.webp`; preload.decode().catch(() => {}); }
+      if (hadPrevious) await waitForFade(panel);
     } catch {
       if (!ready) { ready = true; pause.hidden = false; }
     } finally {
