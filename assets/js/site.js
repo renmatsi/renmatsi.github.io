@@ -43,14 +43,16 @@ const localeData = {
     },
     about: {
       kicker: "Profile",
-      title: "Character art for games, from sculpt to real-time.",
+      title: "Renan Matos",
       captionRole: "Senior 3D Character Artist",
-      captionLocation: "Based in Brazil · Working remotely",
+      captionLocation: "Fortaleza, Ceará, Brazil",
+      specialty: "Real-time characters for games",
+      remote: "Working remotely",
       articleKicker: "Article · EN / PT / ES",
       articleTitle: "3D Starts Before Modeling",
       paragraphs: [
         "I create realistic and stylized characters for PC and mobile games, with hands-on work across sculpting, anatomy, clothing, grooming, retopology, UVs, texturing and optimization.",
-        "I have also led character teams, reviewed work, improved production workflows and built small Blender tools to remove repetitive steps."
+        "I led the character-art team at Gameplay Galaxy, reviewing work and improving production workflows. I also develop Blender add-ons and tools in Python to simplify recurring production tasks."
       ],
       capabilities: [
         ["Character art", "Realistic and stylized characters, anatomy, digital sculpting, garment creation, cloth simulation, grooming and hard-surface props."],
@@ -114,14 +116,16 @@ const localeData = {
     },
     about: {
       kicker: "Perfil",
-      title: "Character art para jogos, da escultura ao tempo real.",
+      title: "Renan Matos",
       captionRole: "Senior 3D Character Artist",
-      captionLocation: "Brasil · Trabalho remoto",
+      captionLocation: "Fortaleza, Ceará, Brasil",
+      specialty: "Personagens em tempo real para jogos",
+      remote: "Trabalho remoto",
       articleKicker: "Artigo · EN / PT / ES",
       articleTitle: "O 3D começa antes da modelagem",
       paragraphs: [
         "Crio personagens realistas e estilizados para jogos de PC e mobile, trabalhando diretamente com escultura, anatomia, roupas, grooming, retopologia, UVs, texturas e otimização.",
-        "Também liderei equipes de character art, revisei trabalhos, melhorei fluxos de produção e desenvolvi ferramentas para Blender voltadas a tarefas repetitivas."
+        "Liderei a equipe de character art da Gameplay Galaxy, revisando trabalhos e melhorando os fluxos de produção. Também desenvolvo add-ons e ferramentas para Blender em Python para simplificar tarefas recorrentes de produção."
       ],
       capabilities: [
         ["Character art", "Personagens realistas e estilizados, anatomia, escultura digital, criação de roupas, simulação de tecido, grooming e props hard surface."],
@@ -185,14 +189,16 @@ const localeData = {
     },
     about: {
       kicker: "Perfil",
-      title: "Character art para juegos, de la escultura al tiempo real.",
+      title: "Renan Matos",
       captionRole: "Senior 3D Character Artist",
-      captionLocation: "Brasil · Trabajo remoto",
+      captionLocation: "Fortaleza, Ceará, Brasil",
+      specialty: "Personajes en tiempo real para videojuegos",
+      remote: "Trabajo remoto",
       articleKicker: "Artículo · EN / PT / ES",
       articleTitle: "El 3D empieza antes del modelado",
       paragraphs: [
         "Creo personajes realistas y estilizados para juegos de PC y mobile, trabajando directamente con escultura, anatomía, ropa, grooming, retopología, UVs, texturas y optimización.",
-        "También he liderado equipos de character art, revisado trabajo, mejorado flujos de producción y desarrollado herramientas de Blender para tareas repetitivas."
+        "Lideré el equipo de character art de Gameplay Galaxy, revisando trabajo y mejorando los flujos de producción. También desarrollo add-ons y herramientas de Blender en Python para simplificar tareas recurrentes de producción."
       ],
       capabilities: [
         ["Character art", "Personajes realistas y estilizados, anatomía, escultura digital, creación de ropa, simulación de tejido, grooming y props hard surface."],
