@@ -18,9 +18,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261007-catalog">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261008-slideshow">
   <link rel="stylesheet" href="assets/css/addons.css">
-  <script src="assets/js/site.js?v=20261007-catalog" defer></script>
+  <script src="assets/js/site.js?v=20261008-slideshow" defer></script>
+  <script src="assets/js/artwork-slideshow.js?v=20261008-slideshow" defer></script>
   <script src="assets/js/addons.js" defer></script>
 
   <script type="application/ld+json">
@@ -82,6 +83,16 @@
   </header>
 
   <main id="top">
+    <section class="artwork-header" id="artworkHeader" aria-label="Selected artwork">
+      <div class="artwork-stage" aria-hidden="true">
+        <div class="artwork-slide is-current"><img src="assets/slideshow/big-warrior.webp" alt="" decoding="async" fetchpriority="high"></div>
+        <div class="artwork-slide"><img alt="" decoding="async"></div>
+      </div>
+      <div class="page-shell artwork-controls">
+        <a class="artwork-project" id="artworkProject" href="#project-big-warrior">Torstein, the Giant</a>
+        <button class="artwork-pause" id="artworkPause" type="button" aria-pressed="false" hidden>Pause</button>
+      </div>
+    </section>
     <section class="work-section" id="work" aria-label="Portfolio">
       <div class="page-shell">
         <h1 class="sr-only">Portfolio</h1>
