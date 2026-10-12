@@ -12,7 +12,7 @@
   const artworks = projects.filter(project => project.status === "published").flatMap(project => {
     const media = [project.main, ...(project.leadMedia || []), ...(project.gallery || []), ...(project.sections || []).flatMap(section => section.media || [])];
     return media.filter(item => {
-      if (!item || !["image", "video"].includes(item.type) || seen.has(item.src)) return false;
+      if (!item || item.slideshow === false || !["image", "video"].includes(item.type) || seen.has(item.src)) return false;
       seen.add(item.src);
       return true;
     }).map(item => ({ project, media: item, key: item.src }));

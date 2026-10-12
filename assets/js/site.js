@@ -324,6 +324,62 @@ const projects = [
   ],
   "sections": [
     {
+      "id": "skin-height-maps",
+      "copy": {
+        "en": {
+          "title": "Facial height maps",
+          "paragraphs": [
+            "I created the facial height maps for Elf, separating pores and expression lines by region: forehead, eyes, cheeks and lips. Each map carries the relief details for a specific part of the face.",
+            "In Substance Painter, I applied the maps through a simple projection onto the model, positioning each texture over its corresponding area. This brought the skin detail into the character using the maps I had prepared. Below are four examples from this set."
+          ]
+        },
+        "pt": {
+          "title": "Height maps faciais",
+          "paragraphs": [
+            "Criei os height maps faciais do Elf, separando poros e linhas de expressão por região: testa, olhos, bochechas e lábios. Cada mapa reúne os detalhes de relevo de uma área específica do rosto.",
+            "No Substance Painter, apliquei os mapas por uma projeção simples sobre o modelo, posicionando cada textura na região correspondente. Assim, integrei os detalhes da pele ao personagem a partir dos mapas que preparei. Abaixo estão quatro exemplos desse conjunto."
+          ]
+        },
+        "es": {
+          "title": "Mapas de altura faciales",
+          "paragraphs": [
+            "Creé los mapas de altura faciales de Elf, separando poros y líneas de expresión por región: frente, ojos, mejillas y labios. Cada mapa reúne los detalles de relieve de una zona específica del rostro.",
+            "En Substance Painter, apliqué los mapas mediante una proyección sencilla sobre el modelo, colocando cada textura en la región correspondiente. Así integré los detalles de la piel en el personaje a partir de los mapas que preparé. A continuación se muestran cuatro ejemplos de este conjunto."
+          ]
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/elf/height-maps/forehead.webp",
+          "slideshow": false,
+          "alt": { "en": "Forehead height map with pores and horizontal expression lines", "pt": "Height map da testa com poros e linhas de expressão horizontais", "es": "Mapa de altura de la frente con poros y líneas de expresión horizontales" },
+          "caption": { "en": "Forehead — pores and expression lines", "pt": "Testa — poros e linhas de expressão", "es": "Frente — poros y líneas de expresión" }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/height-maps/eye.webp",
+          "slideshow": false,
+          "alt": { "en": "Height map of the eye area with pores and eyelid lines", "pt": "Height map da região dos olhos com poros e linhas das pálpebras", "es": "Mapa de altura de la zona de los ojos con poros y líneas de los párpados" },
+          "caption": { "en": "Eye area — pores and eyelid lines", "pt": "Região dos olhos — poros e linhas das pálpebras", "es": "Zona de los ojos — poros y líneas de los párpados" }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/height-maps/cheek.webp",
+          "slideshow": false,
+          "alt": { "en": "Cheek and side-of-face height map showing skin pores", "pt": "Height map da bochecha e lateral do rosto mostrando os poros da pele", "es": "Mapa de altura de la mejilla y el lateral del rostro con poros de la piel" },
+          "caption": { "en": "Cheek and side of the face — pore detail", "pt": "Bochecha e lateral do rosto — detalhes dos poros", "es": "Mejilla y lateral del rostro — detalle de los poros" }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/height-maps/upper-lip.webp",
+          "slideshow": false,
+          "alt": { "en": "Upper-lip height map with fine grooves", "pt": "Height map do lábio superior com sulcos finos", "es": "Mapa de altura del labio superior con surcos finos" },
+          "caption": { "en": "Upper lip — fine grooves", "pt": "Lábio superior — sulcos finos", "es": "Labio superior — surcos finos" }
+        }
+      ]
+    },
+    {
       "id": "renders",
       "copy": {
         "en": {
@@ -3012,13 +3068,15 @@ function projectSectionsMarkup(project) {
   if (!project.sections) return "";
   return `<div class="case-content">${project.sections.map(section => {
     const sectionCopy = section.copy[currentLanguage];
+    const paragraphs = (sectionCopy.paragraphs || []).map(paragraph => `<p>${escapeAttribute(paragraph)}</p>`).join("");
     const media = section.media.map((item, index) => `
-      <figure class="case-media${item.wide ? " case-media--wide" : ""}">${mediaMarkup(item, "", `${sectionCopy.title} — ${index + 1}`)}</figure>`).join("");
+      <figure class="case-media${item.wide ? " case-media--wide" : ""}">${mediaMarkup(item, "", `${sectionCopy.title} — ${index + 1}`)}${item.caption ? `<figcaption>${escapeAttribute(item.caption[currentLanguage])}</figcaption>` : ""}</figure>`).join("");
     return `
       <section class="case-section" data-section="${escapeAttribute(section.id)}">
         <header class="case-section-header">
           <div><h3>${sectionCopy.title}</h3></div>
         </header>
+        ${paragraphs ? `<div class="case-section-copy">${paragraphs}</div>` : ""}
         <div class="case-media-grid">${media}</div>
       </section>`;
   }).join("")}</div>`;
