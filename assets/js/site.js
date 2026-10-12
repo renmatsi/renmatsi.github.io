@@ -285,6 +285,151 @@ const experienceData = [
 
 const projects = [
 {
+  "id": "elf",
+  "status": "published",
+  "tier": "featured",
+  "layout": "large",
+  "featured": true,
+  "year": "2026",
+  "projectType": "personal",
+  "cover": "assets/work/elf/catalog-cover.webp",
+  "main": {
+    "type": "image",
+    "src": "assets/work/elf/render-0005.webp",
+    "alt": {
+      "en": "Elf — render 0005",
+      "pt": "Elf — render 0005",
+      "es": "Elf — render 0005"
+    }
+  },
+  "leadMedia": [
+    {
+      "type": "image",
+      "src": "assets/work/elf/render-0063.webp",
+      "alt": {
+        "en": "Elf — render 0063",
+        "pt": "Elf — render 0063",
+        "es": "Elf — render 0063"
+      }
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/render-0058.webp",
+      "alt": {
+        "en": "Elf — render 0058",
+        "pt": "Elf — render 0058",
+        "es": "Elf — render 0058"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "renders",
+      "copy": {
+        "en": {
+          "title": "Character views"
+        },
+        "pt": {
+          "title": "Vistas do personagem"
+        },
+        "es": {
+          "title": "Vistas del personaje"
+        }
+      },
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/work/elf/render-0013.webp",
+          "alt": {
+            "en": "Elf — render 0013",
+            "pt": "Elf — render 0013",
+            "es": "Elf — render 0013"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/render-0050.webp",
+          "alt": {
+            "en": "Elf — render 0050",
+            "pt": "Elf — render 0050",
+            "es": "Elf — render 0050"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/render-0081.webp",
+          "alt": {
+            "en": "Elf — render 0081",
+            "pt": "Elf — render 0081",
+            "es": "Elf — render 0081"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/render-0109.webp",
+          "alt": {
+            "en": "Elf — render 0109",
+            "pt": "Elf — render 0109",
+            "es": "Elf — render 0109"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/front-lighting.webp",
+          "alt": {
+            "en": "Elf — front-lighting",
+            "pt": "Elf — front-lighting",
+            "es": "Elf — front-lighting"
+          }
+        }
+      ]
+    },
+    {
+      "id": "turntable",
+      "copy": {
+        "en": {
+          "title": "Turntable"
+        },
+        "pt": {
+          "title": "Turntable"
+        },
+        "es": {
+          "title": "Turntable"
+        }
+      },
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/work/elf/turntable.mp4",
+          "poster": "assets/work/elf/turntable-poster.webp"
+        }
+      ]
+    }
+  ],
+  "category": {
+    "en": "Fantasy character",
+    "pt": "Personagem de fantasia",
+    "es": "Personaje de fantasía"
+  },
+  "copy": {
+    "en": {
+      "title": "Elf",
+      "description": "Fantasy character portrait with horns, pointed ears and detailed skin. Hair created with Groomr and eyes created with Iris Studio. Final renders and a turntable.",
+      "tags": []
+    },
+    "pt": {
+      "title": "Elf",
+      "description": "Retrato de personagem de fantasia com chifres, orelhas pontudas e pele detalhada. Cabelo criado com Groomr e olhos criados com Iris Studio. Renders finais e um turntable.",
+      "tags": []
+    },
+    "es": {
+      "title": "Elf",
+      "description": "Retrato de personaje de fantasía con cuernos, orejas puntiagudas y piel detallada. Cabello creado con Groomr y ojos creados con Iris Studio. Renders finales y un turntable.",
+      "tags": []
+    }
+  }
+},
+{
   "id": "pantufa",
   "status": "published",
   "tier": "featured",
@@ -2591,6 +2736,7 @@ const projects = [
 ];
 
 const catalogCovers = {
+  "elf": "assets/work/elf/catalog-cover.webp",
   "pantufa": "assets/work/pantufa/catalog-cover.webp",
   "priestess": "assets/work/priestess/catalog-cover.webp",
   "ranay": "assets/work/ranay/catalog-cover.webp",
@@ -2605,6 +2751,7 @@ const catalogCovers = {
 };
 
 const catalogMetadata = {
+  "elf": { style: "realistic", tags: ["realistic", "character", "groom"], catalogOrder: -1 },
   "drone-soldier": {
     "style": "realistic",
     "tags": [
