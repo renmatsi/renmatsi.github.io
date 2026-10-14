@@ -292,116 +292,221 @@ const projects = [
   "featured": true,
   "year": "2026",
   "projectType": "personal",
-  "cover": "assets/work/elf/catalog-cover.webp",
+  "cover": "assets/work/elf/2026-10-14/catalog-cover.webp",
   "main": {
     "type": "image",
-    "src": "assets/work/elf/render-0005.webp",
+    "src": "assets/work/elf/2026-10-14/0058.webp",
+    "width": 2000,
+    "height": 2600,
     "alt": {
-      "en": "Elf — render 0005",
-      "pt": "Elf — render 0005",
-      "es": "Elf — render 0005"
-    }
+      "en": "Elf — 0058",
+      "pt": "Elf — 0058",
+      "es": "Elf — 0058"
+    },
+    "column": 1
   },
   "leadMedia": [
     {
       "type": "image",
-      "src": "assets/work/elf/render-0063.webp",
+      "src": "assets/work/elf/2026-10-14/0001.webp",
+      "width": 2000,
+      "height": 2600,
       "alt": {
-        "en": "Elf — render 0063",
-        "pt": "Elf — render 0063",
-        "es": "Elf — render 0063"
-      }
+        "en": "Elf — 0001",
+        "pt": "Elf — 0001",
+        "es": "Elf — 0001"
+      },
+      "column": 1
     },
     {
       "type": "image",
-      "src": "assets/work/elf/render-0058.webp",
+      "src": "assets/work/elf/2026-10-14/0008.webp",
+      "width": 2000,
+      "height": 2600,
       "alt": {
-        "en": "Elf — render 0058",
-        "pt": "Elf — render 0058",
-        "es": "Elf — render 0058"
-      }
+        "en": "Elf — 0008",
+        "pt": "Elf — 0008",
+        "es": "Elf — 0008"
+      },
+      "column": 1
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/0099.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — 0099",
+        "pt": "Elf — 0099",
+        "es": "Elf — 0099"
+      },
+      "column": 2
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/0106.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — 0106",
+        "pt": "Elf — 0106",
+        "es": "Elf — 0106"
+      },
+      "column": 2
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/0111.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — 0111",
+        "pt": "Elf — 0111",
+        "es": "Elf — 0111"
+      },
+      "column": 2
+    },
+    {
+      "type": "video",
+      "src": "assets/work/elf/2026-10-14/video.mp4",
+      "poster": "assets/work/elf/2026-10-14/video-poster.webp",
+      "column": 2
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/side1.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — side1",
+        "pt": "Elf — side1",
+        "es": "Elf — side1"
+      },
+      "column": 3
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/side2.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — side2",
+        "pt": "Elf — side2",
+        "es": "Elf — side2"
+      },
+      "column": 3
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/side3.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — side3",
+        "pt": "Elf — side3",
+        "es": "Elf — side3"
+      },
+      "column": 3
+    },
+    {
+      "type": "image",
+      "src": "assets/work/elf/2026-10-14/side4.webp",
+      "width": 2000,
+      "height": 2600,
+      "alt": {
+        "en": "Elf — side4",
+        "pt": "Elf — side4",
+        "es": "Elf — side4"
+      },
+      "column": 3
     }
   ],
   "sections": [
     {
-      "id": "renders",
+      "id": "front-portrait",
       "copy": {
         "en": {
-          "title": "Character views"
+          "title": "Front portrait"
         },
         "pt": {
-          "title": "Vistas do personagem"
+          "title": "Retrato frontal"
         },
         "es": {
-          "title": "Vistas del personaje"
+          "title": "Retrato frontal"
         }
       },
       "media": [
         {
           "type": "image",
-          "src": "assets/work/elf/render-0013.webp",
+          "src": "assets/work/elf/2026-10-14/front2.webp",
+          "loading": "eager",
+          "width": 2000,
+          "height": 2600,
           "alt": {
-            "en": "Elf — render 0013",
-            "pt": "Elf — render 0013",
-            "es": "Elf — render 0013"
-          }
-        },
-        {
-          "type": "image",
-          "src": "assets/work/elf/render-0050.webp",
-          "alt": {
-            "en": "Elf — render 0050",
-            "pt": "Elf — render 0050",
-            "es": "Elf — render 0050"
-          }
-        },
-        {
-          "type": "image",
-          "src": "assets/work/elf/render-0081.webp",
-          "alt": {
-            "en": "Elf — render 0081",
-            "pt": "Elf — render 0081",
-            "es": "Elf — render 0081"
-          }
-        },
-        {
-          "type": "image",
-          "src": "assets/work/elf/render-0109.webp",
-          "alt": {
-            "en": "Elf — render 0109",
-            "pt": "Elf — render 0109",
-            "es": "Elf — render 0109"
-          }
-        },
-        {
-          "type": "image",
-          "src": "assets/work/elf/front-lighting.webp",
-          "alt": {
-            "en": "Elf — front-lighting",
-            "pt": "Elf — front-lighting",
-            "es": "Elf — front-lighting"
+            "en": "Elf — Front2",
+            "pt": "Elf — Front2",
+            "es": "Elf — Front2"
           }
         }
       ]
     },
     {
-      "id": "turntable",
+      "id": "model-without-hair",
       "copy": {
         "en": {
-          "title": "Turntable"
+          "title": "Model without hair"
         },
         "pt": {
-          "title": "Turntable"
+          "title": "Modelo sem cabelo"
         },
         "es": {
-          "title": "Turntable"
+          "title": "Modelo sin cabello"
         }
       },
       "media": [
         {
-          "type": "video",
-          "src": "assets/work/elf/turntable.mp4",
-          "poster": "assets/work/elf/turntable-poster.webp"
+          "type": "image",
+          "src": "assets/work/elf/2026-10-14/001.webp",
+          "width": 2000,
+          "height": 2600,
+          "alt": {
+            "en": "Elf — 001",
+            "pt": "Elf — 001",
+            "es": "Elf — 001"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/2026-10-14/002.webp",
+          "width": 2000,
+          "height": 2600,
+          "alt": {
+            "en": "Elf — 002",
+            "pt": "Elf — 002",
+            "es": "Elf — 002"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/2026-10-14/003.webp",
+          "width": 2000,
+          "height": 2600,
+          "alt": {
+            "en": "Elf — 003",
+            "pt": "Elf — 003",
+            "es": "Elf — 003"
+          }
+        },
+        {
+          "type": "image",
+          "src": "assets/work/elf/2026-10-14/004.webp",
+          "width": 2000,
+          "height": 2600,
+          "alt": {
+            "en": "Elf — 004",
+            "pt": "Elf — 004",
+            "es": "Elf — 004"
+          }
         }
       ]
     },
@@ -491,29 +596,61 @@ const projects = [
           "type": "image",
           "src": "assets/work/elf/height-maps/forehead.webp",
           "slideshow": false,
-          "alt": { "en": "Forehead height map with pores and horizontal expression lines", "pt": "Height map da testa com poros e linhas de expressão horizontais", "es": "Mapa de altura de la frente con poros y líneas de expresión horizontales" },
-          "caption": { "en": "Forehead — pores and expression lines", "pt": "Testa — poros e linhas de expressão", "es": "Frente — poros y líneas de expresión" }
+          "alt": {
+            "en": "Forehead height map with pores and horizontal expression lines",
+            "pt": "Height map da testa com poros e linhas de expressão horizontais",
+            "es": "Mapa de altura de la frente con poros y líneas de expresión horizontales"
+          },
+          "caption": {
+            "en": "Forehead — pores and expression lines",
+            "pt": "Testa — poros e linhas de expressão",
+            "es": "Frente — poros y líneas de expresión"
+          }
         },
         {
           "type": "image",
           "src": "assets/work/elf/height-maps/eye.webp",
           "slideshow": false,
-          "alt": { "en": "Height map of the eye area with pores and eyelid lines", "pt": "Height map da região dos olhos com poros e linhas das pálpebras", "es": "Mapa de altura de la zona de los ojos con poros y líneas de los párpados" },
-          "caption": { "en": "Eye area — pores and eyelid lines", "pt": "Região dos olhos — poros e linhas das pálpebras", "es": "Zona de los ojos — poros y líneas de los párpados" }
+          "alt": {
+            "en": "Height map of the eye area with pores and eyelid lines",
+            "pt": "Height map da região dos olhos com poros e linhas das pálpebras",
+            "es": "Mapa de altura de la zona de los ojos con poros y líneas de los párpados"
+          },
+          "caption": {
+            "en": "Eye area — pores and eyelid lines",
+            "pt": "Região dos olhos — poros e linhas das pálpebras",
+            "es": "Zona de los ojos — poros y líneas de los párpados"
+          }
         },
         {
           "type": "image",
           "src": "assets/work/elf/height-maps/cheek.webp",
           "slideshow": false,
-          "alt": { "en": "Cheek and side-of-face height map showing skin pores", "pt": "Height map da bochecha e lateral do rosto mostrando os poros da pele", "es": "Mapa de altura de la mejilla y el lateral del rostro con poros de la piel" },
-          "caption": { "en": "Cheek and side of the face — pore detail", "pt": "Bochecha e lateral do rosto — detalhes dos poros", "es": "Mejilla y lateral del rostro — detalle de los poros" }
+          "alt": {
+            "en": "Cheek and side-of-face height map showing skin pores",
+            "pt": "Height map da bochecha e lateral do rosto mostrando os poros da pele",
+            "es": "Mapa de altura de la mejilla y el lateral del rostro con poros de la piel"
+          },
+          "caption": {
+            "en": "Cheek and side of the face — pore detail",
+            "pt": "Bochecha e lateral do rosto — detalhes dos poros",
+            "es": "Mejilla y lateral del rostro — detalle de los poros"
+          }
         },
         {
           "type": "image",
           "src": "assets/work/elf/height-maps/upper-lip.webp",
           "slideshow": false,
-          "alt": { "en": "Upper-lip height map with fine grooves", "pt": "Height map do lábio superior com sulcos finos", "es": "Mapa de altura del labio superior con surcos finos" },
-          "caption": { "en": "Upper lip — fine grooves", "pt": "Lábio superior — sulcos finos", "es": "Labio superior — surcos finos" }
+          "alt": {
+            "en": "Upper-lip height map with fine grooves",
+            "pt": "Height map do lábio superior com sulcos finos",
+            "es": "Mapa de altura del labio superior con surcos finos"
+          },
+          "caption": {
+            "en": "Upper lip — fine grooves",
+            "pt": "Lábio superior — sulcos finos",
+            "es": "Labio superior — surcos finos"
+          }
         }
       ]
     }
@@ -539,7 +676,11 @@ const projects = [
       "description": "Retrato de personaje de fantasía con cuernos, orejas puntiagudas y piel detallada. Cabello creado con Groomr y ojos creados con Iris Studio. Renders finales y un turntable.",
       "tags": []
     }
-  }
+  },
+  "leadColumnCount": 3,
+  "pairedLeadColumns": [
+    3
+  ]
 },
 {
   "id": "pantufa",
@@ -2848,7 +2989,7 @@ const projects = [
 ];
 
 const catalogCovers = {
-  "elf": "assets/work/elf/catalog-cover.webp",
+  "elf": "assets/work/elf/2026-10-14/catalog-cover.webp",
   "pantufa": "assets/work/pantufa/catalog-cover.webp",
   "priestess": "assets/work/priestess/catalog-cover.webp",
   "ranay": "assets/work/ranay/catalog-cover.webp",
@@ -3108,7 +3249,9 @@ function mediaMarkup(media, className = "", fallbackAlt = "") {
   }
 
   const alt = media.alt?.[currentLanguage] || fallbackAlt;
-  return `<a class="${className === "gallery-wide" ? "gallery-wide" : ""}" href="${escapeAttribute(media.src)}" target="_blank" rel="noopener"><img class="${className === "dialog-main-media" ? "dialog-main-media" : ""}" src="${escapeAttribute(media.src)}" alt="${escapeAttribute(alt)}" loading="lazy" decoding="async"></a>`;
+  const dimensions = media.width && media.height ? ` width="${escapeAttribute(media.width)}" height="${escapeAttribute(media.height)}"` : "";
+  const loading = media.loading === "eager" ? "eager" : "lazy";
+  return `<a class="${className === "gallery-wide" ? "gallery-wide" : ""}" href="${escapeAttribute(media.src)}" target="_blank" rel="noopener"><img class="${className === "dialog-main-media" ? "dialog-main-media" : ""}" src="${escapeAttribute(media.src)}" alt="${escapeAttribute(alt)}"${dimensions} loading="${loading}" decoding="async"></a>`;
 }
 
 function projectFactsMarkup(project) {
@@ -3149,8 +3292,15 @@ function buildDialog(project) {
   const externalLabel = externalLabels[project.external?.type] || t.project.externalArtstation;
   const gallery = project.sections ? "" : (project.gallery || []).map((media, index) => mediaMarkup(media, index % 5 === 0 && index > 0 ? "gallery-wide" : "", `${copy.title} — view ${index + 1}`)).join("");
   const leadMedia = [project.main, ...(project.leadMedia || [])];
-  const leadClass = leadMedia.length > 1 ? "dialog-main dialog-main-grid" : "dialog-main";
-  const leadMarkup = leadMedia.map((media, index) => `<figure class="case-media dialog-main-item">${mediaMarkup(media, "dialog-main-media", `${copy.title} — main presentation ${index + 1}`)}</figure>`).join("");
+  const leadClass = project.leadColumnCount ? "dialog-main dialog-main-columns" : (leadMedia.length > 1 ? "dialog-main dialog-main-grid" : "dialog-main");
+  const leadItem = (media, index) => `<figure class="case-media dialog-main-item">${mediaMarkup(media, "dialog-main-media", `${copy.title} — main presentation ${index + 1}`)}</figure>`;
+  const leadMarkup = project.leadColumnCount
+    ? Array.from({length: project.leadColumnCount}, (_, index) => {
+      const column = index + 1;
+      const paired = project.pairedLeadColumns?.includes(column);
+      return `<div class="dialog-media-column${paired ? " dialog-media-column--paired" : ""}" data-column="${column}">${leadMedia.filter(media => media.column === column).map(leadItem).join("")}</div>`;
+    }).join("")
+    : leadMedia.map(leadItem).join("");
 
   elements.dialogClose.setAttribute("aria-label", t.project.close);
   elements.dialogContent.dataset.project = project.id;

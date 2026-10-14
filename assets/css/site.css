@@ -2030,18 +2030,27 @@ a { color: inherit; }
 #dialogContent[data-project="trial-xtreme-freedom"] .case-media img { object-fit: contain; }
 #dialogContent[data-project="trial-xtreme-freedom"] [data-section="film"] .case-media { aspect-ratio: 16 / 9; }
 
-/* Elf presents the three selected portraits inside one wide card. */
-#dialogContent[data-project="elf"] .dialog-main-grid {
+/* Three independent columns, with paired hair variants in the third. */
+.dialog-main-columns {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  overflow: hidden;
-  border-radius: var(--radius-surface);
+  gap: clamp(8px, 1.4vw, 20px);
+  align-items: start;
+}
+.dialog-media-column {
+  display: grid;
+  gap: clamp(8px, 1.4vw, 20px);
+  min-width: 0;
+}
+.dialog-media-column--paired { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 740px) {
+  .dialog-main-columns { grid-template-columns: 1fr; }
 }
 #dialogContent[data-project="elf"] .case-media { aspect-ratio: 10 / 13; }
-#dialogContent[data-project="elf"] .dialog-main-item,
-#dialogContent[data-project="elf"] .dialog-main-media { border-radius: 0; }
 #dialogContent[data-project="elf"] .case-media img,
 #dialogContent[data-project="elf"] .case-media video { object-fit: contain; }
+#dialogContent[data-project="elf"] [data-section="front-portrait"] .case-media-grid { grid-template-columns: 1fr; }
+#dialogContent[data-project="elf"] [data-section="front-portrait"] .case-media { width: min(100%, 720px); margin-inline: auto; }
 
 .case-section-copy {
   max-width: 760px;
