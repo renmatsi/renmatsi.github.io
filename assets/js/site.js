@@ -292,10 +292,10 @@ const projects = [
   "featured": true,
   "year": "2026",
   "projectType": "personal",
-  "cover": "assets/work/elf/2026-10-14/catalog-cover.webp",
+  "cover": "assets/work/elf/2026-10-15/catalog-cover.webp",
   "main": {
     "type": "image",
-    "src": "assets/work/elf/2026-10-14/0058.webp",
+    "src": "assets/work/elf/2026-10-15/0058.webp",
     "width": 2000,
     "height": 2600,
     "alt": {
@@ -308,148 +308,36 @@ const projects = [
   "leadMedia": [
     {
       "type": "image",
-      "src": "assets/work/elf/2026-10-14/0001.webp",
+      "src": "assets/work/elf/2026-10-15/0064.webp",
       "width": 2000,
       "height": 2600,
       "alt": {
-        "en": "Elf — 0001",
-        "pt": "Elf — 0001",
-        "es": "Elf — 0001"
-      },
-      "column": 1
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/0008.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — 0008",
-        "pt": "Elf — 0008",
-        "es": "Elf — 0008"
-      },
-      "column": 1
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/0099.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — 0099",
-        "pt": "Elf — 0099",
-        "es": "Elf — 0099"
+        "en": "Elf — 0064",
+        "pt": "Elf — 0064",
+        "es": "Elf — 0064"
       },
       "column": 2
     },
     {
       "type": "image",
-      "src": "assets/work/elf/2026-10-14/0106.webp",
+      "src": "assets/work/elf/2026-10-15/0068.webp",
       "width": 2000,
       "height": 2600,
       "alt": {
-        "en": "Elf — 0106",
-        "pt": "Elf — 0106",
-        "es": "Elf — 0106"
+        "en": "Elf — 0068",
+        "pt": "Elf — 0068",
+        "es": "Elf — 0068"
       },
-      "column": 2
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/0111.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — 0111",
-        "pt": "Elf — 0111",
-        "es": "Elf — 0111"
-      },
-      "column": 2
+      "column": 3
     },
     {
       "type": "video",
-      "src": "assets/work/elf/2026-10-14/video.mp4",
-      "poster": "assets/work/elf/2026-10-14/video-poster.webp",
+      "src": "assets/work/elf/2026-10-15/video.mp4",
+      "poster": "assets/work/elf/2026-10-15/video-poster.webp",
       "column": 2
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/side1.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — side1",
-        "pt": "Elf — side1",
-        "es": "Elf — side1"
-      },
-      "column": 3
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/side2.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — side2",
-        "pt": "Elf — side2",
-        "es": "Elf — side2"
-      },
-      "column": 3
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/side3.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — side3",
-        "pt": "Elf — side3",
-        "es": "Elf — side3"
-      },
-      "column": 3
-    },
-    {
-      "type": "image",
-      "src": "assets/work/elf/2026-10-14/side4.webp",
-      "width": 2000,
-      "height": 2600,
-      "alt": {
-        "en": "Elf — side4",
-        "pt": "Elf — side4",
-        "es": "Elf — side4"
-      },
-      "column": 3
     }
   ],
   "sections": [
-    {
-      "id": "front-portrait",
-      "copy": {
-        "en": {
-          "title": "Front portrait"
-        },
-        "pt": {
-          "title": "Retrato frontal"
-        },
-        "es": {
-          "title": "Retrato frontal"
-        }
-      },
-      "media": [
-        {
-          "type": "image",
-          "src": "assets/work/elf/2026-10-14/front2.webp",
-          "loading": "eager",
-          "width": 2000,
-          "height": 2600,
-          "alt": {
-            "en": "Elf — Front2",
-            "pt": "Elf — Front2",
-            "es": "Elf — Front2"
-          }
-        }
-      ]
-    },
     {
       "id": "model-without-hair",
       "copy": {
@@ -677,10 +565,7 @@ const projects = [
       "tags": []
     }
   },
-  "leadColumnCount": 3,
-  "pairedLeadColumns": [
-    3
-  ]
+  "leadColumnCount": 3
 },
 {
   "id": "pantufa",
@@ -2989,7 +2874,7 @@ const projects = [
 ];
 
 const catalogCovers = {
-  "elf": "assets/work/elf/2026-10-14/catalog-cover.webp",
+  "elf": "assets/work/elf/2026-10-15/catalog-cover.webp",
   "pantufa": "assets/work/pantufa/catalog-cover.webp",
   "priestess": "assets/work/priestess/catalog-cover.webp",
   "ranay": "assets/work/ranay/catalog-cover.webp",
