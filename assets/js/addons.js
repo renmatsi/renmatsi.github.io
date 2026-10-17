@@ -59,6 +59,18 @@
   ];
 
   const products = {
+    "iris-studio": {
+      url: "https://renmatsi.gumroad.com/l/irisstudio",
+      type: { en: "Standalone application", pt: "Aplicativo independente", es: "Aplicación independiente" },
+      video: "https://public-files.gumroad.com/0u14rdvkleonk8ovd5qgvgvw6q7u",
+      poster: "https://public-files.gumroad.com/y7lt8g0mqqw619gyulaklz32c0mt",
+      subtitle: { en: "Procedural eye creation", pt: "Criação procedural de olhos", es: "Creación procedural de ojos" },
+      paragraphs: {
+        en: ["Create realistic eyes with control over the iris, pupil, cornea and sclera. Refine iris fibers, patterns and pigmentation together with scleral tone and blood vessels.", "Review the complete eye in the built-in 3D preview, then export the model and texture maps for character, game and 3D production workflows."],
+        pt: ["Crie olhos realistas com controle sobre íris, pupila, córnea e esclera. Refine fibras, padrões e pigmentação da íris junto com o tom da esclera e os vasos sanguíneos.", "Revise o olho completo no preview 3D integrado e exporte o modelo e os mapas de textura para a produção de personagens, jogos e outras produções 3D."],
+        es: ["Crea ojos realistas con control de iris, pupila, córnea y esclerótica. Refina fibras, patrones y pigmentación del iris junto con el tono de la esclerótica y los vasos sanguíneos.", "Revisa el ojo completo en la vista 3D integrada y exporta el modelo y los mapas de textura para la producción de personajes, videojuegos y otras producciones 3D."]
+      }
+    },
     groomr: {
       video: "https://public-files.gumroad.com/pf5s02v8z3ygzmt6rwr8wd6kqc5e",
       poster: "https://public-files.gumroad.com/kgv8gcg117w897bjd8amuof1teqj",
@@ -126,7 +138,7 @@
     const product = products[activeTool.id];
     const text = labels[lang];
     close.setAttribute("aria-label", text.close);
-    detail.querySelector(".addon-eyebrow").textContent = text.type;
+    detail.querySelector(".addon-eyebrow").textContent = product.type?.[lang] || text.type;
     detail.querySelector(".addon-subtitle").textContent = product.subtitle[lang];
     detail.querySelector(".addon-description").innerHTML = product.paragraphs[lang].map(paragraph => `<p>${paragraph}</p>`).join("");
     detail.querySelector(".addon-gumroad span").textContent = text.gumroad;
@@ -153,7 +165,7 @@
         </div>
         <div class="addon-detail-copy">
           <div class="addon-description"></div>
-          <a class="addon-gumroad" href="https://renmatsi.gumroad.com/l/${id}" target="_blank" rel="noopener noreferrer"><span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="addon-gumroad" href="${product.url || `https://renmatsi.gumroad.com/l/${id}`}" target="_blank" rel="noopener noreferrer"><span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
         </div>
       </div>`;
     updateProductCopy();
