@@ -3,7 +3,7 @@
   "use strict";
 
   function initializeSectionEffects() {
-    const sections = Array.from(document.querySelectorAll("#about, #experience, #tools, #contact"));
+    const sections = Array.from(document.querySelectorAll("#profileCareer, #tools, #contact"));
     if (!sections.length) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
