@@ -20,12 +20,12 @@
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const backgroundCleanup = new WeakMap();
   const motions = [
-    ["down", "translate3d(0,-1%,0) scale(.97)", "translate3d(0,1%,0) scale(.97)"],
-    ["up", "translate3d(0,1%,0) scale(.97)", "translate3d(0,-1%,0) scale(.97)"],
-    ["left", "translate3d(1%,0,0) scale(.97)", "translate3d(-1%,0,0) scale(.97)"],
-    ["right", "translate3d(-1%,0,0) scale(.97)", "translate3d(1%,0,0) scale(.97)"],
-    ["zoom-in", "scale(.96)", "scale(1)"],
-    ["zoom-out", "scale(1)", "scale(.96)"]
+    ["down", "translate3d(0,-3%,0) scale(1.03)", "translate3d(0,3%,0) scale(1.03)"],
+    ["up", "translate3d(0,3%,0) scale(1.03)", "translate3d(0,-3%,0) scale(1.03)"],
+    ["left", "translate3d(3%,0,0) scale(1.03)", "translate3d(-3%,0,0) scale(1.03)"],
+    ["right", "translate3d(-3%,0,0) scale(1.03)", "translate3d(3%,0,0) scale(1.03)"],
+    ["zoom-in", "scale(1)", "scale(1.12)"],
+    ["zoom-out", "scale(1.12)", "scale(1)"]
   ];
   let lastMotion = "";
   let queue = [], history = [], historyIndex = -1;
