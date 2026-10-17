@@ -104,29 +104,30 @@ footer p { margin: 0; }
 
 @media print {
   @page { size: A4; margin: 9mm 11mm; }
-  body { width: auto; margin: 0; color: #111; background: white; font-size: 8.3pt; line-height: 1.28; }
+  body { width: auto; margin: 0; color: #111; background: white; font-size: 10pt; line-height: 1.28; }
   .skip-link,
   .resume-actions { display: none; }
   .resume-header { padding: 0 0 8pt; border-bottom-width: 2pt; }
   .eyebrow { font-size: 7pt; }
   h1 { margin-top: 4pt; font-size: 27pt; }
   .role { font-size: 11.5pt; }
-  .contact-line { gap: 2pt 10pt; padding: 6pt 0; font-size: 6.8pt; }
-  .resume-section { grid-template-columns: 94pt minmax(0, 1fr); gap: 14pt; padding: 8pt 0; }
+  .contact-line { gap: 2pt 10pt; padding: 6pt 0; font-size: 7.2pt; }
+  .resume-section { grid-template-columns: 1fr; gap: 5pt; padding: 7pt 0; }
+  .resume-section > .job { grid-column: 1; }
   .resume-section > h2 { font-size: 7.4pt; }
-  .summary > p { font-size: 8.8pt; }
+  .summary > p { font-size: 10pt; }
   .skill-groups { gap: 3pt; }
   .job,
   .evidence article { grid-column: 2; break-inside: avoid; }
   .job + .job,
-  .evidence article + article { margin-top: 6pt; padding-top: 6pt; }
+  .evidence article + article { margin-top: 3pt; padding-top: 5pt; }
   .job h3,
-  .evidence h3 { font-size: 9.8pt; }
+  .evidence h3 { font-size: 10.5pt; }
   .job header p,
   .progression,
-  .evidence p { font-size: 7.8pt; }
+  .evidence p { font-size: 9pt; }
   .job time,
-  .evidence time { font-size: 6.8pt; }
+  .evidence time { font-size: 8pt; }
   ul { margin-top: 4pt; padding-left: 11pt; }
   li + li { margin-top: 1pt; }
   a { text-decoration: none; }
