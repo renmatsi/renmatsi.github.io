@@ -2115,12 +2115,10 @@ a { color: inherit; }
   height: 100%;
   max-width: none;
   object-fit: cover;
-  filter: blur(24px) brightness(.5);
+  filter: blur(48px) brightness(.45);
   transform: scale(1.12);
-  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, #000 45%, transparent);
-  mask-composite: intersect;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, #000 45%, transparent);
-  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, #000 45%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent);
 }
 .artwork-foreground {
   position: absolute;
@@ -2136,8 +2134,6 @@ a { color: inherit; }
   max-height: 100%;
   object-fit: contain;
   object-position: center;
-  mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
 }
 .artwork-slide.is-moving .artwork-media { animation: artwork-drift 25s linear forwards; animation-play-state: paused; }
 .artwork-header.is-playing .artwork-slide.is-moving .artwork-media { animation-play-state: running; }

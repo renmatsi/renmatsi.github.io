@@ -58,10 +58,22 @@
       const stops = mobileLayout.matches
         ? [["work", "work"], ["about", "about"], ["experience", "work"], ["tools", "tools"], ["contact", "contact"]]
         : [["work", "work"], ["profileCareer", "profile"], ["tools", "tools"], ["contact", "contact"]];
+      const stopIds = new Set(stops.map(([id]) => id));
+      ["profileCareer", "about", "experience"].forEach(id => {
+        if (!stopIds.has(id)) document.getElementById(id)?.removeAttribute("data-scroll-frame");
+      });
       let nextSurface = "work";
       stops.forEach(([id, surface]) => {
         const element = document.getElementById(id);
-        if (element && element.getBoundingClientRect().top <= viewportHeight * .5) nextSurface = surface;
+        if (!element) return;
+        const bounds = element.getBoundingClientRect();
+        if (bounds.top <= viewportHeight * .5) nextSurface = surface;
+        /* Only sections that fit can be centered without skipping their content. */
+        if (id !== "work") {
+          const fits = bounds.height <= viewportHeight - document.getElementById("siteHeader").offsetHeight + 2;
+          const value = fits ? "center" : "free";
+          if (element.dataset.scrollFrame !== value) element.dataset.scrollFrame = value;
+        }
       });
       if (nextSurface !== activeSurface) {
         activeSurface = nextSurface;

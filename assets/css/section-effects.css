@@ -93,6 +93,8 @@
 /* One viewport surface replaces the hard horizontal section bands. */
 .section-surfaces-enabled { scroll-snap-type: y proximity; }
 .section-surfaces-enabled .artwork-header { scroll-snap-align: start; }
+.section-surfaces-enabled [data-scroll-frame="center"] { scroll-snap-align: center !important; }
+.section-surfaces-enabled [data-scroll-frame="free"] { scroll-snap-align: none !important; }
 .section-surfaces-enabled body { isolation: isolate; background: transparent; }
 .page-surfaces { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--ink); }
 .page-surface { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms ease; }
