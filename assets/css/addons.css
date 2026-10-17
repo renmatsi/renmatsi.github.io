@@ -224,30 +224,6 @@
   text-wrap: pretty;
 }
 
-.tool-card.addon-identity-card[data-tool="cuttr"] {
-  --tool-g1: #ff7a00;
-  --tool-g2: #ff2558;
-}
-
-.tool-card.addon-identity-card[data-tool="weavr"] {
-  --tool-g1: #7d52ff;
-  --tool-g2: #00b7ff;
-}
-
-.tool-card.addon-identity-card[data-tool="stitchr"] {
-  --tool-g1: #ff3f91;
-  --tool-g2: #ff9336;
-}
-
-.tool-card.addon-identity-card[data-tool="groomr"] {
-  --tool-g1: #00c9d2;
-  --tool-g2: #63e36e;
-}
-
-.tool-card.addon-identity-card[data-tool="drawr"] {
-  --tool-g1: #cbff37;
-  --tool-g2: #ffab00;
-}
 
 /* Remove the old card UI completely. */
 .tool-card__meta,
@@ -329,20 +305,7 @@
 
 
 /* === IRIS STUDIO CARD === */
-.tool-card.addon-identity-card[data-tool="iris-studio"] {
-  --tool-g1: #6b5cff;
-  --tool-g2: #28c7ff;
-}
 
-.tool-card.addon-identity-card[data-tool="bridgr"] {
-  --tool-g1: #4f8fff;
-  --tool-g2: #48d8d4;
-}
-
-.tool-card.addon-identity-card[data-tool="dformr"] {
-  --tool-g1: #fb7185;
-  --tool-g2: #a78bfa;
-}
 
 .tool-card.addon-identity-card[data-tool="iris-studio"] h3 {
   text-transform: none !important;
@@ -396,11 +359,6 @@
   letter-spacing: -0.045em !important;
 }
 
-/* Iris Studio: first card / software identity. */
-.tool-card.addon-identity-card[data-tool="iris-studio"] {
-  --tool-g1: #6b5cff;
-  --tool-g2: #28c7ff;
-}
 
 /* Keep the ghost identity but make it quieter and aligned. */
 .tool-card.addon-identity-card::before {
@@ -431,4 +389,45 @@
   .tool-card.addon-identity-card[data-tool="iris-studio"] h3 {
     font-size: clamp(27px, 9vw, 42px) !important;
   }
+}
+
+/* Each tool has its own color family; Iris Studio keeps its existing identity. */
+.tool-card.addon-identity-card[data-tool="iris-studio"] {
+  --tool-g1: #6b5cff;
+  --tool-g2: #28c7ff;
+}
+
+.tool-card.addon-identity-card[data-tool="groomr"] {
+  --tool-g1: #00b85b;
+  --tool-g2: #6bdf95;
+}
+
+.tool-card.addon-identity-card[data-tool="stitchr"] {
+  --tool-g1: #e73c91;
+  --tool-g2: #ff97c2;
+}
+
+.tool-card.addon-identity-card[data-tool="weavr"] {
+  --tool-g1: #d8a600;
+  --tool-g2: #ffe38c;
+}
+
+.tool-card.addon-identity-card[data-tool="cuttr"] {
+  --tool-g1: #ff7a00;
+  --tool-g2: #ffb86b;
+}
+
+.tool-card.addon-identity-card[data-tool="drawr"] {
+  --tool-g1: #a3d900;
+  --tool-g2: #dcff80;
+}
+
+.tool-card.addon-identity-card[data-tool="bridgr"] {
+  --tool-g1: #00b6cc;
+  --tool-g2: #7ae7f2;
+}
+
+.tool-card.addon-identity-card[data-tool="dformr"] {
+  --tool-g1: #e44242;
+  --tool-g2: #ff9590;
 }
