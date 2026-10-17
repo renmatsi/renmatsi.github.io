@@ -72,19 +72,97 @@
   z-index: 1;
 }
 
-#about.section-scroll-effects {
-  --section-from: var(--ink);
-  --section-to: var(--paper);
-}
-
-#experience.section-scroll-effects {
-  --section-from: var(--paper);
-  --section-to: var(--ink);
-}
-
 #tools.section-scroll-effects {
   --section-from: var(--ink);
   --section-to: var(--ink-soft);
+}
+
+/* Profile and career share one surface; its transition sits in the grid gutter. */
+.profile-career {
+  --profile-gap: clamp(96px, 10vw, 168px);
+  --profile-width: min(var(--shell), calc(100% - var(--gutter) * 2));
+  --profile-start: calc((100% - var(--profile-width)) / 2);
+  --profile-about-width: calc((var(--profile-width) - var(--profile-gap)) * .475);
+  --profile-fade-start: calc(var(--profile-start) + var(--profile-about-width));
+  --profile-surface: linear-gradient(90deg, var(--paper) var(--profile-fade-start), var(--ink) calc(var(--profile-fade-start) + var(--profile-gap)));
+  padding: clamp(88px, 8vw, 128px) 0;
+  background: var(--profile-surface);
+}
+
+#profileCareer.section-scroll-effects {
+  --section-from: var(--ink);
+  --section-to: var(--profile-surface);
+}
+
+.profile-career-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: var(--profile-gap);
+  align-items: start;
+}
+
+.profile-career .about-section,
+.profile-career .experience-section {
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  scroll-margin-top: 100px;
+}
+
+.profile-career .about-layout {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr);
+  gap: 30px 24px;
+}
+.profile-career .about-copy { display: contents; }
+.profile-career .about-portrait { position: relative; top: auto; width: 136px; margin: 0; }
+.profile-career .about-portrait img { width: 136px; height: 136px; }
+.profile-career .about-copy > .section-heading { grid-column: 2; margin-bottom: 0 !important; }
+.profile-career .about-copy h2 { font-size: clamp(40px, 3.75vw, 58px); line-height: 1; }
+.profile-career .about-role { margin-top: 16px; font-size: 18px; }
+.profile-career .about-specialty { font-size: 15px; }
+.profile-career .about-details { margin-top: 14px; gap: 4px 16px; font-size: 12px; }
+.profile-career .about-text,
+.profile-career .about-links,
+.profile-career .capability-list { grid-column: 1 / -1; min-width: 0; }
+.profile-career .about-text { max-width: none; }
+.profile-career .about-text p { font-size: 18px; line-height: 1.65; letter-spacing: -.02em; }
+.profile-career .about-text p:last-child { margin-bottom: 0; }
+.profile-career .about-links { margin-top: 0; padding-top: 20px; gap: 22px; }
+.profile-career .experience-section .section-heading { margin-bottom: 30px !important; }
+.profile-career .experience-section .section-heading h2 { font-size: clamp(48px, 4.6vw, 70px); line-height: 1; }
+.profile-career .experience-item { grid-template-columns: minmax(98px, .32fr) minmax(0, 1fr); gap: 24px; padding: 28px 0; }
+.profile-career .experience-period { font-size: 10px; letter-spacing: .045em; line-height: 1.65; }
+.profile-career .experience-heading { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.profile-career .experience-heading h3 { font-size: clamp(22px, 1.9vw, 28px); line-height: 1.2; }
+.profile-career .experience-role { font-size: 15px; line-height: 1.6; }
+
+@media (max-width: 1100px) {
+  .profile-career { --profile-surface: var(--paper); padding: 0; }
+  .profile-career-layout { display: block; width: 100%; }
+  .profile-career .about-section { padding: 80px var(--gutter) 40px; }
+  .profile-career .experience-section {
+    padding: 176px var(--gutter) 80px;
+    background: linear-gradient(to bottom, var(--paper), var(--ink) 112px);
+  }
+  .profile-career .about-layout { grid-template-columns: 160px minmax(0, 1fr); column-gap: 32px; }
+  .profile-career .about-portrait,
+  .profile-career .about-portrait img { width: 160px; }
+  .profile-career .about-portrait img { height: 160px; }
+  .profile-career .about-copy h2 { font-size: clamp(42px, 6vw, 62px); }
+  .profile-career .about-text { max-width: 720px; }
+}
+
+@media (max-width: 600px) {
+  .profile-career .about-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .profile-career .about-copy > .section-heading { grid-column: 1; }
+  .profile-career .about-portrait,
+  .profile-career .about-portrait img { width: 180px; }
+  .profile-career .about-portrait img { height: 180px; }
+  .profile-career .experience-item { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 26px 0; }
+  .profile-career .experience-period { order: 2; margin: 0; }
+  .profile-career .experience-heading { order: 1; gap: 8px; }
+  .profile-career .experience-section .section-heading h2 { font-size: clamp(42px, 11vw, 58px); }
 }
 
 #contact.section-scroll-effects {
