@@ -55,6 +55,14 @@
         pt: "Desenha relevos ou gravações diretamente sobre o modelo.",
         es: "Dibuja relieves o grabados directamente sobre el modelo."
       }
+    },
+    {
+      id: "bridgr",
+      name: "Bridgr"
+    },
+    {
+      id: "dformr",
+      name: "Dformr"
     }
   ];
 
