@@ -334,6 +334,16 @@
   --tool-g2: #28c7ff;
 }
 
+.tool-card.addon-identity-card[data-tool="bridgr"] {
+  --tool-g1: #4f8fff;
+  --tool-g2: #48d8d4;
+}
+
+.tool-card.addon-identity-card[data-tool="dformr"] {
+  --tool-g1: #fb7185;
+  --tool-g2: #a78bfa;
+}
+
 .tool-card.addon-identity-card[data-tool="iris-studio"] h3 {
   text-transform: none !important;
   letter-spacing: -0.045em !important;
@@ -344,10 +354,10 @@
 
 /* === ORGANIZED TOOLS GRID 2026 === */
 
-/* Six tools: exact 3 x 2 desktop composition. */
+/* Eight tools: balanced 4 x 2 desktop composition. */
 .tools-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: 18px !important;
   align-items: stretch;
 }
