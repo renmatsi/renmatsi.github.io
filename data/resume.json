@@ -2,7 +2,7 @@
   "identity": {
     "name": "Renan Matos",
     "target_role": "Senior 3D Character Artist",
-    "location": "Brazil",
+    "location": "Fortaleza, Ceará, Brazil",
     "availability": "Remote",
     "relocation": null
   },
@@ -13,7 +13,7 @@
     "artstation": "https://renmatsi.artstation.com/",
     "github": "https://github.com/renmatsi"
   },
-  "summary": "Senior 3D Character Artist with professional experience creating real-time characters and assets for games. Former Lead 3D Character Artist at Gameplay Galaxy, with hands-on work across sculpting, anatomy, garment creation, grooming, retopology, UVs, PBR texturing and engine integration. Experienced in leading artists, organizing production workflows and adapting visual quality to technical requirements.",
+  "summary": "Senior 3D Character Artist creating realistic and stylized characters for PC and mobile games. Former Lead 3D Character Artist at Gameplay Galaxy, combining hands-on production with team guidance and art reviews. Work spans sculpting, clothing, grooming, retopology, UVs, PBR texturing and real-time optimization. I also develop Blender tools in Python and standalone software for character-art workflows.",
   "experience": [
     {
       "company": "Gameplay Galaxy",
@@ -23,9 +23,9 @@
       "end": "2026-05",
       "period": "Jan 2023 — May 2026",
       "bullets": [
-        "Led and mentored the character-art team while remaining directly involved in production.",
-        "Created game-ready characters across sculpting, garment creation, grooming, retopology, UVs and PBR texturing.",
-        "Collaborated with concept, animation and engineering throughout character production and integration."
+        "Led and mentored the character-art team, reviewed work and organized production workflows.",
+        "Produced game-ready characters across sculpting, clothing, grooming, retopology, UVs and PBR texturing.",
+        "Collaborated with concept, animation and engineering on character production and integration."
       ]
     },
     {
@@ -37,7 +37,7 @@
       "period": "Jan 2022 — Feb 2023",
       "bullets": [
         "Modeled and textured characters, props and environments for in-game use.",
-        "Supported rigging, integration and generalist workflows for prototypes and indie productions."
+        "Supported rigging, engine integration and generalist work for prototypes and indie productions."
       ]
     },
     {
@@ -48,8 +48,8 @@
       "end": "2022-05",
       "period": "Jan 2020 — May 2022",
       "bullets": [
-        "Delivered custom 3D assets for international clients across games, AR/VR and animation.",
-        "Adapted assets to different visual styles, production needs and target platforms."
+        "Delivered custom 3D assets for international clients in games, AR/VR and animation.",
+        "Adapted visual style and asset complexity to each project and target platform."
       ]
     },
     {
@@ -60,9 +60,9 @@
       "end": "2022-02",
       "period": "Sep 2017 — Feb 2022",
       "bullets": [
-        "Promoted from 3D Generalist to Lead after approximately three months with the company.",
-        "Worked across modeling, texturing, rigging, animation and game-engine integration.",
-        "Led artists and helped organize production workflows while remaining hands-on with 3D delivery."
+        "Promoted from 3D Generalist to Lead after approximately three months.",
+        "Produced modeling, texturing, rigging, animation and game-engine integration work.",
+        "Guided artists and organized production workflows while remaining involved in asset delivery."
       ]
     }
   ],
@@ -100,24 +100,30 @@
   ],
   "technical_projects": [
     {
+      "name": "Iris Studio",
+      "description": "Standalone procedural eye creation with 3D preview, model and texture-map export",
+      "url": "https://renmatsi.gumroad.com/l/irisstudio",
+      "type": "Standalone application"
+    },
+    {
       "name": "Cuttr",
       "description": "Controlled topology cuts and panel details for Blender",
-      "url": null
+      "url": "https://renmatsi.gumroad.com/l/cuttr"
     },
     {
       "name": "Weavr",
       "description": "Procedural fabric and weave generation for Blender",
-      "url": null
+      "url": "https://renmatsi.gumroad.com/l/weavr"
     },
     {
       "name": "Stitchr",
       "description": "Surface-aware procedural seams and stitching for Blender",
-      "url": null
+      "url": "https://renmatsi.gumroad.com/l/stitchr"
     },
     {
       "name": "Groomr",
       "description": "Guide-driven hair-card grooming with physics and collision controls",
-      "url": null
+      "url": "https://renmatsi.gumroad.com/l/groomr"
     },
     {
       "name": "Drawr",
@@ -135,5 +141,6 @@
     "leadership": true,
     "web3": false,
     "generative_ai": false
-  }
+  },
+  "updated_at": "2026-10-17"
 }

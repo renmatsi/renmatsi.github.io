@@ -18,14 +18,14 @@
     }).map(item => ({ project, media: item, key: item.src }));
   });
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-  const compactFocus = { "big-warrior": 10, "denis": 31, "drone-soldier": 35, "hyperlight": 18, "pantufa": 18, "priestess": 28, "ranay": 6, "red-dress": 27, "tiny-hero": 23, "trial-xtreme-freedom": 0, "weslley-wanderer": 29 };
+  const backgroundCleanup = new WeakMap();
   const motions = [
-    ["down", "translate3d(0,-3%,0) scale(1.03)", "translate3d(0,3%,0) scale(1.03)"],
-    ["up", "translate3d(0,3%,0) scale(1.03)", "translate3d(0,-3%,0) scale(1.03)"],
-    ["left", "translate3d(3%,0,0) scale(1.03)", "translate3d(-3%,0,0) scale(1.03)"],
-    ["right", "translate3d(-3%,0,0) scale(1.03)", "translate3d(3%,0,0) scale(1.03)"],
-    ["zoom-in", "scale(1)", "scale(1.12)"],
-    ["zoom-out", "scale(1.12)", "scale(1)"]
+    ["down", "translate3d(0,-1%,0) scale(.97)", "translate3d(0,1%,0) scale(.97)"],
+    ["up", "translate3d(0,1%,0) scale(.97)", "translate3d(0,-1%,0) scale(.97)"],
+    ["left", "translate3d(1%,0,0) scale(.97)", "translate3d(-1%,0,0) scale(.97)"],
+    ["right", "translate3d(-1%,0,0) scale(.97)", "translate3d(1%,0,0) scale(.97)"],
+    ["zoom-in", "scale(.96)", "scale(1)"],
+    ["zoom-out", "scale(1)", "scale(.96)"]
   ];
   let lastMotion = "";
   let queue = [], history = [], historyIndex = -1;
@@ -73,16 +73,66 @@
   }
 
   function clearPanel(panel) {
+    backgroundCleanup.get(panel)?.();
+    backgroundCleanup.delete(panel);
     panel.classList.remove("is-current", "is-moving");
     panel.querySelectorAll("video").forEach(video => { video.pause(); video.removeAttribute("src"); video.load(); });
     panel.replaceChildren();
+  }
+
+  function createBackground(panel, media) {
+    /* A tiny sampled surface reuses the foreground decoder, including for video. */
+    const canvas = document.createElement("canvas");
+    canvas.className = "artwork-backdrop";
+    canvas.setAttribute("aria-hidden", "true");
+    const width = media.videoWidth || media.naturalWidth;
+    const height = media.videoHeight || media.naturalHeight;
+    const ratio = 320 / Math.max(width, height);
+    canvas.width = Math.max(1, Math.round(width * ratio));
+    canvas.height = Math.max(1, Math.round(height * ratio));
+    const context = canvas.getContext("2d", { alpha: false });
+    if (!context) return;
+    panel.prepend(canvas);
+    const paint = () => context.drawImage(media, 0, 0, canvas.width, canvas.height);
+    paint();
+    if (!(media instanceof HTMLVideoElement)) return;
+
+    let frame = null, lastPaint = 0;
+    const nativeFrames = typeof media.requestVideoFrameCallback === "function";
+    const stop = () => {
+      if (frame !== null) {
+        if (nativeFrames) media.cancelVideoFrameCallback(frame);
+        else clearTimeout(frame);
+      }
+      frame = null;
+    };
+    const tick = now => {
+      frame = null;
+      if (media.paused || !media.isConnected) return;
+      if (now - lastPaint >= 125) { paint(); lastPaint = now; }
+      start();
+    };
+    const start = () => {
+      if (frame !== null || media.paused) return;
+      frame = nativeFrames ? media.requestVideoFrameCallback(tick) : setTimeout(() => tick(performance.now()), 125);
+    };
+    media.addEventListener("play", start);
+    media.addEventListener("pause", stop);
+    backgroundCleanup.set(panel, () => {
+      stop();
+      media.removeEventListener("play", start);
+      media.removeEventListener("pause", stop);
+    });
   }
 
   async function loadMedia(panel, artwork) {
     clearPanel(panel);
     const media = document.createElement(artwork.media.type === "video" ? "video" : "img");
     media.className = "artwork-media";
-    panel.append(media);
+    const foreground = document.createElement("div");
+    foreground.className = "artwork-foreground";
+    foreground.append(media);
+    panel.append(foreground);
     if (media instanceof HTMLImageElement) {
       media.alt = "";
       media.src = sourceFor(artwork);
@@ -105,6 +155,7 @@
         media.load();
       });
     }
+    createBackground(panel, media);
   }
 
   function chooseMotion(panel) {
@@ -161,7 +212,6 @@
       await loadMedia(panel, artwork);
       if (ready && !manual && !canPlay()) { if (fresh) queue.unshift(artwork); clearPanel(panel); return; }
       panel.classList.remove("is-current", "is-moving");
-      panel.style.setProperty("--compact-focus", `center ${compactFocus[artwork.project.id] ?? 18}%`);
       chooseMotion(panel);
       void panel.offsetWidth;
       panel.classList.add("is-current", "is-moving");

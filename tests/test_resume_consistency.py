@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-import fitz
+from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "resume.json"
@@ -26,7 +26,7 @@ class ResumeCanonicalDataTests(unittest.TestCase):
         payload = json.loads(DATA.read_text(encoding="utf-8"))
         self.assertIn("technical_projects", payload)
         names = {project["name"] for project in payload["technical_projects"]}
-        self.assertEqual(names, {"Cuttr", "Weaver", "Knot Forge", "Stitcher"})
+        self.assertEqual(names, {"Iris Studio", "Cuttr", "Weavr", "Stitchr", "Groomr", "Drawr"})
         self.assertIn("Python", payload["software"])
 
     def test_resume_html_uses_canonical_facts_and_omits_superseded_claims(self):
@@ -45,9 +45,10 @@ class ResumeCanonicalDataTests(unittest.TestCase):
             "3D Generalist → Lead",
             "Technical tools",
             "Cuttr",
-            "Weaver",
-            "Knot Forge",
-            "Stitcher",
+            "Iris Studio",
+            "Weavr",
+            "Stitchr",
+            "Groomr",
             "Python",
         ]
         for value in required:
@@ -65,28 +66,28 @@ class ResumeCanonicalDataTests(unittest.TestCase):
 
     def test_generated_pdf_is_one_page_canonical_and_clickable(self):
         self.assertTrue(PDF.exists(), "The canonical Senior resume PDF must be generated")
-        document = fitz.open(PDF)
-        self.assertEqual(len(document), 1)
-        text = "\n".join(page.get_text("text") for page in document)
+        document = PdfReader(PDF)
+        self.assertEqual(len(document.pages), 1)
+        text = "\n".join(page.extract_text() for page in document.pages)
         for value in [
             "Senior 3D Character Artist",
             "Jan 2023 — May 2026",
             "3D Artist / 3D Generalist",
             "English — Fluent",
             "Cuttr",
-            "Weaver",
-            "Knot Forge",
-            "Stitcher",
+            "Iris Studio",
+            "Weavr",
+            "Stitchr",
+            "Groomr",
         ]:
             self.assertIn(value, text)
         for stale in ["Jan 2023 — Present", "Male Character", "Trial Xtreme Freedom"]:
             self.assertNotIn(stale, text)
 
         uris = {
-            link.get("uri")
-            for page in document
-            for link in page.get_links()
-            if link.get("uri")
+            annotation.get_object().get("/A", {}).get("/URI")
+            for page in document.pages
+            for annotation in page.get("/Annots", [])
         }
         payload = json.loads(DATA.read_text(encoding="utf-8"))
         expected = {
@@ -96,6 +97,7 @@ class ResumeCanonicalDataTests(unittest.TestCase):
             payload["contacts"]["artstation"],
             payload["contacts"]["github"],
         }
+        expected.update(project["url"] for project in payload["technical_projects"] if project["url"])
         self.assertTrue(expected.issubset(uris), f"Missing PDF links: {expected - uris}")
 
     def test_superseded_lead_resume_is_not_public(self):
