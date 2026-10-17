@@ -78,7 +78,8 @@
 }
 
 /* Profile and career share one surface; its transition sits in the grid gutter. */
-.profile-career {
+.profile-career,
+.page-surface--profile {
   --profile-gap: clamp(96px, 10vw, 168px);
   --profile-width: min(var(--shell), calc(100% - var(--gutter) * 2));
   --profile-start: calc((100% - var(--profile-width)) / 2);
@@ -87,6 +88,41 @@
   --profile-surface: linear-gradient(90deg, var(--paper) var(--profile-fade-start), var(--ink) calc(var(--profile-fade-start) + var(--profile-gap)));
   padding: clamp(88px, 8vw, 128px) 0;
   background: var(--profile-surface);
+}
+
+/* One viewport surface replaces the hard horizontal section bands. */
+.section-surfaces-enabled { scroll-snap-type: y proximity; }
+.section-surfaces-enabled .artwork-header { scroll-snap-align: start; }
+.section-surfaces-enabled body { isolation: isolate; background: transparent; }
+.page-surfaces { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--ink); }
+.page-surface { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms ease; }
+.page-surface.is-active { opacity: 1; }
+.page-surface--work { background: var(--ink); }
+.page-surface--profile { padding: 0; background: var(--profile-surface); }
+.page-surface--about { background: var(--paper); }
+.page-surface--tools { background: var(--ink-soft); }
+.page-surface--contact { background: var(--accent); }
+.section-surfaces-enabled #work,
+.section-surfaces-enabled #profileCareer,
+.section-surfaces-enabled #tools,
+.section-surfaces-enabled #contact { background: transparent; scroll-snap-align: start; scroll-snap-stop: normal; }
+.section-surfaces-enabled .section-scroll-effects::before { display: none; }
+.section-surfaces-enabled #profileCareer,
+.section-surfaces-enabled #tools,
+.section-surfaces-enabled #contact { min-height: calc(100svh - var(--header-height)); display: grid; align-content: center; }
+.section-surfaces-enabled .site-footer { background: transparent; border-color: rgba(8,8,8,.2); }
+.section-surfaces-enabled .site-footer p,
+.section-surfaces-enabled .site-footer a { color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .section-surfaces-enabled #profileCareer { display: block; scroll-snap-align: none; }
+  .section-surfaces-enabled #about,
+  .section-surfaces-enabled #experience { background: transparent; scroll-snap-align: start; min-height: calc(100svh - var(--header-height)); }
+  .section-surfaces-enabled #experience { padding-top: 96px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-surfaces-enabled { scroll-snap-type: none; }
+  .page-surface { transition: none; }
 }
 
 #profileCareer.section-scroll-effects {
