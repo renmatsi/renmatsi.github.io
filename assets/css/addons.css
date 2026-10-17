@@ -1,5 +1,91 @@
 /* Renan Matos — addon card identity system */
 
+.addon-open {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+.addon-open svg {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 18px;
+  height: 18px;
+  opacity: .55;
+}
+.addon-open svg, .addon-close svg, .addon-gumroad svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.addon-open:focus-visible { outline: 2px solid var(--white); outline-offset: -6px; }
+
+.addon-dialog {
+  position: fixed;
+  width: min(1240px, calc(100% - 48px));
+  max-width: none;
+  max-height: calc(100svh - 48px);
+  margin: auto;
+  padding: clamp(28px, 4vw, 52px);
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  color: var(--white);
+  background: var(--ink);
+}
+.addon-dialog::backdrop { background: rgba(0, 0, 0, .86); backdrop-filter: blur(8px); }
+.addon-dialog[open] { animation: dialogIn 300ms var(--ease) both; }
+.addon-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  margin: -8px -8px -32px 0;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--ink);
+  cursor: pointer;
+}
+.addon-close svg { width: 18px; height: 18px; }
+.addon-close:hover { background: var(--ink-soft); }
+.addon-detail-heading { margin: 0 40px 30px 0; }
+.addon-eyebrow { margin: 0 0 12px; color: var(--muted); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+.addon-detail-heading h2 { margin: 0; font-size: clamp(40px, 5.5vw, 72px); font-weight: 500; letter-spacing: -.06em; line-height: 1; }
+.addon-subtitle { margin: 14px 0 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.addon-detail-layout { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr); gap: clamp(24px, 3vw, 42px); align-items: start; }
+.addon-player { min-width: 0; }
+.addon-player video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 8px; background: #000; object-fit: contain; }
+.addon-description p { margin: 0 0 18px; color: var(--muted); font-size: 15px; line-height: 1.7; text-wrap: pretty; }
+.addon-gumroad { display: inline-flex; align-items: center; gap: 20px; min-height: 46px; margin-top: 8px; padding: 10px 0; border-bottom: 1px solid var(--white); color: var(--white); font-size: 13px; text-decoration: none; }
+.addon-gumroad:hover { color: var(--muted); }
+.addon-gumroad svg { width: 18px; height: 18px; }
+.addon-video-error { margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .addon-detail-layout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .addon-dialog { width: calc(100% - 24px); max-height: calc(100svh - 24px); padding: 28px 20px; border-radius: 16px; }
+  .addon-detail-heading { margin-right: 36px; margin-bottom: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .addon-dialog[open] { animation: none; }
+}
+
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
