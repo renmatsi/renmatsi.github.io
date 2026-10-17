@@ -7,6 +7,19 @@
     if (!sections.length) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileLayout = window.matchMedia("(max-width: 1100px)");
+    const backdrop = document.createElement("div");
+    backdrop.className = "page-surfaces";
+    backdrop.setAttribute("aria-hidden", "true");
+    ["work", "profile", "about", "tools", "contact"].forEach(name => {
+      const layer = document.createElement("div");
+      layer.className = `page-surface page-surface--${name}`;
+      layer.dataset.surface = name;
+      backdrop.append(layer);
+    });
+    document.body.prepend(backdrop);
+    document.documentElement.classList.add("section-surfaces-enabled");
+    let activeSurface = "";
     const reveals = new Set();
     const lastProgress = new WeakMap();
     let framePending = false;
@@ -42,6 +55,21 @@
       framePending = false;
       const viewportHeight = window.innerHeight;
       const still = reducedMotion.matches;
+      const stops = mobileLayout.matches
+        ? [["work", "work"], ["about", "about"], ["experience", "work"], ["tools", "tools"], ["contact", "contact"]]
+        : [["work", "work"], ["profileCareer", "profile"], ["tools", "tools"], ["contact", "contact"]];
+      let nextSurface = "work";
+      stops.forEach(([id, surface]) => {
+        const element = document.getElementById(id);
+        if (element && element.getBoundingClientRect().top <= viewportHeight * .5) nextSurface = surface;
+      });
+      if (nextSurface !== activeSurface) {
+        activeSurface = nextSurface;
+        document.documentElement.dataset.activeSurface = nextSurface;
+        backdrop.querySelectorAll(".page-surface").forEach(layer => {
+          layer.classList.toggle("is-active", layer.dataset.surface === nextSurface);
+        });
+      }
 
       /* Measure all positions before writing styles to avoid layout churn. */
       const sectionPositions = sections.map(section => [section, section.getBoundingClientRect().top]);
@@ -75,6 +103,7 @@
       if (!document.hidden) scheduleUpdate();
     });
     reducedMotion.addEventListener("change", scheduleUpdate);
+    mobileLayout.addEventListener("change", scheduleUpdate);
 
     /* Language changes and add-on loading can replace cards after startup. */
     const observer = new MutationObserver(() => {
