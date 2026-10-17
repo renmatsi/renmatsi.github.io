@@ -2049,6 +2049,25 @@ a { color: inherit; }
 #dialogContent[data-project="elf"] .case-media { aspect-ratio: 10 / 13; }
 #dialogContent[data-project="elf"] .case-media img,
 #dialogContent[data-project="elf"] .case-media video { object-fit: contain; }
+.dialog-main-grouped { display: grid; gap: clamp(12px, 1.8vw, 28px); }
+.dialog-main-grouped > .dialog-main-item {
+  width: min(100%, 640px, calc(86svh * 10 / 13));
+  justify-self: center;
+}
+#dialogContent[data-project="elf"] .dialog-render-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  aspect-ratio: 30 / 13;
+  background: #141412;
+}
+#dialogContent[data-project="elf"] .dialog-render-group img {
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 10 / 13;
+  border-radius: 0;
+}
 #dialogContent[data-project="elf"] [data-section="front-portrait"] .case-media-grid { grid-template-columns: 1fr; }
 #dialogContent[data-project="elf"] [data-section="front-portrait"] .case-media { width: min(100%, 720px); margin-inline: auto; }
 

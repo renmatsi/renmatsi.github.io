@@ -565,7 +565,7 @@ const projects = [
       "tags": []
     }
   },
-  "leadColumnCount": 3
+  "leadImageGroupCount": 3
 },
 {
   "id": "pantufa",
@@ -3177,9 +3177,11 @@ function buildDialog(project) {
   const externalLabel = externalLabels[project.external?.type] || t.project.externalArtstation;
   const gallery = project.sections ? "" : (project.gallery || []).map((media, index) => mediaMarkup(media, index % 5 === 0 && index > 0 ? "gallery-wide" : "", `${copy.title} — view ${index + 1}`)).join("");
   const leadMedia = [project.main, ...(project.leadMedia || [])];
-  const leadClass = project.leadColumnCount ? "dialog-main dialog-main-columns" : (leadMedia.length > 1 ? "dialog-main dialog-main-grid" : "dialog-main");
+  const leadClass = project.leadImageGroupCount ? "dialog-main dialog-main-grouped" : (project.leadColumnCount ? "dialog-main dialog-main-columns" : (leadMedia.length > 1 ? "dialog-main dialog-main-grid" : "dialog-main"));
   const leadItem = (media, index) => `<figure class="case-media dialog-main-item">${mediaMarkup(media, "dialog-main-media", `${copy.title} — main presentation ${index + 1}`)}</figure>`;
-  const leadMarkup = project.leadColumnCount
+  const leadMarkup = project.leadImageGroupCount
+    ? `<figure class="case-media dialog-render-group">${leadMedia.slice(0, project.leadImageGroupCount).map((media, index) => mediaMarkup(media, "", `${copy.title} — main presentation ${index + 1}`)).join("")}</figure>${leadMedia.slice(project.leadImageGroupCount).map(leadItem).join("")}`
+    : project.leadColumnCount
     ? Array.from({length: project.leadColumnCount}, (_, index) => {
       const column = index + 1;
       const paired = project.pairedLeadColumns?.includes(column);
